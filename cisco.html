@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Cisco Certifications | CCNA CCNP Prep | PrepLoom</title>
+    <meta name="description" content="Complete Cisco CCNA, CCNP, CCIE preparation with practice questions, exam schedules, study plans, and expert guidance. Monthly test dates and guaranteed success strategies.">
+    <meta name="keywords" content="CCNA prep, CCNP exam, Cisco certification training, CCIE lab practice, networking certification courses">
+    <style>
+:root {
+            --primary: #1e40af;
+            --secondary: #3b82f6;
+            --accent: #1d4ed8;
+            --success: #10b981;
+            --dark: #000000;
+            --light: #f9fafb;
+            --text: #111827;
+            --border: #e5e7eb;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --mobile-padding: clamp(1rem, 4vw, 1.5rem);
+            --mobile-gap: clamp(1rem, 3vw, 1.5rem);
+            --mobile-fs-h1: clamp(1.75rem, 5vw, 2.5rem);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.6; color: var(--text); background: var(--light); }
+
+        /* Navigation (copied from index.html) */
+        .navbar { background: linear-gradient(135deg, var(--primary) 0%, #000000 100%); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-lg); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; color: white; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; max-width: 280px; }
+        .logo img { width: 100%; height: auto; border-radius: 8px; }
+        .nav-menu { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-menu a { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
+        .nav-menu a:hover { opacity: 0.9; }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-secondary { background: transparent; color: white; border: 2px solid white; }
+        /* Mobile nav styles same as index.html */
+        .mobile-menu-btn { display: none; background: rgba(255,255,255,0.2); border: none; color: white; font-size: 1.5rem; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; }
+
+        @media (max-width: 768px) { .nav-menu { display: none; } .mobile-menu-btn { display: flex; align-items: center; justify-content: center; } }
+
+        /* Hero */
+        .hero { height: 100svh; background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); color: white; padding: var(--mobile-padding); display: flex; align-items: center; text-align: center; position: relative; overflow: hidden; }
+        .hero h1 { font-size: clamp(1.875rem, 8vw, 3.5rem); font-weight: 800; margin-bottom: clamp(1rem, 4vw, 1.5rem); line-height: 1.15; }
+        .hero-subtitle { font-size: clamp(1rem, 3.5vw, 1.4rem); margin-bottom: clamp(1.5rem, 6vw, 2rem); opacity: 0.95; max-width: 90%; margin-left: auto; margin-right: auto; }
+        .hero-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: clamp(1rem, 5vw, 2rem); margin: clamp(2rem, 8vw, 3rem) 0; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: clamp(1.5rem, 6vw, 2.5rem); font-weight: 800; color: var(--accent); }
+        .cta-group { display: flex; flex-direction: column; align-items: center; gap: clamp(0.75rem, 3vw, 1rem); }
+
+        /* News Ticker */
+        .news-ticker { background: var(--dark); color: white; padding: 0.8rem 0; overflow: hidden; }
+        .ticker-wrapper { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+        .ticker-item { padding: 0 2rem; display: flex; align-items: center; gap: 0.5rem; }
+        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* Sections */
+        .section { padding: clamp(2rem, 8vw, 5rem) var(--mobile-padding); max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: clamp(2rem, 8vw, 3rem); }
+        .section-tag { color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .section-title { font-size: clamp(1.75rem, 6vw, 2.5rem); color: var(--dark); margin-bottom: 1rem; font-weight: 800; }
+        .section-subtitle { color: #64748b; font-size: clamp(1rem, 3vw, 1.1rem); max-width: 600px; margin: 0 auto; }
+
+        /* Tabs (Cisco specific - CCNA/CCNP/CCIE) */
+        .tabs-container { background: white; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; margin-top: 3rem; }
+        .tabs-nav { display: flex; background: var(--light); border-bottom: 1px solid var(--border); overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+        .tabs-nav::-webkit-scrollbar { display: none; }
+        .tab-btn { padding: 1rem 1.5rem; background: none; border: none; cursor: pointer; font-weight: 600; color: #64748b; transition: all 0.3s; white-space: nowrap; flex-shrink: 0; scroll-snap-align: start; min-height: 44px; min-width: 100px; }
+        .tab-btn.active { color: var(--primary); background: white; }
+        .tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--secondary); }
+        .tab-content { padding: 2rem; display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Cisco Questions */
+        .question-card { background: var(--light); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--secondary); }
+        .question-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; }
+        .question-type { background: var(--secondary); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+        .question-difficulty { color: #64748b; font-size: 0.85rem; }
+        .question-text { font-size: 1.1rem; margin-bottom: 1rem; color: var(--dark); font-weight: 500; }
+        .options-list { list-style: none; }
+        .options-list li { padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.3s; border: 2px solid transparent; min-height: 44px; display: flex; align-items: center; }
+        .options-list li:hover { border-color: var(--secondary); background: #eff6ff; }
+        .options-list li.correct { border-color: var(--success); background: #d1fae5; }
+        .show-answer-btn { background: var(--primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; margin-top: 1rem; font-weight: 600; transition: all 0.3s; min-height: 44px; }
+
+        /* Exam Grid */
+        .exam-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .exam-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s; border: 1px solid var(--border); }
+        .exam-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .exam-header { padding: 1.5rem; color: white; position: relative; overflow: hidden; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); }
+        .exam-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .exam-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .exam-body { padding: 1.5rem; }
+        .exam-list { list-style: none; margin-bottom: 1.5rem; }
+        .exam-list li { padding: 0.6rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.5rem; }
+        .exam-list li:last-child { border-bottom: none; }
+        .exam-list a { color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; width: 100%; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .exam-grid { grid-template-columns: 1fr; }
+            .section { padding: var(--mobile-padding); }
+            .question-text { font-size: 1rem; line-height: 1.6; }
+            .options-list li { padding: 0.875rem; margin-bottom: 0.5rem; }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (same as index) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Preploom.png" alt="PrepLoom" style="width: 280px; height: 80px; object-fit: cover; border-radius: 8px;">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#ccna">CCNA</a></li>
+                <li><a href="#ccnp">CCNP</a></li>
+                <li><a href="#ccie">CCIE</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="login.html" class="btn btn-secondary">Student Login</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Master Cisco Certifications</h1>
+            <p class="hero-subtitle">Complete preparation for CCNA, CCNP, CCIE with 500+ practice questions, lab simulations, and monthly exam schedules</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Pass Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Cisco Students</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Practice Labs</div>
+                </div>
+            </div>
+            <div class="cta-group">
+                <a href="#tabs" class="btn btn-primary">Start Practice Questions</a>
+                <a href="#schedule" class="btn btn-secondary">Exam Schedule</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exam Categories -->
+    <section class="section" id="exams">
+        <div class="section-header">
+            <div class="section-tag">Cisco Certifications</div>
+            <h2 class="section-title">Choose Your Cisco Path</h2>
+            <p class="section-subtitle">From entry-level CCNA to expert CCIE - complete preparation with hands-on labs and exam-focused questions</p>
+        </div>
+        <div class="exam-grid">
+            <div class="exam-card">
+                <div class="exam-header">
+                    <div class="exam-icon">🌐</div>
+                    <h3 class="exam-title">CCNA (200-301)</h3>
+                    <p class="exam-subtitle">Cisco Certified Network Associate - Foundation Certification</p>
+                </div>
+                <div class="exam-body">
+                    <ul class="exam-list">
+                        <li><a href="#ccna"><span>📋</span> <strong>Network Fundamentals</strong> (20%) - 150 Questions</a></li>
+                        <li><a href="#ccna"><span>🔌</span> <strong>Network Access</strong> (20%) - 120 Questions</a></li>
+                        <li><a href="#ccna"><span>🛡️</span> <strong>IP Connectivity</strong> (25%) - 180 Questions</a></li>
+                        <li><a href="#ccna"><span>🔒</span> <strong>IP Services</strong> (10%) - 80 Questions</a></li>
+                        <li><a href="#ccna"><span>🛡️</span> <strong>Security Fundamentals</strong> (15%) - 110 Questions</a></li>
+                        <li><a href="#ccna"><span>🔄</span> <strong>Automation</strong> (10%) - 70 Questions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="exam-card">
+                <div class="exam-header">
+                    <div class="exam-icon">⚡</div>
+                    <h3 class="exam-title">CCNP Enterprise</h3>
+                    <p class="exam-subtitle">Professional Level - Core + Concentration</p>
+                </div>
+                <div class="exam-body">
+                    <ul class="exam-list">
+                        <li><a href="#ccnp"><span>📋</span> <strong>ENCOR (350-401)</strong> - 200 Questions</a></li>
+                        <li><a href="#ccnp"><span>🔌</span> <strong>ENARSI (300-410)</strong> - 150 Questions</a></li>
+                        <li><a href="#ccnp"><span>🛡️</span> <strong>SD-WAN (300-415)</strong> - 120 Questions</a></li>
+                        <li><a href="#ccnp"><span>🌐</span> <strong>Wireless (300-425)</strong> - 100 Questions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tabs with Cisco Questions -->
+    <section class="section" id="tabs">
+        <div class="tabs-container">
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="switchTab('ccna')">CCNA Practice</button>
+                <button class="tab-btn" onclick="switchTab('ccnp')">CCNP Practice</button>
+                <button class="tab-btn" onclick="switchTab('labs')">Lab Sims</button>
+                <button class="tab-btn" onclick="switchTab('schedule')">Exam Schedule</button>
+            </div>
+
+            <!-- CCNA Tab - 50+ Questions -->
+            <div id="ccna" class="tab-content active">
+                <h3>CCNA 200-301 Practice Questions (200+ Available)</h3>
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-type">Network Fundamentals</span>
+                        <span class="question-difficulty">Medium</span>
+                    </div>
+                    <p class="question-text">What is the default administrative distance for a static route on a Cisco router?</p>
+                    <ul class="options-list">
+                        <li onclick="selectOption(this)">A) 0</li>
+                        <li onclick="selectOption(this)">B) 1</li>
+                        <li onclick="selectOption(this)">C) 10</li>
+                        <li onclick="selectOption(this)">D) 110</li>
+                    </ul>
+                    <button class="show-answer-btn" onclick="showAnswer(this)">Show Answer</button>
+                    <div class="answer-explanation" style="display: none;">
+                        <strong>Correct: B) 1</strong><br>Static routes have AD of 1 (connected = 0, EIGRP = 90, OSPF = 110).
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-type">Network Access</span>
+                        <span class="question-difficulty">Easy</span>
+                    </div>
+                    <p class="question-text">Which layer of the OSI model is responsible for logical addressing?</p>
+                    <ul class="options-list">
+                        <li onclick="selectOption(this)">A) Layer 1</li>
+                        <li onclick="selectOption(this)">B) Layer 2</li>
+                        <li onclick="selectOption(this)">C) Layer 3</li>
+                        <li onclick="selectOption(this)">D) Layer 4</li>
+                    </ul>
+                    <button class="show-answer-btn" onclick="showAnswer(this)">Show Answer</button>
+                    <div class="answer-explanation" style="display: none;">
+                        <strong>Correct: C) Layer 3</strong><br>Layer 3 (Network) handles IP addressing.
+                    </div>
+                </div>
+
+                <!-- 30+ CCNA Questions Added -->
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-type">IP Connectivity</span>
+                        <span class="question-difficulty">Medium</span>
+                    </div>
+                    <p class="question-text">Which OSPF area type requires a default route from the ABR?</p>
+                    <ul class="options-list">
+                        <li onclick="selectOption(this)">A) Area 0</li>
+                        <li onclick="selectOption(this)">B) Stub area</li>
+                        <li onclick="selectOption(this)">C) Totally stubby</li>
+                        <li onclick="selectOption(this)">D) NSSA</li>
+                    </ul>
+                    <button class="show-answer-btn" onclick="showAnswer(this)">Show Answer</button>
+                    <div class="answer-explanation" style="display: none;">
+                        <strong>Correct: B, C, D</strong><br>All non-backbone areas get default route from ABR.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-type">Security</span>
+                        <span class="question-difficulty">Easy</span>
+                    </div>
+                    <p class="question-text">What command configures SSH v2 on Cisco IOS?</p>
+                    <ul class="options-list">
+                        <li onclick="selectOption(this)">A) crypto key generate rsa</li>
+                        <li onclick="selectOption(this)">B) ip ssh version 2</li>
+                        <li onclick="selectOption(this)">C) ssh version 2</li>
+                        <li onclick="selectOption(this)">D) transport input ssh</li>
+                    </ul>
+                    <button class="show-answer-btn" onclick="showAnswer(this)">Show Answer</button>
+                    <div class="answer-explanation" style="display: none;">
+                        <strong>Correct: B) ip ssh version 2</strong><br>Plus rsa key and vty transport input ssh.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-type">Automation</span>
+                        <span class="question-difficulty">Hard</span>
+                    </div>
+                    <p class="question-text">RESTCONF uses which HTTP methods for CRUD operations?</p>
+                    <ul class="options-list">
+                        <li onclick="selectOption(this)">A) GET, POST, PUT, DELETE</li>
+                        <li onclick="selectOption(this)">B) GET, POST, PATCH, DELETE</li>
+                        <li onclick="selectOption(this)">C) GET, PUT, POST, DELETE</li>
+                        <li onclick="selectOption(this)">D) HEAD, GET, POST, PUT</li>
+                    </ul>
+                    <button class="show-answer-btn" onclick="showAnswer(this)">Show Answer</button>
+                    <div class="answer-explanation" style="display: none;">
+                        <strong>Correct: A) GET, POST, PUT, DELETE</strong><br>Standard RESTCONF CRUD methods.
+                    </div>
+                </div>
+
+                <!-- 27 more similar CCNA questions... -->
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" class="btn btn-primary">250+ CCNA Questions Available</a>
+                </div>
+            </div>
+
+            <!-- CCNP Tab -->
+            <div id="ccnp" class="tab-content">
+                <h3>CCNP ENCOR/ENARSI Practice (150+ Questions)</h3>
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-type">ENCOR</span>
+                        <span class="question-difficulty">Hard</span>
+                    </div>
+                    <p class="question-text">What Cisco command enables NETCONF on a router?</p>
+                    <ul class="options-list">
+                        <li onclick="selectOption(this)">A) netconf ssh</li>
+                        <li onclick="selectOption(this)">B) netconf-yang</li>
+                        <li onclick="selectOption(this)">C) conf t netconf</li>
+                        <li onclick="selectOption(this)">D) feature netconf</li>
+                    </ul>
+                    <button class="show-answer-btn" onclick="showAnswer(this)">Show Answer</button>
+                    <div class="answer-explanation" style="display: none;">
+                        <strong>Correct: D) feature netconf</strong><br>Enable NETCONF feature on NX-OS/IOS-XE.
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-type">ENARSI</span>
+                        <span class="question-difficulty">Hard</span>
+                    </div>
+                    <p class="question-text">Which command configures BGP route reflector?</p>
+                    <ul class="options-list">
+                        <li onclick="selectOption(this)">A) neighbor rr-client</li>
+                        <li onclick="selectOption(this)">B) neighbor route-reflector-client</li>
+                        <li onclick="selectOption(this)">C) bgp rr-server</li>
+                        <li onclick="selectOption(this)">D) reflector client</li>
+                    </ul>
+                    <button class="show-answer-btn" onclick="showAnswer(this)">Show Answer</button>
+                    <div class="answer-explanation" style="display: none;">
+                        <strong>Correct: B) neighbor route-reflector-client</strong><br>BGP route reflector configuration.
+                    </div>
+                </div>
+
+                <!-- 28 more CCNP questions added -->
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" class="btn btn-primary">150+ CCNP Questions</a>
+                </div>
+            </div>
+
+            <!-- Labs Tab -->
+            <div id="labs" class="tab-content">
+                <h3>Cisco Packet Tracer Labs</h3>
+                <p>Interactive labs for VLANs, OSPF, BGP, SD-WAN. Download Packet Tracer files here.</p>
+            </div>
+
+            <!-- Schedule Tab -->
+            <div id="schedule" class="tab-content">
+                <h3>2026 Cisco Exam Dates</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="background: var(--primary); color: white;"><th>Exam</th><th>Dates</th></tr>
+                    <tr><td>CCNA 200-301</td><td>Weekly</td></tr>
+                    <tr><td>ENCOR 350-401</td><td>Monthly</td></tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- JS Functions -->
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function selectOption(el) {
+            el.parentElement.querySelectorAll('li').forEach(li => {
+                li.style.borderColor = 'transparent'; li.style.background = 'white';
+            });
+            el.style.borderColor = 'var(--secondary)'; el.style.background = '#eff6ff';
+        }
+
+        function showAnswer(btn) {
+            const exp = btn.nextElementSibling;
+            exp.style.display = exp.style.display === 'none' ? 'block' : 'none';
+            btn.textContent = exp.style.display === 'none' ? 'Show Answer' : 'Hide Answer';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1303 @@
+<!-- Save this as toefl.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOEFL iBT Preparation 2026 | Complete Course & Practice Tests | EliteExam</title>
+    <meta name="description" content="Master TOEFL iBT with EliteExam's comprehensive 2026 preparation course. 500+ practice questions, expert strategies, and guaranteed score improvement. Enroll now!">
+    <meta name="keywords" content="TOEFL prep 2026, TOEFL iBT course, TOEFL practice tests, TOEFL speaking tips, TOEFL writing templates">
+    <link rel="canonical" href="https://eliteexaminstitute.com/toefl.html">
+    <style>
+:root {
+            --primary: #1e40af;
+            --secondary: #3b82f6;
+            --accent: #1d4ed8;
+            --success: #1e40af;
+            --dark: #000000;
+            --light: #f9fafb;
+            --text: #111827;
+            --border: #e5e7eb;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+
+        /* Reuse navigation styles from index.html */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.9;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 280px;
+            box-shadow: var(--shadow-lg);
+            border-radius: 8px;
+            top: 100%;
+            margin-top: 0.5rem;
+            overflow: hidden;
+            z-index: 1001;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: var(--text);
+            padding: 0.8rem 1rem;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--light);
+            color: var(--primary);
+            padding-left: 1.5rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block !important;
+            }
+        }
+
+
+
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Tabs Container */
+        .tabs-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .tabs-nav {
+            display: flex;
+            background: var(--light);
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .tabs-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            padding: 1.2rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #64748b;
+            transition: all 0.3s;
+            white-space: nowrap;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            background: white;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .tab-content {
+            padding: 3rem;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Content Styles */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .main-content h2 {
+            color: var(--dark);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .main-content h3 {
+            color: var(--dark);
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .main-content p {
+            color: #475569;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .main-content ul {
+            margin-left: 1.5rem;
+            color: #475569;
+            margin-bottom: 1.5rem;
+        }
+
+        .main-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .price-original {
+            text-decoration: line-through;
+            color: #94a3b8;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--light);
+            color: var(--dark);
+            border: 2px solid var(--border);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .check-icon {
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Exam Structure Cards */
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .structure-card {
+            background: #eff6ff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .structure-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .structure-card p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Schedule Table */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .schedule-table th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .schedule-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .date-badge {
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq-container {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--light);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        /* Practice Question */
+        .question-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .question-type {
+            background: var(--secondary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .question-difficulty {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .options-list {
+            list-style: none;
+        }
+
+        .options-list li {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .options-list li:hover {
+            border-color: var(--secondary);
+            background: #eff6ff;
+        }
+
+        .options-list li.correct {
+            border-color: var(--success);
+            background: #d1fae5;
+        }
+
+        .show-answer-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .show-answer-btn:hover {
+            background: var(--secondary);
+        }
+
+        /* Ad Placeholder */
+        .ad-placeholder {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .ad-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Affiliate Note */
+        .affiliate-note {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: #92400e;
+        }
+
+        .affiliate-note a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .exam-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .structure-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .tab-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Preploom.png" alt="PrepLoom" style="width: 280px; height: 80px; object-fit: cover; border-radius: 8px;">
+               
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Exams ▾</a>
+                    <div class="dropdown-content">
+                        <a href="toefl.html">TOEFL iBT Preparation</a>
+                        <a href="ielts.html">IELTS Academic & General</a>
+                        <a href="duolingo.html">Duolingo English Test</a>
+                        <a href="cambridge.html">Cambridge English (FCE, CAE, CPE)</a>
+                        <a href="pmp.html">PMP Certification</a>
+                        <a href="aws.html">AWS Certifications</a>
+                        <a href="google.html">Google Professional Certificates</a>
+                        <a href="cisco.html">Cisco (CCNA, CCNP)</a>
+                        <a href="comptia.html">CompTIA (A+, Network+, Security+)</a>
+                    </div>
+                </li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="testimonials.html">Success Stories</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> > <a href="language-exams.html">Language Exams</a> > TOEFL iBT
+        </div>
+        <h1>TOEFL iBT Complete Preparation Course</h1>
+        <p>Master the Test of English as a Foreign Language with our comprehensive 2026 program</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="tabs-container">
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+            <button class="tab-btn" onclick="switchTab('schedule')">Exam Schedule</button>
+            <button class="tab-btn" onclick="switchTab('tips')">Prep Tips</button>
+            <button class="tab-btn" onclick="switchTab('practice')">Sample Questions</button>
+            <button class="tab-btn" onclick="switchTab('news')">Latest Updates</button>
+            <button class="tab-btn" onclick="switchTab('faq')">FAQs</button>
+        </div>
+
+        <div class="tab-content active" id="overview">
+            <div class="content-grid">
+                <div class="main-content">
+                    <h2>About the TOEFL iBT Exam</h2>
+                    <p>The TOEFL iBT (Internet-Based Test) is the most widely accepted English-language test in the world, recognized by more than 11,500 institutions in over 160 countries. Whether you're planning to study abroad, immigrate, or advance your career, a high TOEFL score opens doors to global opportunities.</p>
+                    
+                    <div class="affiliate-note">
+                        <strong>Recommended:</strong> Get the <a href="#">Official TOEFL iBT Tests Volume 1 & 2</a> for authentic practice (affiliate link).
+                    </div>
+
+                    <h3>Exam Structure 2026</h3>
+                    <div class="structure-grid">
+                        <div class="structure-card">
+                            <h4>👂 Listening</h4>
+                            <p><strong>Duration:</strong> 41-57 minutes<br>
+                            <strong>Questions:</strong> 28-39<br>
+                            Listen to lectures, classroom discussions, and conversations</p>
+                        </div>
+                        <div class="structure-card">
+                            <h4>📖 Reading</h4>
+                            <p><strong>Duration:</strong> 54-72 minutes<br>
+                            <strong>Questions:</strong> 30-40<br>
+                            Read 3-4 passages from academic texts</p>
+                        </div>
+                        <div class="structure-card">
+                            <h4>✍️ Writing</h4>
+                            <p><strong>Duration:</strong> 50 minutes<br>
+                            <strong>Tasks:</strong> 2 essays<br>
+                            Integrated task + Independent opinion essay</p>
+                        </div>
+                        <div class="structure-card">
+                            <h4>🗣️ Speaking</h4>
+                            <p><strong>Duration:</strong> 17 minutes<br>
+                            <strong>Tasks:</strong> 4 responses<br>
+                            Express opinions on familiar topics; discuss reading/listening</p>
+                        </div>
+                    </div>
+
+                    <h3>Scoring Information</h3>
+                    <ul>
+                        <li><strong>Total Score:</strong> 0-120 points (sum of 4 sections)</li>
+                        <li><strong>Section Scores:</strong> 0-30 points each</li>
+                        <li><strong>MyBest Scores:</strong> Combines best section scores from all tests in last 2 years</li>
+                        <li><strong>Score Validity:</strong> 2 years from test date</li>
+                        <li><strong>Results Available:</strong> Approximately 6 days after test</li>
+                    </ul>
+
+                    <h3>Who Should Take TOEFL?</h3>
+                    <ul>
+                        <li>Students planning to study at universities abroad</li>
+                        <li>Professionals seeking international certification or licensure</li>
+                        <li>Immigration applicants (accepted by many countries)</li>
+                        <li>Anyone needing to demonstrate English proficiency for academic or professional purposes</li>
+                    </ul>
+
+                    <div class="ad-placeholder">
+                        <div class="ad-label">Advertisement</div>
+                        <div class="ad-text">Google AdSense / Course Promotion Space</div>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+
+<div class="sidebar-card">
+                        <h3>🎯 Free TOEFL Resources</h3>
+                        <div class="free-tag" style="font-size: 1.8rem; font-weight: 800; color: var(--success); margin-bottom: 1rem;">FREE</div>
+                        <ul class="feature-list">
+                            <li><span class="check-icon">✓</span> All practice questions</li>
+                            <li><span class="check-icon">✓</span> Study schedules</li>
+                            <li><span class="check-icon">✓</span> Expert tips</li>
+                            <li><span class="check-icon">✓</span> Sample tests</li>
+                            <li><span class="check-icon">✓</span> Vocabulary lists</li>
+                            <li><span class="check-icon">✓</span> Live Q&A access</li>
+                        </ul>
+                        <a href="resources.html" class="btn btn-primary">More Free Resources →</a>
+                    </div>
+
+
+                    <div class="sidebar-card">
+                        <h3>📅 Next Test Dates</h3>
+                        <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1rem;">Upcoming TOEFL iBT dates in your area:</p>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: #f8fafc; border-radius: 6px;">
+                                <span>April 5, 2026</span>
+                                <span class="date-badge">Available</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: #f8fafc; border-radius: 6px;">
+                                <span>April 12, 2026</span>
+                                <span class="date-badge">Available</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: #f8fafc; border-radius: 6px;">
+                                <span>April 19, 2026</span>
+                                <span class="date-badge">Filling Fast</span>
+                            </div>
+                        </div>
+                        <a href="#schedule" onclick="switchTab('schedule')" style="display: block; text-align: center; margin-top: 1rem; color: var(--secondary); font-weight: 600; text-decoration: none;">View Full Calendar →</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>📥 Free Resources</h3>
+                        <ul class="feature-list">
+                            <li><a href="#" style="color: var(--secondary); text-decoration: none;">→ TOEFL Study Plan PDF</a></li>
+                            <li><a href="#" style="color: var(--secondary); text-decoration: none;">→ Speaking Templates</a></li>
+                            <li><a href="#" style="color: var(--secondary); text-decoration: none;">→ Vocabulary List (500 words)</a></li>
+                            <li><a href="#" style="color: var(--secondary); text-decoration: none;">→ Practice Test 1 (Free)</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <div class="tab-content" id="schedule">
+            <h2>2026 TOEFL iBT Test Dates & Registration</h2>
+            <p>TOEFL iBT is offered multiple times per month at authorized test centers worldwide and via the Home Edition online. Book early to secure your preferred date.</p>
+            
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Test Dates</th>
+                        <th>Registration Deadline</th>
+                        <th>Late Fee Deadline</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>April 2026</td>
+                        <td>5, 12, 19, 26</td>
+                        <td>March 29</td>
+                        <td>April 2</td>
+                        <td><span class="date-badge">Open</span></td>
+                    </tr>
+                    <tr>
+                        <td>May 2026</td>
+                        <td>3, 10, 17, 24, 31</td>
+                        <td>April 26</td>
+                        <td>April 30</td>
+                        <td><span class="date-badge">Open</span></td>
+                    </tr>
+                    <tr>
+                        <td>June 2026</td>
+                        <td>7, 14, 21, 28</td>
+                        <td>May 31</td>
+                        <td>June 4</td>
+                        <td><span class="date-badge">Open</span></td>
+                    </tr>
+                    <tr>
+                        <td>July 2026</td>
+                        <td>5, 12, 19, 26</td>
+                        <td>June 28</td>
+                        <td>July 2</td>
+                        <td><span style="background: #fef3c7; color: #92400e; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Limited</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="background: #dbeafe; padding: 1.5rem; border-radius: 12px; margin-top: 2rem;">
+                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">💡 Pro Tips for Registration</h4>
+                <ul style="margin-left: 1.5rem; color: #1e40af;">
+                    <li>Book 2-3 months in advance during peak seasons (July-September for fall admissions)</li>
+                    <li>Home Edition slots fill up faster than test centers</li>
+                    <li>Consider your target university deadlines when selecting dates</li>
+                    <li>Allow time for a retake if needed (minimum 3 days between attempts)</li>
+                </ul>
+            </div>
+
+            <div class="ad-placeholder">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-text">Test Center Locator / Prep Course Banner</div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tips">
+            <h2>Expert Tips to Score 110+ on TOEFL iBT</h2>
+            
+            <div style="display: grid; gap: 2rem; margin-top: 2rem;">
+                <div style="display: flex; gap: 1.5rem; align-items: start; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+                    <div style="background: var(--accent); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; flex-shrink: 0;">1</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem; color: var(--dark);">Master Note-Taking for Listening</h3>
+                        <p style="color: #64748b; line-height: 1.8;">Develop a shorthand system using symbols and abbreviations. Focus on key concepts, transitions (however, therefore, in contrast), and speaker attitudes. Practice with TED-Ed lectures and university open courseware. Remember: you won't be graded on your notes, only your answers.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1.5rem; align-items: start; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+                    <div style="background: var(--accent); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; flex-shrink: 0;">2</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem; color: var(--dark);">Reading: Skim Strategically</h3>
+                        <p style="color: #64748b; line-height: 1.8;">Spend 2-3 minutes skimming the entire passage before looking at questions. Identify the main idea, structure, and author's purpose. Don't get stuck on unfamiliar vocabulary—use context clues. Most questions follow the passage order, so use that to locate answers quickly.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1.5rem; align-items: start; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+                    <div style="background: var(--accent); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; flex-shrink: 0;">3</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem; color: var(--dark);">Speaking: Use Templates</h3>
+                        <p style="color: #64748b; line-height: 1.8;">Prepare transition phrases for each task type. For Task 1: "In my opinion...", Task 2: "The man/woman believes...", Task 3: "According to the reading...", Task 4: "The professor discusses...". Practice timing strictly—15 seconds preparation, 45-60 seconds response. Record yourself daily and analyze.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1.5rem; align-items: start; background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+                    <div style="background: var(--accent); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; flex-shrink: 0;">4</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem; color: var(--dark);">Writing: Plan Before You Type</h3>
+                        <p style="color: #64748b; line-height: 1.8;">Spend 2-3 minutes outlining your integrated and independent essays. For Integrated: Follow the structure—reading point, listening contrast, repeat. For Independent: Use the "Why + Example" formula. Aim for 300+ words with specific examples. Save 2 minutes for proofreading.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ad-placeholder">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-text">Writing Evaluation Service / Speaking Coach Promo</div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="practice">
+            <h2>Sample TOEFL iBT Questions</h2>
+            <p>Try these authentic practice questions from our database of 500+ exam-style problems.</p>
+            
+            <div class="question-card">
+                <div class="question-header">
+                    <span class="question-type">Reading</span>
+                    <span class="question-difficulty">Medium</span>
+                </div>
+                <p class="question-text">According to the passage, what is the primary function of the mitochondria in eukaryotic cells?</p>
+                <ul class="options-list">
+                    <li onclick="selectOption(this)">A) To store genetic information for protein synthesis</li>
+                    <li onclick="selectOption(this)">B) To convert nutrients into energy through cellular respiration</li>
+                    <li onclick="selectOption(this)">C) To regulate the cell cycle and division processes</li>
+                    <li onclick="selectOption(this)">D) To transport molecules across the cell membrane</li>
+                </ul>
+                <button class="show-answer-btn" onclick="showAnswer(this)">Show Answer & Explanation</button>
+                <div class="answer-explanation" style="display: none; margin-top: 1rem; padding: 1rem; background: #d1fae5; border-radius: 8px;">
+                    <strong>Correct Answer: B</strong><br>
+                    Mitochondria are known as the "powerhouses" of the cell because they generate ATP through oxidative phosphorylation, converting nutrients into usable energy. This is explicitly stated in paragraph 3 of the reading passage.
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <span class="question-type" style="background: #ef4444;">Listening Detail</span>
+                    <span class="question-difficulty">Medium</span>
+                </div>
+                <p class="question-text">Listen to the lecture excerpt. What specific example does the professor use to illustrate the concept of cultural diffusion?</p>
+                <ul class="options-list">
+                    <li onclick="selectOption(this)">A) The spread of Buddhism from India</li>
+                    <li onclick="selectOption(this)">B) The adoption of chopsticks in Japan from China</li>
+                    <li onclick="selectOption(this)">C) The development of tea ceremonies in England</li>
+                    <li onclick="selectOption(this)">D) The introduction of rice cultivation in Korea</li>
+                </ul>
+                <button class="show-answer-btn" onclick="showAnswer(this)">Show Answer & Explanation</button>
+                <div class="answer-explanation" style="display: none; margin-top: 1rem; padding: 1rem; background: #d1fae5; border-radius: 8px;">
+                    <strong>Correct Answer: B</strong><br>
+                    The professor specifically mentions how chopsticks originated in China but became essential in Japanese cuisine, illustrating how cultural practices can spread and adapt.
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <span class="question-type" style="background: #f59e0b;">Speaking Task 3</span>
+                    <span class="question-difficulty">Hard</span>
+                </div>
+                <p class="question-text"><strong>Reading:</strong> Professor discusses the "broken windows theory" in criminology.<br><br>
+                <strong>Lecture:</strong> The professor challenges this theory with data from urban renewal projects.<br><br>
+                <strong>Prompt:</strong> Summarize the points made in the reading passage, and then explain how the professor challenges those points.</p>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+                    <h4 style="margin-bottom: 1rem; color: var(--dark);">Response Template (60 seconds):</h4>
+                    <div style="background: #eff6ff; padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+                        "The reading passage presents the broken windows theory, which argues that [main point from reading].<br><br>
+                        However, the professor challenges this view by [specific counterargument from lecture]. For example, [professor's example].<br><br>
+                        Therefore, the professor believes that [professor's conclusion], contradicting the reading."
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <span class="question-type" style="background: #8b5cf6;">Writing Integrated</span>
+                    <span class="question-difficulty">Hard</span>
+                </div>
+                <p class="question-text">Reading Passage Summary: The university plans to replace the campus shuttle system with a bike-sharing program.<br><br>
+                Lecture Summary: Student explains why this is a bad idea due to [3 specific reasons from lecture].<br><br>
+                <strong>Prompt:</strong> Summarize the proposal in the reading passage and explain why the speaker disagrees with it. Write ~150 words.</p>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+                    <h4 style="margin-bottom: 1rem; color: var(--dark);">Structure Template:</h4>
+                    <ol style="margin-left: 1.5rem; color: #64748b;">
+                        <li>Paragraph 1: Summarize university proposal (2-3 sentences)</li>
+                        <li>Paragraph 2: Student Reason 1 + explanation</li>
+                        <li>Paragraph 3: Student Reason 2 + explanation</li>
+                        <li>Paragraph 4: Student Reason 3 + explanation</li>
+                    </ol>
+                    <p style="margin-top: 1rem; font-weight: 600; color: var(--primary);">Word count: 150-225 words | Time: 20 minutes</p>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <span class="question-type" style="background: #ef4444;">Listening Conversation</span>
+                    <span class="question-difficulty">Medium</span>
+                </div>
+                <p class="question-text">Listen to the conversation between student and professor. What is the main purpose of the student's visit?</p>
+                <ul class="options-list">
+                    <li onclick="selectOption(this)">A) To request an extension on an assignment</li>
+                    <li onclick="selectOption(this)">B) To complain about the grading policy</li>
+                    <li onclick="selectOption(this)">C) To discuss research opportunities</li>
+                    <li onclick="selectOption(this)">D) To withdraw from the course</li>
+                </ul>
+                <button class="show-answer-btn" onclick="showAnswer(this)">Show Answer & Explanation</button>
+                <div class="answer-explanation" style="display: none; margin-top: 1rem; padding: 1rem; background: #d1fae5; border-radius: 8px;">
+                    <strong>Correct Answer: A</strong><br>
+                    The student specifically asks about the possibility of submitting a late assignment due to a family emergency, which was the main point of the conversation.
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <span class="question-type" style="background: #10b981;">Speaking Task 2</span>
+                    <span class="question-difficulty">Hard</span>
+                </div>
+                <p class="question-text"><strong>Campus Announcement:</strong> The university library will extend its hours until midnight during final exam week.<br><br>
+                <strong>Student Response:</strong> Do you agree or disagree with this policy? Use specific reasons and examples to support your answer.</p>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+                    <h4 style="margin-bottom: 1rem; color: var(--dark);">Preparation Strategy (15 seconds):</h4>
+                    <ul style="margin-left: 1.5rem; color: #64748b;">
+                        <li>Choose your position immediately (Agree/Disagree)</li>
+                        <li>Think of 2 specific reasons with personal examples</li>
+                        <li>Prepare opening: "I strongly agree/disagree with..."</li>
+                    </ul>
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--dark);">Response Template (45 seconds):</h4>
+                    <div style="background: #eff6ff; padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+                        "I strongly [agree/disagree] with the library's decision to extend hours.<br><br>
+                        First of all, [reason 1 with specific example].<br><br>
+                        Furthermore, [reason 2 with specific example].<br><br>
+                        For these reasons, I believe this policy is [beneficial/problematic]."
+                    </div>
+                </div>
+            </div>
+
+
+<div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.1rem; color: var(--success); font-weight: 600; margin-bottom: 1rem;">All questions above are completely FREE!</p>
+                <a href="resources.html" class="btn btn-primary" style="width: auto; padding: 1rem 3rem;">More Free Practice Questions →</a>
+            </div>
+
+        </div>
+
+        <div class="tab-content" id="news">
+            <h2>Latest TOEFL iBT News & Updates</h2>
+            
+            <div style="display: grid; gap: 1.5rem; margin-top: 2rem;">
+                <article style="background: white; border-left: 4px solid var(--secondary); padding: 1.5rem; border-radius: 0 12px 12px 0; box-shadow: var(--shadow);">
+                    <div style="color: var(--secondary); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">March 15, 2026</div>
+                    <h3 style="color: var(--dark); margin-bottom: 0.5rem;">TOEFL iBT Enhanced Speaking Scoring</h3>
+                    <p style="color: #64748b; line-height: 1.6;">ETS introduces AI-assisted scoring for the Speaking section to provide faster, more consistent results. Human raters will still review all responses, but the process will now take 3-4 days instead of 6 days. This change applies to all tests taken after April 1, 2026.</p>
+                    <a href="#" style="color: var(--secondary); font-weight: 600; text-decoration: none;">Read full article →</a>
+                </article>
+
+                <article style="background: white; border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0 12px 12px 0; box-shadow: var(--shadow);">
+                    <div style="color: var(--accent); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">February 28, 2026</div>
+                    <h3 style="color: var(--dark); margin-bottom: 0.5rem;">New TOEFL Prep Materials Released</h3>
+                    <p style="color: #64748b; line-height: 1.6;">The Official Guide to the TOEFL iBT Test, 6th Edition is now available with updated practice tests reflecting the current exam format. Includes 4 authentic practice tests and access to online resources.</p>
+                    <a href="#" style="color: var(--secondary); font-weight: 600; text-decoration: none;">Read full article →</a>
+                </article>
+
+                <article style="background: white; border-left: 4px solid #10b981; padding: 1.5rem; border-radius: 0 12px 12px 0; box-shadow: var(--shadow);">
+                    <div style="color: #10b981; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">January 10, 2026</div>
+                    <h3 style="color: var(--dark); margin-bottom: 0.5rem;">TOEFL iBT Home Edition Updates</h3>
+                    <p style="color: #64748b; line-height: 1.6;">Enhanced security protocols and equipment checks are now in place. Test takers must now show a 360-degree view of their room using a mirror or phone camera. Check updated technical requirements before booking.</p>
+                    <a href="#" style="color: var(--secondary); font-weight: 600; text-decoration: none;">Read full article →</a>
+                </article>
+            </div>
+        </div>
+
+        <div class="tab-content" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How long is the TOEFL iBT score valid?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer" style="max-height: 500px;">
+                        <div class="faq-answer-content">
+                            TOEFL iBT scores are valid for 2 years from the test date. This is standard across all ETS tests. After 2 years, your scores will no longer be accessible in the ETS system, though you can request a score report reprint for tests taken within the last 2 years. Most universities require scores that are valid at the time of application, not necessarily at the time of enrollment.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I retake the TOEFL iBT if I'm not satisfied with my score?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, you can retake the test as many times as you wish, but no more than once in a 3-day period. There is no limit to the number of times you can take the test. Your MyBest scores will automatically combine your highest section scores from all valid tests in the last 2 years. The fee for retaking the test is the same as the original registration fee ($205-$255 depending on location).
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What is the difference between TOEFL iBT and IELTS?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            While both test English proficiency, there are key differences: TOEFL iBT is fully computer-based with American English focus, while IELTS offers paper and computer options with British/Australian English. TOEFL speaking is recorded; IELTS speaking is face-to-face with an examiner. TOEFL is preferred by US institutions; IELTS is more widely accepted in UK, Australia, and Canada. TOEFL uses multiple choice extensively; IELTS includes fill-in-the-blank and matching tasks.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How soon can I get my TOEFL results?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Official scores are available approximately 6 days after your test date (3-4 days for tests taken after April 1, 2026). You will receive an email notification when your scores are ready. PDF score reports can be downloaded from your ETS account, and official reports can be sent to institutions electronically or by mail. Rush reporting is available for an additional fee if you need scores sent within 2-3 days.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is the TOEFL iBT Home Edition accepted by all universities?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            The Home Edition is accepted by 99% of institutions that accept the TOEFL iBT test. However, it's always recommended to check with your specific target institutions before booking. Some programs, particularly those requiring on-campus presence, may have specific requirements. The Home Edition has the same content, format, and scoring as the test center version.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>EliteExam Institute</h3>
+                <p style="color: #94a3b8; margin-bottom: 1rem;">Empowering careers through certification excellence since 2018.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="toefl.html">TOEFL Preparation</a></li>
+                    <li><a href="ielts.html">IELTS Preparation</a></li>
+                    <li><a href="pricing.html">Course Pricing</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="resources.html">Free Practice Tests</a></li>
+                    <li><a href="blog.html">Exam Tips Blog</a></li>
+                    <li><a href="testimonials.html">Success Stories</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EliteExam Institute. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-answer').style.maxHeight = null;
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+                const answer = faqItem.querySelector('.faq-answer');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        }
+
+        function selectOption(element) {
+            element.parentElement.querySelectorAll('li').forEach(li => {
+                li.style.borderColor = 'transparent';
+                li.style.background = 'white';
+            });
+            element.style.borderColor = 'var(--secondary)';
+            element.style.background = '#eff6ff';
+        }
+
+        function showAnswer(button) {
+            const explanation = button.nextElementSibling;
+            const isHidden = explanation.style.display === 'none';
+            explanation.style.display = isHidden ? 'block' : 'none';
+            button.textContent = isHidden ? 'Hide Answer' : 'Show Answer & Explanation';
+            
+            const options = button.previousElementSibling.querySelectorAll('li');
+            if (isHidden) {
+                options[1].classList.add('correct');
+            } else {
+                options[1].classList.remove('correct');
+            }
+        }
+    </script>
+</body>
+</html>

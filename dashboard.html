@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | PrepLoom - Preploom</title>
+    <style>
+:root {
+            --primary: #1e40af;
+            --secondary: #3b82f6;
+            --accent: #1d4ed8;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --dark: #000000;
+            --light: #f9fafb;
+            --text: #111827;
+            --border: #e5e7eb;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+
+        /* Navbar - Identical to login.html */
+        .navbar {
+background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 280px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.9;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Dashboard Hero */
+        .dashboard-hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .stat-label {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* Main Content */
+        .dashboard-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+        }
+
+        /* Profile Sidebar */
+        .profile-sidebar {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .profile-email {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-stats {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .profile-stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 12px;
+        }
+
+        /* Main Dashboard */
+        .dashboard-main h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .progress-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .progress-label {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success), var(--warning));
+            border-radius: 6px;
+            transition: width 1s ease;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .action-btn {
+            padding: 1.5rem;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .action-btn:hover {
+            border-color: var(--secondary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .action-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .upcoming-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .exam-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .exam-item:hover {
+            background: white;
+            box-shadow: var(--shadow);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .dashboard-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .profile-sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .dashboard-content {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="logo">
+                <img src="images/Preploom.png" alt="PrepLoom">
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+
+                <li><a href="index.html#exams">Exams</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li class="user-menu">
+                    <div class="user-profile">
+                        <span>👤</span>
+                        <span id="userName">Loading...</span>
+                    </div>
+                    <a href="#" onclick="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Dashboard Header -->
+    <section class="dashboard-hero">
+        <div class="hero-content">
+            <h1 class="hero-title" id="welcomeTitle">Welcome Back!</h1>
+            <p class="hero-subtitle" id="welcomeSubtitle">Here's what's new in your learning journey</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalProgress">0%</div>
+                    <div class="stat-label">Overall Progress</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="testsTaken">0</div>
+                    <div class="stat-label">Tests Taken</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="streakDays">0</div>
+                    <div class="stat-label">Study Streak</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="nextExam">Apr 15</div>
+                    <div class="stat-label">Next Exam</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="dashboard-content">
+        <!-- Profile Sidebar -->
+        <aside class="profile-sidebar">
+            <div class="profile-avatar">👤</div>
+            <h3 class="profile-name" id="profileName">Loading...</h3>
+            <p class="profile-email" id="profileEmail">Loading...</p>
+            
+            <div class="profile-stats">
+                <div class="profile-stat">
+                    <span>Member Since</span>
+                    <span id="joinDate">-</span>
+                </div>
+                <div class="profile-stat">
+                    <span>Role</span>
+                    <span id="userRole" class="success">Student</span>
+                </div>
+                <div class="profile-stat">
+                    <span>Enrolled Exams</span>
+                    <span id="examCount">0</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="#" class="action-btn" onclick="viewSettings()">
+                    <span class="action-icon">⚙️</span>
+                    Settings
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Progress Overview -->
+            <section class="section">
+                <h2>📊 Your Progress</h2>
+                <div class="progress-grid">
+                    <div class="progress-card">
+                        <div class="progress-label">TOEFL iBT</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%" data-exam="toefl"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                            <span>78%</span>
+                            <span>+12% this week</span>
+                        </div>
+                    </div>
+                    <div class="progress-card">
+                        <div class="progress-label">IELTS Academic</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 62%" data-exam="ielts"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                            <span>62%</span>
+                            <span>+8% this week</span>
+                        </div>
+                    </div>
+                    <div class="progress-card">
+                        <div class="progress-label">PMP Certification</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%" data-exam="pmp"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                            <span>45%</span>
+                            <span>+5% this week</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="section">
+                <h2>⚡ Quick Actions</h2>
+                <div class="quick-actions">
+                    <a href="#" class="action-btn" onclick="startPractice()">
+                        <span class="action-icon">📝</span>
+                        Start Practice Test
+                    </a>
+                <a href="progress.html" class="action-btn">
+                        <span class="action-icon">📚</span>
+                        Track Progress
+                    </a>
+                <a href="my-exams.html" class="action-btn">
+                        <span class="action-icon">📋</span>
+                        My Exams
+                    </a>
+                    <a href="#" class="action-btn" onclick="liveSupport()">
+                        <span class="action-icon">💬</span>
+                        Live Support
+                    </a>
+                </div>
+            </section>
+
+            <!-- Upcoming Exams -->
+            <section class="section">
+                <h2>📅 Upcoming Exams</h2>
+                <div class="upcoming-grid" id="upcomingExams">
+                    <!-- Loaded from API -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Auth Check - Redirect if not logged in
+        window.addEventListener('load', async () => {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                // window.location.href = 'login.html';
+                return;
+            }
+
+            await loadDashboard();
+        });
+
+        async function loadDashboard() {
+            try {
+                const token = localStorage.getItem('token');
+                const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+                // Update UI with user data
+                document.getElementById('userName').textContent = user.name || 'Student';
+                document.getElementById('profileName').textContent = user.name || 'Student';
+                document.getElementById('profileEmail').textContent = user.email || '';
+                document.getElementById('userRole').textContent = user.role?.toUpperCase() || 'STUDENT';
+                document.getElementById('welcomeTitle').innerHTML = `Welcome back, <strong>${user.name}</strong>!`;
+
+                // Load dashboard data
+                const response = await fetch('/api/dashboard', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    updateDashboardData(data);
+                }
+            } catch (error) {
+                console.error('Dashboard load error:', error);
+                alert('Session expired. Please login again.');
+                logout();
+            }
+        }
+
+        function updateDashboardData(data) {
+            // Update stats
+            document.getElementById('totalProgress').textContent = data.overallProgress || '0%';
+            document.getElementById('testsTaken').textContent = data.testsTaken || 0;
+            document.getElementById('streakDays').textContent = data.streak || 0;
+            document.getElementById('nextExam').textContent = data.nextExam || 'TBA';
+
+            // Update upcoming exams
+            const container = document.getElementById('upcomingExams');
+            container.innerHTML = data.upcoming.map(exam => `
+                <div class="exam-item">
+                    <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem;">${exam.name}</div>
+                    <div style="color: #64748b; font-size: 0.9rem;">${exam.date}</div>
+                    <div style="color: var(--success); font-weight: 600; margin-top: 0.75rem;">
+                        Register → ${exam.status}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = 'login.html';
+        }
+
+        // Quick action handlers
+        function startPractice() {
+            alert('🚀 Starting practice test... (Full feature coming soon)');
+        }
+
+        function viewStudyPlan() {
+            alert('📚 Loading personalized study plan...');
+        }
+
+        function viewExams() {
+            alert('📋 My enrolled exams & progress');
+        }
+
+        function liveSupport() {
+            alert('💬 Connecting to live support...');
+        }
+
+        function viewSettings() {
+            alert('⚙️ Account settings & preferences');
+        }
+
+        // Mobile menu
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+

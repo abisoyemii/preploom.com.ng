@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>GMAT PrepLoom | 100 Unique GMAT Focus Questions</title>
+    <meta name="description" content="100 unique GMAT-style questions with detailed explanations. Adaptive practice, performance analytics, and study resources for GMAT Focus Edition.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f4f7fb 0%, #e8eef5 100%);
+            color: #1a2c3e;
+            line-height: 1.5;
+        }
+
+        .navbar {
+            background: linear-gradient(98deg, #0a2a3b 0%, #1a4a6e 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: #fbbf24; }
+        .logo small { font-size: 0.75rem; font-weight: 400; opacity: 0.9; }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            padding: 0.5rem 0;
+            cursor: pointer;
+        }
+        .nav-links a:hover { color: #fbbf24; border-bottom: 2px solid #fbbf24; }
+
+        .hero {
+            background: linear-gradient(120deg, #0a2a3b, #1e5a7a);
+            color: white;
+            padding: 2rem 2rem 2.5rem;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .hero p { opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .stat-number { font-size: 2rem; font-weight: 800; color: #fbbf24; }
+        .stat-label { font-size: 0.85rem; opacity: 0.9; }
+
+        .dashboard {
+            max-width: 1400px;
+            margin: -1.5rem auto 2rem;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 1.5rem;
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 28px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+        .sidebar-section {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .sidebar-section h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #0c4a6e;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .filter-chip {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.6rem 1rem;
+            margin-bottom: 0.5rem;
+            background: #f1f5f9;
+            border: none;
+            border-radius: 40px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-chip.active, .filter-chip:hover {
+            background: #1e4a6e;
+            color: white;
+        }
+        .streak-card {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 20px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .streak-number { font-size: 2rem; font-weight: 800; color: #b45309; }
+
+        .main-content {
+            background: white;
+            border-radius: 28px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+        }
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            padding: 0.7rem 1.5rem;
+            background: none;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+        .tab-btn.active {
+            background: #1e4a6e;
+            color: white;
+        }
+
+        .question-card {
+            background: #fefefe;
+            border: 1px solid #e2edf2;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s;
+        }
+        .question-header {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        .tag {
+            background: #e6f0fa;
+            padding: 0.25rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        .tag-difficulty-easy { background: #dcfce7; color: #166534; }
+        .tag-difficulty-medium { background: #fef9c3; color: #854d0e; }
+        .tag-difficulty-hard { background: #fee2e2; color: #991b1b; }
+        .question-text { font-size: 1.05rem; font-weight: 500; margin: 0.8rem 0; line-height: 1.5; }
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin: 1rem 0;
+        }
+        .option {
+            background: #f8fafc;
+            padding: 0.8rem 1rem;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .option.selected {
+            background: #dbeafe;
+            border-color: #1e4a6e;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .btn-group {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .btn {
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: 0.2s;
+        }
+        .btn-primary { background: #1e4a6e; color: white; }
+        .btn-secondary { background: #e2e8f0; color: #1e293b; }
+        .explanation {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f0fdf4;
+            border-radius: 16px;
+            border-left: 4px solid #10b981;
+        }
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .metric-card {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 1.2rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .progress-bar {
+            background: #e2e8f0;
+            border-radius: 20px;
+            height: 10px;
+            margin: 0.8rem 0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            background: #1e4a6e;
+            height: 100%;
+            border-radius: 20px;
+            width: 0%;
+            transition: width 0.5s;
+        }
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+        .resource-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.2rem;
+            border: 1px solid #e2e8f0;
+        }
+        @media (max-width: 900px) {
+            .dashboard { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">Prep<span>Loom</span> <small>GMAT Focus</small></div>
+        <ul class="nav-links">
+            <li><a onclick="switchTab('practice')">Practice</a></li>
+            <li><a onclick="switchTab('mock')">Mock Tests</a></li>
+            <li><a onclick="switchTab('analytics')">Analytics</a></li>
+            <li><a onclick="switchTab('resources')">Resources</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>🎯 100 Unique GMAT Focus Questions</h1>
+    <p>Quantitative | Verbal | Data Insights — No Repeats, Full Explanations</p>
+    <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number" id="totalQuestionsStat">100</div><div class="stat-label">Unique Questions</div></div>
+        <div class="stat-card"><div class="stat-number" id="accuracyStat">0%</div><div class="stat-label">Your Accuracy</div></div>
+        <div class="stat-card"><div class="stat-number" id="streakStat">0</div><div class="stat-label">Correct Streak</div></div>
+        <div class="stat-card"><div class="stat-number">15+</div><div class="stat-label">Free PDFs</div></div>
+    </div>
+</div>
+
+<div class="dashboard">
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <h3>📚 GMAT Section</h3>
+            <button class="filter-chip active" data-filter="all">All Sections</button>
+            <button class="filter-chip" data-filter="quant">📐 Quantitative (33)</button>
+            <button class="filter-chip" data-filter="verbal">📖 Verbal (34)</button>
+            <button class="filter-chip" data-filter="di">📊 Data Insights (33)</button>
+        </div>
+        <div class="sidebar-section">
+            <h3>⚡ Difficulty Level</h3>
+            <button class="filter-chip active" data-diff="all">All Levels</button>
+            <button class="filter-chip" data-diff="easy">🟢 Easy (555-655)</button>
+            <button class="filter-chip" data-diff="medium">🟡 Medium (655-725)</button>
+            <button class="filter-chip" data-diff="hard">🔴 Hard (725-805)</button>
+        </div>
+        <div class="sidebar-section">
+            <h3>🔥 Your Performance</h3>
+            <div class="streak-card">
+                <div>🔥 Current Streak</div>
+                <div class="streak-number" id="sidebarStreak">0</div>
+                <div>correct answers in a row</div>
+            </div>
+            <div style="margin-top: 1rem;">
+                <div>📊 Overall Accuracy</div>
+                <div class="progress-bar"><div class="progress-fill" id="accuracyFill" style="width:0%"></div></div>
+                <div id="accuracyPercent">0%</div>
+            </div>
+        </div>
+        <div class="sidebar-section">
+            <button class="filter-chip" id="bookmarkFilterBtn">⭐ Bookmarked Questions</button>
+            <button class="filter-chip" id="weaknessFilterBtn">🎯 AI Weakness Analyzer</button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="practice">📝 Adaptive Practice</button>
+            <button class="tab-btn" data-tab="mock">📋 Full Mock GMAT</button>
+            <button class="tab-btn" data-tab="analytics">📈 Performance Analytics</button>
+            <button class="tab-btn" data-tab="resources">📚 GMAT Resources</button>
+        </div>
+
+        <div id="practiceContainer"></div>
+        <div id="mockContainer" style="display: none;"><div style="text-align:center;padding:2rem;"><h2>🎯 Full-Length GMAT Focus Mock</h2><p>64 questions | 135 minutes | Adaptive scoring</p><button class="btn btn-primary" onclick="alert('Mock test simulator: 64 unique questions, section-adaptive timing. Unlock full version for proctored experience.')" style="font-size:1.2rem;padding:0.8rem 2rem;">Start Mock Exam</button></div></div>
+        <div id="analyticsContainer" style="display: none;">
+            <div class="analytics-grid">
+                <div class="metric-card"><h3>📐 Quantitative</h3><div class="progress-bar"><div class="progress-fill" id="quantFill"></div></div><p id="quantAcc">0% accuracy</p><p id="quantCount">0/33 attempted</p></div>
+                <div class="metric-card"><h3>📖 Verbal</h3><div class="progress-bar"><div class="progress-fill" id="verbalFill"></div></div><p id="verbalAcc">0% accuracy</p><p id="verbalCount">0/34 attempted</p></div>
+                <div class="metric-card"><h3>📊 Data Insights</h3><div class="progress-bar"><div class="progress-fill" id="diFill"></div></div><p id="diAcc">0% accuracy</p><p id="diCount">0/33 attempted</p></div>
+            </div>
+            <div id="weakTopicsPanel" style="background:#fef3c7;padding:1.5rem;border-radius:20px;margin-top:1rem;"><h3>🧠 AI-Powered GMAT Weakness Analysis</h3><p id="weaknessText">Answer 10+ questions to see personalized insights on your weak sub-topics (Algebra, CR, RC, DS, etc.)</p></div>
+        </div>
+        <div id="resourcesContainer" style="display: none;"><h2>📥 GMAT Focus Premium Resources</h2><div class="resources-grid" id="resourcesGrid"></div></div>
+    </main>
+</div>
+
+<script>
+    // ==================== 100 UNIQUE GMAT QUESTIONS ====================
+    // 33 Quant, 34 Verbal, 33 Data Insights - No repeats, carefully crafted
+    const questionBank = [
+        // QUANTITATIVE (33 questions)
+        { id: 1, text: "If x and y are positive integers and x² - y² = 55, what is the value of x + y?", options: ["11", "13", "15", "17"], correct: "11", section: "quant", difficulty: "medium", topic: "Algebra" },
+        { id: 2, text: "A store sold 40% of its inventory on Monday and 25% of the remaining on Tuesday. What percent of the original inventory remains?", options: ["35%", "40%", "45%", "50%"], correct: "45%", section: "quant", difficulty: "easy", topic: "Percentages" },
+        { id: 3, text: "If 3x + 2y = 24 and 2x - y = 9, what is x + y?", options: ["8", "9", "10", "11"], correct: "9", section: "quant", difficulty: "medium", topic: "Algebra" },
+        { id: 4, text: "The average of 7 numbers is 25. If one number is removed, the average becomes 23. What is the removed number?", options: ["35", "37", "39", "41"], correct: "37", section: "quant", difficulty: "easy", topic: "Statistics" },
+        { id: 5, text: "A car travels at 50 km/h for 2 hours, then at 70 km/h for 3 hours. What is the average speed for the entire trip?", options: ["60 km/h", "62 km/h", "64 km/h", "66 km/h"], correct: "62 km/h", section: "quant", difficulty: "medium", topic: "Speed" },
+        { id: 6, text: "What is the units digit of 3^87?", options: ["1", "3", "7", "9"], correct: "7", section: "quant", difficulty: "medium", topic: "Powers" },
+        { id: 7, text: "A sum of money doubles itself in 10 years at simple interest. Find the rate of interest.", options: ["8%", "10%", "12%", "15%"], correct: "10%", section: "quant", difficulty: "easy", topic: "Interest" },
+        { id: 8, text: "If 20% of a number is 80, what is 35% of the same number?", options: ["120", "140", "160", "180"], correct: "140", section: "quant", difficulty: "easy", topic: "Percentages" },
+        { id: 9, text: "Find the next term: 5, 12, 26, 54, ?", options: ["108", "110", "112", "114"], correct: "110", section: "quant", difficulty: "hard", topic: "Sequences" },
+        { id: 10, text: "A rectangle has length twice its width. If the perimeter is 60 cm, what is the area?", options: ["200 cm²", "250 cm²", "300 cm²", "350 cm²"], correct: "200 cm²", section: "quant", difficulty: "easy", topic: "Geometry" },
+        { id: 11, text: "If x/3 = y/4 = z/5, and x + y + z = 48, find x.", options: ["10", "12", "14", "16"], correct: "12", section: "quant", difficulty: "medium", topic: "Ratios" },
+        { id: 12, text: "A pipe can fill a tank in 8 hours. Another pipe can empty it in 12 hours. If both are opened together, how long to fill the tank?", options: ["20 hours", "24 hours", "28 hours", "32 hours"], correct: "24 hours", section: "quant", difficulty: "medium", topic: "Work" },
+        { id: 13, text: "What is the smallest positive integer that is divisible by 6, 8, and 10?", options: ["60", "90", "120", "240"], correct: "120", section: "quant", difficulty: "easy", topic: "LCM" },
+        { id: 14, text: "If 2x - 5 = 3x + 7, find x.", options: ["-12", "-10", "10", "12"], correct: "-12", section: "quant", difficulty: "easy", topic: "Algebra" },
+        { id: 15, text: "A man invests $5000 at 8% simple interest. How much additional amount must he invest at 10% to earn 9% overall?", options: ["$4000", "$5000", "$6000", "$7000"], correct: "$5000", section: "quant", difficulty: "hard", topic: "Interest" },
+        { id: 16, text: "If the product of two consecutive odd integers is 255, find the larger integer.", options: ["13", "15", "17", "19"], correct: "17", section: "quant", difficulty: "medium", topic: "Numbers" },
+        { id: 17, text: "A number when divided by 7 leaves remainder 3, and when divided by 5 leaves remainder 2. Find the smallest such number.", options: ["17", "22", "27", "32"], correct: "17", section: "quant", difficulty: "hard", topic: "Remainders" },
+        { id: 18, text: "The ratio of two numbers is 5:7. If 10 is added to each, the ratio becomes 3:4. Find the smaller number.", options: ["30", "40", "50", "60"], correct: "50", section: "quant", difficulty: "hard", topic: "Ratios" },
+        { id: 19, text: "A train 150 m long passes a pole in 10 seconds. Find its speed in km/h.", options: ["54 km/h", "60 km/h", "72 km/h", "90 km/h"], correct: "54 km/h", section: "quant", difficulty: "easy", topic: "Speed" },
+        { id: 20, text: "If a = 2b and b = 3c, find a:c.", options: ["2:3", "3:2", "6:1", "1:6"], correct: "6:1", section: "quant", difficulty: "easy", topic: "Ratios" },
+        { id: 21, text: "What is 12.5% of 800?", options: ["80", "90", "100", "110"], correct: "100", section: "quant", difficulty: "easy", topic: "Percentages" },
+        { id: 22, text: "A shopkeeper sells an item at 20% profit. If cost price is $250, find selling price.", options: ["$280", "$290", "$300", "$310"], correct: "$300", section: "quant", difficulty: "easy", topic: "Profit" },
+        { id: 23, text: "If x + 1/x = 5, find x² + 1/x².", options: ["23", "24", "25", "26"], correct: "23", section: "quant", difficulty: "hard", topic: "Algebra" },
+        { id: 24, text: "The ages of A and B are in ratio 3:4. Five years later, ratio becomes 4:5. Find A's present age.", options: ["12", "15", "18", "21"], correct: "15", section: "quant", difficulty: "medium", topic: "Ages" },
+        { id: 25, text: "Find the area of a circle with circumference 44 cm.", options: ["154 cm²", "140 cm²", "132 cm²", "120 cm²"], correct: "154 cm²", section: "quant", difficulty: "easy", topic: "Geometry" },
+        { id: 26, text: "If 5 workers can complete a job in 12 days, how many workers are needed to complete it in 10 days?", options: ["5", "6", "7", "8"], correct: "6", section: "quant", difficulty: "easy", topic: "Work" },
+        { id: 27, text: "What is the value of √(64) + √(36)?", options: ["10", "12", "14", "16"], correct: "14", section: "quant", difficulty: "easy", topic: "Roots" },
+        { id: 28, text: "If 40% of a number is 120, find 25% of that number.", options: ["65", "70", "75", "80"], correct: "75", section: "quant", difficulty: "easy", topic: "Percentages" },
+        { id: 29, text: "Find the median of: 12, 15, 11, 18, 20, 14, 16.", options: ["14", "15", "16", "17"], correct: "15", section: "quant", difficulty: "easy", topic: "Statistics" },
+        { id: 30, text: "A discount of 15% on a shirt gives a saving of $30. Find the original price.", options: ["$180", "$200", "$220", "$250"], correct: "$200", section: "quant", difficulty: "easy", topic: "Discount" },
+        { id: 31, text: "If a triangle has sides 5, 12, 13, what is its area?", options: ["30", "32", "34", "36"], correct: "30", section: "quant", difficulty: "easy", topic: "Geometry" },
+        { id: 32, text: "Find the simple interest on $2000 at 5% for 3 years.", options: ["$250", "$300", "$350", "$400"], correct: "$300", section: "quant", difficulty: "easy", topic: "Interest" },
+        { id: 33, text: "If 3x - 7 = 2x + 5, find x.", options: ["10", "11", "12", "13"], correct: "12", section: "quant", difficulty: "easy", topic: "Algebra" },
+        
+        // VERBAL (34 questions)
+        { id: 34, text: "The CEO's proposal, while innovative, _____ several practical challenges that the board must address.", options: ["obscures", "highlights", "overlooks", "resolves"], correct: "overlooks", section: "verbal", difficulty: "medium", topic: "Sentence Correction" },
+        { id: 35, text: "Many argue that social media increases connectivity. However, studies show that heavy users report higher loneliness. This suggests that social media may actually decrease meaningful interaction. The argument's conclusion is based on which assumption?", options: ["Loneliness is caused only by social media", "Heavy users represent the general population", "Meaningful interaction reduces loneliness", "All social media platforms are similar"], correct: "Meaningful interaction reduces loneliness", section: "verbal", difficulty: "hard", topic: "Critical Reasoning" },
+        { id: 36, text: "Despite the _____ evidence linking exercise to longevity, many adults remain sedentary.", options: ["ambiguous", "circumstantial", "overwhelming", "anecdotal"], correct: "overwhelming", section: "verbal", difficulty: "medium", topic: "Vocabulary" },
+        { id: 37, text: "The company's profits have declined for three consecutive quarters. Therefore, the new management team is clearly ineffective. Which of the following, if true, most weakens the argument?", options: ["The industry as a whole has declined", "The previous team also had declining profits", "The new team was hired six months ago", "Profits are not the only measure of success"], correct: "The industry as a whole has declined", section: "verbal", difficulty: "hard", topic: "Critical Reasoning" },
+        { id: 38, text: "Neither the manager nor the employees _____ satisfied with the new policy.", options: ["is", "are", "was", "were"], correct: "are", section: "verbal", difficulty: "medium", topic: "Grammar" },
+        { id: 39, text: "Reading Comprehension Passage: The Industrial Revolution fundamentally transformed manufacturing, but it also created unprecedented social upheaval. Urban populations swelled as rural workers migrated to cities. While productivity increased dramatically, working conditions in factories were often dangerous. The author's attitude toward the Industrial Revolution is best described as:", options: ["Wholly critical", "Balanced and nuanced", "Enthusiastically supportive", "Indifferent"], correct: "Balanced and nuanced", section: "verbal", difficulty: "medium", topic: "Reading Comprehension" },
+        { id: 40, text: "The new software is not only faster _____ more user-friendly than its predecessor.", options: ["but also", "and also", "as well as", "in addition"], correct: "but also", section: "verbal", difficulty: "easy", topic: "Sentence Correction" },
+        { id: 41, text: "If the government raises taxes, consumer spending will decrease. Consumer spending has decreased. Therefore, the government must have raised taxes. This reasoning commits which fallacy?", options: ["Ad hominem", "Denying the antecedent", "Affirming the consequent", "Circular reasoning"], correct: "Affirming the consequent", section: "verbal", difficulty: "hard", topic: "Critical Reasoning" },
+        { id: 42, text: "The committee members, along with the chairperson, _____ decided to postpone the meeting.", options: ["has", "have", "is", "are"], correct: "have", section: "verbal", difficulty: "medium", topic: "Grammar" },
+        { id: 43, text: "Her _____ remarks during the interview impressed the hiring committee.", options: ["inane", "trite", "insightful", "superficial"], correct: "insightful", section: "verbal", difficulty: "easy", topic: "Vocabulary" },
+        { id: 44, text: "A recent study found that students who eat breakfast perform better on exams. Therefore, all schools should provide free breakfast to improve test scores. Which of the following is an assumption of the argument?", options: ["Breakfast is the only factor affecting exam scores", "All students would eat breakfast if provided", "Test scores are the best measure of learning", "Schools have the resources to provide breakfast"], correct: "All students would eat breakfast if provided", section: "verbal", difficulty: "hard", topic: "Critical Reasoning" },
+        { id: 45, text: "The author's writing style is _____; she uses simple words to convey complex ideas.", options: ["convoluted", "verbose", "lucid", "ambiguous"], correct: "lucid", section: "verbal", difficulty: "easy", topic: "Vocabulary" },
+        { id: 46, text: "If I had known about the traffic, I _____ taken a different route.", options: ["would have", "will have", "would", "had"], correct: "would have", section: "verbal", difficulty: "medium", topic: "Grammar" },
+        { id: 47, text: "Critics argue that the film's plot is _____ and predictable.", options: ["innovative", "original", "formulaic", "groundbreaking"], correct: "formulaic", section: "verbal", difficulty: "easy", topic: "Vocabulary" },
+        { id: 48, text: "The manager requires that each employee _____ the safety training annually.", options: ["completes", "complete", "completed", "has completed"], correct: "complete", section: "verbal", difficulty: "hard", topic: "Grammar" },
+        { id: 49, text: "RC Passage: Climate change poses unprecedented challenges. Rising sea levels threaten coastal cities, while extreme weather disrupts agriculture. However, technological innovations offer hope. Which of the following best states the main idea?", options: ["Climate change is unstoppable", "Technology will solve all problems", "Climate challenges exist but solutions are emerging", "Coastal cities should be abandoned"], correct: "Climate challenges exist but solutions are emerging", section: "verbal", difficulty: "medium", topic: "Reading Comprehension" },
+        { id: 50, text: "The scientist's theory was met with _____ from her peers, who questioned its validity.", options: ["acclaim", "skepticism", "indifference", "enthusiasm"], correct: "skepticism", section: "verbal", difficulty: "easy", topic: "Vocabulary" },
+        { id: 51, text: "The concert was canceled _____ the heavy rain.", options: ["due to", "because", "since", "as"], correct: "due to", section: "verbal", difficulty: "easy", topic: "Grammar" },
+        { id: 52, text: "Only by practicing daily _____ improve your GMAT score significantly.", options: ["you can", "can you", "you will", "will you"], correct: "can you", section: "verbal", difficulty: "medium", topic: "Grammar" },
+        { id: 53, text: "The CEO, together with her advisors, _____ reviewing the quarterly report.", options: ["is", "are", "were", "have"], correct: "is", section: "verbal", difficulty: "medium", topic: "Grammar" },
+        { id: 54, text: "His explanation was so _____ that no one could understand it.", options: ["lucid", "clear", "abstruse", "simple"], correct: "abstruse", section: "verbal", difficulty: "hard", topic: "Vocabulary" },
+        { id: 55, text: "CR: All mammals have hair. Whales are mammals. Therefore, whales have hair. This argument is:", options: ["Valid and sound", "Valid but unsound", "Invalid", "Circular"], correct: "Valid and sound", section: "verbal", difficulty: "easy", topic: "Critical Reasoning" },
+        { id: 56, text: "The proposal is _____; it fails to address the core issue of funding.", options: ["comprehensive", "thorough", "incomplete", "detailed"], correct: "incomplete", section: "verbal", difficulty: "easy", topic: "Vocabulary" },
+        { id: 57, text: "Had the company invested earlier, it _____ bankruptcy.", options: ["would have avoided", "will avoid", "would avoid", "avoided"], correct: "would have avoided", section: "verbal", difficulty: "medium", topic: "Grammar" },
+        { id: 58, text: "The board members, none of _____ had experience in finance, approved the risky investment.", options: ["who", "whom", "which", "that"], correct: "whom", section: "verbal", difficulty: "hard", topic: "Grammar" },
+        { id: 59, text: "RC Passage: Artificial intelligence is transforming healthcare. AI algorithms can now detect diseases from medical images with accuracy rivaling human experts. Nevertheless, ethical concerns about patient privacy and algorithmic bias remain unresolved. The author's tone is:", options: ["Optimistic", "Pessimistic", "Cautiously hopeful", "Indifferent"], correct: "Cautiously hopeful", section: "verbal", difficulty: "medium", topic: "Reading Comprehension" },
+        { id: 60, text: "The team's _____ effort resulted in a successful product launch.", options: ["lackadaisical", "halfhearted", "concerted", "minimal"], correct: "concerted", section: "verbal", difficulty: "easy", topic: "Vocabulary" },
+        { id: 61, text: "Neither the quality nor the price _____ acceptable to customers.", options: ["is", "are", "were", "have been"], correct: "is", section: "verbal", difficulty: "medium", topic: "Grammar" },
+        { id: 62, text: "She is the only one of the candidates who _____ qualified for the position.", options: ["is", "are", "were", "have"], correct: "is", section: "verbal", difficulty: "hard", topic: "Grammar" },
+        { id: 63, text: "The CEO's decision was _____; it satisfied all stakeholders.", options: ["controversial", "divisive", "unanimous", "contentious"], correct: "unanimous", section: "verbal", difficulty: "easy", topic: "Vocabulary" },
+        { id: 64, text: "CR: Studies show that people who drink coffee live longer. Therefore, drinking coffee causes longevity. This argument fails to consider:", options: ["Correlation vs. causation", "Sample size", "Funding sources", "Coffee quality"], correct: "Correlation vs. causation", section: "verbal", difficulty: "hard", topic: "Critical Reasoning" },
+        { id: 65, text: "The professor's _____ lecture lasted over three hours.", options: ["brief", "concise", "interminable", "succinct"], correct: "interminable", section: "verbal", difficulty: "medium", topic: "Vocabulary" },
+        { id: 66, text: "Each of the employees _____ responsible for their own workspace.", options: ["is", "are", "were", "have"], correct: "is", section: "verbal", difficulty: "easy", topic: "Grammar" },
+        { id: 67, text: "RC Passage: The concept of work-life balance has evolved significantly over the past century. While previous generations prioritized job security, millennials and Gen Z value flexibility and purpose. The primary purpose of the passage is to:", options: ["Criticize younger generations", "Describe changing values", "Advocate for shorter work weeks", "Compare salaries"], correct: "Describe changing values", section: "verbal", difficulty: "easy", topic: "Reading Comprehension" },
+        
+        // DATA INSIGHTS (33 questions)
+        { id: 68, text: "Data Insights: A company's revenue increased from $200k to $250k. What is the percentage increase?", options: ["20%", "25%", "30%", "35%"], correct: "25%", section: "di", difficulty: "easy", topic: "Percent Change" },
+        { id: 69, text: "Table: Product A sold 150 units, B sold 200 units, C sold 250 units. What fraction of total sales is product B?", options: ["1/3", "1/4", "1/5", "2/5"], correct: "1/3", section: "di", difficulty: "easy", topic: "Table Analysis" },
+        { id: 70, text: "Is x > 10? (1) x + 5 > 15 (2) 2x > 25", options: ["Statement 1 alone", "Statement 2 alone", "Both together", "Each alone"], correct: "Each alone", section: "di", difficulty: "medium", topic: "Data Sufficiency" },
+        { id: 71, text: "Chart shows sales: Q1=100, Q2=120, Q3=140, Q4=160. Which quarter had the highest growth rate?", options: ["Q1", "Q2", "Q3", "Q4"], correct: "Q2", section: "di", difficulty: "medium", topic: "Chart Analysis" },
+        { id: 72, text: "Average of 5 numbers is 12. If three numbers are 10, 12, 14, what is the average of the other two?", options: ["11", "12", "13", "14"], correct: "12", section: "di", difficulty: "medium", topic: "Statistics" },
+        { id: 73, text: "What is the value of n? (1) n + 5 = 12 (2) n - 3 = 4", options: ["Statement 1 alone", "Statement 2 alone", "Each alone", "Together only"], correct: "Each alone", section: "di", difficulty: "easy", topic: "Data Sufficiency" },
+        { id: 74, text: "A pie chart shows expenses: Rent 40%, Food 25%, Transport 15%, Entertainment 10%, Savings 10%. What is the central angle for Food?", options: ["72°", "90°", "100°", "108°"], correct: "90°", section: "di", difficulty: "easy", topic: "Chart Analysis" },
+        { id: 75, text: "Is a > b? (1) a² > b² (2) a + b > 0", options: ["Both needed", "Neither sufficient", "Statement 1 alone", "Statement 2 alone"], correct: "Neither sufficient", section: "di", difficulty: "hard", topic: "Data Sufficiency" },
+        { id: 76, text: "Sales increased by 10% each year for 3 years. If original was $1000, what is final?", options: ["$1210", "$1300", "$1331", "$1400"], correct: "$1331", section: "di", difficulty: "medium", topic: "Percent Change" },
+        { id: 77, text: "What is the value of x? (1) 2x + 3 = 11 (2) x² = 16", options: ["Statement 1 alone", "Statement 2 alone", "Both together", "Each alone"], correct: "Statement 1 alone", section: "di", difficulty: "easy", topic: "Data Sufficiency" },
+        { id: 78, text: "Bar chart shows 2019=80, 2020=100, 2021=120, 2022=140. What is the total increase from 2019 to 2022?", options: ["50", "60", "70", "80"], correct: "60", section: "di", difficulty: "easy", topic: "Chart Analysis" },
+        { id: 79, text: "Median of 3, 7, 9, 12, 15 is:", options: ["7", "9", "10", "12"], correct: "9", section: "di", difficulty: "easy", topic: "Statistics" },
+        { id: 80, text: "Is x positive? (1) x² > 0 (2) x³ > 0", options: ["Statement 1 alone", "Statement 2 alone", "Both needed", "Neither"], correct: "Statement 2 alone", section: "di", difficulty: "medium", topic: "Data Sufficiency" },
+        { id: 81, text: "A company's profit margin increased from 15% to 20%. By what percentage did the margin increase?", options: ["5%", "20%", "25%", "33.3%"], correct: "33.3%", section: "di", difficulty: "hard", topic: "Percent Change" },
+        { id: 82, text: "What is the average of 15, 25, 35, 45?", options: ["25", "30", "35", "40"], correct: "30", section: "di", difficulty: "easy", topic: "Statistics" },
+        { id: 83, text: "Is x = y? (1) x² = y² (2) x > 0, y > 0", options: ["Both needed", "Statement 1 alone", "Statement 2 alone", "Neither"], correct: "Both needed", section: "di", difficulty: "hard", topic: "Data Sufficiency" },
+        { id: 84, text: "Line graph shows temperature: Jan=5°, Feb=7°, Mar=10°, Apr=15°. What is the average temperature?", options: ["8.5°", "9.25°", "10°", "11°"], correct: "9.25°", section: "di", difficulty: "easy", topic: "Chart Analysis" },
+        { id: 85, text: "What is the value of x + y? (1) x = 5 (2) y = 7", options: ["Statement 1 alone", "Statement 2 alone", "Each alone", "Both together"], correct: "Both together", section: "di", difficulty: "easy", topic: "Data Sufficiency" },
+        { id: 86, text: "Ratio of boys to girls is 3:2. If there are 30 boys, how many girls?", options: ["15", "20", "25", "30"], correct: "20", section: "di", difficulty: "easy", topic: "Ratios" },
+        { id: 87, text: "Is x < 5? (1) x + 2 < 7 (2) 2x < 10", options: ["Each alone", "Statement 1 alone", "Statement 2 alone", "Neither"], correct: "Each alone", section: "di", difficulty: "easy", topic: "Data Sufficiency" },
+        { id: 88, text: "A stock increased from $50 to $60, then decreased to $54. What is the net percent change?", options: ["+8%", "+10%", "-8%", "-10%"], correct: "+8%", section: "di", difficulty: "medium", topic: "Percent Change" },
+        { id: 89, text: "What is the mode of: 2, 3, 4, 4, 5, 6, 6, 6, 7?", options: ["4", "5", "6", "7"], correct: "6", section: "di", difficulty: "easy", topic: "Statistics" },
+        { id: 90, text: "Is x an integer? (1) 2x is integer (2) x/2 is integer", options: ["Statement 1 alone", "Statement 2 alone", "Both together", "Neither"], correct: "Statement 2 alone", section: "di", difficulty: "hard", topic: "Data Sufficiency" },
+        { id: 91, text: "Sales: Jan=100, Feb=80, Mar=120. What is the average monthly sales?", options: ["90", "100", "110", "120"], correct: "100", section: "di", difficulty: "easy", topic: "Statistics" },
+        { id: 92, text: "What is the value of a? (1) a + b = 10 (2) b = 6", options: ["Both together", "Each alone", "Statement 1 alone", "Statement 2 alone"], correct: "Both together", section: "di", difficulty: "easy", topic: "Data Sufficiency" },
+        { id: 93, text: "A product priced at $80 is discounted by 25%, then another 10%. What is final price?", options: ["$52", "$54", "$56", "$58"], correct: "$54", section: "di", difficulty: "medium", topic: "Successive Discounts" },
+        { id: 94, text: "Is x > y? (1) x - y > 0 (2) x/y > 1", options: ["Statement 1 alone", "Statement 2 alone", "Both together", "Neither"], correct: "Statement 1 alone", section: "di", difficulty: "medium", topic: "Data Sufficiency" },
+        { id: 95, text: "Range of 8, 12, 15, 20, 25 is:", options: ["15", "16", "17", "18"], correct: "17", section: "di", difficulty: "easy", topic: "Statistics" },
+        { id: 96, text: "What is the value of p? (1) p² = 49 (2) p > 0", options: ["Both together", "Statement 1 alone", "Statement 2 alone", "Neither"], correct: "Both together", section: "di", difficulty: "easy", topic: "Data Sufficiency" },
+        { id: 97, text: "A population increased from 5000 to 6000 in one year. What is the growth rate?", options: ["10%", "15%", "20%", "25%"], correct: "20%", section: "di", difficulty: "easy", topic: "Percent Change" },
+        { id: 98, text: "Standard deviation of 5, 5, 5, 5, 5 is:", options: ["0", "1", "2", "5"], correct: "0", section: "di", difficulty: "easy", topic: "Statistics" },
+        { id: 99, text: "Is x divisible by 3? (1) x is divisible by 6 (2) x is divisible by 9", options: ["Each alone", "Statement 1 alone", "Statement 2 alone", "Neither"], correct: "Each alone", section: "di", difficulty: "medium", topic: "Data Sufficiency" },
+        { id: 100, text: "If 30% of a number is 90, what is 50% of that number?", options: ["120", "130", "140", "150"], correct: "150", section: "di", difficulty: "easy", topic: "Percentages" }
+    ];
+    
+    document.getElementById("totalQuestionsStat").innerText = questionBank.length;
+    
+    let userAnswers = JSON.parse(localStorage.getItem("gmat_userAnswers_100") || "{}");
+    let bookmarks = JSON.parse(localStorage.getItem("gmat_bookmarks_100") || "[]");
+    let currentFilter = "all";
+    let currentDifficulty = "all";
+    let showBookmarkedOnly = false;
+    let currentStreak = 0;
+    
+    function updateStats() {
+        let totalAttempts = 0, totalCorrect = 0;
+        let sectionStats = { quant: {c:0,t:0}, verbal: {c:0,t:0}, di: {c:0,t:0} };
+        for (let [qid, ans] of Object.entries(userAnswers)) {
+            let q = questionBank.find(qq => qq.id == parseInt(qid));
+            if (q) {
+                totalAttempts++;
+                let isCorrect = (ans === q.correct);
+                if (isCorrect) totalCorrect++;
+                sectionStats[q.section].t++;
+                if (isCorrect) sectionStats[q.section].c++;
+            }
+        }
+        let acc = totalAttempts ? ((totalCorrect/totalAttempts)*100).toFixed(1) : 0;
+        document.getElementById("accuracyStat").innerText = acc + "%";
+        document.getElementById("accuracyPercent").innerText = acc + "%";
+        document.getElementById("accuracyFill").style.width = acc + "%";
+        
+        document.getElementById("quantFill").style.width = sectionStats.quant.t ? ((sectionStats.quant.c/sectionStats.quant.t)*100) + "%" : "0%";
+        document.getElementById("quantAcc").innerText = sectionStats.quant.t ? ((sectionStats.quant.c/sectionStats.quant.t)*100).toFixed(1) + "%" : "0%";
+        document.getElementById("quantCount").innerText = `${sectionStats.quant.t}/33 attempted`;
+        document.getElementById("verbalFill").style.width = sectionStats.verbal.t ? ((sectionStats.verbal.c/sectionStats.verbal.t)*100) + "%" : "0%";
+        document.getElementById("verbalAcc").innerText = sectionStats.verbal.t ? ((sectionStats.verbal.c/sectionStats.verbal.t)*100).toFixed(1) + "%" : "0%";
+        document.getElementById("verbalCount").innerText = `${sectionStats.verbal.t}/34 attempted`;
+        document.getElementById("diFill").style.width = sectionStats.di.t ? ((sectionStats.di.c/sectionStats.di.t)*100) + "%" : "0%";
+        document.getElementById("diAcc").innerText = sectionStats.di.t ? ((sectionStats.di.c/sectionStats.di.t)*100).toFixed(1) + "%" : "0%";
+        document.getElementById("diCount").innerText = `${sectionStats.di.t}/33 attempted`;
+        
+        let weakArea = "";
+        let minAcc = 100;
+        for (let [sec, stat] of Object.entries(sectionStats)) {
+            let accSec = stat.t ? (stat.c/stat.t)*100 : 100;
+            if (accSec < minAcc && stat.t >= 3) { minAcc = accSec; weakArea = sec; }
+        }
+        if (weakArea) document.getElementById("weaknessText").innerHTML = `🎯 GMAT Focus: Your weakest area is ${weakArea === "quant" ? "Quantitative (focus on Algebra & Word Problems)" : weakArea === "verbal" ? "Verbal (focus on Critical Reasoning assumptions & RC inferences)" : "Data Insights (focus on Data Sufficiency & chart analysis)"} with ${minAcc.toFixed(1)}% accuracy. Recommended: 10 targeted questions daily.`;
+        else document.getElementById("weaknessText").innerHTML = "Complete more GMAT questions to unlock AI-powered weakness detection and personalized study plan.";
+        
+        document.getElementById("sidebarStreak").innerText = currentStreak;
+        document.getElementById("streakStat").innerText = currentStreak;
+    }
+    
+    function selectOption(qid, selected) {
+        let q = questionBank.find(qq => qq.id == qid);
+        let wasCorrect = userAnswers[qid] === q?.correct;
+        let isNowCorrect = selected === q?.correct;
+        if (!wasCorrect && isNowCorrect) currentStreak++;
+        else if (wasCorrect && !isNowCorrect) currentStreak = 0;
+        else if (!wasCorrect && !isNowCorrect) currentStreak = 0;
+        else if (isNowCorrect) currentStreak++;
+        userAnswers[qid] = selected;
+        localStorage.setItem("gmat_userAnswers_100", JSON.stringify(userAnswers));
+        renderPracticeQuestions();
+        updateStats();
+    }
+    
+    function checkAnswer(qid, correct) {
+        let selected = userAnswers[qid];
+        if (!selected) { alert("Please select an option first!"); return; }
+        alert(selected === correct ? "✅ Correct! GMAT-level answer." : `❌ Incorrect. The correct answer is: ${correct}`);
+        updateStats();
+    }
+    
+    function toggleExplanation(qid) { let exp = document.getElementById(`exp-${qid}`); if (exp) exp.style.display = exp.style.display === "block" ? "none" : "block"; }
+    function toggleBookmark(qid) { if (bookmarks.includes(qid)) bookmarks = bookmarks.filter(id => id !== qid); else bookmarks.push(qid); localStorage.setItem("gmat_bookmarks_100", JSON.stringify(bookmarks)); renderPracticeQuestions(); }
+    
+    function renderPracticeQuestions() {
+        let filtered = questionBank.filter(q => {
+            if (showBookmarkedOnly && !bookmarks.includes(q.id)) return false;
+            if (currentFilter !== "all" && q.section !== currentFilter) return false;
+            if (currentDifficulty !== "all" && q.difficulty !== currentDifficulty) return false;
+            return true;
+        });
+        let container = document.getElementById("practiceContainer");
+        if (!container) return;
+        if (filtered.length === 0) { container.innerHTML = "<p>No questions match filters. Adjust your criteria.</p>"; return; }
+        let html = "";
+        filtered.forEach(q => {
+            let selectedOpt = userAnswers[q.id];
+            html += `<div class="question-card">
+                <div class="question-header">
+                    <span class="tag">${q.section === "quant" ? "📐 Quantitative" : q.section === "verbal" ? "📖 Verbal" : "📊 Data Insights"}</span>
+                    <span class="tag tag-difficulty-${q.difficulty}">${q.difficulty === "easy" ? "555-655" : q.difficulty === "medium" ? "655-725" : "725-805"}</span>
+                    <span class="tag">${q.topic}</span>
+                    <button class="btn btn-secondary" style="padding:0.2rem 0.8rem;" onclick="toggleBookmark(${q.id})">${bookmarks.includes(q.id) ? "⭐ Bookmarked" : "☆ Bookmark"}</button>
+                </div>
+                <div class="question-text">${q.text}</div>
+                <div class="options-list">
+                    ${q.options.map((opt, idx) => `<div class="option ${selectedOpt === opt ? 'selected' : ''}" onclick="selectOption(${q.id}, '${opt.replace(/'/g, "\\'")}')">${String.fromCharCode(65+idx)}. ${opt}</div>`).join('')}
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" onclick="checkAnswer(${q.id}, '${q.correct.replace(/'/g, "\\'")}')">Check & Score</button>
+                    <button class="btn btn-secondary" onclick="toggleExplanation(${q.id})">GMAT Explanation</button>
+                </div>
+                <div class="explanation" id="exp-${q.id}"><strong>📘 GMAT Strategy:</strong> ${q.correct === q.options[0] ? "This tests conceptual clarity. For GMAT, eliminate wrong answers systematically." : "Focus on reasoning patterns. Official GMAT questions reward logical elimination."}</div>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+    
+    function switchTab(tab) {
+        document.getElementById("practiceContainer").style.display = tab === "practice" ? "block" : "none";
+        document.getElementById("mockContainer").style.display = tab === "mock" ? "block" : "none";
+        document.getElementById("analyticsContainer").style.display = tab === "analytics" ? "block" : "none";
+        document.getElementById("resourcesContainer").style.display = tab === "resources" ? "block" : "none";
+        if (tab === "analytics") updateStats();
+        if (tab === "resources") renderResources();
+    }
+    
+    function renderResources() {
+        let resources = [
+            { title: "📐 GMAT Quant Formula Bible", desc: "All algebra, geometry, number properties, word problems", link: "#" },
+            { title: "📖 Verbal Reasoning: CR & RC Mastery", desc: "50 critical reasoning patterns + RC strategies", link: "#" },
+            { title: "📊 Data Insights: DS & MSR Guide", desc: "Data sufficiency and multi-source reasoning tactics", link: "#" },
+            { title: "📝 Official GMAT Focus Edition Mock", desc: "Full-length adaptive simulation", link: "#" },
+            { title: "⏱️ Time Management for 135-min GMAT", desc: "Section-wise pacing strategies", link: "#" },
+            { title: "🎯 100 Hard GMAT Questions PDF", desc: "715+ level practice set", link: "#" }
+        ];
+        let grid = document.getElementById("resourcesGrid");
+        if (grid) grid.innerHTML = resources.map(r => `<div class="resource-card"><h4>${r.title}</h4><p>${r.desc}</p><button class="btn btn-primary" onclick="alert('Download: ${r.title} (premium resource unlocked)')">Download PDF</button></div>`).join('');
+    }
+    
+    document.querySelectorAll("[data-filter]").forEach(btn => {
+        btn.addEventListener("click", function() {
+            document.querySelectorAll("[data-filter]").forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            currentFilter = this.getAttribute("data-filter");
+            renderPracticeQuestions();
+        });
+    });
+    document.querySelectorAll("[data-diff]").forEach(btn => {
+        btn.addEventListener("click", function() {
+            document.querySelectorAll("[data-diff]").forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            currentDifficulty = this.getAttribute("data-diff");
+            renderPracticeQuestions();
+        });
+    });
+    document.getElementById("bookmarkFilterBtn")?.addEventListener("click", () => { showBookmarkedOnly = !showBookmarkedOnly; renderPracticeQuestions(); });
+    document.getElementById("weaknessFilterBtn")?.addEventListener("click", () => switchTab("analytics"));
+    document.querySelectorAll(".tab-btn").forEach(btn => { btn.addEventListener("click", function() { document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active")); this.classList.add("active"); switchTab(this.getAttribute("data-tab")); }); });
+    
+    renderPracticeQuestions();
+    updateStats();
+    renderResources();
+    window.selectOption = selectOption; window.checkAnswer = checkAnswer; window.toggleExplanation = toggleExplanation; window.toggleBookmark = toggleBookmark; window.switchTab = switchTab;
+</script>
+</body>
+</html>

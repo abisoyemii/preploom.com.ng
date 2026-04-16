@@ -1,0 +1,3157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>PrepLoom | Premier Language & Professional Certification Prep</title>
+    <meta name="description" content="Preploom offers expert preparation for TOEFL, IELTS, Duolingo, PMP, AWS, Google, Cisco, and CompTIA certifications. Monthly exam schedules, online courses, and guaranteed success strategies.">
+    <meta name="keywords" content="TOEFL prep 2026, IELTS exam dates monthly, PMP online exam tips, AWS certification training, Duolingo English Test preparation, professional certification courses online">
+    <meta name="author" content="Preploom">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Preploom Institute | Ace Your Certification Exams">
+    <meta property="og:description" content="Expert-led preparation for language proficiency and professional certifications with monthly exam schedules">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://preploominstitute.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://preploominstitute.com">
+    <style>
+:root {
+            --primary: #1e40af;
+            --secondary: #3b82f6;
+            --accent: #1d4ed8;
+            --success: #1e40af;
+            --dark: #000000;
+            --light: #f9fafb;
+            --text: #111827;
+            --border: #e5e7eb;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --mobile-padding: clamp(1rem, 4vw, 1.5rem);
+            --mobile-gap: clamp(1rem, 3vw, 1.5rem);
+            --mobile-fs-h1: clamp(1.75rem, 5vw, 2.5rem);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+
+        /* Navigation */
+        .navbar {
+background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            max-width: 280px;
+        }
+        .logo img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.9;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 250px;
+            box-shadow: var(--shadow-lg);
+            border-radius: 8px;
+            top: 100%;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: var(--text);
+            padding: 0.8rem 1rem;
+            display: block;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dropdown-content a:hover {
+            background: var(--light);
+            color: var(--primary);
+        }
+
+        .nav-container .mobile-menu-btn {
+            display: none;
+        }
+
+        /* Fullscreen Mobile Menu */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 350px;
+            height: 100vh;
+            background: var(--primary);
+            z-index: 1000;
+            padding: 5rem 1.5rem 2rem;
+            overflow-y: auto;
+            transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mobile-nav-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .mobile-nav-close:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .mobile-nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mobile-nav-menu li {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: block;
+            padding: 1rem 0;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: padding-left 0.3s;
+        }
+
+        .mobile-nav-menu a:hover {
+            padding-left: 1rem;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                max-width: 220px;
+                transform-origin: left center;
+            }
+
+            .logo img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .nav-container .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+
+
+
+        /* Hero Section */
+        .hero {
+background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 50%, #000000 100%);
+            color: white;
+            padding: 6rem 2rem;
+
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {\n            font-size: clamp(2rem, var(--mobile-fs-h1), 3.5rem);\n            font-weight: 800;\n            margin-bottom: 1.5rem;\n            line-height: 1.2;\n            animation: fadeInUp 0.8s ease-out;\n        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* News Ticker */
+        .news-ticker {
+            background: var(--dark);
+            color: white;
+            padding: 0.8rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-wrapper {
+            display: flex;
+            animation: ticker 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ticker-badge {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Ad Placeholder */
+        .ad-placeholder {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .ad-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .ad-text {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            color: var(--secondary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Exam Categories */
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .exam-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .exam-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .exam-header {
+            padding: 1.5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exam-header.language {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+
+        .exam-header.professional {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+        }
+
+        .exam-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .exam-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .exam-subtitle {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .exam-body {
+            padding: 1.5rem;
+        }
+
+        .exam-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .exam-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .exam-list li:last-child {
+            border-bottom: none;
+        }
+
+        .exam-list a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .exam-list a:hover {
+            color: var(--secondary);
+        }
+
+        .exam-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Calendar Widget */
+        .calendar-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin: 3rem 0;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .calendar-btn {
+            background: var(--light);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calendar-btn:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+            text-align: center;
+        }
+
+        .calendar-day-header {
+            font-weight: 700;
+            color: #64748b;
+            padding: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .calendar-day:hover {
+            background: var(--light);
+        }
+
+        .calendar-day.has-exam {
+            background: #dbeafe;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .calendar-day.has-exam::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .calendar-day.today {
+            border: 2px solid var(--secondary);
+        }
+
+        .exam-legend {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        /* Tabs Section */
+        .tabs-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .tabs-nav {
+            display: flex;
+            background: var(--light);
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .tabs-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #64748b;
+            transition: all 0.3s;
+            white-space: nowrap;
+            position: relative;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            min-height: 44px;
+            min-width: 100px;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            background: white;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .tab-content {
+            padding: 2rem;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sample Questions */
+        .question-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .question-type {
+            background: var(--secondary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .question-difficulty {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .options-list {
+            list-style: none;
+        }
+
+        .options-list li {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .options-list li:hover {
+            border-color: var(--secondary);
+            background: #eff6ff;
+        }
+
+        .options-list li.correct {
+            border-color: var(--success);
+            background: #d1fae5;
+        }
+
+        .show-answer-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .show-answer-btn:hover {
+            background: var(--secondary);
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 100%);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-category {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .read-more {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* Lead Magnet */
+        .lead-magnet {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 24px;
+            margin: 4rem auto;
+            max-width: 1200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lead-magnet::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .lead-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lead-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .lead-text p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .lead-benefits {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .lead-benefits li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lead-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--light);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+
+        .social-icon:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .lead-content {
+                grid-template-columns: 1fr;
+            }
+
+            .exam-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Advanced sections mobile optimization */
+            .section {\n                padding: var(--mobile-padding) var(--mobile-padding);\n            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            /* All grid layouts in sections become single column on mobile */
+            .section div[style*="grid-template-columns"],
+            .lead-content {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            /* Specific section adjustments */
+            .section div[style*="grid-template-columns"] > div {
+                margin-bottom: 1.5rem;
+            }
+
+            /* Blog grid specific */
+            .blog-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            /* Footer mobile optimization */
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            /* Tabs mobile */
+            .tabs-nav {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .tab-btn {
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+
+            /* Calendar mobile */
+            .calendar-section {
+                padding: 1rem;
+            }
+
+            .calendar-header h3 {
+                font-size: 0.95rem;
+            }
+
+            .calendar-grid {
+                grid-template-columns: repeat(7, 1fr);
+                gap: 2px;
+                font-size: 0.72rem;
+            }
+
+            .calendar-day-header {
+                font-size: 0.65rem;
+                padding: 0.25rem 0;
+            }
+
+            .calendar-day {
+                aspect-ratio: unset;
+                height: 32px;
+                font-size: 0.72rem;
+                border-radius: 4px;
+            }
+
+            .calendar-day.has-exam::after {
+                bottom: 2px;
+                width: 3px;
+                height: 3px;
+            }
+
+            .exam-legend {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+
+            /* FAQ mobile */
+            .faq-item {
+                margin-bottom: 0.5rem;
+            }
+
+            /* Blog cards mobile */
+            .blog-card {
+                margin-bottom: 1.5rem;
+            }
+
+            /* Buttons mobile */
+            .btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* Stats mobile */
+            .stat-item {
+                text-align: center;
+            }
+
+            /* Touch-friendly interactions */
+            .calendar-day,
+            .tab-btn,
+            .faq-question,
+            .btn,
+            .options-list li {
+                min-height: 44px; /* iOS touch target minimum */
+                cursor: pointer;
+            }
+
+            /* Better mobile spacing */
+            .section-header {
+                margin-bottom: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            /* Mobile-optimized cards */
+            .exam-card,
+            .blog-card {
+                border-radius: 12px;
+                box-shadow: var(--shadow);
+            }
+
+            /* Improved mobile navigation */
+            .nav-menu a {
+                padding: 0.75rem 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-menu a:last-child {
+                border-bottom: none;
+            }
+
+            /* Mobile form improvements */
+            .lead-form {
+                padding: 1.5rem;
+            }
+            .logo {
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .logo-icon {
+              font-size: 1rem;
+              width: 28px;
+              height: 28px;
+            }
+
+            /* Better mobile readability */
+            .question-text {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .options-list li {
+                padding: 0.875rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        /* Tablet responsive */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .exam-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+            .section {
+                padding: 4rem 2rem;
+            }
+
+            .exam-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .blog-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 2rem; }
+        .mt-2 { margin-top: 2rem; }
+        .hidden { display: none; }
+        .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        @media (max-width: 768px) {
+            .grid-2col { grid-template-columns: 1fr !important; gap: 2rem !important; }
+            .contact-name-row { grid-template-columns: 1fr !important; }
+        }
+
+        /* Affiliate Disclosure */
+        .affiliate-note {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.85rem;
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <span style="color:white;font-weight:700;font-size:1.1rem;">Menu</span>
+            <button class="mobile-nav-close" onclick="closeMobileMenu()" aria-label="Close menu">&#10005;</button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="toefl.html" onclick="closeMobileMenu()">TOEFL iBT</a></li>
+            <li><a href="ielts.html" onclick="closeMobileMenu()">IELTS</a></li>
+            <li><a href="duolingo.html" onclick="closeMobileMenu()">Duolingo English Test</a></li>
+            <li><a href="gmat.html" onclick="closeMobileMenu()">GMAT</a></li>
+            <li><a href="cambridge.html" onclick="closeMobileMenu()">Cambridge English</a></li>
+            <li><a href="pmp.html" onclick="closeMobileMenu()">PMP Certification</a></li>
+            <li><a href="google.html" onclick="closeMobileMenu()">Google Certificates</a></li>
+            <li><a href="cisco.html" onclick="closeMobileMenu()">Cisco CCNA/CCNP</a></li>
+            <li><a href="resources.html" onclick="closeMobileMenu()">Resources</a></li>
+            <li><a href="blog.html" onclick="closeMobileMenu()">Blog</a></li>
+            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+            <li><a href="login.html" onclick="closeMobileMenu()">Student Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Desktop nav (hidden on mobile via CSS) -->
+    <nav class="navbar" id="desktopNav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Preploom.png" alt="PrepLoom" style="width: 280px; height: 80px; object-fit: cover; border-radius: 8px;">
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu">&#9776;</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#exams">Exams ▾</a>
+                    <div class="dropdown-content">
+                        <a href="toefl.html">TOEFL iBT Preparation</a>
+                        <a href="gmat.html">GMAT Prep</a>
+                        <a href="#ielts">IELTS Academic & General</a>
+                        <a href="duolingo.html">Duolingo English Test</a>
+                        <a href="cambridge.html">Cambridge English (FCE, CAE, CPE)</a>
+                        <a href="#pmp">PMP Certification</a>
+                        <a href="#google">Google Professional Certificates</a>
+                        <a href="cisco.html">Cisco (CCNA, CCNP)</a>
+                        
+                    </div>
+                </li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn btn-secondary" style="padding: 0.5rem 1rem;">Student Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- News Ticker -->
+    <div class="news-ticker">
+        <div class="ticker-wrapper">
+            <div class="ticker-item"><span class="ticker-badge">NEW</span> TOEFL iBT pattern updates for 2026 now live</div>
+            <div class="ticker-item"><span class="ticker-badge">EXAM</span> IELTS Academic test dates added for April 2026</div>
+            <div class="ticker-item"><span class="ticker-badge">UPDATE</span> AWS Solutions Architect exam changes effective June 1</div>
+            <div class="ticker-item"><span class="ticker-badge">RESULTS</span> March PMP exam results released - Check your email</div>
+            <div class="ticker-item"><span class="ticker-badge">COURSE</span> New Duolingo English Test masterclass launching soon</div>
+            <div class="ticker-item"><span class="ticker-badge">NEW</span> TOEFL iBT pattern updates for 2026 now live</div>
+            <div class="ticker-item"><span class="ticker-badge">EXAM</span> IELTS Academic test dates added for April 2026</div>
+            <div class="ticker-item"><span class="ticker-badge">UPDATE</span> AWS Solutions Architect exam changes effective June 1</div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Ace Your Certification Exams with Expert Guidance</h1>
+            <p class="hero-subtitle">Join 500,000+ successful candidates who achieved their dream scores in TOEFL, IELTS, PMP, and more with our proven preparation strategies</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div style="color: red;" class="stat-number">98%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div style="color: red;" class="stat-number">500K+</div>
+                    <div class="stat-label">Students Trained</div>
+                </div>
+                <div class="stat-item">
+                    <div style="color: red;" class="stat-number">4.9★</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-item">
+                    <div style="color: red;" class="stat-number">12</div>
+                    <div class="stat-label">Exam Categories</div>
+                </div>
+            </div>
+
+            <div class="cta-group">
+                <a href="#exams" class="btn btn-primary">Explore Exam Prep →</a>
+                <a href="resources.html" class="btn btn-secondary">Free Practice Tests</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Placeholder Top -->
+    <div class="ad-placeholder">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-text">Google AdSense / Affiliate Banner Space (728x90 or Responsive)</div>
+    </div>
+
+    <!-- Exam Categories Section -->
+    <section class="section" id="exams">
+        <div class="section-header">
+            <div class="section-tag">Comprehensive Preparation</div>
+            <h2 class="section-title">Choose Your Certification Path</h2>
+            <p class="section-subtitle">Monthly exam schedules with flexible online preparation courses designed for busy professionals and students</p>
+        </div>
+
+        <div class="exam-grid">
+            <!-- Language Proficiency -->
+            <div class="exam-card">
+                <div class="exam-header language">
+                    <div class="exam-icon">🌍</div>
+                    <h3 class="exam-title">Language Proficiency</h3>
+                    <p class="exam-subtitle">Prove your English skills for study, work, and migration</p>
+                </div>
+                <div class="exam-body">
+                    <ul class="exam-list">
+                        <li>
+                            <a href="#toefl">
+                                <span>📋</span>
+                                <div>
+                                    <strong>TOEFL iBT</strong>
+                                    <small style="display: block; color: #64748b; font-size: 0.85rem;">Monthly test dates available</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ielts">
+                                <span>📝</span>
+                                <div>
+                                    <strong>IELTS Academic & General</strong>
+                                    <small style="display: block; color: #64748b; font-size: 0.85rem;">48 test dates per year</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#duolingo">
+                                <span>📱</span>
+                                <div>
+                                    <strong>Duolingo English Test</strong>
+                                    <small style="display: block; color: #64748b; font-size: 0.85rem;">Take anytime, anywhere online</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#cambridge">
+                                <span>🏆</span>
+                                <div>
+                                    <strong>Cambridge English (FCE, CAE, CPE)</strong>
+                                    <small style="display: block; color: #64748b; font-size: 0.85rem;">Quarterly exam sessions</small>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="exam-meta">
+                        <span class="meta-item">⏱️ 1-4 hours</span>
+                        <span class="meta-item">💻 Online/Offline</span>
+                        <span class="meta-item">📜 Valid 2 years</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Certifications -->
+            <div class="exam-card">
+                <div class="exam-header professional">
+                    <div class="exam-icon">💼</div>
+                    <h3 class="exam-title">Professional Certifications</h3>
+                    <p class="exam-subtitle">Advance your career with industry-recognized credentials</p>
+                </div>
+                <div class="exam-body">
+                    <ul class="exam-list">
+                        <li>
+                            <a href="#pmp">
+                                <span>📊</span>
+                                <div>
+                                    <strong>PMP Certification</strong>
+                                    <small style="display: block; color: #64748b; font-size: 0.85rem;">PMI authorized training</small>
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#google">
+                                <span>🔍</span>
+                                <div>
+                                    <strong>Google Professional Certificates</strong>
+                                    <small style="display: block; color: #64748b; font-size: 0.85rem;">Data analytics, UX design, Project management</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#cisco">
+                                <span>🌐</span>
+                                <div>
+                                    <strong>Cisco (CCNA, CCNP)</strong>
+                                    <small style="display: block; color: #64748b; font-size: 0.85rem;">Networking essentials to professional</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#comptia">
+                                <span>🔒</span>
+                                <div>
+                                    <strong>CompTIA (A+, Network+, Security+)</strong>
+                                    <small style="display: block; color: #64748b; font-size: 0.85rem;">IT fundamentals to cybersecurity</small>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="exam-meta">
+                        <span class="meta-item">⏱️ 90-230 mins</span>
+                        <span class="meta-item">💻 Online proctored</span>
+                        <span class="meta-item">📜 Valid 3 years</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendar Widget -->
+        <div class="calendar-section">
+            <div class="calendar-header">
+                <h3>📅 Upcoming Exam Dates - April 2026</h3>
+                <div class="calendar-nav">
+                    <button class="calendar-btn" onclick="changeMonth(-1)">←</button>
+                    <button class="calendar-btn" onclick="changeMonth(1)">→</button>
+                </div>
+            </div>
+            <div class="calendar-grid" id="calendar">
+                <!-- Generated by JS -->
+            </div>
+            <div class="exam-legend">
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #3b82f6;"></div>
+                    <span>TOEFL iBT</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #10b981;"></div>
+                    <span>IELTS</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #f59e0b;"></div>
+                    <span>PMP</span>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Placeholder Middle -->
+    <div class="ad-placeholder">
+        <div class="ad-label">Sponsored Content</div>
+        <div class="ad-text">Affiliate Marketing Space / Course Promotion Area</div>
+    </div>
+
+    <!-- Interactive Exam Prep Section -->
+    <section class="section" id="resources" style="background: white; margin: 0; max-width: 100%; padding: 5rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="section-header">
+                <div class="section-tag">Interactive Learning</div>
+                <h2 class="section-title">TOEFL iBT Complete Preparation</h2>
+                <p class="section-subtitle">Master each section with our comprehensive study materials and practice questions</p>
+            </div>
+
+            <div class="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+                    <button class="tab-btn" onclick="switchTab('schedule')">Exam Schedule</button>
+                    <button class="tab-btn" onclick="switchTab('tips')">Prep Tips</button>
+                    <button class="tab-btn" onclick="switchTab('practice')">Sample Questions</button>
+                    <button class="tab-btn" onclick="switchTab('news')">Latest Updates</button>
+                    <button class="tab-btn" onclick="switchTab('faq')">FAQs</button>
+                </div>
+
+                <div id="overview" class="tab-content active">
+                    <h3>TOEFL iBT Exam Structure 2026</h3>
+                    <p style="margin-bottom: 1.5rem;">The TOEFL iBT (Test of English as a Foreign Language Internet-Based Test) is the most widely accepted English-language test in the world. Recognized by over 11,500 institutions in more than 160 countries, it's your gateway to academic success.</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                        <div style="text-align: center; padding: 1.5rem; background: #eff6ff; border-radius: 12px;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">👂</div>
+                            <h4>Listening</h4>
+                            <p style="font-size: 0.9rem; color: #64748b;">41-57 minutes<br/>28-39 questions</p>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: #fef3c7; border-radius: 12px;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📖</div>
+                            <h4>Reading</h4>
+                            <p style="font-size: 0.9rem; color: #64748b;">54-72 minutes<br/>30-40 questions</p>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: #d1fae5; border-radius: 12px;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">✍️</div>
+                            <h4>Writing</h4>
+                            <p style="font-size: 0.9rem; color: #64748b;">50 minutes<br/>2 tasks</p>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: #e0e7ff; border-radius: 12px;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🗣️</div>
+                            <h4>Speaking</h4>
+                            <p style="font-size: 0.9rem; color: #64748b;">17 minutes<br/>4 tasks</p>
+                        </div>
+                    </div>
+
+                    <div class="affiliate-note">
+                        <strong>Recommended Resource:</strong> Get the Official TOEFL iBT Tests Volume 1 & 2 for authentic practice questions. <a href="#" style="color: var(--primary);">Check latest prices on Amazon</a> (affiliate link).
+                    </div>
+
+                    <h4>Scoring Information</h4>
+                    <ul style="margin-left: 1.5rem; color: #475569;">
+                        <li>Total Score: 0-120 points</li>
+                        <li>Section Scores: 0-30 points each</li>
+                        <li>MyBest™ Scores: Combine best section scores from all valid tests in the last 2 years</li>
+                        <li>Score Validity: 2 years</li>
+                        <li>Results Available: 6 days after test</li>
+                    </ul>
+                </div>
+
+                <div id="schedule" class="tab-content">
+                    <h3>2026 TOEFL iBT Test Dates & Registration</h3>
+                    <p>TOEFL iBT is offered multiple times per month at authorized test centers worldwide and via the Home Edition online. Below are the upcoming test dates:</p>
+                    
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem;">
+                        <thead>
+                            <tr style="background: var(--primary); color: white;">
+                                <th style="padding: 1rem; text-align: left;">Month</th>
+                                <th style="padding: 1rem; text-align: left;">Test Dates</th>
+                                <th style="padding: 1rem; text-align: left;">Registration Deadline</th>
+                                <th style="padding: 1rem; text-align: left;">Late Fee Applies</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem;">April 2026</td>
+                                <td style="padding: 1rem;">5, 12, 19, 26</td>
+                                <td style="padding: 1rem;">March 29</td>
+                                <td style="padding: 1rem;">April 2</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border); background: #f8fafc;">
+                                <td style="padding: 1rem;">May 2026</td>
+                                <td style="padding: 1rem;">3, 10, 17, 24, 31</td>
+                                <td style="padding: 1rem;">April 26</td>
+                                <td style="padding: 1rem;">April 30</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem;">June 2026</td>
+                                <td style="padding: 1rem;">7, 14, 21, 28</td>
+                                <td style="padding: 1rem;">May 31</td>
+                                <td style="padding: 1rem;">June 4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="background: #dbeafe; padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem;">
+                        <strong>💡 Pro Tip:</strong> Book your test at least 2-3 months in advance during peak seasons (July-September for fall admissions). Home Edition slots fill up quickly!
+                    </div>
+                </div>
+
+                <div id="tips" class="tab-content">
+                    <h3>Expert Tips to Score 110+ on TOEFL iBT</h3>
+                    
+                    <div style="display: grid; gap: 1.5rem; margin-top: 1.5rem;">
+                        <div style="display: flex; gap: 1rem; align-items: start;">
+                            <div style="background: var(--accent); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">1</div>
+                            <div>
+                                <h4>Master Note-Taking for Listening</h4>
+                                <p style="color: #64748b; margin-top: 0.5rem;">Develop a shorthand system. Focus on key concepts, transitions, and speaker attitudes. Practice with academic lectures from TED-Ed and university open courses.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: start;">
+                            <div style="background: var(--accent); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">2</div>
+                            <div>
+                                <h4>Reading: Skim Strategically</h4>
+                                <p style="color: #64748b; margin-top: 0.5rem;">Spend 2-3 minutes skimming the entire passage before looking at questions. Identify the main idea, structure, and author's purpose first.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: start;">
+                            <div style="background: var(--accent); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">3</div>
+                            <div>
+                                <h4>Speaking: Use Templates</h4>
+                                <p style="color: #64748b; margin-top: 0.5rem;">Prepare transition phrases for each task type. Practice timing strictly - 15 seconds preparation, 45-60 seconds response. Record yourself daily.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: start;">
+                            <div style="background: var(--accent); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">4</div>
+                            <div>
+                                <h4>Writing: Plan Before You Type</h4>
+                                <p style="color: #64748b; margin-top: 0.5rem;">Spend 2-3 minutes outlining your integrated and independent essays. Use specific examples and clear topic sentences. Aim for 300+ words.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="practice" class="tab-content">
+                    <h3>Sample TOEFL iBT Questions</h3>
+                    
+                    <div class="question-card">
+                        <div class="question-header">
+                            <span class="question-type">Reading</span>
+                            <span class="question-difficulty">Medium</span>
+                        </div>
+                        <p class="question-text">According to the passage, what is the primary function of the mitochondria in eukaryotic cells?</p>
+                        <ul class="options-list">
+                            <li onclick="selectOption(this)">A) To store genetic information for protein synthesis</li>
+                            <li onclick="selectOption(this)">B) To convert nutrients into energy through cellular respiration</li>
+                            <li onclick="selectOption(this)">C) To regulate the cell cycle and division processes</li>
+                            <li onclick="selectOption(this)">D) To transport molecules across the cell membrane</li>
+                        </ul>
+                        <button class="show-answer-btn" onclick="showAnswer(this)">Show Answer & Explanation</button>
+                        <div class="answer-explanation" style="display: none; margin-top: 1rem; padding: 1rem; background: #d1fae5; border-radius: 8px;">
+                            <strong>Correct Answer: B</strong><br>
+                            Mitochondria are known as the "powerhouses" of the cell because they generate ATP through oxidative phosphorylation, converting nutrients into usable energy.
+                        </div>
+                    </div>
+
+                    <div class="question-card">
+                        <div class="question-header">
+                            <span class="question-type" style="background: #10b981;">Speaking Task 2</span>
+                            <span class="question-difficulty">Hard</span>
+                        </div>
+                        <p class="question-text">Campus Announcement: The university library will extend its hours until midnight during final exam week. Do you agree or disagree with this policy? Use specific reasons and examples.</p>
+                        <div style="background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <strong>Preparation Strategy:</strong>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>State your position clearly in the first sentence</li>
+                                <li>Provide 2 specific reasons with examples</li>
+                                <li>Use transitions: "First of all," "Furthermore," "In conclusion"</li>
+                                <li>Manage your time: 15 seconds prep, 45 seconds response</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="#" class="btn btn-primary">Access 500+ Practice Questions</a>
+                    </div>
+                </div>
+
+                <div id="news" class="tab-content">
+                    <h3>Latest TOEFL iBT News & Updates</h3>
+                    
+                    <div style="display: grid; gap: 1.5rem; margin-top: 1.5rem;">
+                        <article style="border-left: 4px solid var(--secondary); padding-left: 1.5rem;">
+                            <div style="color: var(--secondary); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">March 15, 2026</div>
+                            <h4>TOEFL iBT Enhanced Speaking Scoring</h4>
+                            <p style="color: #64748b; margin-top: 0.5rem;">ETS introduces AI-assisted scoring for Speaking section to provide faster, more consistent results. Human raters still review all responses.</p>
+                            <a href="#" style="color: var(--secondary); font-weight: 600;">Read more →</a>
+                        </article>
+                        
+                        <article style="border-left: 4px solid var(--accent); padding-left: 1.5rem;">
+                            <div style="color: var(--accent); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">February 28, 2026</div>
+                            <h4>New TOEFL Prep Materials Released</h4>
+                            <p style="color: #64748b; margin-top: 0.5rem;">Official Guide to the TOEFL iBT Test, 6th Edition now available with updated practice tests reflecting current exam format.</p>
+                            <a href="#" style="color: var(--secondary); font-weight: 600;">Read more →</a>
+                        </article>
+                        
+                        <article style="border-left: 4px solid #10b981; padding-left: 1.5rem;">
+                            <div style="color: #10b981; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">January 10, 2026</div>
+                            <h4>TOEFL iBT Home Edition Updates</h4>
+                            <p style="color: #64748b; margin-top: 0.5rem;">Enhanced security protocols and equipment checks now in place. Check updated technical requirements before booking.</p>
+                            <a href="#" style="color: var(--secondary); font-weight: 600;">Read more →</a>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="faq" class="tab-content">
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>How long is the TOEFL iBT score valid?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    TOEFL iBT scores are valid for 2 years from the test date. This is standard across all ETS tests. After 2 years, your scores will no longer be accessible in the ETS system, though you can request a score report reprint for tests taken within the last 2 years.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Can I retake the TOEFL iBT if I'm not satisfied with my score?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Yes, you can retake the test as many times as you wish, but no more than once in a 3-day period. There is no limit to the number of times you can take the test. Your MyBest scores will automatically combine your highest section scores from all valid tests in the last 2 years.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>What is the difference between TOEFL iBT and IELTS?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    While both test English proficiency, TOEFL iBT is fully computer-based with American English focus, while IELTS offers paper and computer options with British/Australian English. TOEFL speaking is recorded; IELTS speaking is face-to-face with an examiner. TOEFL is preferred by US institutions; IELTS is more widely accepted in UK, Australia, and Canada.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>How soon can I get my TOEFL results?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    Official scores are available approximately 6 days after your test date. You will receive an email notification when your scores are ready. PDF score reports can be downloaded from your ETS account, and official reports can be sent to institutions electronically or by mail.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section" id="blog">
+        <div class="section-header">
+            <div class="section-tag">Expert Insights</div>
+            <h2 class="section-title">Latest from Our Blog</h2>
+            <p class="section-subtitle">Stay updated with exam strategies, industry trends, and success stories</p>
+        </div>
+
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-image">🎯</div>
+                <div class="blog-content">
+                    <div class="blog-category">TOEFL Strategy</div>
+                    <h3 class="blog-title">How to Score 110+ on TOEFL iBT: The Complete 30-Day Study Plan</h3>
+                    <p class="blog-excerpt">A day-by-day breakdown of exactly what to study, practice tests to take, and common pitfalls to avoid for maximum score improvement.</p>
+                    <div class="blog-meta">
+                        <span>8 min read</span>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #10b981, #059669);">☁️</div>
+                <div class="blog-content">
+                    <div class="blog-category">Cloud Computing</div>
+                    <h3 class="blog-title">Top 5 AWS Certifications to Boost Your Career in 2026</h3>
+                    <p class="blog-excerpt">From Cloud Practitioner to Solutions Architect Professional - which AWS cert should you pursue based on your experience level and career goals?</p>
+                    <div class="blog-meta">
+                        <span>12 min read</span>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #f59e0b, #d97706);">⏰</div>
+                <div class="blog-content">
+                    <div class="blog-category">IELTS Tips</div>
+                    <h3 class="blog-title">IELTS Academic Tips for Busy Professionals: Study Smarter, Not Harder</h3>
+                    <p class="blog-excerpt">Time-efficient strategies for working professionals preparing for IELTS. How to maximize your score with just 1 hour of daily study.</p>
+                    <div class="blog-meta">
+                        <span>6 min read</span>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">📊</div>
+                <div class="blog-content">
+                    <div class="blog-category">Project Management</div>
+                    <h3 class="blog-title">PMP Exam Changes 2026: What You Need to Know About the New Format</h3>
+                    <p class="blog-excerpt">PMI has updated the PMP exam content outline. Learn about the new domain distribution and agile/hybrid focus areas.</p>
+                    <div class="blog-meta">
+                        <span>10 min read</span>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #ef4444, #dc2626);">🔒</div>
+                <div class="blog-content">
+                    <div class="blog-category">Cybersecurity</div>
+                    <h3 class="blog-title">CompTIA Security+ vs. CEH: Which Certification Should You Choose?</h3>
+                    <p class="blog-excerpt">Comparing the two most popular entry-level cybersecurity certifications. Job market value, difficulty level, and career path implications.</p>
+                    <div class="blog-meta">
+                        <span>9 min read</span>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #ec4899, #db2777);">🎓</div>
+                <div class="blog-content">
+                    <div class="blog-category">Success Stories</div>
+                    <h3 class="blog-title">From 85 to 115: How Sarah Improved Her TOEFL Score in 3 Weeks</h3>
+                    <p class="blog-excerpt">Real student case study with exact study schedule, resources used, and mindset shifts that led to a 30-point improvement.</p>
+                    <div class="blog-meta">
+                        <span>7 min read</span>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Lead Magnet / Email Capture -->
+    <section class="lead-magnet" id="free-resources">
+        <div class="lead-content">
+            <div class="lead-text">
+                <h2>Get Your Free Exam Success Starter Kit</h2>
+                <p>Join 25,000+ students who receive our weekly exam tips, exclusive practice questions, and early access to new courses.</p>
+                <ul class="lead-benefits">
+                    <li>✅ 50+ Practice questions for TOEFL, IELTS & more</li>
+                    <li>✅ Monthly exam date reminder service</li>
+                    <li>✅ Exclusive discount codes (up to 40% off)</li>
+                    <li>✅ Study planner templates & checklists</li>
+                </ul>
+            </div>
+            <div class="lead-form">
+                <form onsubmit="handleSubscribe(event)">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Target Exam</label>
+                        <select required>
+                            <option value="">Select your exam...</option>
+                            <option>TOEFL iBT</option>
+                            <option>IELTS Academic</option>
+                            <option>IELTS General</option>
+                            <option>Duolingo English Test</option>
+                            <option>PMP Certification</option>
+                            <option>AWS Certifications</option>
+                            <option>Google Certificates</option>
+                            <option>Cisco CCNA/CCNP</option>
+                            <option>CompTIA A+/Network+/Security+</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Get Free Access Now →</button>
+                    <p style="font-size: 0.8rem; color: #64748b; margin-top: 1rem; text-align: center;">
+                        🔒 We respect your privacy. Unsubscribe anytime.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-header">
+            <div class="section-tag">About Us</div>
+            <h2 class="section-title">Why Choose PrepLoom?</h2>
+        </div>
+        
+<div class="grid-2col">
+            <div>
+                <h3 style="font-size: 1.8rem; color: var(--dark); margin-bottom: 1rem;">Our Mission</h3>
+                <p style="color: #64748b; margin-bottom: 1.5rem; line-height: 1.8;">
+                <p style="color: #64748b; margin-bottom: 1.5rem; line-height: 1.8;">
+                    To become the world's most trusted platform for professional and academic certification preparation, helping 1 million candidates achieve their career and educational goals by 2030.
+                </p>
+
+                <div style="display: flex; gap: 2rem; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--secondary);">15+</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">Expert Instructors</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--secondary);">50K+</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">Success Stories</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--secondary);">98%</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">Pass Rate</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow-lg);">
+                <h3 style="margin-bottom: 1.5rem; color: var(--dark);">What Makes Us Different</h3>
+                <ul style="list-style: none; display: grid; gap: 1rem;">
+                    <li style="display: flex; align-items: start; gap: 1rem;">
+                        <span style="background: #dbeafe; color: var(--primary); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</span>
+                        <div>
+                            <strong>Real Exam Experience</strong>
+                            <p style="color: #64748b; font-size: 0.9rem;">Our practice tests mirror the actual exam interface and timing</p>
+                        </div>
+                    </li>
+                    <li style="display: flex; align-items: start; gap: 1rem;">
+                        <span style="background: #dbeafe; color: var(--primary); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</span>
+                        <div>
+                            <strong>AI-Powered Analytics</strong>
+                            <p style="color: #64748b; font-size: 0.9rem;">Personalized study plans based on your performance data</p>
+                        </div>
+                    </li>
+                    <li style="display: flex; align-items: start; gap: 1rem;">
+                        <span style="background: #dbeafe; color: var(--primary); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</span>
+                        <div>
+                            <strong>Expert Support 24/7</strong>
+                            <p style="color: #64748b; font-size: 0.9rem;">Get your questions answered by certified instructors anytime</p>
+                        </div>
+                    </li>
+                    <li style="display: flex; align-items: start; gap: 1rem;">
+                        <span style="background: #dbeafe; color: var(--primary); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</span>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact" style="background: white;">
+        <div class="section-header">
+            <div class="section-tag">Get In Touch</div>
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Have questions? Our team is here to help you choose the right preparation path</p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <form style="display: grid; gap: 1.5rem;" onsubmit="handleContact(event)">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;" class="contact-name-row">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Doe" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <select required>
+                        <option value="">Select a topic...</option>
+                        <option>Course Inquiry</option>
+                        <option>Technical Support</option>
+                        <option>Partnership Opportunity</option>
+                        <option>Billing Question</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea style="width: 100%; padding: 0.75rem 1rem; border: 2px solid var(--border); border-radius: 8px; min-height: 150px; font-family: inherit; font-size: 1rem;" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; text-align: center;">
+                <div>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📧</div>
+                    <h4>Email Us</h4>
+                    <p style="color: #64748b; font-size: 0.9rem;">support@preploom.com</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">💬</div>
+                    <h4>Live Chat</h4>
+                    <p style="color: #64748b; font-size: 0.9rem;">Available 24/7</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+                    <h4>Call Us</h4>
+                    <p style="color: #64748b; font-size: 0.9rem;">+234 703-1323-048</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Ad -->
+    <div class="ad-placeholder" style="margin-bottom: 0;">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-text">Footer Ad Space / Newsletter Sponsorship Area</div>
+    </div>
+
+    <!-- Advanced Features Section -->
+    <section class="section" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+        <div class="section-header">
+            <div class="section-tag">Cutting-Edge Technology</div>
+            <h2 class="section-title">Advanced Learning Features</h2>
+            <p class="section-subtitle">Experience the future of exam preparation with our proprietary AI-powered platform and immersive learning tools</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+            <!-- AI Learning Analytics -->
+            <div style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: var(--shadow); border: 1px solid var(--border);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">🤖</div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--dark); margin: 0;">AI Learning Analytics</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem; margin: 0.25rem 0 0 0;">Personalized insights powered by machine learning</p>
+                    </div>
+                </div>
+                <p style="color: var(--text); margin-bottom: 1.5rem; line-height: 1.6;">Our advanced AI analyzes your study patterns, identifies knowledge gaps, and creates customized learning paths that adapt in real-time to your progress.</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--success); font-size: 1.1rem;">✓</span>
+                        <span style="font-size: 0.9rem;">Predictive performance modeling</span>
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--success); font-size: 1.1rem;">✓</span>
+                        <span style="font-size: 0.9rem;">Adaptive difficulty adjustment</span>
+                    </li>
+                    <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--success); font-size: 1.1rem;">✓</span>
+                        <span style="font-size: 0.9rem;">Smart review scheduling</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Virtual Reality Labs -->
+            <div style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: var(--shadow); border: 1px solid var(--border);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">🥽</div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--dark); margin: 0;">VR Practice Labs</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem; margin: 0.25rem 0 0 0;">Immersive exam simulation environments</p>
+                    </div>
+                </div>
+                <p style="color: var(--text); margin-bottom: 1.5rem; line-height: 1.6;">Step into realistic exam environments with our VR labs. Practice in test centers, meeting rooms, and office settings that mirror real certification scenarios.</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--success); font-size: 1.1rem;">✓</span>
+                        <span style="font-size: 0.9rem;">Realistic test center simulation</span>
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--success); font-size: 1.1rem;">✓</span>
+                        <span style="font-size: 0.9rem;">Interactive whiteboards & equipment</span>
+                    </li>
+                    <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--success); font-size: 1.1rem;">✓</span>
+                        <span style="font-size: 0.9rem;">Stress management scenarios</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Real-time Dashboard -->
+            <div style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: var(--shadow); border: 1px solid var(--border);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">📊</div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--dark); margin: 0;">Live Progress Dashboard</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem; margin: 0.25rem 0 0 0;">Real-time performance tracking</p>
+                    </div>
+                </div>
+                <p style="color: var(--text); margin-bottom: 1.5rem; line-height: 1.6;">Monitor your improvement with detailed analytics, progress charts, and predictive score modeling that updates after every practice session.</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--success); font-size: 1.1rem;">✓</span>
+                        <span style="font-size: 0.9rem;">Score prediction algorithms</span>
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--success); font-size: 1.1rem;">✓</span>
+                        <span style="font-size: 0.9rem;">Weakness identification</span>
+                    </li>
+                    <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--success); font-size: 1.1rem;">✓</span>
+                        <span style="font-size: 0.9rem;">Study streak tracking</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Q&A Sessions -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-tag">Expert Support</div>
+            <h2 class="section-title">Live Q&A Sessions with Industry Experts</h2>
+            <p class="section-subtitle">Get your questions answered by certified professionals and exam developers in real-time interactive sessions</p>
+        </div>
+
+<div class="grid-2col">
+            <div>
+                <h3 style="font-size: 1.8rem; color: var(--dark); margin-bottom: 1rem;">Weekly Live Sessions</h3>
+                <p style="color: #64748b; margin-bottom: 2rem; line-height: 1.8;">
+
+                <div style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="background: var(--secondary); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700;">1</span>
+                        <span style="color: var(--text);">TOEFL Strategy Sessions (Every Tuesday)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="background: var(--secondary); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700;">2</span>
+                        <span style="color: var(--text);">AWS Certification Deep Dives (Every Wednesday)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="background: var(--secondary); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700;">3</span>
+                        <span style="color: var(--text);">PMP Case Study Reviews (Every Thursday)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="background: var(--secondary); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700;">4</span>
+                        <span style="color: var(--text);">IELTS Speaking Practice (Every Friday)</span>
+                    </div>
+                </div>
+
+                <a href="#" style="background: var(--secondary); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block;">View Session Schedule →</a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow-lg);">
+                <h4 style="margin-bottom: 1.5rem; color: var(--dark);">Recent Session Highlights</h4>
+                <div style="display: grid; gap: 1.5rem;">
+                    <div style="border-left: 4px solid var(--secondary); padding-left: 1rem;">
+                        <h5 style="color: var(--dark); margin-bottom: 0.5rem;">TOEFL Reading Strategies</h5>
+                        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 0.5rem;">"Master the 3-pass approach for academic passages"</p>
+                        <div style="display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; color: #94a3b8;">
+                            <span>👤 Dr. Sarah Chen, ETS Developer</span>
+                            <span>👥 247 attendees</span>
+                        </div>
+                    </div>
+                    <div style="border-left: 4px solid var(--success); padding-left: 1rem;">
+                        <h5 style="color: var(--dark); margin-bottom: 0.5rem;">AWS Cost Optimization</h5>
+                        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 0.5rem;">"Reduce cloud costs by 30% with these proven techniques"</p>
+                        <div style="display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; color: #94a3b8;">
+                            <span>👤 Mark Johnson, AWS Solutions Architect</span>
+                            <span>👥 189 attendees</span>
+                        </div>
+                    </div>
+                    <div style="border-left: 4px solid var(--accent); padding-left: 1rem;">
+                        <h5 style="color: var(--dark); margin-bottom: 0.5rem;">PMP Risk Management</h5>
+                        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 0.5rem;">"How to identify and mitigate project risks effectively"</p>
+                        <div style="display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; color: #94a3b8;">
+                            <span>👤 Lisa Wong, PMP, CSM</span>
+                            <span>👥 312 attendees</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personalized Study Plans -->
+    <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <div class="section-header">
+            <div class="section-tag" style="color: rgba(255,255,255,0.8);">AI-Powered Planning</div>
+            <h2 class="section-title" style="color: white;">Personalized Study Plans</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Get a custom curriculum designed specifically for your learning style, schedule, and target score</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="margin-bottom: 1rem;">📊 Assessment Phase</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.9;">Take our comprehensive diagnostic test to identify your current proficiency level and knowledge gaps.</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; opacity: 0.9;">• Detailed skill analysis</li>
+                    <li style="padding: 0.5rem 0; opacity: 0.9;">• Time management evaluation</li>
+                    <li style="padding: 0.5rem 0; opacity: 0.9;">• Learning style identification</li>
+                </ul>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="margin-bottom: 1rem;">🎯 Customization Phase</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.9;">Our AI creates a personalized curriculum based on your goals, available time, and learning preferences.</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; opacity: 0.9;">• Flexible scheduling options</li>
+                    <li style="padding: 0.5rem 0; opacity: 0.9;">• Adaptive difficulty levels</li>
+                    <li style="padding: 0.5rem 0; opacity: 0.9;">• Progress milestone tracking</li>
+                </ul>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="margin-bottom: 1rem;">🚀 Optimization Phase</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.9;">Continuous monitoring and adjustment ensures you're always on the most effective learning path.</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; opacity: 0.9;">• Real-time performance analysis</li>
+                    <li style="padding: 0.5rem 0; opacity: 0.9;">• Dynamic content recommendations</li>
+                    <li style="padding: 0.5rem 0; opacity: 0.9;">• Motivation and accountability</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="#" style="background: white; color: var(--primary); padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Create My Study Plan →</a>
+        </div>
+    </section>
+
+    <!-- Success Stories Gallery -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-tag">Real Transformations</div>
+            <h2 class="section-title">Success Stories Gallery</h2>
+            <p class="section-subtitle">See how our students achieved their dream scores and advanced their careers</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow);">
+                <div style="height: 200px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">🎓</div>
+                <div style="padding: 2rem;">
+                    <h4 style="color: var(--dark); margin-bottom: 0.5rem;">From 85 to 115 TOEFL Score</h4>
+                    <p style="color: var(--text); font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.6;">"The AI-powered study plan identified my weak areas in speaking and provided targeted practice. I improved 30 points in just 6 weeks!"</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: 600; color: var(--primary);">Maria Rodriguez</span>
+                        <span style="color: var(--text-light); font-size: 0.8rem;">Accepted to Harvard</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow);">
+                <div style="height: 200px; background: linear-gradient(135deg, #10b981, #059669); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">💼</div>
+                <div style="padding: 2rem;">
+                    <h4 style="color: var(--dark); margin-bottom: 0.5rem;">PMP Certification First Try</h4>
+                    <p style="color: var(--text); font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.6;">"The virtual labs prepared me perfectly for the real exam environment. The risk management simulations were incredibly realistic."</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: 600; color: var(--primary);">David Chen</span>
+                        <span style="color: var(--text-light); font-size: 0.8rem;">Project Manager at Google</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow);">
+                <div style="height: 200px; background: linear-gradient(135deg, #f59e0b, #d97706); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">☁️</div>
+                <div style="padding: 2rem;">
+                    <h4 style="color: var(--dark); margin-bottom: 0.5rem;">AWS Solutions Architect Pro</h4>
+                    <p style="color: var(--text); font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.6;">"The live Q&A sessions with AWS experts gave me insights I couldn't find anywhere else. Passed all 3 exams on first attempt!"</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: 600; color: var(--primary);">Sarah Johnson</span>
+                        <span style="color: var(--text-light); font-size: 0.8rem;">Cloud Architect at Amazon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="#" style="background: var(--secondary); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Read More Success Stories →</a>
+        </div>
+    </section>
+
+    <!-- Industry Partnerships -->
+    <section class="section" style="background: #f8fafc;">
+        <div class="section-header">
+            <div class="section-tag">Trusted Partnerships</div>
+            <h2 class="section-title">Industry Partnerships & Accreditations</h2>
+            <p class="section-subtitle">We collaborate with leading organizations to provide the most accurate and up-to-date exam preparation</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 12px; box-shadow: var(--shadow);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">📚</div>
+                <h4 style="color: var(--dark); margin-bottom: 0.5rem;">ETS Official Partner</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Authorized TOEFL iBT preparation provider</p>
+            </div>
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 12px; box-shadow: var(--shadow);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+                <h4 style="color: var(--dark); margin-bottom: 0.5rem;">PMI Authorized Training</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Official PMP certification training partner</p>
+            </div>
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 12px; box-shadow: var(--shadow);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">☁️</div>
+                <h4 style="color: var(--dark); margin-bottom: 0.5rem;">AWS Training Partner</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Advanced Consulting Partner status</p>
+            </div>
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 12px; box-shadow: var(--shadow);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
+                <h4 style="color: var(--dark); margin-bottom: 0.5rem;">CompTIA Partner</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Authorized training and testing center</p>
+            </div>
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 12px; box-shadow: var(--shadow);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🎓</div>
+                <h4 style="color: var(--dark); margin-bottom: 0.5rem;">Cambridge Assessment</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Official IELTS preparation center</p>
+            </div>
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 12px; box-shadow: var(--shadow);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+                <h4 style="color: var(--dark); margin-bottom: 0.5rem;">Google for Education</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Certified training partner</p>
+            </div>
+        </div>
+
+        <div style="background: white; padding: 3rem; border-radius: 16px; box-shadow: var(--shadow); text-align: center;">
+            <h3 style="color: var(--dark); margin-bottom: 1rem;">Accreditation & Recognition</h3>
+            <p style="color: var(--text); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Preploom is accredited by leading educational bodies and recognized by Fortune 500 companies as a premier certification training provider.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="background: #dbeafe; color: var(--primary); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">ISO 9001 Certified</div>
+                <div style="background: #dcfce7; color: #166534; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Microsoft Partner</div>
+                <div style="background: #fef3c7; color: #92400e; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Cisco Academy</div>
+                <div style="background: #e0e7ff; color: #3730a3; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">PMI REP</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Learning App -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-tag">Mobile Learning</div>
+            <h2 class="section-title">Learn Anywhere with Our Mobile App</h2>
+            <p class="section-subtitle">Access your personalized study materials, practice tests, and progress tracking on the go</p>
+        </div>
+
+<div class="grid-2col">
+            <div>
+                <h3 style="font-size: 1.8rem; color: var(--dark); margin-bottom: 1rem;">Study Smarter, Not Harder</h3>
+                <p style="color: #64748b; margin-bottom: 2rem; line-height: 1.8;">
+
+                <div style="display: grid; gap: 1.5rem;">
+                    <div style="display: flex; align-items: start; gap: 1rem;">
+                        <div style="background: var(--secondary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">📱</div>
+                        <div>
+                            <h4 style="color: var(--dark); margin-bottom: 0.25rem;">Offline Access</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">Download lessons and practice tests for offline study</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: start; gap: 1rem;">
+                        <div style="background: var(--secondary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">🎧</div>
+                        <div>
+                            <h4 style="color: var(--dark); margin-bottom: 0.25rem;">Audio Lessons</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">Listen to expert explanations while commuting or exercising</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: start; gap: 1rem;">
+                        <div style="background: var(--secondary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">📊</div>
+                        <div>
+                            <h4 style="color: var(--dark); margin-bottom: 0.25rem;">Smart Reminders</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">AI-powered notifications to keep you on track</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: start; gap: 1rem;">
+                        <div style="background: var(--secondary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">🎯</div>
+                        <div>
+                            <h4 style="color: var(--dark); margin-bottom: 0.25rem;">Micro-Learning</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">5-minute lessons perfect for busy schedules</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <a href="#" style="background: #000; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>📱</span> Download for iOS
+                    </a>
+                    <a href="#" style="background: #3ddc84; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>🤖</span> Download for Android
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <div style="background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 24px; padding: 2rem; color: white; margin-bottom: 2rem;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">📱</div>
+                    <h4 style="margin-bottom: 0.5rem;">Preploom Mobile App</h4>
+                    <p style="opacity: 0.9; font-size: 0.9rem;">Available on iOS and Android</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow);">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⭐⭐⭐⭐⭐</div>
+                        <p style="color: var(--text); font-size: 0.9rem;">"Best study app I've ever used!"</p>
+                        <p style="color: var(--text-light); font-size: 0.8rem;">- App Store Review</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: var(--shadow);">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📈</div>
+                        <p style="color: var(--text); font-size: 0.9rem;">500K+ Downloads</p>
+                        <p style="color: var(--text-light); font-size: 0.8rem;">4.9★ Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Roadmap -->
+    <section class="section" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
+        <div class="section-header">
+            <div class="section-tag" style="color: rgba(255,255,255,0.8);">Career Guidance</div>
+            <h2 class="section-title" style="color: white;">Certification Roadmap</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Plan your career progression with our interactive certification pathfinders</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="margin-bottom: 1rem;">🎓 Academic Path</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.9;">For students pursuing higher education abroad</p>
+                <div style="display: grid; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; opacity: 0.9;">
+                        <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%;"></span>
+                        <span>TOEFL iBT → IELTS → Cambridge CPE</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; opacity: 0.9;">
+                        <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%;"></span>
+                        <span>University applications & scholarships</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; opacity: 0.9;">
+                        <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%;"></span>
+                        <span>Visa interview preparation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="margin-bottom: 1rem;">💼 IT Career Path</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.9;">From entry-level to cloud architect</p>
+                <div style="display: grid; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; opacity: 0.9;">
+                        <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%;"></span>
+                        <span>CompTIA A+ → Network+ → Security+</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; opacity: 0.9;">
+                        <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%;"></span>
+                        <span>AWS Cloud Practitioner → Solutions Architect</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; opacity: 0.9;">
+                        <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%;"></span>
+                        <span>Cisco CCNA → CCNP → CCIE</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="margin-bottom: 1rem;">📊 Project Management</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.9;">Build your PM career from foundation to executive level</p>
+                <div style="display: grid; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; opacity: 0.9;">
+                        <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%;"></span>
+                        <span>Google Project Management → PMP</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; opacity: 0.9;">
+                        <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%;"></span>
+                        <span>CSM (Scrum Master) → PMP-ACP</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; opacity: 0.9;">
+                        <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%;"></span>
+                        <span>PfMP (Portfolio Management)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="#" style="background: white; color: #f5576c; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Explore Career Paths →</a>
+        </div>
+    </section>
+
+    <!-- Community Forum Preview -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-tag">Community Learning</div>
+            <h2 class="section-title">Join Our Learning Community</h2>
+            <p class="section-subtitle">Connect with fellow learners, share experiences, and get support from our global community of exam takers</p>
+        </div>
+
+<div class="grid-2col">
+            <div>
+                <h3 style="font-size: 1.8rem; color: var(--dark); margin-bottom: 1rem;">Learn Together, Succeed Together</h3>
+                <p style="color: #64748b; margin-bottom: 2rem; line-height: 1.8;">
+
+                <div style="display: grid; gap: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="background: var(--secondary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">💬</div>
+                        <div>
+                            <h4 style="color: var(--dark); margin-bottom: 0.25rem;">Discussion Forums</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">Topic-specific forums for each exam and certification</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="background: var(--secondary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">📚</div>
+                        <div>
+                            <h4 style="color: var(--dark); margin-bottom: 0.25rem;">Study Groups</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">Form or join study groups based on exam dates and goals</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="background: var(--secondary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🏆</div>
+                        <div>
+                            <h4 style="color: var(--dark); margin-bottom: 0.25rem;">Success Stories</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">Share your achievements and inspire others</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="background: var(--secondary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🎯</div>
+                        <div>
+                            <h4 style="color: var(--dark); margin-bottom: 0.25rem;">Mentorship Program</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">Get guidance from experienced mentors who have passed the exams</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" style="background: var(--secondary); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 2rem;">Join Community →</a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow-lg);">
+                <h4 style="margin-bottom: 1.5rem; color: var(--dark);">Recent Community Activity</h4>
+                <div style="display: grid; gap: 1.5rem;">
+                    <div style="border-left: 4px solid var(--secondary); padding-left: 1rem;">
+                        <p style="color: var(--dark); font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Maria R.</strong> just scored 115 on TOEFL! 🎉</p>
+                        <p style="color: #64748b; font-size: 0.8rem;">"The study group helped me so much with speaking practice!"</p>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem;">
+                            <span style="color: #94a3b8; font-size: 0.7rem;">2 hours ago</span>
+                            <span style="color: var(--secondary); font-size: 0.7rem;">💬 23 replies</span>
+                        </div>
+                    </div>
+                    <div style="border-left: 4px solid var(--success); padding-left: 1rem;">
+                        <p style="color: var(--dark); font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>David C.</strong> passed AWS SAA-C03 first try!</p>
+                        <p style="color: #64748b; font-size: 0.8rem;">"The practice labs were spot-on. Thanks community!"</p>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem;">
+                            <span style="color: #94a3b8; font-size: 0.7rem;">5 hours ago</span>
+                            <span style="color: var(--secondary); font-size: 0.7rem;">👍 45 likes</span>
+                        </div>
+                    </div>
+                    <div style="border-left: 4px solid var(--accent); padding-left: 1rem;">
+                        <p style="color: var(--dark); font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Sarah J.</strong> seeking PMP study partners</p>
+                        <p style="color: #64748b; font-size: 0.8rem;">"Looking for 2-3 people for weekly study sessions. Exam in June."</p>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem;">
+                            <span style="color: #94a3b8; font-size: 0.7rem;">1 day ago</span>
+                            <span style="color: var(--secondary); font-size: 0.7rem;">👥 8 interested</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>PrepLoom</h3>
+                <p style="color: #94a3b8; margin-bottom: 1rem;">Empowering careers through certification excellence since 2018.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">ig</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Language Exams</h3>
+                <ul class="footer-links">
+                    <li><a href="#">TOEFL iBT Preparation</a></li>
+                    <li><a href="#">IELTS Academic</a></li>
+                    <li><a href="#">IELTS General Training</a></li>
+                    <li><a href="#">Duolingo English Test</a></li>
+                    <li><a href="#">Cambridge English (FCE, CAE, CPE)</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Professional Certs</h3>
+                <ul class="footer-links">
+                    <li><a href="#">PMP Certification</a></li>
+                    <li><a href="#">AWS Certifications</a></li>
+                    <li><a href="#">Google Professional</a></li>
+                    <li><a href="#">Cisco CCNA/CCNP</a></li>
+                    <li><a href="#">CompTIA A+/Network+/Security+</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Free Practice Tests</a></li>
+                    <li><a href="#">Study Guides</a></li>
+                    <li><a href="#">Exam Dates Calendar</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 PrepLoom Institute. All rights reserved. | <a href="#" style="color: #64748b;">Privacy Policy</a> | <a href="#" style="color: #64748b;">Terms of Service</a> | <a href="#" style="color: #64748b;">Affiliate Disclosure</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Calendar Widget
+        function generateCalendar() {
+            const calendar = document.getElementById('calendar');
+            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const examDates = [5, 12, 15, 19, 22, 26, 29]; // Example exam dates
+            
+            // Day headers
+            days.forEach(day => {
+                const header = document.createElement('div');
+                header.className = 'calendar-day-header';
+                header.textContent = day;
+                calendar.appendChild(header);
+            });
+
+            // Empty cells for April 2026 (starts on Wednesday)
+            for (let i = 0; i < 3; i++) {
+                const empty = document.createElement('div');
+                calendar.appendChild(empty);
+            }
+
+            // Days
+            for (let day = 1; day <= 30; day++) {
+                const cell = document.createElement('div');
+                cell.className = 'calendar-day';
+                cell.textContent = day;
+                
+                if (examDates.includes(day)) {
+                    cell.classList.add('has-exam');
+                    cell.title = 'TOEFL iBT Available';
+                }
+                
+                if (day === 22) { // Today
+                    cell.classList.add('today');
+                }
+                
+                cell.onclick = () => {
+                    if (examDates.includes(day)) {
+                        alert(`Exam slots available on April ${day}, 2026. Click to register.`);
+                    }
+                };
+                
+                calendar.appendChild(cell);
+            }
+        }
+
+        function changeMonth(direction) {
+            // Simplified month change - in production, this would update the calendar
+            alert('Calendar navigation: ' + (direction > 0 ? 'Next month' : 'Previous month'));
+        }
+
+        // Tab Switching
+        function switchTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        // Sample Question Interaction
+        function selectOption(element) {
+            // Remove previous selections
+            element.parentElement.querySelectorAll('li').forEach(li => {
+                li.style.borderColor = 'transparent';
+                li.style.background = 'white';
+            });
+            
+            // Highlight selected
+            element.style.borderColor = 'var(--secondary)';
+            element.style.background = '#eff6ff';
+        }
+
+        function showAnswer(button) {
+            const explanation = button.nextElementSibling;
+            explanation.style.display = explanation.style.display === 'none' ? 'block' : 'none';
+            button.textContent = explanation.style.display === 'none' ? 'Show Answer & Explanation' : 'Hide Answer';
+            
+            // Highlight correct answer
+            const options = button.previousElementSibling.querySelectorAll('li');
+            options[1].classList.add('correct'); // B is correct in this example
+        }
+
+// Backend API Integration
+async function handleSubscribe(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    
+    try {
+        const response = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        alert(result.message);
+        e.target.reset();
+    } catch (error) {
+        alert('Subscription failed. Please try again.');
+    }
+}
+
+async function handleContact(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = {
+        firstName: formData.get('firstName') || '',
+        lastName: formData.get('lastName') || '',
+        email: formData.get('email') || '',
+        subject: formData.get('subject') || '',
+        message: formData.get('message') || ''
+    };
+    
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        alert(result.message);
+        e.target.reset();
+    } catch (error) {
+        alert('Message failed to send. Please try again.');
+    }
+}
+
+// Load dynamic data
+async function loadCalendarData() {
+    try {
+        const response = await fetch('/api/calendar');
+        const data = await response.json();
+        generateCalendarFromData(data);
+    } catch (error) {
+        console.error('Failed to load calendar:', error);
+        generateCalendar(); // Fallback to static
+    }
+}
+
+function generateCalendarFromData(data) {
+    const calendar = document.getElementById('calendar');
+    calendar.innerHTML = '';
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    
+    // Headers
+    days.forEach(day => {
+        const header = document.createElement('div');
+        header.className = 'calendar-day-header';
+        header.textContent = day;
+        calendar.appendChild(header);
+    });
+    
+    // Empty cells (April 2026 starts Wednesday)
+    for (let i = 0; i < 3; i++) {
+        calendar.appendChild(document.createElement('div'));
+    }
+    
+    // Days
+    for (let day = 1; day <= 30; day++) {
+        const cell = document.createElement('div');
+        cell.className = 'calendar-day';
+        cell.textContent = day;
+        
+        if (data.examDates.includes(day)) {
+            cell.classList.add('has-exam');
+            cell.title = data.exams[day] || 'Exam available';
+        }
+        if (day === data.today) {
+            cell.classList.add('today');
+        }
+        cell.onclick = () => alert(`Exam: ${data.exams[day] || 'Multiple exams'} on ${data.month}`);
+        calendar.appendChild(cell);
+    }
+}
+
+// Load blog data
+async function loadBlogData() {
+    try {
+        const response = await fetch('/api/blog');
+        const data = await response.json();
+        renderBlog(data);
+    } catch (error) {
+        console.error('Failed to load blog:', error);
+    }
+}
+
+function renderBlog(data) {
+    const grid = document.querySelector('.blog-grid');
+    grid.innerHTML = '';
+    data.forEach(post => {
+        const card = document.createElement('article');
+        card.className = 'blog-card';
+        card.innerHTML = `
+            <div class="blog-image">${getIcon(post.category)}</div>
+            <div class="blog-content">
+                <div class="blog-category">${post.category}</div>
+                <h3 class="blog-title">${post.title}</h3>
+                <p class="blog-excerpt">${post.excerpt}</p>
+                <div class="blog-meta">
+                    <span>${post.readTime}</span>
+                    <a href="#" class="read-more">Read Article →</a>
+                </div>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+function getIcon(category) {
+    const icons = {
+        'TOEFL Strategy': '🎯',
+        'Cloud Computing': '☁️',
+        'IELTS Tips': '⏰'
+    };
+    return icons[category] || '📄';
+}
+
+// Initialize with backend data
+document.addEventListener('DOMContentLoaded', async function() {
+    loadCalendarData();
+    loadBlogData();
+    generateCalendar(); // Fallback
+    // ... existing init code
+});
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            generateCalendar();
+            
+            // Add scroll animation observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.exam-card, .blog-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease-out';
+                observer.observe(el);
+            });
+        });
+
+        // Dynamic News Ticker Speed Control
+        let tickerSpeed = 30;
+        const ticker = document.querySelector('.ticker-wrapper');
+        
+        function pauseTicker() {
+            ticker.style.animationPlayState = 'paused';
+        }
+        
+        function resumeTicker() {
+            ticker.style.animationPlayState = 'running';
+        }
+        
+        ticker.addEventListener('mouseenter', pauseTicker);
+        ticker.addEventListener('mouseleave', resumeTicker);
+    </script>
+    
+    <!-- PrepLoom AI Chat Widget -->
+    <script src="chat.js"></script>
+</body>
+</html>

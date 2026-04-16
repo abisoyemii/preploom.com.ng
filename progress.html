@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Progress | Preploom</title>
+    <style>
+        :root {
+            --primary: #1e40af; --secondary: #3b82f6; --success: #10b981; --warning: #f59e0b;
+            --dark: #000; --light: #f9fafb; --text: #111827; --border: #e5e7eb; --shadow: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--light); color: var(--text); }
+        /* Navbar (match dashboard) */
+        .navbar { background: linear-gradient(135deg, var(--primary), #000); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-lg); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo img { width: 280px; height: 80px; object-fit: cover; border-radius: 8px; }
+        .user-menu { display: flex; gap: 1rem; }
+        .user-profile { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; }
+        /* Main */
+        .dashboard-content { max-width: 1200px; margin: 4rem auto 2rem; padding: 0 2rem; }
+        .section { background: white; border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow); margin-bottom: 2rem; }
+        h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--dark); }
+        .progress-table { width: 100%; border-collapse: collapse; }
+        .progress-row { border-bottom: 1px solid var(--border); }
+        .progress-row:hover { background: var(--light); }
+        th, td { padding: 1.25rem; text-align: left; }
+        th { background: var(--light); font-weight: 600; }
+        .progress-bar { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--success), var(--warning)); transition: width 0.5s; }
+        .btn { padding: 0.5rem 1rem; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+        .btn-primary { background: var(--secondary); color: white; }
+        .btn-success { background: var(--success); color: white; }
+        .btn-warning { background: var(--warning); color: white; }
+        .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+        .loading { opacity: 0.7; pointer-events: none; }
+        @media (max-width: 768px) { .dashboard-content { padding: 0 1rem; } .progress-table { font-size: 0.9rem; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="logo"><img src="images/Preploom.png" alt="Preploom"></a>
+            <div class="user-menu">
+                <div class="user-profile" id="userName">Loading...</div>
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-content">
+        <div class="section">
+            <h2>📊 Detailed Progress</h2>
+            <p>Track and update your progress for each enrolled exam.</p>
+            <table class="progress-table" id="progressTable">
+                <thead><tr><th>Exam</th><th>Progress</th><th>Lessons</th><th>Tests</th><th>Score</th><th>Actions</th></tr></thead>
+                <tbody></tbody>
+            </table>
+            <div id="message" style="margin-top: 1rem; padding: 1rem; border-radius: 8px; display: none;"></div>
+        </div>
+    </div>
+
+    <script>
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (!token) location.href = 'login.html';
+
+        document.getElementById('userName').textContent = user.name;
+
+        async function loadProgress() {
+            document.body.classList.add('loading');
+            try {
+                const res = await fetch('/api/progress', { headers: { 'Authorization': `Bearer ${token}` } });
+                const progress = await res.json();
+                const tbody = document.querySelector('#progressTable tbody');
+                tbody.innerHTML = Object.entries(progress).map(([exam, data]) => `
+                    <tr class="progress-row">
+                        <td><strong>${exam.toUpperCase()}</strong></td>
+                        <td><div class="progress-bar"><div class="progress-fill" style="width: ${data.progress}%"></div></div> ${data.progress}%</td>
+                        <td>${data.lessons}</td>
+                        <td>${data.tests}</td>
+                        <td>${data.score}</td>
+                        <td>
+                            <input type="number" id="prog-${exam}" value="${data.progress}" min="0" max="100" style="width: 60px;">
+                            <button class="btn btn-success" onclick="updateProgress('${exam}')">Update</button>
+                        </td>
+                    </tr>
+                `).join('');
+            } catch {
+                showMessage('Error loading progress', 'error');
+            } finally {
+                document.body.classList.remove('loading');
+            }
+        }
+
+        async function updateProgress(exam) {
+            const newProgress = parseInt(document.getElementById(`prog-${exam}`).value);
+            if (isNaN(newProgress) || newProgress < 0 || newProgress > 100) return showMessage('Invalid progress (0-100)', 'error');
+
+            try {
+                const res = await fetch('/api/progress', {
+                    method: 'PUT',
+                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ [exam]: { progress: newProgress, updated: new Date().toISOString() } })
+                });
+                if (res.ok) {
+                    showMessage('Progress updated!', 'success');
+                    loadProgress();
+                } else {
+                    showMessage('Update failed', 'error');
+                }
+            } catch {
+                showMessage('Network error', 'error');
+            }
+        }
+
+        function showMessage(text, type) {
+            const msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.className = type;
+            msg.style.display = 'block';
+            setTimeout(() => msg.style.display = 'none', 3000);
+        }
+
+        function logout() {
+            localStorage.removeItem('token'); localStorage.removeItem('user');
+            location.href = 'login.html';
+        }
+
+        window.onload = loadProgress;
+    </script>
+</body>
+</html>

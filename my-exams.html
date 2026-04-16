@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Exams | EliteExam Institute</title>
+    <style>
+        :root { --primary: #1e40af; --secondary: #3b82f6; --success: #10b981; --danger: #ef4444; --dark: #000; --light: #f9fafb; --shadow-lg: 0 10px 15px rgba(0,0,0,0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--light); }
+        .navbar { background: linear-gradient(135deg, var(--primary), #000); color: white; padding: 1rem 0; position: sticky; top: 0; box-shadow: var(--shadow-lg); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo img { width: 280px; height: 80px; object-fit: cover; border-radius: 8px; }
+        .user-menu { display: flex; gap: 1rem; }
+        .dashboard-content { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+        .section { background: white; border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow-lg); margin-bottom: 2rem; }
+        h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+        .exams-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; }
+        .exam-card { border: 2px solid var(--light); border-radius: 16px; padding: 1.5rem; transition: all 0.3s; cursor: pointer; }
+        .exam-card:hover { border-color: var(--secondary); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+        .exam-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .exam-status { padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+        .btn { padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s; margin: 0.25rem; }
+        .btn-primary { background: var(--secondary); color: white; }
+        .btn-danger { background: var(--danger); color: white; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        #availableExams { margin-top: 2rem; }
+        .loading { opacity: 0.7; }
+        @media (max-width: 768px) { .exams-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="logo"><img src="images/Preploom.png" alt="EliteExam"></a>
+            <div class="user-menu" id="userName">Loading...</div>
+            <a href="#" onclick="logout()" style="color: white; text-decoration: none;">Logout</a>
+        </div>
+    </nav>
+
+    <div class="dashboard-content">
+        <div class="section">
+            <h2>📋 My Exams</h2>
+            <div id="enrolledExams" class="exams-grid"></div>
+        </div>
+        <div class="section">
+            <h2>➕ Available Exams</h2>
+            <div id="availableExams" class="exams-grid"></div>
+        </div>
+        <div id="message" style="padding: 1rem; border-radius: 8px; display: none; margin: 1rem 2rem;"></div>
+    </div>
+
+    <script>
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (!token) location.href = 'login.html';
+
+        document.getElementById('userName').textContent = user.name;
+
+        async function loadExams() {
+            document.body.classList.add('loading');
+            try {
+                // Enrolled
+                const enrollRes = await fetch('/api/enrollments', { headers: { 'Authorization': `Bearer ${token}` } });
+                const enrollments = await enrollRes.json();
+                const examsRes = await fetch('/api/exams');
+                const exams = await examsRes.json();
+                const enrolledExams = exams.filter(e => enrollments.includes(e.id));
+
+                document.getElementById('enrolledExams').innerHTML = enrolledExams.map(e => `
+                    <div class="exam-card">
+                        <div class="exam-title">${e.title}</div>
+                        <div>${e.description}</div>
+                        <div style="margin-top: 1rem;">
+                            <span class="exam-status" style="background: #10b981; color: white;">Enrolled</span>
+                            <button class="btn btn-danger" onclick="unenroll(${e.id})">Unenroll</button>
+                        </div>
+                    </div>
+                `).join('') || '<p>No enrolled exams. Enroll below!</p>';
+
+                // Available
+                const available = exams.filter(e => !enrollments.includes(e.id));
+                document.getElementById('availableExams').innerHTML = available.map(e => `
+                    <div class="exam-card">
+                        <div class="exam-title">${e.title}</div>
+                        <div>${e.description}</div>
+                        <div style="margin-top: 1rem;">
+                            <span class="exam-status" style="background: #f3f4f6; color: #374151;">Available</span>
+                            <button class="btn btn-primary" onclick="enroll(${e.id})">Enroll Now</button>
+                        </div>
+                    </div>
+                `).join('');
+
+            } catch { showMessage('Error loading exams', 'error'); } finally {
+                document.body.classList.remove('loading');
+            }
+        }
+
+        async function enroll(examId) {
+            try {
+                const res = await fetch('/api/enroll', {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ examId })
+                });
+                if (res.ok) {
+                    showMessage('Enrolled successfully!', 'success');
+                    loadExams();
+                }
+            } catch { showMessage('Enroll failed', 'error'); }
+        }
+
+        async function unenroll(examId) {
+            try {
+                const res = await fetch(`/api/enroll/${examId}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}` } });
+                if (res.ok) {
+                    showMessage('Unenrolled!', 'success');
+                    loadExams();
+                }
+            } catch { showMessage('Unenroll failed', 'error'); }
+        }
+
+        function showMessage(text, type) {
+            const msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.style.background = type === 'success' ? '#d1fae5' : '#fee2e2';
+            msg.style.color = type === 'success' ? '#065f46' : '#991b1b';
+            msg.style.display = 'block';
+            setTimeout(() => msg.style.display = 'none', 3000);
+        }
+
+        function logout() {
+            localStorage.removeItem('token'); localStorage.removeItem('user');
+            location.href = 'login.html';
+        }
+
+        window.onload = loadExams;
+    </script>
+</body>
+</html>

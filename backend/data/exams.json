@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "category": "language",
+    "title": "TOEFL iBT",
+    "description": "Monthly test dates available",
+    "exams": ["TOEFL iBT", "IELTS Academic & General", "Duolingo English Test", "Cambridge English"],
+    "meta": {"duration": "1-4 hours", "mode": "Online/Offline", "validity": "2 years"}
+  },
+  {
+    "id": 2,
+    "category": "professional",
+    "title": "Professional Certifications",
+    "description": "Advance your career with industry-recognized credentials",
+    "exams": ["PMP Certification", "Google Professional Certificates", "Cisco CCNA/CCNP", "CompTIA"],
+    "meta": {"duration": "90-230 mins", "mode": "Online proctored", "validity": "3 years"}
+  }
+]

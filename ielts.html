@@ -1,0 +1,422 @@
+<!-- ielts.html - Similar structure to TOEFL but with IELTS-specific content -->
+<!-- pmp.html, aws.html, etc. follow same pattern with different colors (green theme for professional) -->
+
+<!-- testimonials.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Success Stories | Preploom Testimonials</title>
+    <meta name="description" content="Read success stories from 50,000+ students who achieved their target scores with Preploom Institute's preparation courses. Real results, real students.">
+    <style>
+:root {
+            --primary: #1e40af;
+            --secondary: #3b82f6;
+            --accent: #1d4ed8;
+            --success: #1e40af;
+            --dark: #000000;
+            --light: #f9fafb;
+            --text: #111827;
+            --border: #e5e7eb;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+
+        /* Reuse navigation and footer styles from previous pages */
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .stats-bar {
+            background: white;
+            padding: 2rem;
+            margin: -2rem auto 4rem;
+            max-width: 1000px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .stat-box h3 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+
+        .stat-box p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .testimonials-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--border);
+            background: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-card.featured {
+            border: 2px solid var(--accent);
+            grid-column: span 2;
+        }
+
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .author-info {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-details h4 {
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-details .exam-tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .score-badge {
+            background: var(--success);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .score-badge .label {
+            font-size: 0.7rem;
+            opacity: 0.9;
+        }
+
+        .score-badge .value {
+            font-size: 1.25rem;
+        }
+
+        .testimonial-text {
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .improvement-bar {
+            background: #f1f5f9;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .improvement-fill {
+            background: linear-gradient(90deg, var(--accent), var(--success));
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .improvement-text {
+            font-size: 0.85rem;
+            color: #64748b;
+            text-align: right;
+        }
+
+        .video-testimonial {
+            position: relative;
+            background: var(--dark);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+        }
+
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .video-testimonial:hover .play-btn {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card.featured {
+                grid-column: span 1;
+            }
+            .stats-bar {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as other pages) -->
+    <nav style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); padding: 1rem 0; position: sticky; top: 0; z-index: 1000;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" style="font-size: 1.8rem; font-weight: 800; color: white; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center;">🎓</div>
+                <a href="index.html" class="logo">
+                <img src="images/Preploom.png" alt="PrepLoom" style="width: 280px; height: 80px; object-fit: cover; border-radius: 8px;">
+               
+            </a>
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Student Success Stories</h1>
+        <p>Join 50,000+ successful candidates who achieved their dream scores</p>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stat-box">
+            <h3>50,000+</h3>
+            <p>Students Trained</p>
+        </div>
+        <div class="stat-box">
+            <h3>98%</h3>
+            <p>Success Rate</p>
+        </div>
+        <div class="stat-box">
+            <h3>4.9★</h3>
+            <p>Average Rating</p>
+        </div>
+        <div class="stat-box">
+            <h3>25+</h3>
+            <p>Points Average Improvement</p>
+        </div>
+    </div>
+
+    <section class="testimonials-section">
+        <div class="filter-tabs">
+            <button class="filter-btn active">All Stories</button>
+            <button class="filter-btn">TOEFL</button>
+            <button class="filter-btn">IELTS</button>
+            <button class="filter-btn">PMP</button>
+            <button class="filter-btn">AWS</button>
+            <button class="filter-btn">Video Stories</button>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card featured">
+                <div class="testimonial-header">
+                    <div class="author-info">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-details">
+                            <h4>Sarah Mitchell</h4>
+                            <span class="exam-tag">TOEFL iBT</span>
+                            <p style="color: #64748b; font-size: 0.9rem; margin-top: 0.25rem;">Columbia University Admit</p>
+                        </div>
+                    </div>
+                    <div class="score-badge">
+                        <div class="label">Final Score</div>
+                        <div class="value">112/120</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"I was stuck at 85 for three attempts before finding Preploom. Their structured approach to speaking templates and writing feedback was transformative. The AI-powered analytics identified my weak areas in listening - specifically detail questions - and targeted practice helped me improve dramatically. The instructors genuinely care about your success."</p>
+                <div class="improvement-bar">
+                    <div class="improvement-fill" style="width: 90%;"></div>
+                </div>
+                <div class="improvement-text">Improved from 85 to 112 (+27 points)</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="author-info">
+                        <div class="author-avatar">JC</div>
+                        <div class="author-details">
+                            <h4>James Chen</h4>
+                            <span class="exam-tag" style="background: #d1fae5; color: #065f46;">PMP</span>
+                        </div>
+                    </div>
+                    <div class="score-badge" style="background: var(--primary);">
+                        <div class="label">Result</div>
+                        <div class="value">Above Target</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Passed on my first attempt! The agile methodology sections were explained so clearly. The practice exams were harder than the real thing, which built my confidence."</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="video-testimonial">
+                    <div class="play-btn">▶</div>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <h4>Anita Patel</h4>
+                        <span class="exam-tag" style="background: #fef3c7; color: #92400e;">AWS</span>
+                    </div>
+                    <p style="color: #64748b; font-size: 0.9rem;">Watch how Anita went from zero cloud knowledge to AWS certified in 8 weeks.</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="author-info">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-details">
+                            <h4>Marco Rodriguez</h4>
+                            <span class="exam-tag" style="background: #fce7f3; color: #9d174d;">IELTS</span>
+                        </div>
+                    </div>
+                    <div class="score-badge">
+                        <div class="label">Band Score</div>
+                        <div class="value">8.0</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"The writing feedback was incredibly detailed. My instructor corrected my task response issues and helped me reach Band 8 from 6.5 in just 4 weeks."</p>
+                <div class="improvement-bar">
+                    <div class="improvement-fill" style="width: 75%;"></div>
+                </div>
+                <div class="improvement-text">6.5 → 8.0 (+1.5 bands)</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="author-info">
+                        <div class="author-avatar">LW</div>
+                        <div class="author-details">
+                            <h4>Lisa Wang</h4>
+                            <span class="exam-tag" style="background: #e0e7ff; color: #3730a3;">Cisco</span>
+                        </div>
+                    </div>
+                    <div class="score-badge" style="background: var(--primary);">
+                        <div class="label">CCNA</div>
+                        <div class="value">Passed</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"The lab simulations were identical to the actual exam. Best investment I made for my networking career. Already got a job offer!"</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="author-info">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-details">
+                            <h4>David Kim</h4>
+                            <span class="exam-tag">TOEFL</span>
+                        </div>
+                    </div>
+                    <div class="score-badge">
+                        <div class="label">Score</div>
+                        <div class="value">118</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Perfect score in Reading and Listening! The strategies for eliminating wrong answer choices saved me so much time."</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 16px; color: white;">
+            <h2 style="margin-bottom: 1rem;">Ready to Write Your Success Story?</h2>
+            <p style="margin-bottom: 2rem; opacity: 0.9;">Join thousands of students achieving their dream scores</p>
+            <a href="pricing.html" style="display: inline-block; padding: 1rem 3rem; background: var(--accent); color: var(--dark); text-decoration: none; border-radius: 50px; font-weight: 700;">Start Your Preparation</a>
+        </div>
+    </section>
+</body>
+</html>

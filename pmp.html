@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>PMP CBT Simulator 2026 | 2000+ Questions | Preploom</title>
+    <meta name="description" content="Full PMP CBT simulator with 2000+ real exam questions, performance domains, agile/hybrid focus, 35 PDU bootcamp. Interactive exam-like experience.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+            background: #f1f5f9;
+            color: #0f172a;
+            line-height: 1.5;
+        }
+
+        :root {
+            --pmp: #f97316;
+            --pmp-dark: #ea580c;
+            --primary: #1e3a8a;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-700: #334155;
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            padding: 0.75rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            height: 52px;
+            width: auto;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .nav-menu a:hover { color: #f97316; }
+        .dropdown { position: relative; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 220px;
+            border-radius: 16px;
+            top: 100%;
+            margin-top: 0.75rem;
+            box-shadow: var(--shadow-xl);
+            z-index: 10;
+        }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a {
+            color: #1e293b;
+            padding: 0.75rem 1.25rem;
+            display: block;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .mobile-menu-btn:hover {
+            opacity: 0.8;
+        }
+        .page-header {
+            background: linear-gradient(115deg, #f97316 0%, #ea580c 30%, #1e3a8a 100%);
+            color: white;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+        .page-header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+
+        /* Two-column layout: Left Tabs + Right CBT */
+        .exam-layout {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2rem;
+        }
+
+        /* Left Side - Info Tabs */
+        .info-panel {
+            background: white;
+            border-radius: 28px;
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            height: fit-content;
+            position: sticky;
+            top: 90px;
+        }
+        .tabs-nav {
+            display: flex;
+            background: #ffffff;
+            border-bottom: 1px solid var(--gray-200);
+            overflow-x: auto;
+            padding: 0 0.25rem;
+        }
+        .tab-btn {
+            padding: 1rem 1.2rem;
+            background: none;
+            border: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #475569;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .tab-btn.active {
+            color: var(--pmp);
+            background: #fffaf5;
+            border-bottom: 3px solid var(--pmp);
+        }
+        .tab-content {
+            padding: 1.5rem;
+            display: none;
+            animation: fadeIn 0.2s ease;
+        }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .domain-card {
+            background: #fff7ed;
+            padding: 1rem;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--pmp);
+        }
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+            margin: 1rem 0;
+        }
+        .risk-cell {
+            aspect-ratio: 1;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+        .risk-low { background: #10b981; }
+        .risk-medium { background: #f59e0b; }
+        .risk-high { background: #ef4444; }
+
+        /* Right Side - CBT SIMULATOR */
+        .cbt-panel {
+            background: white;
+            border-radius: 28px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .cbt-header {
+            background: #0f172a;
+            color: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .question-counter {
+            background: var(--pmp);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-weight: bold;
+        }
+        .cbt-body {
+            padding: 1.8rem;
+            min-height: 500px;
+        }
+        .question-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            color: #0f172a;
+        }
+        .options-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        .options-list li {
+            background: var(--gray-100);
+            margin: 0.8rem 0;
+            padding: 1rem 1.2rem;
+            border-radius: 60px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .options-list li:hover {
+            background: #fff0e0;
+            border-color: var(--pmp);
+        }
+        .options-list li.selected {
+            background: #f97316;
+            color: white;
+            border-color: #f97316;
+        }
+        .feedback-area {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--pmp);
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+        .nav-btn {
+            background: #e2e8f0;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .nav-btn.primary {
+            background: var(--pmp);
+            color: white;
+        }
+        .nav-btn.primary:hover { background: #ea580c; }
+        .reset-btn {
+            background: #1e293b;
+            color: white;
+        }
+        .progress-bar {
+            background: var(--gray-200);
+            height: 8px;
+            border-radius: 10px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            background: var(--pmp);
+            width: 0%;
+            height: 100%;
+            transition: width 0.3s;
+        }
+        .badge {
+            background: #f9731610;
+            color: var(--pmp);
+            border-radius: 30px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        
+        /* Mobile responsive fixes */
+        @media (max-width: 900px) {
+            .exam-layout { 
+                grid-template-columns: 1fr; 
+                gap: 1.5rem;
+            }
+            .info-panel { 
+                position: relative; 
+                top: 0; 
+            }
+            .mobile-menu-btn { 
+                display: block; 
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #0f172a;
+                padding: 1rem;
+                gap: 1rem;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                box-shadow: var(--shadow-lg);
+                border-top: 1px solid #334155;
+                z-index: 999;
+            }
+            .nav-menu.active { 
+                display: flex; 
+            }
+            .dropdown {
+                width: 100%;
+            }
+            .dropdown-content {
+                position: static;
+                background: #1e293b;
+                box-shadow: none;
+                margin-top: 0.5rem;
+                width: 100%;
+                border-radius: 12px;
+            }
+            .dropdown-content a {
+                color: white;
+                padding: 0.5rem 1rem;
+            }
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            .cbt-header {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            .question-text {
+                font-size: 1.1rem;
+            }
+            .nav-buttons {
+                flex-wrap: wrap;
+            }
+            .nav-btn {
+                flex: 1;
+                text-align: center;
+                padding: 0.6rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        button { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="images/Preploom.png" alt="Preploom">
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#">Home</a></li>
+                <li class="dropdown" id="examsDropdown">
+                    <a href="#" id="dropdownToggle">Exams ▼</a>
+                    <div class="dropdown-content">
+                        <a href="#">PMP</a>
+                        <a href="#">TOEFL</a>
+                        <a href="#">Cambridge</a>
+                        <a href="#">Duolingo</a>
+                    </div>
+                </li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Success</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="page-header">
+        <h1>📋 PMP CBT Simulator 2026</h1>
+        <p>2,300+ real exam questions • Adaptive learning • Full-length mock • 98% pass rate</p>
+    </header>
+
+    <div class="exam-layout">
+        <!-- LEFT PANEL: Information Tabs -->
+        <div class="info-panel">
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="switchInfoTab('overview')">📌 Overview</button>
+                <button class="tab-btn" onclick="switchInfoTab('domains')">🎯 Domains</button>
+                <button class="tab-btn" onclick="switchInfoTab('agile')">🔄 Agile</button>
+                <button class="tab-btn" onclick="switchInfoTab('pdu')">📜 35 PDUs</button>
+                <button class="tab-btn" onclick="switchInfoTab('schedule')">🗓️ Schedule</button>
+                <button class="tab-btn" onclick="switchInfoTab('faq')">❓ FAQ</button>
+            </div>
+            <div class="tab-content active" id="overview-tab">
+                <h3>PMP Exam 2026</h3>
+                <p>180 questions • 230 min • Scenario-based, 50% agile/hybrid</p>
+                <div class="domain-card"><strong>👥 People (42%)</strong><br>Leadership, conflict, teams</div>
+                <div class="domain-card"><strong>⚙️ Process (50%)</strong><br>Lifecycle, risk, budget</div>
+                <div class="domain-card"><strong>🏢 Business (8%)</strong><br>Compliance, benefits</div>
+                <h4>Interactive Risk Matrix</h4>
+                <div class="risk-matrix" id="riskMatrix"></div>
+                <p><span class="badge">PMI ATP</span> <span class="badge">35 PDUs included</span></p>
+            </div>
+            <div class="tab-content" id="domains-tab"><h3>Performance Domains</h3><ul><li>People: servant leadership, stakeholder engagement</li><li>Process: change control, risk response, procurement</li><li>Business: strategic alignment, value delivery</li></ul></div>
+            <div class="tab-content" id="agile-tab"><h3>Agile & Hybrid (50% exam)</h3><p>Scrum, Kanban, Lean, SAFe. Real-world situational questions with VR simulations.</p></div>
+            <div class="tab-content" id="pdu-tab"><h3>35 Contact Hours</h3><p>PMI-authorized training provider. Includes certificate for PMP application.</p></div>
+            <div class="tab-content" id="schedule-tab"><h3>Exam Scheduling</h3><p>Available globally at Pearson VUE centers & online proctoring. Monthly seats open.</p></div>
+            <div class="tab-content" id="faq-tab"><div id="faqInner"></div></div>
+        </div>
+
+        <!-- RIGHT PANEL: FULL CBT SIMULATOR -->
+        <div class="cbt-panel">
+            <div class="cbt-header">
+                <span>📖 PMP 2026 Computer-Based Test (CBT)</span>
+                <span class="question-counter" id="questionCounter">Q1 / 20</span>
+            </div>
+            <div class="cbt-body">
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+                <div id="questionDisplay">
+                    <div class="question-text" id="questionText">Loading questions...</div>
+                    <ul class="options-list" id="optionsList"></ul>
+                </div>
+                <div id="feedbackArea" class="feedback-area" style="display: none;"></div>
+                <div class="nav-buttons">
+                    <button class="nav-btn" id="prevBtn">◀ Previous</button>
+                    <button class="nav-btn primary" id="nextBtn">Next ▶</button>
+                    <button class="nav-btn reset-btn" id="resetBtn">⟳ Reset All</button>
+                </div>
+                <div style="margin-top: 1rem; font-size:0.85rem; text-align:center;" id="scoreDisplay"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer"><p>© 2026 Preploom — PMI Authorized Training Partner. All PMP materials align with ECO 2026.</p></footer>
+
+    <script>
+        // ----- 20 REALISTIC PMP QUESTIONS (simulating full CBT bank) -----
+        const FULL_QUESTION_SET = [
+            { text: "A project manager is leading a software development project. The team is distributed across three time zones. What is the BEST approach to keep daily communication effective?", options: ["Conduct a daily 2-hour meeting", "Use asynchronous updates and one daily 15-minute standup", "Send emails once a week", "Only communicate via chat"], correct: 1, explanation: "Asynchronous tools + short daily sync respect time zones and improve collaboration (Agile principle)." },
+            { text: "During risk assessment, you identify a risk that could save $50,000 if realized. What type of strategy would you use?", options: ["Mitigate", "Exploit", "Transfer", "Avoid"], correct: 1, explanation: "Exploit is used for positive risks (opportunities) to ensure they happen." },
+            { text: "A stakeholder is resistant to the project's agile transformation. The BEST initial action is to:", options: ["Escalate to sponsor", "Remove them from the team", "Coach and understand their concerns", "Ignore them"], correct: 2, explanation: "Coaching and empathy build trust, key to change management." },
+            { text: "Your project has EV = $95,000, AC = $110,000, PV = $100,000. What is the Cost Performance Index (CPI)?", options: ["0.86", "0.95", "1.05", "0.91"], correct: 0, explanation: "CPI = EV/AC = 95000/110000 = 0.86 → over budget." },
+            { text: "Which of the following is an output of the Validate Scope process?", options: ["Work performance data", "Accepted deliverables", "Change requests", "Project management plan updates"], correct: 1, explanation: "Validate Scope produces accepted deliverables from the customer." },
+            { text: "A project team is using Kanban. What metric helps them improve flow efficiency?", options: ["Velocity", "Cycle time", "Story points", "Burndown chart"], correct: 1, explanation: "Cycle time measures how long tasks take from start to finish, improving flow." },
+            { text: "During a daily standup, a developer mentions a blocking issue. What should the Scrum Master do?", options: ["Solve it immediately", "Add to backlog", "Facilitate removal after the standup", "Ignore if minor"], correct: 2, explanation: "Scrum Master removes impediments after the daily scrum to keep focus." },
+            { text: "A project has a 60% chance of $100k profit and 40% chance of $30k loss. Calculate EMV.", options: ["$48k", "$42k", "$58k", "$36k"], correct: 0, explanation: "EMV = (0.6*100) + (0.4*(-30)) = 60 -12 = 48k." },
+            { text: "Which process involves obtaining seller responses, selecting a seller, and awarding a contract?", options: ["Conduct Procurements", "Plan Procurement", "Control Procurements", "Administer Procurements"], correct: 0, explanation: "Conduct Procurements includes bidder conferences, source selection, and contract award." },
+            { text: "A project manager is creating the stakeholder register. What is the PRIMARY element included?", options: ["Communication requirements", "Power/interest grid", "Stakeholder name, influence, expectations", "Risk tolerance"], correct: 2, explanation: "Stakeholder register includes identification info, assessment, and classification." },
+            { text: "In a hybrid project, the team finishes a sprint but the product owner rejects the increment because it doesn't match the acceptance criteria. What should the team do?", options: ["Blame the product owner", "Review the definition of done and improve backlog refinement", "Skip retrospective", "Extend sprint"], correct: 1, explanation: "Refine DoD and ensure clarity on acceptance criteria before next sprint." },
+            { text: "A risk response strategy for a threat that involves shifting ownership to a third party is called:", options: ["Avoid", "Transfer", "Mitigate", "Accept"], correct: 1, explanation: "Transfer (insurance, warranty) shifts impact to a third party." },
+            { text: "What is the main purpose of a RACI chart?", options: ["Show schedule dependencies", "Define roles and responsibilities", "Track budget", "Manage quality"], correct: 1, explanation: "RACI clarifies who is Responsible, Accountable, Consulted, Informed." },
+            { text: "During a retrospective, the team mentions that technical debt is slowing them down. The agile lead should:", options: ["Add technical debt reduction stories to the backlog", "Ignore until release", "Blame developers", "Cancel next sprint"], correct: 0, explanation: "Technical debt must be prioritized to maintain velocity." },
+            { text: "The project sponsor asks for a major scope change after the baselines are approved. What should the project manager do FIRST?", options: ["Implement change immediately", "Analyze impact and submit a change request", "Reject the request", "Ask team to vote"], correct: 1, explanation: "Integrated change control process: impact analysis then formal request." },
+            { text: "A project manager calculates that the project's SPI is 0.92 and CPI is 1.05. What does this indicate?", options: ["Behind schedule, under budget", "Ahead schedule, over budget", "Behind schedule, over budget", "Ahead schedule, under budget"], correct: 0, explanation: "SPI<1 means behind schedule; CPI>1 means under budget." },
+            { text: "Which agile ceremony is used to inspect the increment and adapt the product backlog?", options: ["Sprint Review", "Daily Scrum", "Sprint Retrospective", "Backlog Refinement"], correct: 0, explanation: "Sprint Review inspects increment and updates backlog based on feedback." },
+            { text: "A project manager is managing a virtual team. The BEST way to build trust is:", options: ["Weekly status reports", "Regular informal check-ins and clear norms", "Strict deadlines", "Micromanagement"], correct: 1, explanation: "Trust is built through consistent communication and psychological safety." },
+            { text: "What does 'cost of quality' include?", options: ["Prevention, appraisal, failure costs", "Only testing", "Only rework", "Only training"], correct: 0, explanation: "COQ includes all costs to ensure quality and costs of poor quality." },
+            { text: "A project has a critical path duration of 12 months. The project manager adds a 2-month contingency reserve. What is the project duration baseline?", options: ["10 months", "12 months", "14 months", "16 months"], correct: 1, explanation: "Contingency reserve is part of schedule baseline; management reserve is extra. Baseline remains 12 months + contingency." }
+        ];
+
+        let currentQuestions = [...FULL_QUESTION_SET];
+        let userAnswers = new Array(currentQuestions.length).fill(null);
+        let currentIndex = 0;
+        let answerStatus = new Array(currentQuestions.length).fill(false);
+
+        function renderCurrentQuestion() {
+            const q = currentQuestions[currentIndex];
+            if (!q) return;
+            document.getElementById('questionText').innerHTML = `<span class="badge">PMP 2026</span> <br> ${q.text}`;
+            const optionsHtml = q.options.map((opt, idx) => {
+                const isSelected = (userAnswers[currentIndex] === idx);
+                return `<li data-optidx="${idx}" class="${isSelected ? 'selected' : ''}">${String.fromCharCode(65+idx)}. ${opt}</li>`;
+            }).join('');
+            document.getElementById('optionsList').innerHTML = optionsHtml;
+            
+            document.querySelectorAll('#optionsList li').forEach(li => {
+                li.addEventListener('click', (e) => {
+                    const optIdx = parseInt(li.dataset.optidx);
+                    if (userAnswers[currentIndex] === optIdx) return;
+                    userAnswers[currentIndex] = optIdx;
+                    answerStatus[currentIndex] = true;
+                    renderCurrentQuestion();
+                    evaluateAndShowFeedback();
+                    updateProgressAndCounter();
+                });
+            });
+            
+            const feedbackDiv = document.getElementById('feedbackArea');
+            if (userAnswers[currentIndex] !== null && answerStatus[currentIndex]) {
+                const isCorrect = (userAnswers[currentIndex] === q.correct);
+                feedbackDiv.style.display = 'block';
+                const correctLetter = String.fromCharCode(65+q.correct);
+                if (isCorrect) {
+                    feedbackDiv.innerHTML = `✅ <strong>Correct!</strong> ${q.explanation}`;
+                    feedbackDiv.style.background = '#d1fae5';
+                } else {
+                    feedbackDiv.innerHTML = `❌ <strong>Incorrect.</strong> Correct answer: ${correctLetter}. ${q.explanation}`;
+                    feedbackDiv.style.background = '#fee2e2';
+                }
+            } else {
+                feedbackDiv.style.display = 'none';
+            }
+            updateProgressAndCounter();
+            updateScoreDisplay();
+        }
+
+        function evaluateAndShowFeedback() {
+            const q = currentQuestions[currentIndex];
+            const selected = userAnswers[currentIndex];
+            const feedbackDiv = document.getElementById('feedbackArea');
+            if (selected !== null) {
+                const isCorrect = (selected === q.correct);
+                feedbackDiv.style.display = 'block';
+                const correctLetter = String.fromCharCode(65+q.correct);
+                if (isCorrect) {
+                    feedbackDiv.innerHTML = `✅ <strong>Correct!</strong> ${q.explanation}`;
+                    feedbackDiv.style.background = '#d1fae5';
+                } else {
+                    feedbackDiv.innerHTML = `❌ <strong>Incorrect.</strong> Correct answer: ${correctLetter}. ${q.explanation}`;
+                    feedbackDiv.style.background = '#fee2e2';
+                }
+            } else {
+                feedbackDiv.style.display = 'none';
+            }
+        }
+
+        function updateProgressAndCounter() {
+            const answeredCount = userAnswers.filter(a => a !== null).length;
+            const percent = (answeredCount / currentQuestions.length) * 100;
+            document.getElementById('progressFill').style.width = `${percent}%`;
+            document.getElementById('questionCounter').innerHTML = `Q${currentIndex+1} / ${currentQuestions.length} | ✅ ${answeredCount} answered`;
+        }
+
+        function updateScoreDisplay() {
+            let correctCount = 0;
+            for (let i=0; i<currentQuestions.length; i++) {
+                if (userAnswers[i] !== null && userAnswers[i] === currentQuestions[i].correct) correctCount++;
+            }
+            const scorePercent = Math.round((correctCount / currentQuestions.length)*100);
+            document.getElementById('scoreDisplay').innerHTML = `📊 Current Score: ${correctCount}/${currentQuestions.length} (${scorePercent}%) — Keep practicing!`;
+        }
+
+        function nextQuestion() {
+            if (currentIndex < currentQuestions.length - 1) {
+                currentIndex++;
+                renderCurrentQuestion();
+            } else {
+                alert("🏆 You've reached the end of the CBT! Click Reset to start over or review your answers.");
+            }
+        }
+
+        function prevQuestion() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderCurrentQuestion();
+            }
+        }
+
+        function resetAll() {
+            if (confirm("Reset all answers and progress? This will clear your responses.")) {
+                userAnswers = new Array(currentQuestions.length).fill(null);
+                answerStatus = new Array(currentQuestions.length).fill(false);
+                currentIndex = 0;
+                renderCurrentQuestion();
+                updateProgressAndCounter();
+                updateScoreDisplay();
+                document.getElementById('feedbackArea').style.display = 'none';
+            }
+        }
+
+        function buildRiskMatrix() {
+            const container = document.getElementById('riskMatrix');
+            if (!container) return;
+            container.innerHTML = '';
+            for (let i=0;i<5;i++) {
+                for (let j=0;j<5;j++) {
+                    let riskClass = '';
+                    let score = i*j;
+                    if (score <=4) riskClass='risk-low';
+                    else if (score<=12) riskClass='risk-medium';
+                    else riskClass='risk-high';
+                    const cell = document.createElement('div');
+                    cell.className = `risk-cell ${riskClass}`;
+                    cell.onclick = () => alert(`Probability: ${i+1}/5, Impact: ${j+1}/5 → ${riskClass.toUpperCase()} priority`);
+                    container.appendChild(cell);
+                }
+            }
+        }
+
+        function buildFAQ() {
+            const faqContainer = document.getElementById('faqInner');
+            if (!faqContainer) return;
+            const faqs = [
+                { q: "PMP eligibility?", a: "36 months project leading experience + 35 PDUs." },
+                { q: "How many questions?", a: "180 questions, 230 minutes." },
+                { q: "Passing score?", a: "PMI uses psychometric analysis; approx 70%." },
+                { q: "Retake policy?", a: "Up to 3 attempts per year." }
+            ];
+            faqContainer.innerHTML = faqs.map(f => `<div style="margin-bottom:1rem;"><strong>❓ ${f.q}</strong><p style="margin-top:0.3rem;">${f.a}</p></div>`).join('');
+        }
+
+        function switchInfoTab(id) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(`${id}-tab`).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Fixed hamburger menu functionality
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+        
+        // Handle dropdown on mobile
+        function handleMobileDropdowns() {
+            if (window.innerWidth <= 900) {
+                const dropdown = document.getElementById('examsDropdown');
+                const dropdownToggle = document.getElementById('dropdownToggle');
+                if (dropdownToggle) {
+                    dropdownToggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                }
+            }
+        }
+
+        window.switchInfoTab = switchInfoTab;
+        window.toggleMenu = toggleMobileMenu;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            buildRiskMatrix();
+            buildFAQ();
+            renderCurrentQuestion();
+            document.getElementById('nextBtn').addEventListener('click', nextQuestion);
+            document.getElementById('prevBtn').addEventListener('click', prevQuestion);
+            document.getElementById('resetBtn').addEventListener('click', resetAll);
+            updateProgressAndCounter();
+            
+            // Mobile menu button event listener
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            if (mobileBtn) {
+                mobileBtn.addEventListener('click', toggleMobileMenu);
+            }
+            
+            handleMobileDropdowns();
+            window.addEventListener('resize', handleMobileDropdowns);
+        });
+    </script>
+</body>
+</html>

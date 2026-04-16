@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Maria Rodriguez",
+    "exam": "TOEFL iBT",
+    "score": "85 → 115",
+    "text": "The AI-powered study plan identified my weak areas in speaking and provided targeted practice. I improved 30 points in just 6 weeks!",
+    "school": "Harvard University",
+    "filter": "language"
+  },
+  {
+    "id": 2,
+    "name": "David Chen",
+    "exam": "PMP",
+    "score": "Passed 1st Try",
+    "text": "The virtual labs prepared me perfectly for the real exam environment. The risk management simulations were incredibly realistic.",
+    "company": "Google",
+    "filter": "professional"
+  },
+  {
+    "id": 3,
+    "name": "Sarah Johnson",
+    "exam": "AWS Solutions Architect",
+    "score": "3 Certs in 6 Months",
+    "text": "The live Q&A sessions with AWS experts gave me insights I couldn't find anywhere else. Passed all 3 exams on first attempt!",
+    "company": "Amazon",
+    "filter": "professional"
+  }
+]

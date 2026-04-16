@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Preploom | Get Help & Support</title>
+    <meta name="description" content="Contact our expert team for course inquiries, technical support, partnership opportunities. Live chat, email, phone support available 24/7.">
+    <style>
+:root {
+            --primary: #1e40af;
+            --secondary: #3b82f6;
+            --accent: #1d4ed8;
+            --success: #1e40af;
+            --dark: #000000;
+            --light: #f9fafb;
+            --text: #111827;
+            --border: #e5e7eb;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+
+        /* Navigation - Same as about.html */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.9;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--success) 0%, var(--accent) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--secondary);
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        .phone-link, .email-link {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .submit-btn.loading {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .form-success {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            display: none;
+            margin-top: 1rem;
+        }
+
+        /* Live Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--success), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .chat-widget:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Map Placeholder */
+        .map-placeholder {
+            height: 300px;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            border: 2px dashed #94a3b8;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .chat-widget {
+                bottom: 1rem;
+                right: 1rem;
+                width: 55px;
+                height: 55px;
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🎓</div>
+                Preploom
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="language-exams.html">Language Exams</a></li>
+                <li><a href="professional-exams.html">Professional Exams</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Let's Connect</h1>
+        <p class="page-subtitle">Our team is here 24/7 to help you choose the perfect preparation path</p>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-info">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email Support</h3>
+                <p>Fastest response for course inquiries and technical issues</p>
+                <p><a href="mailto:support@Preploom.com" class="email-link">support@Preploom.com</a></p>
+                <p>Response within 2 hours</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3>Phone Support</h3>
+                <p>Call our experts for immediate assistance</p>
+                <p><strong>+1 (555) 123-4567</strong></p>
+                <p>Mon-Fri 8AM-8PM EST</p>
+                <p><a href="tel:+15551234567" class="phone-link">Call Now</a></p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">💬</div>
+                <h3>Live Chat</h3>
+                <p>Instant help from our support team</p>
+                <p>Available 24/7</p>
+                <p>Average wait: 30 seconds</p>
+                <button onclick="openChat()" style="background: var(--secondary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600;">Start Chat</button>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Office Location</h3>
+                <p>Visit us or attend workshops</p>
+                <p>123 Certification Ave<br>New York, NY 10001</p>
+                <div class="map-placeholder">
+                    🗺️ Interactive Google Maps<br>Coming Soon - Embed View
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2 style="color: var(--dark); margin-bottom: 2rem; text-align: center;">Send us a Message</h2>
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <select name="subject" required>
+                        <option value="">Choose topic...</option>
+                        <option value="course">Course Enrollment</option>
+                        <option value="technical">Technical Support</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="billing">Billing Issue</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tell us more...</label>
+                    <textarea name="message" rows="6" placeholder="How can we help you today?" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message 🚀</button>
+            </form>
+            <div class="form-success" id="successMsg">
+                ✅ Thank you! Your message has been sent. We'll respond within 2 hours.
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" onclick="openChat()" title="Live Chat - 24/7 Support">
+        💬
+    </div>
+
+    <!-- Footer (simplified) -->
+    <footer style="background: var(--dark); color: white; padding: 3rem 2rem; text-align: center;">
+        <p>&copy; 2026 Preploom. All rights reserved. | <a href="#" style="color: #94a3b8;">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        function openChat() {
+            // Unique: Animated chat bubble
+            alert('🧙‍♂️ Live Chat Opening...\n\nHello! This is your AI assistant. How can I help?\n\n(Production: Integrates with Intercom/Zendesk)');
+        }
+
+        // Form submission with animation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('.submit-btn');
+            const successMsg = document.getElementById('successMsg');
+            
+            btn.textContent = 'Sending...';
+            btn.classList.add('loading');
+            
+            setTimeout(() => {
+                btn.textContent = 'Message Sent! 🚀';
+                btn.classList.remove('loading');
+                successMsg.style.display = 'block';
+                this.reset();
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                    btn.textContent = 'Send Message 🚀';
+                }, 5000);
+            }, 1500);
+        });
+
+        // Smooth scrolling & animations
+        document.querySelectorAll('.contact-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateX(-50px)';
+            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        });
+
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.contact-card').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateX(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "email": "student@eliteexam.com",
+    "password": "$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi", 
+    "name": "Demo Student",
+    "role": "student",
+    "createdAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": 2,
+    "email": "admin@eliteexam.com", 
+    "password": "$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+    "name": "Admin User",
+    "role": "admin",
+    "createdAt": "2024-01-01T00:00:00Z"
+  }
+]
+

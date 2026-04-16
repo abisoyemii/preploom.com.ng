@@ -1,0 +1,14 @@
+{
+  "month": "April 2026",
+  "examDates": [5, 12, 15, 19, 22, 26, 29],
+  "today": 22,
+  "exams": {
+    "5": "TOEFL iBT",
+    "12": "IELTS Academic",
+    "15": "PMP",
+    "19": "TOEFL iBT",
+    "22": "Duolingo",
+    "26": "IELTS General",
+    "29": "Google Cert"
+  }
+}

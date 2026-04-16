@@ -1,0 +1,2876 @@
+<!-- resources.html - Expanded with Comprehensive Practice Questions -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Practice Questions & Resources | All Exams | Preploom</title>
+1000+ free practice questions for TOEFL, IELTS, Duolingo, PMP, Google, Cisco,.
+PMP exam questions, CompTIA A+ questions
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text: #334155;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.8;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+        /* Sidebar Filters */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .filter-section {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .filter-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1rem;
+            background: var(--light);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #dbeafe;
+            border-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        .filter-btn .count {
+            background: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .difficulty-easy { color: var(--success); }
+        .difficulty-medium { color: var(--warning); }
+        .difficulty-hard { color: var(--danger); }
+
+        /* Content Area */
+        .content-area {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .section-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1rem;
+            overflow-x: auto;
+        }
+
+        .section-tab {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #64748b;
+            border-radius: 8px;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+
+        .section-tab.active {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .section-tab:hover:not(.active) {
+            background: var(--light);
+        }
+
+        /* Question Cards */
+        .question-section {
+            display: none;
+        }
+
+        .question-section.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .exam-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .exam-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .exam-icon.toefl { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .exam-icon.ielts { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .exam-icon.duolingo { background: linear-gradient(135deg, #10b981, #059669); }
+        .exam-icon.cambridge { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .exam-icon.pmp { background: linear-gradient(135deg, #ef4444, #dc2626); }
+
+        .exam-icon.google { background: linear-gradient(135deg, #4285f4, #34a853); }
+        .exam-icon.cisco { background: linear-gradient(135deg, #00bceb, #005073); }
+        .exam-icon.comptia { background: linear-gradient(135deg, #c41230, #6d2077); }
+        .exam-icon.jimat { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
+
+        .exam-title h2 {
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .exam-title p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .question-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary);
+            transition: all 0.3s;
+        }
+
+        .question-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateX(5px);
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .question-type {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .type-reading { background: #dbeafe; color: #1e40af; }
+        .type-listening { background: #d1fae5; color: #065f46; }
+        .type-speaking { background: #fef3c7; color: #92400e; }
+        .type-writing { background: #fce7f3; color: #9d174d; }
+        .type-technical { background: #e0e7ff; color: #3730a3; }
+        .type-situational { background: #f3e8ff; color: #6b21a8; }
+
+        .difficulty-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .badge-easy { background: #d1fae5; color: #065f46; }
+        .badge-medium { background: #fef3c7; color: #92400e; }
+        .badge-hard { background: #fee2e2; color: #991b1b; }
+
+        .question-text {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .question-context {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: #64748b;
+            border-left: 3px solid var(--accent);
+        }
+
+        .options-list {
+            list-style: none;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .option-item {
+            padding: 1rem;
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .option-item:hover {
+            border-color: var(--secondary);
+            background: #eff6ff;
+        }
+
+        .option-item.selected {
+            border-color: var(--secondary);
+            background: #dbeafe;
+        }
+
+        .option-item.correct {
+            border-color: var(--success);
+            background: #d1fae5;
+        }
+
+        .option-item.incorrect {
+            border-color: var(--danger);
+            background: #fee2e2;
+        }
+
+        .option-letter {
+            width: 32px;
+            height: 32px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--text);
+            flex-shrink: 0;
+        }
+
+        .option-item.selected .option-letter {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .option-item.correct .option-letter {
+            background: var(--success);
+            color: white;
+        }
+
+        .option-item.incorrect .option-letter {
+            background: var(--danger);
+            color: white;
+        }
+
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light);
+        }
+
+        .explanation-box {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid var(--success);
+        }
+
+        .explanation-box.show {
+            display: block;
+            animation: slideDown 0.3s;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; max-height: 0; }
+            to { opacity: 1; max-height: 500px; }
+        }
+
+        .explanation-title {
+            color: var(--success);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .explanation-text {
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        .explanation-tip {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #fef3c7;
+            border-radius: 8px;
+            color: #92400e;
+            font-size: 0.95rem;
+        }
+
+        /* Speaking/Writing Special Cards */
+        .response-card {
+            background: white;
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .response-textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            resize: vertical;
+        }
+
+        .response-textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .rubric-table th, .rubric-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .rubric-table th {
+            background: var(--light);
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .score-input {
+            width: 60px;
+            padding: 0.5rem;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        /* Audio Player Simulation */
+        .audio-player {
+            background: var(--dark);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .play-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: var(--accent);
+            transition: width 0.1s;
+        }
+
+        .time-display {
+            font-size: 0.9rem;
+            font-family: monospace;
+        }
+
+        /* Voice Recorder */
+        .voice-recorder {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .record-btn {
+            width: 70px;
+            height: 70px;
+            background: #ef4444;
+            border: 4px solid rgba(255,255,255,0.4);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.6rem;
+            margin: 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            animation: none;
+        }
+        .record-btn.recording {
+            animation: pulse-red 1s infinite;
+            background: #dc2626;
+        }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(239,68,68,0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(239,68,68,0); }
+            100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+        }
+        .waveform {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            height: 40px;
+            margin: 0.5rem 0;
+        }
+        .wave-bar {
+            width: 4px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 2px;
+            transition: height 0.15s;
+        }
+        .speaking-tips {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+        .speaking-tips h4 { color: #065f46; margin-bottom: 0.5rem; }
+        .speaking-tips ul { color: #047857; margin-left: 1rem; font-size: 0.9rem; }
+        .audio-transcript {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem;
+            font-style: italic;
+            color: #475569;
+            margin: 1rem 0;
+            line-height: 1.8;
+        }
+        .audio-transcript strong { color: var(--dark); font-style: normal; }
+        .band-score-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.85rem; }
+        .band-score-table th { background: var(--primary); color: white; padding: 0.5rem; text-align: left; }
+        .band-score-table td { padding: 0.5rem; border-bottom: 1px solid var(--border); }
+        .band-score-table tr:nth-child(even) td { background: #f8fafc; }
+
+        /* Resources Grid */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .resource-header {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .resource-body {
+            padding: 1.5rem;
+        }
+
+        .resource-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-title {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .download-btn-small {
+            padding: 0.5rem 1rem;
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .page-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--border);
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            .stats-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .question-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Ad Placeholders */
+        .ad-banner {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .ad-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/Preploom.png" alt="PrepLoom" style="width: 280px; height: 80px; object-fit: cover; border-radius: 8px;">
+               
+            </a>
+
+                <li><a href="resources.html">Practice Questions</a></li>
+                <li><a href="testimonials.html">Success Stories</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Free Practice Question Bank</h1>
+        <p>1000+ authentic practice questions across all exams with detailed explanations</p>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Practice Questions</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Exam Categories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Question Types</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Free Access</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+            <div class="filter-section">
+                <div class="filter-title">📋 Exam Categories</div>
+                <div class="filter-options">
+                    <button class="filter-btn active" onclick="filterExam('all')">
+                        All Exams <span class="count">1000+</span>
+                    </button>
+                    <button class="filter-btn" onclick="filterExam('toefl')">
+                        TOEFL iBT <span class="count">200</span>
+                    </button>
+                    <button class="filter-btn" onclick="filterExam('ielts')">
+                        IELTS <span class="count">180</span>
+                    </button>
+                    <button class="filter-btn" onclick="filterExam('duolingo')">
+                        Duolingo <span class="count">120</span>
+                    </button>
+                    <button class="filter-btn" onclick="filterExam('cambridge')">
+                        Cambridge <span class="count">100</span>
+                    </button>
+                    <button class="filter-btn" onclick="filterExam('jimat')">
+                        JIMAT <span class="count">80</span>
+                    </button>
+                    <button class="filter-btn" onclick="filterExam('pmp')">
+                        PMP <span class="count">150</span>
+                    </button>
+
+
+<button class="filter-btn" onclick="filterExam('google')">
+                        Google Professional <span class="count">120</span>
+                    </button>
+
+                    <button class="filter-btn" onclick="filterExam('cisco')">
+                        Cisco <span class="count">90</span>
+                    </button>
+                    <button class="filter-btn" onclick="filterExam('comptia')">
+                        CompTIA <span class="count">110</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-title">🎯 Difficulty Level</div>
+                <div class="filter-group">
+                    <div class="filter-options">
+                        <button class="filter-btn" onclick="filterDifficulty('easy')">
+                            <span class="difficulty-easy">●</span> Easy <span class="count">300</span>
+                        </button>
+                        <button class="filter-btn" onclick="filterDifficulty('medium')">
+                            <span class="difficulty-medium">●</span> Medium <span class="count">500</span>
+                        </button>
+                        <button class="filter-btn" onclick="filterDifficulty('hard')">
+                            <span class="difficulty-hard">●</span> Hard <span class="count">200</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-title">🏷️ Question Type</div>
+                <div class="filter-options">
+                    <button class="filter-btn" onclick="filterType('reading')">
+                        Reading <span class="count">250</span>
+                    </button>
+                    <button class="filter-btn" onclick="filterType('listening')">
+                        Listening <span class="count">200</span>
+                    </button>
+                    <button class="filter-btn" onclick="filterType('speaking')">
+                        Speaking <span class="count">150</span>
+                    </button>
+                    <button class="filter-btn" onclick="filterType('writing')">
+                        Writing <span class="count">150</span>
+                    </button>
+                    <button class="filter-btn" onclick="filterType('technical')">
+                        Technical <span class="count">300</span>
+                    </button>
+                    <button class="filter-btn" onclick="filterType('situational')">
+                        Situational <span class="count">200</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content-area">
+            <!-- Section Tabs -->
+            <div class="section-tabs">
+                <button class="section-tab active" onclick="switchSection('questions')">Practice Questions</button>
+                <button class="section-tab" onclick="switchSection('tests')">Full Tests</button>
+                <button class="section-tab" onclick="switchSection('downloads')">Downloads</button>
+                <button class="section-tab" onclick="switchSection('saved')">Saved Questions</button>
+            </div>
+
+            <!-- Questions Section -->
+            <div id="questions-section" class="question-section active">
+                
+                <!-- TOEFL Questions -->
+                <div class="exam-section" id="toefl-questions">
+                    <div class="exam-header">
+                        <div class="exam-icon toefl">📋</div>
+                        <div class="exam-title">
+                            <h2>TOEFL iBT Practice Questions</h2>
+                            <p>Reading, Listening, Speaking, and Writing sections</p>
+                        </div>
+                    </div>
+
+                    <!-- TOEFL Reading Question 1 -->
+                    <div class="question-card" data-exam="toefl" data-type="reading" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-reading">📖 Reading</span>
+                            <span class="difficulty-badge badge-medium">Medium</span>
+                        </div>
+                        <div class="question-context">
+                            <strong>Passage Excerpt:</strong> "The Industrial Revolution marked a major turning point in Earth's ecology and humans' relationship with their environment. The impacts on the world's psyche would be catastrophic if the same were to happen with today's industry and technology."
+                        </div>
+                        <p class="question-text">According to the passage, what is the author's main concern regarding modern industry and technology?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this, 'A')">
+                                <span class="option-letter">A</span>
+                                <span>That they will cause more pollution than the Industrial Revolution</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'B')">
+                                <span class="option-letter">B</span>
+                                <span>That their psychological impact could be devastating if similar changes occur</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'C')">
+                                <span class="option-letter">C</span>
+                                <span>That they will reverse the ecological progress made since the 1800s</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'C')">
+                                <span class="option-letter">D</span>
+                                <span>That they represent a less significant change than the Industrial Revolution</span>
+                            </li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this, 'B')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Show Explanation</button>
+                            <button class="btn btn-secondary" onclick="saveQuestion(this)">💾 Save</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: B</div>
+                            <div class="explanation-text">
+                                The passage explicitly states that "The impacts on the world's psyche would be catastrophic if the same were to happen with today's industry and technology." This directly supports option B. The author is concerned about psychological impacts, not just pollution (A) or ecological reversal (C).
+                            </div>
+                            <div class="explanation-tip">
+                                <strong>💡 Tip:</strong> In TOEFL Reading, look for direct paraphrases of the passage text. The correct answer often uses synonyms for words in the passage (e.g., "catastrophic" = "devastating", "psyche" = "psychological").
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TOEFL Listening Question -->
+                    <div class="question-card" data-exam="toefl" data-type="listening" data-difficulty="hard">
+                        <div class="question-header">
+                            <span class="question-type type-listening">👂 Listening</span>
+                            <span class="difficulty-badge badge-hard">Hard</span>
+                        </div>
+                        <div class="audio-player">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span>🎧 Conversation: Student & Professor</span>
+                                <span class="time-display">0:00 / 2:30</span>
+                            </div>
+                            <div class="audio-controls">
+                                <button class="play-btn" onclick="toggleAudio(this)">▶</button>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="question-text">What does the professor imply about the student's research proposal?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this, 'A')">
+                                <span class="option-letter">A</span>
+                                <span>It requires significant revision before submission</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'B')">
+                                <span class="option-letter">B</span>
+                                <span>It shows originality but lacks sufficient data</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'C')">
+                                <span class="option-letter">C</span>
+                                <span>It is ready for the department review committee</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'D')">
+                                <span class="option-letter">D</span>
+                                <span>It would be better suited for a different course</span>
+                            </li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this, 'B')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Show Explanation</button>
+                            <button class="btn btn-secondary">💾 Save</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: B</div>
+                            <div class="explanation-text">
+                                The professor acknowledges the student's "fresh perspective" (originality) but notes that "you'll need to bolster your argument with more empirical evidence" (lacks sufficient data). This is a classic TOEFL implied meaning question requiring inference from tone and specific phrases.
+                            </div>
+                            <div class="explanation-tip">
+                                <strong>💡 Tip:</strong> For implied meaning questions, pay attention to the professor's tone and qualifying words. "But" and "however" often indicate the main point follows.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TOEFL Speaking Question -->
+                    <div class="question-card" data-exam="toefl" data-type="speaking" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-speaking">🎤 Speaking Task 2</span>
+                            <span class="difficulty-badge badge-medium">Medium</span>
+                        </div>
+                        <div class="question-context">
+                            <strong>Campus Announcement:</strong> The university is considering implementing a new policy that would require all first-year students to live on campus. Proponents argue this will improve academic performance and social integration.
+                        </div>
+                        <p class="question-text">The student expresses her opinion about the proposed policy. State her opinion and explain the reasons she gives for holding that opinion.</p>
+                        
+                        <div class="response-card">
+                            <h4 style="margin-bottom: 1rem; color: var(--dark);">Practice Your Response</h4>
+                            <p style="color: #64748b; margin-bottom: 1rem; font-size: 0.9rem;">Prepare: 15 seconds | Speak: 45 seconds</p>
+                            <textarea class="response-textarea" placeholder="Type your response here or use our voice recorder (Premium feature)..."></textarea>
+                            <div style="margin-top: 1rem;">
+                                <button class="btn btn-primary" onclick="alert('In the full version, this would provide AI scoring and feedback!')">Submit for AI Scoring</button>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 1.5rem; padding: 1.5rem; background: white; border-radius: 8px;">
+                            <h4 style="color: var(--dark); margin-bottom: 1rem;">Sample High-Scoring Response (Score: 4/4)</h4>
+                            <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; color: #475569; line-height: 1.8; font-style: italic;">
+                                "The woman opposes the new housing policy for first-year students. First, she argues that forcing students to live on campus doesn't guarantee better grades. She mentions her friend who commutes and has a 4.0 GPA, showing that living off-campus doesn't hurt academic performance. Second, she points out that the real issue is the high cost of dormitories. Many students choose off-campus housing because it's more affordable, and the policy would create financial hardship without actually improving education."
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <table class="rubric-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Scoring Criteria</th>
+                                            <th>Score</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>General Description</td>
+                                            <td>4 - Clear opinion stated</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Delivery</td>
+                                            <td>4 - Fluent, clear pronunciation</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Language Use</td>
+                                            <td>4 - Effective grammar/vocabulary</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Topic Development</td>
+                                            <td>4 - Coherent, well-developed</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TOEFL Writing Question -->
+                    <div class="question-card" data-exam="toefl" data-type="writing" data-difficulty="hard">
+                        <div class="question-header">
+                            <span class="question-type type-writing">✍️ Independent Writing</span>
+                            <span class="difficulty-badge badge-hard">Hard</span>
+                        </div>
+                        <p class="question-text">Do you agree or disagree with the following statement? "The best way to improve the quality of education is to increase teachers' salaries." Use specific reasons and examples to support your answer.</p>
+                        
+                        <div class="response-card">
+                            <h4 style="margin-bottom: 1rem; color: var(--dark);">Write Your Essay</h4>
+                            <p style="color: #64748b; margin-bottom: 1rem; font-size: 0.9rem;">Suggested length: 300-350 words | Time: 30 minutes</p>
+                            <textarea class="response-textarea" style="min-height: 250px;" placeholder="Start writing your essay here..."></textarea>
+                            <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                                <button class="btn btn-primary">Get AI Feedback</button>
+                                <button class="btn btn-secondary">View Outline Template</button>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 1.5rem;">
+                            <h4 style="color: var(--dark); margin-bottom: 1rem;">Essay Structure Template</h4>
+                            <div style="background: #eff6ff; padding: 1.5rem; border-radius: 8px;">
+                                <p style="margin-bottom: 0.5rem;"><strong>Introduction (3-4 sentences):</strong></p>
+                                <ul style="margin-left: 1.5rem; color: #475569; margin-bottom: 1rem;">
+                                    <li>Hook/Background</li>
+                                    <li>Thesis statement (clear position)</li>
+                                    <li>Preview of reasons</li>
+                                </ul>
+                                <p style="margin-bottom: 0.5rem;"><strong>Body Paragraph 1 (5-6 sentences):</strong></p>
+                                <ul style="margin-left: 1.5rem; color: #475569; margin-bottom: 1rem;">
+                                    <li>Topic sentence (Reason 1)</li>
+                                    <li>Explanation</li>
+                                    <li>Specific example (personal or general)</li>
+                                    <li>Transition</li>
+                                </ul>
+                                <p style="margin-bottom: 0.5rem;"><strong>Body Paragraph 2 (5-6 sentences):</strong></p>
+                                <ul style="margin-left: 1.5rem; color: #475569; margin-bottom: 1rem;">
+                                    <li>Topic sentence (Reason 2)</li>
+                                    <li>Explanation with counter-argument consideration</li>
+                                    <li>Specific example</li>
+                                </ul>
+                                <p style="margin-bottom: 0.5rem;"><strong>Conclusion (2-3 sentences):</strong></p>
+                                <ul style="margin-left: 1.5rem; color: #475569;">
+                                    <li>Restate thesis (different words)</li>
+                                    <li>Final thought/implication</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IELTS Questions -->
+                <div class="exam-section" id="ielts-questions" style="display: none;">
+                    <div class="exam-header">
+                        <div class="exam-icon ielts">📝</div>
+                        <div class="exam-title">
+                            <h2>IELTS Academic & General Practice</h2>
+                            <p>All four sections: Listening, Reading, Writing, Speaking</p>
+                        </div>
+                    </div>
+
+                    <!-- IELTS Reading -->
+                    <div class="question-card" data-exam="ielts" data-type="reading" data-difficulty="hard">
+                        <div class="question-header">
+                            <span class="question-type type-reading">📖 Academic Reading</span>
+                            <span class="difficulty-badge badge-hard">Hard</span>
+                        </div>
+                        <div class="question-context">
+                            <strong>Passage:</strong> "Climate change is not merely an environmental issue; it represents one of the most significant threats to global economic stability in the 21st century. Rising sea levels, extreme weather events, and shifting agricultural zones could displace millions and disrupt supply chains worldwide."
+                        </div>
+                        <p class="question-text">Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.</p>
+                        <p style="background: white; padding: 1rem; border-radius: 8px; line-height: 2; color: #475569;">
+                            Climate change poses a serious risk to 1. ________________ beyond just environmental concerns. The consequences include 2. ________________ that could affect coastal populations and disruptions to 3. ________________ caused by changing weather patterns and agricultural displacement.
+                        </p>
+                        <div style="margin-top: 1rem;">
+                            <p style="font-weight: 600; margin-bottom: 0.5rem;">Your Answers:</p>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <input type="text" placeholder="1. Answer" style="padding: 0.5rem; border: 2px solid var(--border); border-radius: 6px;">
+                                <input type="text" placeholder="2. Answer" style="padding: 0.5rem; border: 2px solid var(--border); border-radius: 6px;">
+                                <input type="text" placeholder="3. Answer" style="padding: 0.5rem; border: 2px solid var(--border); border-radius: 6px;">
+                            </div>
+                        </div>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="alert('Answers: 1. economic stability, 2. Rising sea levels, 3. supply chains')">Check Answers</button>
+                            <button class="btn btn-secondary">💾 Save</button>
+                        </div>
+                    </div>
+
+                    <!-- IELTS Writing Task 1 -->
+                    <div class="question-card" data-exam="ielts" data-type="writing" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-writing">📊 Task 1: Data Analysis</span>
+                            <span class="difficulty-badge badge-medium">Medium</span>
+                        </div>
+                        <p class="question-text">The chart below shows the percentage of households in different income brackets that owned computers between 2010 and 2020. Summarize the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+                        
+                        <div style="background: #f8fafc; padding: 2rem; border-radius: 8px; text-align: center; margin: 1rem 0;">
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem;">
+                                <div style="background: var(--secondary); color: white; padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 2rem; font-weight: 800;">45%</div>
+                                    <div style="font-size: 0.8rem;">Low Income<br>2010</div>
+                                </div>
+                                <div style="background: var(--secondary); color: white; padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 2rem; font-weight: 800;">78%</div>
+                                    <div style="font-size: 0.8rem;">Low Income<br>2020</div>
+                                </div>
+                                <div style="background: var(--primary); color: white; padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 2rem; font-weight: 800;">82%</div>
+                                    <div style="font-size: 0.8rem;">High Income<br>2010</div>
+                                </div>
+                                <div style="background: var(--primary); color: white; padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 2rem; font-weight: 800;">96%</div>
+                                    <div style="font-size: 0.8rem;">High Income<br>2020</div>
+                                </div>
+                            </div>
+                            <p style="color: #64748b; font-size: 0.9rem;">[Chart visualization - Bar chart showing computer ownership by income level over time]</p>
+                        </div>
+
+                        <div class="response-card">
+                            <textarea class="response-textarea" placeholder="Write your Task 1 response here (minimum 150 words)..."></textarea>
+                            <div style="margin-top: 1rem;">
+                                <button class="btn btn-primary">Check Word Count & Get Feedback</button>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 1.5rem; padding: 1.5rem; background: #fef3c7; border-radius: 8px;">
+                            <h4 style="color: #92400e; margin-bottom: 0.5rem;">Key Vocabulary for This Task:</h4>
+                            <p style="color: #92400e; font-size: 0.9rem;">
+                                rose significantly, witnessed a dramatic increase, remained relatively stable, the gap between... narrowed, proportion, percentage, whereas, while, in contrast, compared to
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- IELTS Speaking -->
+                    <div class="question-card" data-exam="ielts" data-type="speaking" data-difficulty="easy">
+                        <div class="question-header">
+                            <span class="question-type type-speaking">🎤 Speaking Part 2</span>
+                            <span class="difficulty-badge badge-easy">Easy</span>
+                        </div>
+                        <div style="background: #dbeafe; padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem;">
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">Cue Card</h4>
+                            <p style="color: var(--dark); font-weight: 600; margin-bottom: 1rem;">Describe a book that you enjoyed reading.</p>
+                            <p style="color: #475569; margin-bottom: 0.5rem;">You should say:</p>
+                            <ul style="margin-left: 1.5rem; color: #475569;">
+                                <li>What the book was</li>
+                                <li>What it was about</li>
+                                <li>Why you read it</li>
+                                <li>And explain why you enjoyed it</li>
+                            </ul>
+                        </div>
+                        <div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 0.5rem;">⏱️ Preparation time: 1 minute | Speaking time: 2 minutes</p>
+                        </div>
+                        <div class="response-card">
+                            <button class="btn btn-primary" style="margin-bottom: 1rem;">Start Recording (Premium)</button>
+                            <p style="color: #64748b;">Or view sample response:</p>
+                        </div>
+                        <details style="margin-top: 1rem;">
+                            <summary style="cursor: pointer; color: var(--secondary); font-weight: 600;">View Sample Band 8+ Response</summary>
+                            <div style="margin-top: 1rem; padding: 1rem; background: #f8fafc; border-radius: 8px; color: #475569; line-height: 1.8;">
+                                "I'd like to talk about 'Sapiens' by Yuval Noah Harari, which I read last summer. It's a non-fiction book that explores the history of humankind from the Stone Age to the modern era... [Full response would continue with complex sentences, idiomatic language, and discourse markers]"
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- NEW IELTS QUESTIONS: Listening, Speaking, Writing, Reading  -->
+                <!-- ============================================================ -->
+
+                <!-- IELTS Listening Q1 — Map Labelling -->
+                <div class="question-card" data-exam="ielts" data-type="listening" data-difficulty="medium" style="display:none;">
+                    <div class="question-header">
+                        <span class="question-type type-listening">👂 Listening – Section 2</span>
+                        <span class="difficulty-badge badge-medium">Medium</span>
+                    </div>
+                    <div class="audio-player">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                            <span>🎧 Tour Guide: City Museum Audio Guide</span>
+                            <span class="time-display">0:00 / 3:15</span>
+                        </div>
+                        <div class="audio-controls">
+                            <button class="play-btn" onclick="toggleAudio(this)">▶</button>
+                            <div class="progress-bar"><div class="progress-fill"></div></div>
+                        </div>
+                    </div>
+                    <div class="audio-transcript">
+                        <strong>Audio transcript (read silently):</strong> "Welcome to the National History Museum. As you enter through the main entrance, the gift shop is on your left. Walk straight ahead past the information desk and you'll find the Roman Exhibition Hall. Turn right at the café — which is now on your left — and continue down the corridor to reach the Egyptian Gallery. The children's activity room is located upstairs via the staircase next to the café."
+                    </div>
+                    <p class="question-text">Label the plan below. Choose the correct letter A–G for each location.</p>
+                    <div style="background:white;padding:1.5rem;border-radius:8px;margin:1rem 0;">
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-size:0.9rem;color:#475569;">
+                            <div>
+                                <p style="font-weight:700;color:var(--dark);margin-bottom:0.5rem;">Map Key:</p>
+                                <ul style="list-style:none;">
+                                    <li>A – Main Entrance</li><li>B – Gift Shop</li><li>C – Information Desk</li>
+                                    <li>D – Roman Exhibition Hall</li><li>E – Café</li><li>F – Egyptian Gallery</li><li>G – Children's Room</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p style="font-weight:700;color:var(--dark);margin-bottom:0.5rem;">Questions:</p>
+                                <p>1. The room directly to the left as you enter: <input type="text" style="width:40px;border:2px solid var(--border);border-radius:4px;padding:2px 6px;"></p>
+                                <p>2. The room past the information desk: <input type="text" style="width:40px;border:2px solid var(--border);border-radius:4px;padding:2px 6px;"></p>
+                                <p>3. Upstairs via the staircase next to the café: <input type="text" style="width:40px;border:2px solid var(--border);border-radius:4px;padding:2px 6px;"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-bar">
+                        <button class="btn btn-primary" onclick="alert('Answers: 1=B (Gift Shop), 2=D (Roman Exhibition Hall), 3=G (Children\'s Room)')">Check Answers</button>
+                        <button class="btn btn-secondary" onclick="showExplanation(this)">Show Tip</button>
+                        <button class="btn btn-secondary" onclick="saveQuestion(this)">💾 Save</button>
+                    </div>
+                    <div class="explanation-box">
+                        <div class="explanation-title">✓ Answers: 1=B, 2=D, 3=G</div>
+                        <div class="explanation-tip"><strong>💡 IELTS Listening Tip:</strong> For map/plan labelling questions, read all labels before the audio starts. Follow spatial language carefully: "on your left", "straight ahead", "turn right". The answer order usually follows the direction of movement described.</div>
+                    </div>
+                </div>
+
+                <!-- IELTS Listening Q2 — Note Completion -->
+                <div class="question-card" data-exam="ielts" data-type="listening" data-difficulty="hard" style="display:none;">
+                    <div class="question-header">
+                        <span class="question-type type-listening">👂 Listening – Section 4 (Academic)</span>
+                        <span class="difficulty-badge badge-hard">Hard</span>
+                    </div>
+                    <div class="audio-player">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                            <span>🎧 Lecture: The Psychology of Decision-Making</span>
+                            <span class="time-display">0:00 / 4:45</span>
+                        </div>
+                        <div class="audio-controls">
+                            <button class="play-btn" onclick="toggleAudio(this)">▶</button>
+                            <div class="progress-bar"><div class="progress-fill"></div></div>
+                        </div>
+                    </div>
+                    <div class="audio-transcript">
+                        <strong>Audio transcript:</strong> "Today I want to discuss cognitive bias in decision-making. Researchers Kahneman and Tversky identified what they called 'prospect theory' — the idea that humans are more sensitive to losses than to equivalent gains. This is known as <em>loss aversion</em>. Studies show people require approximately twice the gain to offset the pain of a comparable loss. Another key concept is the <em>anchoring effect</em>, where the first piece of information encountered — the anchor — disproportionately influences subsequent judgments. For example, in salary negotiations, whoever states a figure first tends to control the outcome."
+                    </div>
+                    <p class="question-text">Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.</p>
+                    <div style="background:white;padding:1.5rem;border-radius:8px;margin:1rem 0;line-height:2.2;color:#475569;">
+                        <strong>Cognitive Bias in Decision-Making (Lecture Notes)</strong><br>
+                        • Theory developed by: Kahneman and <input type="text" placeholder="1. ___________" style="border:2px solid var(--border);border-radius:4px;padding:2px 8px;width:130px;"><br>
+                        • Core concept: <input type="text" placeholder="2. ___________" style="border:2px solid var(--border);border-radius:4px;padding:2px 8px;width:130px;"> — people feel losses more strongly than gains<br>
+                        • Required gain: approximately <input type="text" placeholder="3. ___________" style="border:2px solid var(--border);border-radius:4px;padding:2px 8px;width:80px;"> the size of a comparable loss<br>
+                        • Anchoring: first information acts as an <input type="text" placeholder="4. ___________" style="border:2px solid var(--border);border-radius:4px;padding:2px 8px;width:130px;"><br>
+                        • Practical example: <input type="text" placeholder="5. ___________" style="border:2px solid var(--border);border-radius:4px;padding:2px 8px;width:150px;"> negotiations
+                    </div>
+                    <div class="action-bar">
+                        <button class="btn btn-primary" onclick="alert('Answers: 1=Tversky, 2=loss aversion, 3=twice, 4=anchor, 5=salary')">Check Answers</button>
+                        <button class="btn btn-secondary" onclick="showExplanation(this)">Strategy Tips</button>
+                    </div>
+                    <div class="explanation-box">
+                        <div class="explanation-title">✓ Answers: 1=Tversky, 2=loss aversion, 3=twice, 4=anchor, 5=salary</div>
+                        <div class="explanation-tip"><strong>💡 Section 4 Tip:</strong> This is the hardest section — a monologue academic lecture with no pause. Preview all blanks before audio starts. Listen for discourse markers ("another key concept is…") that signal the next answer is coming.</div>
+                    </div>
+                </div>
+
+                <!-- IELTS Speaking Q — Part 1 Personal Questions -->
+                <div class="question-card" data-exam="ielts" data-type="speaking" data-difficulty="easy" style="display:none;">
+                    <div class="question-header">
+                        <span class="question-type type-speaking">🎤 Speaking Part 1 – Personal Questions</span>
+                        <span class="difficulty-badge badge-easy">Easy</span>
+                    </div>
+                    <div class="speaking-tips">
+                        <h4>🎯 Part 1 Format</h4>
+                        <ul>
+                            <li>Duration: 4–5 minutes</li>
+                            <li>Topics: work, study, hobbies, family, hometown</li>
+                            <li>Answers should be 2–3 sentences — not too short, not too long</li>
+                        </ul>
+                    </div>
+                    <p class="question-text">Answer each of the following Part 1 questions as if in a live interview:</p>
+                    <div style="background:white;padding:1.5rem;border-radius:8px;margin:1rem 0;">
+                        <p style="margin-bottom:1rem;color:var(--dark);"><strong>Q1:</strong> Do you enjoy cooking? Why or why not?</p>
+                        <p style="margin-bottom:1rem;color:var(--dark);"><strong>Q2:</strong> What kind of music do you usually listen to?</p>
+                        <p style="margin-bottom:1rem;color:var(--dark);"><strong>Q3:</strong> Are there many parks in your hometown?</p>
+                    </div>
+                    <div class="voice-recorder" id="recorder-ielts-p1">
+                        <p style="font-size:0.9rem;opacity:0.85;">🎤 Practice speaking your answer aloud</p>
+                        <button class="record-btn" onclick="toggleRecorder(this, 'recorder-ielts-p1')" style="margin:0.8rem auto;">🎙️</button>
+                        <div class="waveform" id="wave-ielts-p1">
+                            <div class="wave-bar" style="height:8px"></div><div class="wave-bar" style="height:20px"></div>
+                            <div class="wave-bar" style="height:14px"></div><div class="wave-bar" style="height:30px"></div>
+                            <div class="wave-bar" style="height:10px"></div><div class="wave-bar" style="height:25px"></div>
+                            <div class="wave-bar" style="height:16px"></div><div class="wave-bar" style="height:8px"></div>
+                        </div>
+                        <p id="rec-status-ielts-p1" style="font-size:0.8rem;opacity:0.7;">Click to start recording</p>
+                    </div>
+                    <details style="margin-top:1rem;">
+                        <summary style="cursor:pointer;color:var(--secondary);font-weight:600;">View Sample Band 7+ Answers</summary>
+                        <div style="margin-top:1rem;background:#f8fafc;padding:1rem;border-radius:8px;color:#475569;line-height:1.9;">
+                            <p><strong>Q1:</strong> "Yes, I really enjoy cooking, actually. I find it quite therapeutic after a long day at work. I especially like experimenting with different cuisines — lately I've been trying to learn how to cook Thai food."</p>
+                            <p style="margin-top:0.8rem;"><strong>Q2:</strong> "I tend to listen to a mix of jazz and indie pop, depending on my mood. If I'm studying or working, I prefer instrumental jazz because it helps me focus. But when I'm relaxing, I'll often listen to indie artists like Hozier."</p>
+                            <p style="margin-top:0.8rem;"><strong>Q3:</strong> "There are quite a few parks, actually. The main one is a large riverside park where families go at weekends. It has a jogging trail and some beautiful old trees. I used to go there regularly as a child."</p>
+                        </div>
+                    </details>
+                    <div class="action-bar" style="margin-top:1rem;">
+                        <button class="btn btn-secondary" onclick="saveQuestion(this)">💾 Save</button>
+                    </div>
+                </div>
+
+                <!-- IELTS Speaking Q — Part 3 Discussion -->
+                <div class="question-card" data-exam="ielts" data-type="speaking" data-difficulty="hard" style="display:none;">
+                    <div class="question-header">
+                        <span class="question-type type-speaking">🎤 Speaking Part 3 – Discussion</span>
+                        <span class="difficulty-badge badge-hard">Hard</span>
+                    </div>
+                    <p class="question-text">The examiner will ask more abstract, analytical questions related to the Part 2 topic. Respond to the following discussion questions:</p>
+                    <div style="background:white;padding:1.5rem;border-radius:8px;margin:1rem 0;">
+                        <p style="color:var(--dark);font-weight:600;margin-bottom:1rem;">Topic: Technology and Communication</p>
+                        <p style="margin-bottom:0.8rem;color:#475569;"><strong>Q1:</strong> How has social media changed the way people communicate compared to previous generations?</p>
+                        <p style="margin-bottom:0.8rem;color:#475569;"><strong>Q2:</strong> Some people argue that technology has made us less capable of deep conversation. To what extent do you agree?</p>
+                        <p style="color:#475569;"><strong>Q3:</strong> What do you think will be the most significant communication challenge for the next generation?</p>
+                    </div>
+                    <div class="voice-recorder" id="recorder-ielts-p3">
+                        <p style="font-size:0.9rem;opacity:0.85;">🎤 Aim for 1–2 minutes per question</p>
+                        <button class="record-btn" onclick="toggleRecorder(this, 'recorder-ielts-p3')" style="margin:0.8rem auto;">🎙️</button>
+                        <div class="waveform" id="wave-ielts-p3">
+                            <div class="wave-bar" style="height:8px"></div><div class="wave-bar" style="height:22px"></div>
+                            <div class="wave-bar" style="height:15px"></div><div class="wave-bar" style="height:32px"></div>
+                            <div class="wave-bar" style="height:12px"></div><div class="wave-bar" style="height:28px"></div>
+                            <div class="wave-bar" style="height:18px"></div><div class="wave-bar" style="height:9px"></div>
+                        </div>
+                        <p id="rec-status-ielts-p3" style="font-size:0.8rem;opacity:0.7;">Click to start recording</p>
+                    </div>
+                    <div class="speaking-tips" style="margin-top:1rem;">
+                        <h4>💡 Part 3 Scoring Strategy</h4>
+                        <ul>
+                            <li>Use discourse markers: "Well, from my perspective…", "That's an interesting question…", "On the other hand…"</li>
+                            <li>Give two-sided answers — show awareness of multiple viewpoints</li>
+                            <li>Use hedging language: "It could be argued that…", "To some extent…"</li>
+                            <li>Band 8+ answers often include hypothetical constructions: "If we consider…"</li>
+                        </ul>
+                    </div>
+                    <details style="margin-top:1rem;">
+                        <summary style="cursor:pointer;color:var(--secondary);font-weight:600;">View Band 8 Model Answer (Q1)</summary>
+                        <div style="margin-top:1rem;background:#f8fafc;padding:1rem;border-radius:8px;color:#475569;line-height:1.9;">
+                            "Social media has fundamentally transformed interpersonal communication in ways that previous generations could scarcely have imagined. On one hand, it has democratized information sharing and allowed people to maintain connections across vast distances effortlessly. On the other hand, I think it's created what some sociologists call 'shallow connectivity' — we have more contacts but fewer deep relationships. Previous generations relied on face-to-face interaction and letters, which arguably required more intentionality. So while technology has broadened our reach, it may have come at the cost of relational depth."
+                        </div>
+                    </details>
+                    <div class="action-bar" style="margin-top:1rem;">
+                        <button class="btn btn-secondary" onclick="saveQuestion(this)">💾 Save</button>
+                    </div>
+                </div>
+
+                <!-- IELTS Writing Task 2 — Agree/Disagree -->
+                <div class="question-card" data-exam="ielts" data-type="writing" data-difficulty="hard" style="display:none;">
+                    <div class="question-header">
+                        <span class="question-type type-writing">✍️ Writing Task 2 – Opinion Essay</span>
+                        <span class="difficulty-badge badge-hard">Hard</span>
+                    </div>
+                    <p class="question-text">You should spend about 40 minutes on this task. Write at least 250 words.</p>
+                    <div style="background:#dbeafe;padding:1.5rem;border-radius:8px;margin:1rem 0;">
+                        <strong>Task:</strong> Some people believe that governments should invest more money in public transportation than in building new roads. To what extent do you agree or disagree with this statement? Give reasons for your answer and include any relevant examples from your own knowledge or experience.
+                    </div>
+                    <div class="response-card">
+                        <textarea class="response-textarea" style="min-height:280px;" placeholder="Write your Task 2 essay here (minimum 250 words)..." oninput="updateWordCount(this, 'wc-ielts-t2')"></textarea>
+                        <div style="margin-top:0.5rem;display:flex;justify-content:space-between;align-items:center;">
+                            <span style="color:#64748b;font-size:0.85rem;">Word count: <span id="wc-ielts-t2">0</span></span>
+                            <button class="btn btn-primary">Get AI Feedback</button>
+                        </div>
+                    </div>
+                    <div style="margin-top:1.5rem;background:#f0fdf4;padding:1.5rem;border-radius:8px;">
+                        <h4 style="color:#065f46;margin-bottom:0.75rem;">IELTS Task 2 Band Descriptors</h4>
+                        <table class="band-score-table">
+                            <thead><tr><th>Criterion</th><th>Band 7</th><th>Band 8</th><th>Band 9</th></tr></thead>
+                            <tbody>
+                                <tr><td>Task Achievement</td><td>Addresses all parts</td><td>Well-developed position</td><td>Fully addresses all</td></tr>
+                                <tr><td>Coherence</td><td>Logical sequence</td><td>Skillfully managed</td><td>Seamless progression</td></tr>
+                                <tr><td>Vocabulary</td><td>Good resource</td><td>Wide resource</td><td>Full flexibility</td></tr>
+                                <tr><td>Grammar</td><td>Mix of structures</td><td>Wide range, rare errors</td><td>Full range, error-free</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- IELTS Writing Task 1 — Graph (Line) -->
+                <div class="question-card" data-exam="ielts" data-type="writing" data-difficulty="medium" style="display:none;">
+                    <div class="question-header">
+                        <span class="question-type type-writing">📈 Writing Task 1 – Line Graph</span>
+                        <span class="difficulty-badge badge-medium">Medium</span>
+                    </div>
+                    <p class="question-text">Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.</p>
+                    <div style="background:#f8fafc;padding:1.5rem;border-radius:8px;margin:1rem 0;">
+                        <p style="font-weight:700;margin-bottom:1rem;color:var(--dark);">The graph shows average internet usage (hours/day) in four countries from 2000–2020.</p>
+                        <div style="overflow-x:auto;">
+                            <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+                                <thead><tr style="background:var(--primary);color:white;"><th style="padding:0.5rem;">Year</th><th>South Korea</th><th>Brazil</th><th>Nigeria</th><th>Germany</th></tr></thead>
+                                <tbody>
+                                    <tr style="background:#f0f9ff;"><td style="padding:0.4rem;text-align:center;">2000</td><td style="text-align:center;">1.2</td><td style="text-align:center;">0.3</td><td style="text-align:center;">0.05</td><td style="text-align:center;">0.8</td></tr>
+                                    <tr><td style="padding:0.4rem;text-align:center;">2005</td><td style="text-align:center;">3.1</td><td style="text-align:center;">0.9</td><td style="text-align:center;">0.2</td><td style="text-align:center;">2.0</td></tr>
+                                    <tr style="background:#f0f9ff;"><td style="padding:0.4rem;text-align:center;">2010</td><td style="text-align:center;">5.4</td><td style="text-align:center;">2.5</td><td style="text-align:center;">0.7</td><td style="text-align:center;">3.5</td></tr>
+                                    <tr><td style="padding:0.4rem;text-align:center;">2015</td><td style="text-align:center;">7.2</td><td style="text-align:center;">4.8</td><td style="text-align:center;">2.1</td><td style="text-align:center;">5.0</td></tr>
+                                    <tr style="background:#f0f9ff;"><td style="padding:0.4rem;text-align:center;">2020</td><td style="text-align:center;">8.9</td><td style="text-align:center;">7.3</td><td style="text-align:center;">4.6</td><td style="text-align:center;">6.8</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="response-card">
+                        <textarea class="response-textarea" placeholder="Write your Task 1 report here (minimum 150 words)..." oninput="updateWordCount(this, 'wc-ielts-t1')"></textarea>
+                        <div style="margin-top:0.5rem;display:flex;justify-content:space-between;align-items:center;">
+                            <span style="color:#64748b;font-size:0.85rem;">Word count: <span id="wc-ielts-t1">0</span></span>
+                            <button class="btn btn-primary">Check Word Count</button>
+                        </div>
+                    </div>
+                    <div style="margin-top:1rem;background:#fef3c7;padding:1rem;border-radius:8px;">
+                        <strong style="color:#92400e;">Key Phrases for Line Graph Reports:</strong>
+                        <p style="color:#92400e;font-size:0.9rem;margin-top:0.5rem;">experienced a sharp rise • grew steadily • remained relatively stable • witnessed the most dramatic increase • by contrast • while • whereas • the gap narrowed/widened • peaked at • reached its lowest point</p>
+                    </div>
+                </div>
+
+                <!-- IELTS Reading — True/False/Not Given -->
+                <div class="question-card" data-exam="ielts" data-type="reading" data-difficulty="medium" style="display:none;">
+                    <div class="question-header">
+                        <span class="question-type type-reading">📖 Reading – True/False/Not Given</span>
+                        <span class="difficulty-badge badge-medium">Medium</span>
+                    </div>
+                    <div class="question-context">
+                        <strong>Passage:</strong> "Urban vertical farming has emerged as a promising solution to food security challenges. Unlike traditional agriculture, vertical farms use controlled environments, artificial lighting, and hydroponic systems to grow crops in stacked layers inside buildings. These facilities can produce yields up to 100 times greater per square metre than conventional outdoor farms. However, critics point out that the high energy costs of maintaining artificial lighting significantly increase the carbon footprint, potentially offsetting the environmental benefits. Some researchers suggest that pairing vertical farms with renewable energy sources could resolve this issue."
+                    </div>
+                    <p class="question-text">Do the following statements agree with the information in the passage? Write <strong>TRUE</strong>, <strong>FALSE</strong>, or <strong>NOT GIVEN</strong>.</p>
+                    <div style="background:white;padding:1.5rem;border-radius:8px;margin:1rem 0;display:grid;gap:1rem;">
+                        <div>
+                            <p style="color:var(--dark);">1. Vertical farms use natural sunlight as their primary light source.</p>
+                            <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+                                <button class="btn btn-secondary" onclick="markAnswer(this,'FALSE','1-tf')" style="font-size:0.8rem;padding:0.4rem 0.8rem;">TRUE</button>
+                                <button class="btn btn-secondary" onclick="markAnswer(this,'FALSE','1-tf')" style="font-size:0.8rem;padding:0.4rem 0.8rem;">FALSE</button>
+                                <button class="btn btn-secondary" onclick="markAnswer(this,'FALSE','1-tf')" style="font-size:0.8rem;padding:0.4rem 0.8rem;">NOT GIVEN</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p style="color:var(--dark);">2. Vertical farms can produce significantly more food per square metre than traditional farms.</p>
+                            <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+                                <button class="btn btn-secondary" onclick="markAnswer(this,'TRUE','2-tf')" style="font-size:0.8rem;padding:0.4rem 0.8rem;">TRUE</button>
+                                <button class="btn btn-secondary" onclick="markAnswer(this,'TRUE','2-tf')" style="font-size:0.8rem;padding:0.4rem 0.8rem;">FALSE</button>
+                                <button class="btn btn-secondary" onclick="markAnswer(this,'TRUE','2-tf')" style="font-size:0.8rem;padding:0.4rem 0.8rem;">NOT GIVEN</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p style="color:var(--dark);">3. The majority of vertical farms currently use solar panels for energy.</p>
+                            <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+                                <button class="btn btn-secondary" onclick="markAnswer(this,'NOT GIVEN','3-tf')" style="font-size:0.8rem;padding:0.4rem 0.8rem;">TRUE</button>
+                                <button class="btn btn-secondary" onclick="markAnswer(this,'NOT GIVEN','3-tf')" style="font-size:0.8rem;padding:0.4rem 0.8rem;">FALSE</button>
+                                <button class="btn btn-secondary" onclick="markAnswer(this,'NOT GIVEN','3-tf')" style="font-size:0.8rem;padding:0.4rem 0.8rem;">NOT GIVEN</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-bar">
+                        <button class="btn btn-primary" onclick="alert('Answers: 1=FALSE (artificial lighting used), 2=TRUE (up to 100x), 3=NOT GIVEN (only suggested as possibility)')">Reveal All Answers</button>
+                        <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                    </div>
+                    <div class="explanation-box">
+                        <div class="explanation-title">✓ Answers: 1=FALSE, 2=TRUE, 3=NOT GIVEN</div>
+                        <div class="explanation-text">1. FALSE — The passage states "artificial lighting" is used. 2. TRUE — "up to 100 times greater per square metre" is explicitly stated. 3. NOT GIVEN — Solar panels are mentioned as a possible solution, but it never says most farms currently use them.</div>
+                        <div class="explanation-tip"><strong>💡 Key Rule:</strong> NOT GIVEN means the passage neither confirms nor denies. FALSE means the passage directly contradicts the statement. Don't use outside knowledge — base every answer only on the text.</div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- NEW TOEFL QUESTIONS: Reading, Listening, Speaking, Writing   -->
+                <!-- ============================================================ -->
+
+                <!-- TOEFL Listening Q2 — Campus Conversation -->
+                <div class="question-card" data-exam="toefl" data-type="listening" data-difficulty="medium" style="display:none;">
+                    <div class="question-header">
+                        <span class="question-type type-listening">👂 Listening – Campus Conversation</span>
+                        <span class="difficulty-badge badge-medium">Medium</span>
+                    </div>
+                    <div class="audio-player">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                            <span>🎧 Student & Financial Aid Officer</span>
+                            <span class="time-display">0:00 / 2:00</span>
+                        </div>
+                        <div class="audio-controls">
+                            <button class="play-btn" onclick="toggleAudio(this)">▶</button>
+                            <div class="progress-bar"><div class="progress-fill"></div></div>
+                        </div>
+                    </div>
+                    <div class="audio-transcript">
+                        <strong>Audio transcript:</strong> <em>Student:</em> "Hi, I received a letter saying my scholarship was reduced. I'm not sure why." <em>Officer:</em> "Let me look that up… I see here your enrollment dropped below 12 credit hours. Our scholarship requires full-time status." <em>Student:</em> "I had to drop a class because the professor said I couldn't handle the workload." <em>Officer:</em> "I understand, but we do have an appeal process. If you have documented medical or academic reasons, you can file a reinstatement request before the 15th."
+                    </div>
+                    <p class="question-text">Why was the student's scholarship reduced?</p>
+                    <ul class="options-list">
+                        <li class="option-item" onclick="selectOption(this,'A')"><span class="option-letter">A</span><span>The student failed a required course</span></li>
+                        <li class="option-item" onclick="selectOption(this,'B')"><span class="option-letter">B</span><span>The student's enrollment fell below full-time status</span></li>
+                        <li class="option-item" onclick="selectOption(this,'C')"><span class="option-letter">C</span><span>The student missed the scholarship renewal deadline</span></li>
+                        <li class="option-item" onclick="selectOption(this,'D')"><span class="option-letter">D</span><span>The professor recommended the student be removed from the program</span></li>
+                    </ul>
+                    <div class="action-bar">
+                        <button class="btn btn-primary" onclick="checkAnswer(this,'B')">Check Answer</button>
+                        <button class="btn btn-secondary" onclick="showExplanation(this)">Show Explanation</button>
+                        <button class="btn btn-secondary" onclick="saveQuestion(this)">💾 Save</button>
+                    </div>
+                    <div class="explanation-box">
+                        <div class="explanation-title">✓ Correct Answer: B</div>
+                        <div class="explanation-text">The officer explicitly states: "Your enrollment dropped below 12 credit hours. Our scholarship requires full-time status." The student dropped a class (not failed it), which triggered the scholarship reduction. Option A is incorrect — failing and dropping are different.</div>
+                        <div class="explanation-tip"><strong>💡 TOEFL Tip:</strong> In campus conversation questions, listen for the official's explanation of policy, not just what the student says. Students often mischaracterize their situation.</div>
+                    </div>
+                </div>
+
+                <!-- TOEFL Listening Q3 — Lecture with Multiple Choice -->
+                <div class="question-card" data-exam="toefl" data-type="listening" data-difficulty="hard" style="display:none;">
+                    <div class="question-header">
+                        <span class="question-type type-listening">👂 Listening – Academic Lecture</span>
+                        <span class="difficulty-badge badge-hard">Hard</span>
+                    </div>
+                    <div class="audio-player">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                            <span>🎧 Lecture: Bioluminescence in Marine Biology</span>
+                            <span class="time-display">0:00 / 5:10</span>
+                        </div>
+                        <div class="audio-controls">
+                            <button class="play-btn" onclick="toggleAudio(this)">▶</button>
+                            <div class="progress-bar"><div class="progress-fill"></div></div>
+                        </div>
+                    </div>
+                    <div class="audio-transcript">
+                        <strong>Transcript excerpt:</strong> "Bioluminescence — the production of light by living organisms — is found in roughly 76% of all ocean species below 200 metres. What's fascinating is that this ability evolved independently in at least 40 different lineages, suggesting strong evolutionary pressure favoring it. Scientists have identified three main functions: predation, where the anglerfish uses a glowing lure to attract prey; counterillumination, used by squid to match ambient light and avoid predators below; and communication, seen most dramatically in firefly squid mating displays. Notably, despite how common bioluminescence is in the ocean, it's extremely rare in freshwater environments — a fact that still puzzles researchers."
+                    </div>
+                    <p class="question-text">According to the professor, which of the following best describes WHY bioluminescence evolved in so many different species?</p>
+                    <ul class="options-list">
+                        <li class="option-item" onclick="selectOption(this,'A')"><span class="option-letter">A</span><span>A single common ancestor passed the trait down to all ocean species</span></li>
+                        <li class="option-item" onclick="selectOption(this,'B')"><span class="option-letter">B</span><span>It developed independently many times due to strong evolutionary advantages</span></li>
+                        <li class="option-item" onclick="selectOption(this,'C')"><span class="option-letter">C</span><span>Scientists artificially introduced it to increase marine biodiversity</span></li>
+                        <li class="option-item" onclick="selectOption(this,'D')"><span class="option-letter">D</span><span>It is primarily a response to water temperature changes</span></li>
+                    </ul>
+                    <div class="action-bar">
+                        <button class="btn btn-primary" onclick="checkAnswer(this,'B')">Check Answer</button>
+                        <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                    </div>
+                    <div class="explanation-box">
+                        <div class="explanation-title">✓ Correct Answer: B</div>
+                        <div class="explanation-text">The professor says it "evolved independently in at least 40 different lineages, suggesting strong evolutionary pressure favoring it." This directly supports B. Option A is incorrect — independent evolution means different lineages, not a single ancestor.</div>
+                    </div>
+                </div>
+
+                <!-- TOEFL Speaking Task 4 — Academic Lecture Summary -->
+                <div class="question-card" data-exam="toefl" data-type="speaking" data-difficulty="hard" style="display:none;">
+                    <div class="question-header">
+                        <span class="question-type type-speaking">🎤 Speaking Task 4 – Academic Summary</span>
+                        <span class="difficulty-badge badge-hard">Hard</span>
+                    </div>
+                    <div class="audio-player">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                            <span>🎧 Lecture: The Dunning-Kruger Effect</span>
+                            <span class="time-display">0:00 / 1:30</span>
+                        </div>
+                        <div class="audio-controls">
+                            <button class="play-btn" onclick="toggleAudio(this)">▶</button>
+                            <div class="progress-bar"><div class="progress-fill"></div></div>
+                        </div>
+                    </div>
+                    <div class="audio-transcript">
+                        <strong>Lecture:</strong> "Today we're looking at the Dunning-Kruger effect, a cognitive bias where people with limited knowledge in a domain overestimate their own competence. Kruger and Dunning's 1999 study found that students who scored in the bottom quartile on tests consistently rated their performance above average. They lacked the metacognitive ability to recognize their own limitations. Interestingly, true experts often underestimate their ability — they assume tasks easy for them must be easy for others. This has real-world implications: in medicine, partially-informed patients may refuse expert advice; in business, junior staff may overcommit on projects."
+                    </div>
+                    <p class="question-text">Using the points and examples from the lecture, explain the Dunning-Kruger effect and its real-world implications.</p>
+                    <div style="background:white;padding:1rem;border-radius:8px;margin:1rem 0;display:flex;gap:2rem;font-size:0.85rem;color:#64748b;">
+                        <span>⏱️ Preparation: 20 seconds</span>
+                        <span>🎙️ Speaking time: 60 seconds</span>
+                    </div>
+                    <div class="voice-recorder" id="recorder-toefl-t4">
+                        <p style="font-size:0.9rem;opacity:0.85;">🎤 Record your response</p>
+                        <button class="record-btn" onclick="toggleRecorder(this, 'recorder-toefl-t4')" style="margin:0.8rem auto;">🎙️</button>
+                        <div class="waveform" id="wave-toefl-t4">
+                            <div class="wave-bar" style="height:10px"></div><div class="wave-bar" style="height:24px"></div>
+                            <div class="wave-bar" style="height:16px"></div><div class="wave-bar" style="height:36px"></div>
+                            <div class="wave-bar" style="height:12px"></div><div class="wave-bar" style="height:28px"></div>
+                            <div class="wave-bar" style="height:20px"></div><div class="wave-bar" style="height:10px"></div>
+                        </div>
+                        <p id="rec-status-toefl-t4" style="font-size:0.8rem;opacity:0.7;">Click to start recording</p>
+                    </div>
+                    <details style="margin-top:1rem;">
+                        <summary style="cursor:pointer;color:var(--secondary);font-weight:600;">View Sample High-Scoring Response (Score: 4/4)</summary>
+                        <div style="margin-top:1rem;background:#f8fafc;padding:1rem;border-radius:8px;color:#475569;line-height:1.9;">
+                            "The professor explains the Dunning-Kruger effect, a cognitive bias where people with little knowledge overestimate their own ability. According to the lecture, a 1999 study showed that students scoring in the bottom quartile consistently believed they performed above average, because they lacked the metacognitive skills to recognize their own gaps. Interestingly, experts tend to do the opposite — they underestimate their ability. The professor gives two real-world examples: patients who refuse medical advice because they think they know better, and junior employees who overcommit on work tasks. Both cases illustrate how this bias can lead to poor decisions."
+                        </div>
+                        <table class="rubric-table" style="margin-top:1rem;">
+                            <thead><tr><th>Criteria</th><th>Score</th></tr></thead>
+                            <tbody>
+                                <tr><td>General Description</td><td>4 — Accurately captures the main concept</td></tr>
+                                <tr><td>Key Points Covered</td><td>4 — Both expert/novice aspects + examples cited</td></tr>
+                                <tr><td>Language Use</td><td>4 — Fluent, varied vocabulary</td></tr>
+                                <tr><td>Delivery</td><td>4 — Clear, well-paced</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+
+                <!-- TOEFL Writing Task 2 — Integrated Writing -->
+                <div class="question-card" data-exam="toefl" data-type="writing" data-difficulty="hard" style="display:none;">
+                    <div class="question-header">
+                        <span class="question-type type-writing">✍️ Integrated Writing – Reading + Lecture</span>
+                        <span class="difficulty-badge badge-hard">Hard</span>
+                    </div>
+                    <div class="question-context">
+                        <strong>Reading Passage (3 minutes):</strong> Proponents of nuclear energy argue it is the most viable path to a carbon-free future. Nuclear plants produce no direct greenhouse gas emissions during operation, and modern reactors are significantly safer than older designs. Additionally, nuclear energy provides consistent baseload power unlike intermittent renewables such as wind and solar.
+                    </div>
+                    <div class="audio-player" style="margin:1rem 0;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                            <span>🎧 Lecture countering the reading</span>
+                            <span class="time-display">0:00 / 2:00</span>
+                        </div>
+                        <div class="audio-controls">
+                            <button class="play-btn" onclick="toggleAudio(this)">▶</button>
+                            <div class="progress-bar"><div class="progress-fill"></div></div>
+                        </div>
+                    </div>
+                    <div class="audio-transcript">
+                        <strong>Lecture:</strong> "The reading makes nuclear energy sound appealing, but it overlooks several critical issues. First, while plants themselves don't emit carbon, the mining, enrichment, and construction process certainly does. Second, 'safer' is relative — Fukushima in 2011 demonstrated that even modern plants are vulnerable to unforeseen events. Third, nuclear plants take 15–20 years to build, meaning they can't address urgent climate needs. Battery storage technology is rapidly making renewables far more reliable as baseload."
+                    </div>
+                    <p class="question-text">Summarize the points made in the lecture, explaining how they cast doubt on the specific claims in the reading. Write 150–225 words.</p>
+                    <div class="response-card">
+                        <textarea class="response-textarea" style="min-height:220px;" placeholder="Write your integrated response here (150–225 words)..." oninput="updateWordCount(this, 'wc-toefl-int')"></textarea>
+                        <div style="margin-top:0.5rem;display:flex;justify-content:space-between;align-items:center;">
+                            <span style="color:#64748b;font-size:0.85rem;">Word count: <span id="wc-toefl-int">0</span></span>
+                            <button class="btn btn-primary">Get AI Feedback</button>
+                        </div>
+                    </div>
+                    <div style="margin-top:1rem;background:#eff6ff;padding:1rem;border-radius:8px;">
+                        <strong style="color:var(--primary);">Structure Template:</strong>
+                        <p style="color:#475569;font-size:0.9rem;margin-top:0.5rem;">The lecture challenges three main claims from the reading. First, regarding [Claim 1], the professor argues that... Second, the reading states [Claim 2], however the lecturer points out... Finally, [Claim 3] is contradicted by the professor's argument that...</p>
+                    </div>
+                </div>
+
+                <!-- TOEFL Reading Q2 — Insert a Sentence -->
+                <div class="question-card" data-exam="toefl" data-type="reading" data-difficulty="hard" style="display:none;">
+                    <div class="question-header">
+                        <span class="question-type type-reading">📖 Reading – Insert a Sentence</span>
+                        <span class="difficulty-badge badge-hard">Hard</span>
+                    </div>
+                    <div class="question-context">
+                        <strong>Passage:</strong> "The development of agriculture approximately 10,000 years ago marked a pivotal shift in human civilization. [■A] Nomadic hunter-gatherer groups began settling in fixed locations, allowing for the accumulation of surplus food. [■B] This surplus enabled population growth, as communities were no longer limited by the immediate availability of wild resources. [■C] Specialization of labor soon followed, with some individuals dedicating themselves to non-food activities like pottery, trade, and governance. [■D] These changes laid the groundwork for what historians call the first complex societies."
+                    </div>
+                    <p class="question-text">Where would the following sentence best fit in the passage?<br><br><strong style="background:#fef3c7;padding:0.3rem 0.6rem;border-radius:4px;">"Such stability was previously impossible for groups that moved constantly in search of food."</strong></p>
+                    <ul class="options-list">
+                        <li class="option-item" onclick="selectOption(this,'A')"><span class="option-letter">A</span><span>Position A — After "pivotal shift in human civilization"</span></li>
+                        <li class="option-item" onclick="selectOption(this,'B')"><span class="option-letter">B</span><span>Position B — After "accumulation of surplus food"</span></li>
+                        <li class="option-item" onclick="selectOption(this,'C')"><span class="option-letter">C</span><span>Position C — After "availability of wild resources"</span></li>
+                        <li class="option-item" onclick="selectOption(this,'D')"><span class="option-letter">D</span><span>Position D — After "pottery, trade, and governance"</span></li>
+                    </ul>
+                    <div class="action-bar">
+                        <button class="btn btn-primary" onclick="checkAnswer(this,'B')">Check Answer</button>
+                        <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                    </div>
+                    <div class="explanation-box">
+                        <div class="explanation-title">✓ Correct Answer: B</div>
+                        <div class="explanation-text">The inserted sentence refers to "Such stability" — this pronoun refers to the stability created by settling in fixed locations (mentioned just before Position B). The contrast with "groups that moved constantly" also links logically to the discussion of nomadic groups ending their movement.</div>
+                        <div class="explanation-tip"><strong>💡 Strategy:</strong> For insert-a-sentence questions, look for pronoun references (this, such, these, they), logical connectors, and cause-effect relationships that link the new sentence to surrounding text.</div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- CAMBRIDGE QUESTIONS SECTION (NEW)                            -->
+                <!-- ============================================================ -->
+                <div class="exam-section" id="cambridge-questions" style="display: none;">
+                    <div class="exam-header">
+                        <div class="exam-icon cambridge">🎓</div>
+                        <div class="exam-title">
+                            <h2>Cambridge English Practice (B2/C1/C2)</h2>
+                            <p>First (FCE), Advanced (CAE), Proficiency (CPE) — all four skills</p>
+                        </div>
+                    </div>
+
+                    <!-- Cambridge Reading — Multiple Choice -->
+                    <div class="question-card" data-exam="cambridge" data-type="reading" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-reading">📖 CAE Reading Part 1</span>
+                            <span class="difficulty-badge badge-medium">Medium (C1)</span>
+                        </div>
+                        <div class="question-context">
+                            <strong>Text:</strong> "The concept of 'digital minimalism' — consciously reducing one's use of digital tools — has gained traction in recent years as a counter-movement to the attention economy. Its proponents argue that constant connectivity fragments concentration and erodes the capacity for deep work. Critics, however, suggest that the solution lies not in abstinence but in developing better digital literacy skills, enabling users to engage with technology more intentionally rather than reactively."
+                        </div>
+                        <p class="question-text">What does the writer suggest critics of digital minimalism believe?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this,'A')"><span class="option-letter">A</span><span>People should avoid using digital devices altogether</span></li>
+                            <li class="option-item" onclick="selectOption(this,'B')"><span class="option-letter">B</span><span>Greater awareness of how to use technology is more useful than avoiding it</span></li>
+                            <li class="option-item" onclick="selectOption(this,'C')"><span class="option-letter">C</span><span>The attention economy is beneficial to modern society</span></li>
+                            <li class="option-item" onclick="selectOption(this,'D')"><span class="option-letter">D</span><span>Deep work is an outdated concept in the digital age</span></li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this,'B')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                            <button class="btn btn-secondary" onclick="saveQuestion(this)">💾 Save</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: B</div>
+                            <div class="explanation-text">Critics say the answer is "developing better digital literacy skills… engaging with technology more intentionally." This is a paraphrase of option B. Option A is the opposite of what critics believe — that was what minimalists suggest.</div>
+                            <div class="explanation-tip"><strong>💡 Cambridge Reading Tip:</strong> CAE questions often test your ability to distinguish between the views of different groups mentioned in the text. Note who is speaking before selecting an answer.</div>
+                        </div>
+                    </div>
+
+                    <!-- Cambridge Reading — Open Cloze -->
+                    <div class="question-card" data-exam="cambridge" data-type="reading" data-difficulty="hard">
+                        <div class="question-header">
+                            <span class="question-type type-reading">📖 FCE Use of English Part 2 – Open Cloze</span>
+                            <span class="difficulty-badge badge-hard">Hard (B2)</span>
+                        </div>
+                        <p class="question-text">Read the text below and choose the correct word for each gap. Use only ONE word in each space.</p>
+                        <div style="background:white;padding:1.5rem;border-radius:8px;margin:1rem 0;line-height:2.4;color:var(--dark);">
+                            Despite <select style="border:2px solid var(--border);border-radius:4px;padding:2px;"><option>---</option><option>having</option><option>being</option><option>making</option><option>doing</option></select> been around for centuries, coffee only became a truly global commodity in the twentieth century. It <select style="border:2px solid var(--border);border-radius:4px;padding:2px;"><option>---</option><option>was</option><option>is</option><option>has</option><option>had</option></select> not until the rise of international trade networks that demand began to grow <select style="border:2px solid var(--border);border-radius:4px;padding:2px;"><option>---</option><option>at</option><option>in</option><option>on</option><option>by</option></select> an unprecedented rate. Today, over 2.5 billion cups are consumed every day worldwide, making it <select style="border:2px solid var(--border);border-radius:4px;padding:2px;"><option>---</option><option>one</option><option>a</option><option>the</option><option>some</option></select> of the most traded commodities on earth.
+                        </div>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="alert('Answers: 1=having, 2=was, 3=at, 4=one')">Check Answers</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Grammar Notes</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Answers: having / was / at / one</div>
+                            <div class="explanation-text">1. "Despite having been" — gerund after preposition. 2. "It was not until" — fixed expression for time clauses. 3. "grow at a rate" — fixed collocation. 4. "making it one of" — superlative structure with "one of".</div>
+                            <div class="explanation-tip"><strong>💡 Cambridge Cloze Tip:</strong> Most gaps test prepositions, articles, conjunctions, auxiliary verbs, or pronouns — not vocabulary. Look at the surrounding grammar structure before guessing.</div>
+                        </div>
+                    </div>
+
+                    <!-- Cambridge Listening — Multiple Matching -->
+                    <div class="question-card" data-exam="cambridge" data-type="listening" data-difficulty="hard">
+                        <div class="question-header">
+                            <span class="question-type type-listening">👂 CAE Listening Part 4 – Multiple Matching</span>
+                            <span class="difficulty-badge badge-hard">Hard (C1)</span>
+                        </div>
+                        <div class="audio-player">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                                <span>🎧 Five speakers discuss career changes</span>
+                                <span class="time-display">0:00 / 4:00</span>
+                            </div>
+                            <div class="audio-controls">
+                                <button class="play-btn" onclick="toggleAudio(this)">▶</button>
+                                <div class="progress-bar"><div class="progress-fill"></div></div>
+                            </div>
+                        </div>
+                        <div class="audio-transcript">
+                            <strong>Speaker 1:</strong> "I was earning well, but I felt completely disconnected from the impact of my work. I had to leave." | <strong>Speaker 2:</strong> "A health scare made me realize I was sacrificing too much for my career. Work-life balance became non-negotiable." | <strong>Speaker 3:</strong> "I'd always dreamed of running my own business. The corporate ladder just wasn't where I wanted to be." | <strong>Speaker 4:</strong> "My industry collapsed almost overnight due to automation. I had no choice but to retrain completely." | <strong>Speaker 5:</strong> "My manager was incredibly inspiring. When she moved companies, I followed and it changed my whole career trajectory."
+                        </div>
+                        <p class="question-text">Match each speaker (1–5) with the reason they changed career (A–F). There is one extra option you do not need.</p>
+                        <div style="background:white;padding:1.5rem;border-radius:8px;margin:1rem 0;display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-size:0.9rem;">
+                            <div>
+                                <strong>Reasons (A–F):</strong><br>
+                                A – Desire for entrepreneurship<br>
+                                B – Personal health reasons<br>
+                                C – Loss of job due to technology<br>
+                                D – Lack of meaning in work<br>
+                                E – Influence of a mentor<br>
+                                F – Desire for higher salary
+                            </div>
+                            <div>
+                                Speaker 1: <select style="border:2px solid var(--border);border-radius:4px;padding:2px;"><option>Select</option><option>A</option><option>B</option><option>C</option><option value="D">D</option><option>E</option><option>F</option></select><br><br>
+                                Speaker 2: <select style="border:2px solid var(--border);border-radius:4px;padding:2px;"><option>Select</option><option>A</option><option value="B">B</option><option>C</option><option>D</option><option>E</option><option>F</option></select><br><br>
+                                Speaker 3: <select style="border:2px solid var(--border);border-radius:4px;padding:2px;"><option>Select</option><option value="A">A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option></select><br><br>
+                                Speaker 4: <select style="border:2px solid var(--border);border-radius:4px;padding:2px;"><option>Select</option><option>A</option><option>B</option><option value="C">C</option><option>D</option><option>E</option><option>F</option></select><br><br>
+                                Speaker 5: <select style="border:2px solid var(--border);border-radius:4px;padding:2px;"><option>Select</option><option>A</option><option>B</option><option>C</option><option>D</option><option value="E">E</option><option>F</option></select>
+                            </div>
+                        </div>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="alert('Answers: 1=D, 2=B, 3=A, 4=C, 5=E (F is the extra option)')">Reveal Answers</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Strategy</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Answers: 1=D, 2=B, 3=A, 4=C, 5=E</div>
+                            <div class="explanation-tip"><strong>💡 Multiple Matching Strategy:</strong> The distractors are designed to sound plausible. Speaker 1 mentions "earning well" but the real reason is lack of meaning (D), not salary. Eliminate obvious wrong answers first, then use context. The audio plays twice — use the first listen to get general meaning and the second to confirm answers.</div>
+                        </div>
+                    </div>
+
+                    <!-- Cambridge Speaking — Parts 3 & 4 Collaborative Task -->
+                    <div class="question-card" data-exam="cambridge" data-type="speaking" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-speaking">🎤 FCE Speaking Parts 3 & 4 – Collaborative Task</span>
+                            <span class="difficulty-badge badge-medium">Medium (B2)</span>
+                        </div>
+                        <div style="background:#dbeafe;padding:1.5rem;border-radius:8px;margin:1rem 0;">
+                            <h4 style="color:var(--primary);margin-bottom:0.75rem;">Part 3 Task (4 minutes with partner)</h4>
+                            <p style="color:#475569;margin-bottom:1rem;font-weight:600;">Your school is creating a well-being initiative. Discuss which TWO of the following would be most beneficial for students:</p>
+                            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.5rem;margin-bottom:1rem;">
+                                <div style="background:white;padding:0.75rem;border-radius:6px;text-align:center;font-size:0.9rem;color:var(--dark);">🧘 Mindfulness sessions</div>
+                                <div style="background:white;padding:0.75rem;border-radius:6px;text-align:center;font-size:0.9rem;color:var(--dark);">🏋️ Extended PE classes</div>
+                                <div style="background:white;padding:0.75rem;border-radius:6px;text-align:center;font-size:0.9rem;color:var(--dark);">😴 Flexible start times</div>
+                                <div style="background:white;padding:0.75rem;border-radius:6px;text-align:center;font-size:0.9rem;color:var(--dark);">🤝 Peer counselling</div>
+                                <div style="background:white;padding:0.75rem;border-radius:6px;text-align:center;font-size:0.9rem;color:var(--dark);">📴 Phone-free zones</div>
+                            </div>
+                            <p style="color:#475569;font-size:0.9rem;"><em>Part 4 question (examiner-led):</em> "How important is it for schools to prioritize student mental health compared to academic results?"</p>
+                        </div>
+                        <div class="voice-recorder" id="recorder-cam-speak">
+                            <p style="font-size:0.9rem;opacity:0.85;">🎤 Practice Part 3 — discuss all options before choosing two</p>
+                            <button class="record-btn" onclick="toggleRecorder(this, 'recorder-cam-speak')" style="margin:0.8rem auto;">🎙️</button>
+                            <div class="waveform" id="wave-cam-speak">
+                                <div class="wave-bar" style="height:8px"></div><div class="wave-bar" style="height:22px"></div>
+                                <div class="wave-bar" style="height:14px"></div><div class="wave-bar" style="height:32px"></div>
+                                <div class="wave-bar" style="height:10px"></div><div class="wave-bar" style="height:26px"></div>
+                                <div class="wave-bar" style="height:17px"></div><div class="wave-bar" style="height:9px"></div>
+                            </div>
+                            <p id="rec-status-cam-speak" style="font-size:0.8rem;opacity:0.7;">Click to start recording</p>
+                        </div>
+                        <div class="speaking-tips" style="margin-top:1rem;">
+                            <h4>💡 Cambridge Speaking Band 5 Phrases</h4>
+                            <ul>
+                                <li>"What do you think about…?" / "How does that compare to…?"</li>
+                                <li>"I'd argue that… because…" / "That's a fair point, but…"</li>
+                                <li>"Shall we move on to…?" / "So, which two shall we go with?"</li>
+                                <li>Don't just agree — politely challenge to show range</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Cambridge Writing — Essay (CAE) -->
+                    <div class="question-card" data-exam="cambridge" data-type="writing" data-difficulty="hard">
+                        <div class="question-header">
+                            <span class="question-type type-writing">✍️ CAE Writing Part 1 – Essay (C1)</span>
+                            <span class="difficulty-badge badge-hard">Hard</span>
+                        </div>
+                        <div style="background:#f0f9ff;padding:1.5rem;border-radius:8px;margin:1rem 0;">
+                            <p style="color:var(--dark);margin-bottom:0.75rem;">You have listened to a discussion about the role of arts education in schools. You must write an essay based on the two points from the discussion below:</p>
+                            <ul style="color:#475569;margin-left:1.5rem;">
+                                <li>Arts subjects develop creativity and critical thinking</li>
+                                <li>Schools should focus more on STEM subjects for employability</li>
+                            </ul>
+                            <p style="color:#475569;margin-top:0.75rem;font-size:0.9rem;"><em>Write an essay discussing both viewpoints and giving your own opinion. Write 220–260 words.</em></p>
+                        </div>
+                        <div class="response-card">
+                            <textarea class="response-textarea" style="min-height:260px;" placeholder="Write your CAE essay here (220–260 words)..." oninput="updateWordCount(this, 'wc-cam-essay')"></textarea>
+                            <div style="margin-top:0.5rem;display:flex;justify-content:space-between;align-items:center;">
+                                <span style="color:#64748b;font-size:0.85rem;">Word count: <span id="wc-cam-essay">0</span></span>
+                                <button class="btn btn-primary">Get AI Feedback</button>
+                            </div>
+                        </div>
+                        <div style="margin-top:1rem;background:#f0fdf4;padding:1rem;border-radius:8px;">
+                            <strong style="color:#065f46;">CAE Essay Structure:</strong>
+                            <p style="color:#047857;font-size:0.9rem;margin-top:0.5rem;">Introduction (introduce topic + stance) → Point 1 (arts — concede + develop) → Point 2 (STEM — acknowledge + counter) → Conclusion (balanced opinion). Use formal register. Avoid contractions and colloquial language.</p>
+                        </div>
+                    </div>
+
+                    <!-- Cambridge Writing — Letter/Email (FCE) -->
+                    <div class="question-card" data-exam="cambridge" data-type="writing" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-writing">✍️ FCE Writing Part 2 – Formal Letter (B2)</span>
+                            <span class="difficulty-badge badge-medium">Medium</span>
+                        </div>
+                        <div style="background:#fef3c7;padding:1.5rem;border-radius:8px;margin:1rem 0;">
+                            <strong style="color:#92400e;">Task:</strong>
+                            <p style="color:#78350f;margin-top:0.5rem;">You have seen an advertisement for a part-time position at a local community centre. Write a letter of application to the manager, Mr. Davies. Include: your relevant experience, why you are interested in the role, and what you can offer the centre. Write 140–190 words.</p>
+                        </div>
+                        <div class="response-card">
+                            <textarea class="response-textarea" placeholder="Dear Mr. Davies,&#10;&#10;I am writing to apply for..." oninput="updateWordCount(this, 'wc-cam-letter')"></textarea>
+                            <div style="margin-top:0.5rem;display:flex;justify-content:space-between;align-items:center;">
+                                <span style="color:#64748b;font-size:0.85rem;">Word count: <span id="wc-cam-letter">0</span></span>
+                                <button class="btn btn-primary">Check & Submit</button>
+                            </div>
+                        </div>
+                        <details style="margin-top:1rem;">
+                            <summary style="cursor:pointer;color:var(--secondary);font-weight:600;">View Sample Band 5 Response</summary>
+                            <div style="margin-top:1rem;background:#f8fafc;padding:1rem;border-radius:8px;color:#475569;line-height:1.9;font-size:0.9rem;">
+                                Dear Mr. Davies,<br><br>
+                                I am writing to apply for the part-time position advertised at the Westfield Community Centre. I believe my background makes me a strong candidate for this role.<br><br>
+                                Having volunteered at a youth club for two years, I have developed strong communication skills and a genuine passion for community work. I am particularly adept at organizing events and working with people of all ages.<br><br>
+                                I am drawn to this position because I am eager to contribute to a meaningful local initiative. I could offer not only my time and enthusiasm, but also my experience in social media promotion, which could help raise the centre's profile among younger residents.<br><br>
+                                I would welcome the opportunity to discuss my application further. Please do not hesitate to contact me.<br><br>
+                                Yours sincerely,<br>
+                                [Your Name]
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- JIMAT QUESTIONS SECTION (NEW)                                -->
+                <!-- ============================================================ -->
+                <div class="exam-section" id="jimat-questions" style="display: none;">
+                    <div class="exam-header">
+                        <div class="exam-icon jimat">📘</div>
+                        <div class="exam-title">
+                            <h2>JIMAT (Jaminan Mutu Terpadu) Practice</h2>
+                            <p>Reading Comprehension, Grammar, Listening, Writing & Speaking</p>
+                        </div>
+                    </div>
+
+                    <!-- JIMAT Reading Q1 -->
+                    <div class="question-card" data-exam="jimat" data-type="reading" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-reading">📖 Reading Comprehension</span>
+                            <span class="difficulty-badge badge-medium">Medium</span>
+                        </div>
+                        <div class="question-context">
+                            <strong>Passage:</strong> "Renewable energy sources such as solar and wind power have become increasingly cost-competitive with fossil fuels over the past decade. Governments worldwide are introducing incentives to accelerate the transition, including tax rebates, feed-in tariffs, and public subsidies for research and development. Despite initial investment costs, renewable installations typically recoup their expenses within 7–10 years and continue generating free energy thereafter. Critics, however, point to grid reliability issues during low-sun or low-wind periods as a significant barrier to complete dependence on renewables."
+                        </div>
+                        <p class="question-text">Which of the following best states the main idea of the passage?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this,'A')"><span class="option-letter">A</span><span>Renewable energy is cheaper than fossil fuels in all circumstances</span></li>
+                            <li class="option-item" onclick="selectOption(this,'B')"><span class="option-letter">B</span><span>Renewable energy is increasingly viable but faces practical reliability challenges</span></li>
+                            <li class="option-item" onclick="selectOption(this,'C')"><span class="option-letter">C</span><span>Governments are the only reason renewable energy is growing</span></li>
+                            <li class="option-item" onclick="selectOption(this,'D')"><span class="option-letter">D</span><span>Fossil fuels remain superior to renewable energy in almost every way</span></li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this,'B')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                            <button class="btn btn-secondary" onclick="saveQuestion(this)">💾 Save</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: B</div>
+                            <div class="explanation-text">The passage presents both the growing competitiveness and government support for renewables AND acknowledges the criticism about grid reliability. Option B captures this balance. A is too absolute; C ignores cost-competitiveness; D is directly contradicted by the passage.</div>
+                        </div>
+                    </div>
+
+                    <!-- JIMAT Grammar — Fill in the Blank -->
+                    <div class="question-card" data-exam="jimat" data-type="reading" data-difficulty="easy">
+                        <div class="question-header">
+                            <span class="question-type type-reading">📝 Grammar – Sentence Completion</span>
+                            <span class="difficulty-badge badge-easy">Easy</span>
+                        </div>
+                        <p class="question-text">Choose the grammatically correct option to complete each sentence.</p>
+                        <div style="background:white;padding:1.5rem;border-radius:8px;margin:1rem 0;display:grid;gap:1.5rem;">
+                            <div>
+                                <p style="color:var(--dark);margin-bottom:0.5rem;"><strong>1.</strong> By the time the manager arrived, the team ________ the report.</p>
+                                <ul class="options-list" style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+                                    <li class="option-item" onclick="selectOption(this,'A')" style="padding:0.6rem;"><span class="option-letter">A</span><span>had already completed</span></li>
+                                    <li class="option-item" onclick="selectOption(this,'B')" style="padding:0.6rem;"><span class="option-letter">B</span><span>has completed</span></li>
+                                    <li class="option-item" onclick="selectOption(this,'C')" style="padding:0.6rem;"><span class="option-letter">C</span><span>completed</span></li>
+                                    <li class="option-item" onclick="selectOption(this,'D')" style="padding:0.6rem;"><span class="option-letter">D</span><span>will complete</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p style="color:var(--dark);margin-bottom:0.5rem;"><strong>2.</strong> Neither the director nor the employees ________ informed about the change.</p>
+                                <ul class="options-list" style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+                                    <li class="option-item" onclick="selectOption(this,'A')" style="padding:0.6rem;"><span class="option-letter">A</span><span>was</span></li>
+                                    <li class="option-item" onclick="selectOption(this,'B')" style="padding:0.6rem;"><span class="option-letter">B</span><span>were</span></li>
+                                    <li class="option-item" onclick="selectOption(this,'C')" style="padding:0.6rem;"><span class="option-letter">C</span><span>are</span></li>
+                                    <li class="option-item" onclick="selectOption(this,'D')" style="padding:0.6rem;"><span class="option-letter">D</span><span>has been</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="alert('Answers:\n1. A — Past Perfect required (action completed before another past event)\n2. B — Neither...nor: verb agrees with the closer noun (employees = plural → were)')">Check All Answers</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Grammar Rules</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Answers: 1=A, 2=B</div>
+                            <div class="explanation-text">1. "By the time + past simple" triggers the Past Perfect for the earlier action. 2. With "Neither...nor", the verb agrees with the noun closest to it. "Employees" is plural → "were".</div>
+                            <div class="explanation-tip"><strong>💡 JIMAT Grammar Tip:</strong> Watch for subject-verb agreement with correlative conjunctions (either/or, neither/nor, not only/but also). The verb always agrees with the second (closer) subject.</div>
+                        </div>
+                    </div>
+
+                    <!-- JIMAT Listening -->
+                    <div class="question-card" data-exam="jimat" data-type="listening" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-listening">👂 Listening Comprehension</span>
+                            <span class="difficulty-badge badge-medium">Medium</span>
+                        </div>
+                        <div class="audio-player">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                                <span>🎧 Announcement: Company Restructuring</span>
+                                <span class="time-display">0:00 / 2:45</span>
+                            </div>
+                            <div class="audio-controls">
+                                <button class="play-btn" onclick="toggleAudio(this)">▶</button>
+                                <div class="progress-bar"><div class="progress-fill"></div></div>
+                            </div>
+                        </div>
+                        <div class="audio-transcript">
+                            <strong>Transcript:</strong> "Good morning, everyone. I'd like to inform you about some important organizational changes taking effect next month. The marketing and communications teams will be merged into a single department to improve coordination. This will result in some role adjustments — three positions will be made redundant, however all affected staff will be offered retraining opportunities and priority consideration for new openings. Additionally, remote work arrangements will be formalized: employees may work from home up to three days per week with manager approval. These changes are designed to reduce operational costs while improving flexibility."
+                        </div>
+                        <p class="question-text">According to the announcement, what will happen to staff whose positions are made redundant?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this,'A')"><span class="option-letter">A</span><span>They will be immediately dismissed without compensation</span></li>
+                            <li class="option-item" onclick="selectOption(this,'B')"><span class="option-letter">B</span><span>They will be offered retraining and priority for new roles</span></li>
+                            <li class="option-item" onclick="selectOption(this,'C')"><span class="option-letter">C</span><span>They will be automatically transferred to the new merged department</span></li>
+                            <li class="option-item" onclick="selectOption(this,'D')"><span class="option-letter">D</span><span>They will be required to work remotely permanently</span></li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this,'B')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: B</div>
+                            <div class="explanation-text">The announcement states: "all affected staff will be offered retraining opportunities and priority consideration for new openings." This directly matches option B.</div>
+                        </div>
+                    </div>
+
+                    <!-- JIMAT Speaking — Presentation Task -->
+                    <div class="question-card" data-exam="jimat" data-type="speaking" data-difficulty="hard">
+                        <div class="question-header">
+                            <span class="question-type type-speaking">🎤 Speaking – Short Presentation</span>
+                            <span class="difficulty-badge badge-hard">Hard</span>
+                        </div>
+                        <div style="background:#dbeafe;padding:1.5rem;border-radius:8px;margin:1rem 0;">
+                            <h4 style="color:var(--primary);margin-bottom:0.75rem;">Presentation Task</h4>
+                            <p style="color:#475569;font-weight:600;margin-bottom:0.75rem;">Topic: "The advantages and disadvantages of remote work for organisations."</p>
+                            <p style="color:#475569;font-size:0.9rem;">Speak for 2–3 minutes. You must cover: (1) at least two advantages, (2) at least one disadvantage, and (3) your recommendation.</p>
+                        </div>
+                        <div class="voice-recorder" id="recorder-jimat-speak">
+                            <p style="font-size:0.9rem;opacity:0.85;">🎤 Record your 2–3 minute presentation</p>
+                            <button class="record-btn" onclick="toggleRecorder(this, 'recorder-jimat-speak')" style="margin:0.8rem auto;">🎙️</button>
+                            <div class="waveform" id="wave-jimat-speak">
+                                <div class="wave-bar" style="height:9px"></div><div class="wave-bar" style="height:21px"></div>
+                                <div class="wave-bar" style="height:13px"></div><div class="wave-bar" style="height:34px"></div>
+                                <div class="wave-bar" style="height:11px"></div><div class="wave-bar" style="height:27px"></div>
+                                <div class="wave-bar" style="height:19px"></div><div class="wave-bar" style="height:8px"></div>
+                            </div>
+                            <p id="rec-status-jimat-speak" style="font-size:0.8rem;opacity:0.7;">Click to start recording</p>
+                        </div>
+                        <div class="speaking-tips" style="margin-top:1rem;">
+                            <h4>💡 Presentation Structure Guide</h4>
+                            <ul>
+                                <li><strong>Opening:</strong> "Today I'd like to discuss the pros and cons of remote work for organisations."</li>
+                                <li><strong>Advantages:</strong> cost savings on office space, access to global talent pool, higher employee satisfaction</li>
+                                <li><strong>Disadvantage:</strong> challenges in collaboration, monitoring productivity, maintaining company culture</li>
+                                <li><strong>Recommendation:</strong> Use signal phrases like "Based on the evidence, I would recommend a hybrid approach…"</li>
+                            </ul>
+                        </div>
+                        <details style="margin-top:1rem;">
+                            <summary style="cursor:pointer;color:var(--secondary);font-weight:600;">View Sample High-Scoring Response</summary>
+                            <div style="margin-top:1rem;background:#f8fafc;padding:1rem;border-radius:8px;color:#475569;line-height:1.9;font-size:0.9rem;">
+                                "Good morning. Today I'd like to present a balanced view of remote work from an organisational perspective.<br><br>
+                                To begin with the advantages: firstly, organisations can significantly reduce overhead costs by downsizing office space — a substantial saving for large companies. Secondly, remote work allows organisations to recruit from a much wider talent pool, unconstrained by geography, which is particularly valuable in specialised fields.<br><br>
+                                However, remote work also presents notable challenges. Chief among these is the difficulty of maintaining effective collaboration and spontaneous communication, which can slow decision-making and weaken team cohesion over time.<br><br>
+                                Based on these considerations, my recommendation is that organisations adopt a structured hybrid model — allowing remote work two to three days per week while requiring on-site presence for key collaborative activities. This balances flexibility with the benefits of in-person interaction. Thank you."
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- JIMAT Writing — Formal Report -->
+                    <div class="question-card" data-exam="jimat" data-type="writing" data-difficulty="hard">
+                        <div class="question-header">
+                            <span class="question-type type-writing">✍️ Writing – Formal Report</span>
+                            <span class="difficulty-badge badge-hard">Hard</span>
+                        </div>
+                        <div style="background:#f0f9ff;padding:1.5rem;border-radius:8px;margin:1rem 0;">
+                            <strong style="color:var(--dark);">Task:</strong>
+                            <p style="color:#475569;margin-top:0.5rem;">You work for a company that is considering introducing a new employee wellness programme. Your manager has asked you to write a report evaluating the proposal. Your report should include: the potential benefits, possible challenges, and a final recommendation. Write 200–250 words in a formal style.</p>
+                        </div>
+                        <div class="response-card">
+                            <textarea class="response-textarea" style="min-height:240px;" placeholder="Write your formal report here (200–250 words)...&#10;&#10;Suggested structure:&#10;Title / Introduction / Benefits / Challenges / Recommendation" oninput="updateWordCount(this, 'wc-jimat-report')"></textarea>
+                            <div style="margin-top:0.5rem;display:flex;justify-content:space-between;align-items:center;">
+                                <span style="color:#64748b;font-size:0.85rem;">Word count: <span id="wc-jimat-report">0</span></span>
+                                <button class="btn btn-primary">Submit for Review</button>
+                            </div>
+                        </div>
+                        <div style="margin-top:1rem;background:#fef3c7;padding:1rem;border-radius:8px;">
+                            <strong style="color:#92400e;">Formal Report Language:</strong>
+                            <p style="color:#78350f;font-size:0.9rem;margin-top:0.5rem;">The purpose of this report is to… • It is evident that… • A significant advantage would be… • One potential drawback is… • In light of the above, it is recommended that… • This report concludes that…</p>
+                        </div>
+                    </div>
+
+                    <!-- JIMAT Writing — Short Email Response -->
+                    <div class="question-card" data-exam="jimat" data-type="writing" data-difficulty="easy">
+                        <div class="question-header">
+                            <span class="question-type type-writing">✍️ Writing – Email Response</span>
+                            <span class="difficulty-badge badge-easy">Easy</span>
+                        </div>
+                        <div style="background:#f8fafc;padding:1.5rem;border-radius:8px;margin:1rem 0;border-left:4px solid var(--secondary);">
+                            <p style="color:#475569;font-style:italic;font-size:0.9rem;">"Dear Team,<br>We are planning a staff appreciation dinner for next Friday evening. Please reply to confirm your attendance, indicate any dietary requirements, and suggest one activity you would enjoy at the event. Kind regards, HR Department."</p>
+                        </div>
+                        <p class="question-text">Write a reply email to the HR Department. Include all three points mentioned. Write 80–100 words.</p>
+                        <div class="response-card">
+                            <textarea class="response-textarea" placeholder="Dear HR Department,&#10;&#10;Thank you for your email..." oninput="updateWordCount(this, 'wc-jimat-email')"></textarea>
+                            <div style="margin-top:0.5rem;display:flex;justify-content:space-between;align-items:center;">
+                                <span style="color:#64748b;font-size:0.85rem;">Word count: <span id="wc-jimat-email">0</span></span>
+                                <button class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                        <div class="action-bar" style="margin-top:1rem;">
+                            <button class="btn btn-secondary" onclick="saveQuestion(this)">💾 Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duolingo Questions -->
+                <div class="exam-section" id="duolingo-questions" style="display: none;">
+                    <div class="exam-header">
+                        <div class="exam-icon duolingo">📱</div>
+                        <div class="exam-title">
+                            <h2>Duolingo English Test Practice</h2>
+                            <p>Adaptive questions, video interview, and writing sample</p>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-exam="duolingo" data-type="reading" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-reading">📖 Read and Complete</span>
+                            <span class="difficulty-badge badge-medium">Medium</span>
+                        </div>
+                        <p class="question-text">Fill in the missing letters to complete the text:</p>
+                        <div style="background: white; padding: 2rem; border-radius: 8px; font-size: 1.1rem; line-height: 2; color: var(--dark);">
+                            The sc___nt___c comm___n___ty has m___de s___gn___f___c___nt str___d___s ___n underst___nd___ng cl___m___te ch___nge. Desp___te th___s, m___ny ch___ll___nges rem___n ___n ___mpl___m___nt___ng eff___ct___ve s___l___t___ons.
+                        </div>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="alert('Complete text: The scientific community has made significant strides in understanding climate change. Despite this, many challenges remain in implementing effective solutions.')">Reveal Answer</button>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-exam="duolingo" data-type="writing" data-difficulty="hard">
+                        <div class="question-header">
+                            <span class="question-type type-writing">✍️ Interactive Writing</span>
+                            <span class="difficulty-badge badge-hard">Hard</span>
+                        </div>
+                        <p class="question-text">Write about the following topic for 3-5 minutes. You must write at least 50 words.</p>
+                        <div style="background: #dbeafe; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <strong>Prompt:</strong> Describe a time when you had to solve a difficult problem. What was the problem and how did you solve it?
+                        </div>
+                        <textarea class="response-textarea" placeholder="Type your response (minimum 50 words)..."></textarea>
+                        <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="color: #64748b;">Word count: 0</span>
+                            <button class="btn btn-primary">Submit for Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PMP Questions -->
+                <div class="exam-section" id="pmp-questions" style="display: none;">
+                    <div class="exam-header">
+                        <div class="exam-icon pmp">📊</div>
+                        <div class="exam-title">
+                            <h2>PMP Certification Practice</h2>
+                            <p>People, Process, and Business Environment domains</p>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-exam="pmp" data-type="situational" data-difficulty="hard">
+                        <div class="question-header">
+                            <span class="question-type type-situational">💼 Situational</span>
+                            <span class="difficulty-badge badge-hard">Hard</span>
+                        </div>
+                        <p class="question-text">You are managing a software development project using Agile methodology. During the third sprint, two key developers have a conflict about the technical architecture approach. The team velocity has dropped by 40%, and stakeholders are concerned about the schedule impact. What should you do first?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this, 'A')">
+                                <span class="option-letter">A</span>
+                                <span>Escalate the conflict to the functional managers for resolution</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'B')">
+                                <span class="option-letter">B</span>
+                                <span>Facilitate a collaborative session to understand both perspectives and reach consensus</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'C')">
+                                <span class="option-letter">C</span>
+                                <span>Make the architectural decision yourself to keep the project on schedule</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'D')">
+                                <span class="option-letter">D</span>
+                                <span>Remove both developers from the project and replace them</span>
+                            </li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this, 'B')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: B</div>
+                            <div class="explanation-text">
+                                As a project manager, your role is to facilitate and empower the team. Option B demonstrates servant leadership and conflict resolution skills. In Agile, self-organizing teams should resolve technical issues collaboratively. Escalating (A) or making unilateral decisions (C) undermines team autonomy. Removing developers (D) is premature and doesn't address the root cause.
+                            </div>
+                            <div class="explanation-tip">
+                                <strong>💡 Domain:</strong> People (42%) - Conflict Management<br>
+                                <strong>Key Concept:</strong> Servant leadership, facilitating team decisions, protecting team from external interference.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-exam="pmp" data-type="technical" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-technical">🔢 Technical</span>
+                            <span class="difficulty-badge badge-medium">Medium</span>
+                        </div>
+                        <p class="question-text">Your project has a Budget at Completion (BAC) of $500,000. The Earned Value (EV) is $200,000, Actual Cost (AC) is $250,000, and Planned Value (PV) is $220,000. What is the Cost Performance Index (CPI) and what does it indicate?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this, 'A')">
+                                <span class="option-letter">A</span>
+                                <span>CPI = 0.80; the project is over budget</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'B')">
+                                <span class="option-letter">B</span>
+                                <span>CPI = 1.10; the project is under budget</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'C')">
+                                <span class="option-letter">C</span>
+                                <span>CPI = 0.91; the project is slightly over budget</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'D')">
+                                <span class="option-letter">D</span>
+                                <span>CPI = 1.25; the project is significantly under budget</span>
+                            </li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this, 'A')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Show Formula</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: A (CPI = 0.80)</div>
+                            <div class="explanation-text">
+                                <strong>Formula:</strong> CPI = EV / AC<br>
+                                <strong>Calculation:</strong> $200,000 / $250,000 = 0.80<br><br>
+                                A CPI less than 1.0 indicates the project is over budget (getting $0.80 of value for every $1.00 spent). The project is also behind schedule (SPI = EV/PV = 0.91).
+                            </div>
+                            <div style="margin-top: 1rem; padding: 1rem; background: #f8fafc; border-radius: 8px;">
+                                <strong>Related Formulas:</strong><br>
+                                SPI (Schedule Performance Index) = EV / PV = 0.91<br>
+                                CV (Cost Variance) = EV - AC = -$50,000<br>
+                                EAC (Estimate at Completion) = BAC / CPI = $625,000
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-exam="pmp" data-type="technical" data-difficulty="hard">
+                        <div class="question-header">
+                            <span class="question-type type-technical">🎯 Agile/Hybrid</span>
+                            <span class="difficulty-badge badge-hard">Hard</span>
+                        </div>
+                        <p class="question-text">A project team is transitioning from predictive to Agile methodology. The product owner is struggling to prioritize the backlog because stakeholders keep changing requirements. As the Scrum Master, what technique would you recommend to improve this situation?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this, 'A')">
+                                <span class="option-letter">A</span>
+                                <span>Implement a strict change control board to limit requirement changes</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'B')">
+                                <span class="option-letter">B</span>
+                                <span>Use MoSCoW prioritization and establish a Definition of Ready for backlog items</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'C')">
+                                <span class="option-letter">C</span>
+                                <span>Extend the sprint length to accommodate changing requirements</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'D')">
+                                <span class="option-letter">D</span>
+                                <span>Return to predictive methodology for better control</span>
+                            </li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this, 'B')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: B</div>
+                            <div class="explanation-text">
+                                MoSCoW (Must have, Should have, Could have, Won't have) provides a clear framework for prioritization. Definition of Ready ensures backlog items are properly refined before sprint planning, reducing mid-sprint changes. This maintains Agile principles while bringing structure to prioritization.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                    <!-- Google Professional Certificates Questions -->
+                    <div class="exam-section" id="google-questions" style="display: none;">
+                        <div class="exam-header">
+                            <div class="exam-icon google">🤖</div>
+                            <div class="exam-title">
+                                <h2>Google Professional Certificates</h2>
+                                <p>Data Analytics, UX Design, Project Management, IT Support</p>
+                            </div>
+                        </div>
+
+                        <!-- Google Data Analytics Question -->
+                        <div class="question-card" data-exam="google" data-type="technical" data-difficulty="medium">
+                            <div class="question-header">
+                                <span class="question-type type-technical">📊 Data Analytics</span>
+                                <span class="difficulty-badge badge-medium">Medium</span>
+                            </div>
+                            <p class="question-text">In Google Data Analytics, which SQL clause groups rows that have the same values in specified columns into summary rows?</p>
+                            <ul class="options-list">
+                                <li class="option-item" onclick="selectOption(this, 'A')"><span class="option-letter">A</span><span>WHERE</span></li>
+                                <li class="option-item" onclick="selectOption(this, 'B')"><span class="option-letter">B</span><span>ORDER BY</span></li>
+                                <li class="option-item" onclick="selectOption(this, 'C')"><span class="option-letter">C</span><span>GROUP BY</span></li>
+                                <li class="option-item" onclick="selectOption(this, 'D')"><span class="option-letter">D</span><span>JOIN</span></li>
+                            </ul>
+                            <div class="action-bar">
+                                <button class="btn btn-primary" onclick="checkAnswer(this, 'C')">Check Answer</button>
+                                <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                                <button class="btn btn-secondary" onclick="saveQuestion(this)">💾 Save</button>
+                            </div>
+                            <div class="explanation-box">
+                                <div class="explanation-title">✓ Correct Answer: C</div>
+                                <div class="explanation-text">GROUP BY clause groups rows with identical values into summary rows, often used with aggregate functions like COUNT(), AVG(), SUM().</div>
+                                <div class="explanation-tip">💡 <strong>Data Analytics Tip:</strong> GROUP BY is essential for creating pivot tables and summarizing datasets.</div>
+                            </div>
+                        </div>
+
+                        <!-- Google UX Design Question -->
+                        <div class="question-card" data-exam="google" data-type="situational" data-difficulty="hard">
+                            <div class="question-header">
+                                <span class="question-type type-situational">🎨 UX Design</span>
+                                <span class="difficulty-badge badge-hard">Hard</span>
+                            </div>
+                            <p class="question-text">During user interviews for a new mobile banking app, several participants mention feeling anxious about entering sensitive information on their phone. What UX design principle should guide your approach to address this concern?</p>
+                            <ul class="options-list">
+                                <li class="option-item" onclick="selectOption(this, 'A')"><span class="option-letter">A</span><span>Progressive disclosure — show sensitive fields only when necessary</span></li>
+                                <li class="option-item" onclick="selectOption(this, 'B')"><span class="option-letter">B</span><span>High-contrast text for better readability</span></li>
+                                <li class="option-item" onclick="selectOption(this, 'C')"><span class="option-letter">C</span><span>Large touch targets to prevent mis-taps</span></li>
+                                <li class="option-item" onclick="selectOption(this, 'D')"><span class="option-letter">D</span><span>Animated transitions between screens</span></li>
+                            </ul>
+                            <div class="action-bar">
+                                <button class="btn btn-primary" onclick="checkAnswer(this, 'A')">Check Answer</button>
+                                <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                            </div>
+                            <div class="explanation-box">
+                                <div class="explanation-title">✓ Correct Answer: A</div>
+                                <div class="explanation-text">Progressive disclosure reduces cognitive load by revealing information gradually, building user trust before asking for sensitive data.</div>
+                            </div>
+                        </div>
+
+                        <!-- Google Project Management Question -->
+                        <div class="question-card" data-exam="google" data-type="situational" data-difficulty="medium">
+                            <div class="question-header">
+                                <span class="question-type type-situational">📋 Project Management</span>
+                                <span class="difficulty-badge badge-medium">Medium</span>
+                            </div>
+                            <p class="question-text">Your project team is behind schedule due to scope creep from the client. During the next sprint planning meeting, how should you address this?</p>
+                            <ul class="options-list">
+                                <li class="option-item" onclick="selectOption(this, 'A')"><span class="option-letter">A</span><span>Add more team members to work overtime</span></li>
+                                <li class="option-item" onclick="selectOption(this, 'B')"><span class="option-letter">B</span><span>Discuss with client and reprioritize the backlog using MoSCoW method</span></li>
+                                <li class="option-item" onclick="selectOption(this, 'C')"><span class="option-letter">C</span><span>Cancel the sprint planning meeting</span></li>
+                                <li class="option-item" onclick="selectOption(this, 'D')"><span class="option-letter">D</span><span>Work extra hours to catch up</span></li>
+                            </ul>
+                            <div class="action-bar">
+                                <button class="btn btn-primary" onclick="checkAnswer(this, 'B')">Check Answer</button>
+                                <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                            </div>
+                            <div class="explanation-box">
+                                <div class="explanation-title">✓ Correct Answer: B</div>
+                                <div class="explanation-text">MoSCoW (Must/Should/Could/Won't) prioritization helps manage scope creep by clearly defining priorities with stakeholders.</div>
+                            </div>
+                        </div>
+
+                        <!-- Google IT Support Question -->
+                        <div class="question-card" data-exam="google" data-type="technical" data-difficulty="easy">
+                            <div class="question-header">
+                                <span class="question-type type-technical">💻 IT Support</span>
+                                <span class="difficulty-badge badge-easy">Easy</span>
+                            </div>
+                            <p class="question-text">A user reports they cannot access shared network drives. The drives were working yesterday. You can ping the file server from your computer. What should you check FIRST?</p>
+                            <ul class="options-list">
+                                <li class="option-item" onclick="selectOption(this, 'A')"><span class="option-letter">A</span><span>User's permissions on the share</span></li>
+                                <li class="option-item" onclick="selectOption(this, 'B')"><span class="option-letter">B</span><span>File server is powered on</span></li>
+                                <li class="option-item" onclick="selectOption(this, 'C')"><span class="option-letter">C</span><span>User's network cable is plugged in</span></li>
+                                <li class="option-item" onclick="selectOption(this, 'D')"><span class="option-letter">D</span><span>User's computer has restarted today</span></li>
+                            </ul>
+                            <div class="action-bar">
+                                <button class="btn btn-primary" onclick="checkAnswer(this, 'A')">Check Answer</button>
+                                <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                            </div>
+                            <div class="explanation-box">
+                                <div class="explanation-title">✓ Correct Answer: A</div>
+                                <div class="explanation-text">Since network connectivity is confirmed (ping works) and it was working yesterday, permissions are the most likely cause of sudden access denial.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CompTIA Questions (existing remains intact) -->
+                    <div class="exam-section" id="comptia-questions" style="display: none;">
+
+                    <div class="exam-header">
+                        <div class="exam-icon comptia">🔒</div>
+                        <div class="exam-title">
+                            <h2>CompTIA Certification Practice</h2>
+                            <p>A+, Network+, Security+, and CySA+</p>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-exam="comptia" data-type="technical" data-difficulty="easy">
+                        <div class="question-header">
+                            <span class="question-type type-technical">💻 A+ Core 1</span>
+                            <span class="difficulty-badge badge-easy">Easy</span>
+                        </div>
+                        <p class="question-text">A user reports their computer is running slowly and the hard drive LED is constantly active. Task Manager shows 100% disk utilization. Which tool should you use FIRST to diagnose the issue?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this, 'A')">
+                                <span class="option-letter">A</span>
+                                <span>CHKDSK</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'B')">
+                                <span class="option-letter">B</span>
+                                <span>System File Checker (SFC)</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'C')">
+                                <span class="option-letter">C</span>
+                                <span>Resource Monitor (Resmon)</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'D')">
+                                <span class="option-letter">D</span>
+                                <span>Disk Cleanup</span>
+                            </li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this, 'C')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: C (Resource Monitor)</div>
+                            <div class="explanation-text">
+                                Resource Monitor (resmon) provides real-time detailed analysis of disk activity by process. This allows you to identify which specific process is causing high disk utilization before attempting repairs. CHKDSK (A) checks file system integrity but doesn't identify active processes.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-card" data-exam="comptia" data-type="technical" data-difficulty="hard">
+                        <div class="question-header">
+                            <span class="question-type type-technical">🛡️ Security+</span>
+                            <span class="difficulty-badge badge-hard">Hard</span>
+                        </div>
+                        <p class="question-text">An organization discovers that an attacker has been present in their network for six months, exfiltrating data slowly to avoid detection. The attacker used legitimate administrative tools and credentials. Which type of attack is this, and what security control would have best detected it?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this, 'A')">
+                                <span class="option-letter">A</span>
+                                <span>SQL Injection; Web Application Firewall (WAF)</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'B')">
+                                <span class="option-letter">B</span>
+                                <span>Pass-the-Hash; Privileged Access Management (PAM)</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'C')">
+                                <span class="option-letter">C</span>
+                                <span>Living off the Land; User and Entity Behavior Analytics (UEBA)</span>
+                            </li>
+                            <li class="option-item" onclick="selectOption(this, 'D')">
+                                <span class="option-letter">D</span>
+                                <span>Cross-Site Scripting (XSS); Content Security Policy (CSP)</span>
+                            </li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this, 'C')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Security Concepts</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: C</div>
+                            <div class="explanation-text">
+                                "Living off the Land" (LotL) attacks use legitimate tools (PowerShell, WMI, PsExec) and valid credentials to blend in with normal activity. UEBA establishes baselines of normal behavior and detects anomalies like unusual login times, data access patterns, or tool usage that differ from established profiles.
+                            </div>
+                            <div class="explanation-tip">
+                                <strong>Key Indicators of LotL Attacks:</strong><br>
+                                • Use of built-in Windows tools (PowerShell, WMI)<br>
+                                • Legitimate credentials (often compromised)<br>
+                                • Low-and-slow data exfiltration<br>
+                                • No malware signatures to detect
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn" onclick="changePage(1)">1</button>
+                    <button class="page-btn active" onclick="changePage(2)">2</button>
+                    <button class="page-btn" onclick="changePage(3)">3</button>
+                    <button class="page-btn" onclick="changePage(4)">4</button>
+                    <button class="page-btn" onclick="changePage(5)">5</button>
+                    <span style="display: flex; align-items: center; padding: 0 0.5rem;">...</span>
+                    <button class="page-btn" onclick="changePage(50)">50</button>
+                </div>
+
+                <div class="ad-banner">
+                    <div class="ad-label">Advertisement</div>
+                    <div style="color: #94a3b8; margin-top: 0.5rem;">Upgrade to Premium for 5000+ questions and full-length mock exams</div>
+                </div>
+            </div>
+
+            <!-- Downloads Section -->
+            <div id="downloads-section" class="question-section">
+                <h2 style="margin-bottom: 2rem;">Free Study Materials & Downloads</h2>
+                
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-header" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">📝</div>
+                        <div class="resource-body">
+                            <span class="resource-tag" style="background: #dbeafe; color: #1e40af;">TOEFL</span>
+                            <h3 class="resource-title">TOEFL iBT Complete Practice Test PDF</h3>
+                            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">Full-length test with audio files and answer explanations</p>
+                            <div class="resource-meta">
+                                <span>📄 PDF + MP3</span>
+                                <span>⬇️ 15k downloads</span>
+                            </div>
+                            <button class="download-btn-small" style="margin-top: 1rem; width: 100%;">Download Free</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📊</div>
+                        <div class="resource-body">
+                            <span class="resource-tag" style="background: #fef3c7; color: #92400e;">PMP</span>
+                            <h3 class="resource-title">PMP Formula Cheat Sheet</h3>
+                            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">All 49 processes and 100+ formulas on one page</p>
+                            <div class="resource-meta">
+                                <span>📄 PDF</span>
+                                <span>⬇️ 22k downloads</span>
+                            </div>
+                            <button class="download-btn-small" style="margin-top: 1rem; width: 100%;">Download Free</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header" style="background: linear-gradient(135deg, #10b981, #059669);">☁️</div>
+                        <div class="resource-body">
+
+                            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">200+ services organized by use case and function</p>
+                            <div class="resource-meta">
+                                <span>📄 PDF</span>
+                                <span>⬇️ 18k downloads</span>
+                            </div>
+                            <button class="download-btn-small" style="margin-top: 1rem; width: 100%;">Download Free</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">🔒</div>
+                        <div class="resource-body">
+                            <span class="resource-tag" style="background: #ede9fe; color: #5b21b6;">CompTIA</span>
+                            <h3 class="resource-title">Security+ SY0-701 Study Guide</h3>
+                            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">Complete domain coverage with practice questions</p>
+                            <div class="resource-meta">
+                                <span>📄 PDF (120 pages)</span>
+                                <span>⬇️ 12k downloads</span>
+                            </div>
+                            <button class="download-btn-small" style="margin-top: 1rem; width: 100%;">Download Free</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header" style="background: linear-gradient(135deg, #ec4899, #db2777);">🗣️</div>
+                        <div class="resource-body">
+                            <span class="resource-tag" style="background: #fce7f3; color: #9d174d;">IELTS</span>
+                            <h3 class="resource-title">IELTS Speaking Part 2 Cue Cards</h3>
+                            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">100+ topics with model answers and vocabulary</p>
+                            <div class="resource-meta">
+                                <span>📄 PDF</span>
+                                <span>⬇️ 25k downloads</span>
+                            </div>
+                            <button class="download-btn-small" style="margin-top: 1rem; width: 100%;">Download Free</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header" style="background: linear-gradient(135deg, #6b7280, #374151);">📅</div>
+                        <div class="resource-body">
+                            <span class="resource-tag" style="background: #f3f4f6; color: #374151;">General</span>
+                            <h3 class="resource-title">90-Day Study Planner Template</h3>
+                            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">Customizable Excel template for any exam</p>
+                            <div class="resource-meta">
+                                <span>📊 Excel</span>
+                                <span>⬇️ 30k downloads</span>
+                            </div>
+                            <button class="download-btn-small" style="margin-top: 1rem; width: 100%;">Download Free</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Tab switching
+        function switchSection(section) {
+            document.querySelectorAll('.question-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+            
+            document.getElementById(section + '-section').classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Exam filtering
+        function filterExam(exam) {
+            document.querySelectorAll('.exam-section').forEach(section => {
+                if (exam === 'all') {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = section.id === exam + '-questions' ? 'block' : 'none';
+                }
+            });
+            // Also show/hide question cards within visible sections based on exam
+            document.querySelectorAll('.question-card').forEach(card => {
+                if (exam === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    const cardExam = card.getAttribute('data-exam');
+                    card.style.display = (cardExam === exam) ? 'block' : 'none';
+                }
+            });
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Difficulty filtering
+        function filterDifficulty(level) {
+            document.querySelectorAll('.question-card').forEach(card => {
+                const cardDifficulty = card.getAttribute('data-difficulty');
+                card.style.display = cardDifficulty === level ? 'block' : 'none';
+            });
+        }
+
+        // Type filtering
+        function filterType(type) {
+            document.querySelectorAll('.question-card').forEach(card => {
+                const cardType = card.getAttribute('data-type');
+                card.style.display = cardType === type ? 'block' : 'none';
+            });
+        }
+
+        // Option selection
+        function selectOption(element, letter) {
+            const parent = element.parentElement;
+            parent.querySelectorAll('.option-item').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            element.classList.add('selected');
+        }
+
+        // Check answer
+        function checkAnswer(button, correctLetter) {
+            const card = button.closest('.question-card');
+            const options = card.querySelectorAll('.option-item');
+            const selected = card.querySelector('.option-item.selected');
+            
+            options.forEach(opt => {
+                const letter = opt.querySelector('.option-letter').textContent;
+                if (letter === correctLetter) {
+                    opt.classList.add('correct');
+                } else if (opt.classList.contains('selected') && letter !== correctLetter) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            if (selected) {
+                const selectedLetter = selected.querySelector('.option-letter').textContent;
+                if (selectedLetter === correctLetter) {
+                    button.textContent = '✓ Correct!';
+                    button.style.background = 'var(--success)';
+                } else {
+                    button.textContent = '✗ Incorrect';
+                    button.style.background = 'var(--danger)';
+                }
+            }
+        }
+
+        // Show explanation
+        function showExplanation(button) {
+            const card = button.closest('.question-card');
+            const explanation = card.querySelector('.explanation-box');
+            explanation.classList.toggle('show');
+            button.textContent = explanation.classList.contains('show') ? 'Hide Explanation' : 'Show Explanation';
+        }
+
+        // Save question
+        function saveQuestion(button) {
+            button.textContent = '💾 Saved';
+            button.style.background = 'var(--success)';
+            button.style.color = 'white';
+        }
+
+        // Audio player simulation
+        function toggleAudio(button) {
+            const player = button.closest('.audio-player');
+            const fill = player.querySelector('.progress-fill');
+            const timeDisplay = player.querySelector('.time-display');
+            
+            if (button.textContent === '▶') {
+                button.textContent = '⏸';
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += 1;
+                    fill.style.width = progress + '%';
+                    const seconds = Math.floor((progress / 100) * 150);
+                    const mins = Math.floor(seconds / 60);
+                    const secs = seconds % 60;
+                    timeDisplay.textContent = `${mins}:${secs.toString().padStart(2, '0')} / 2:30`;
+                    
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                        button.textContent = '▶';
+                    }
+                }, 100);
+                button.dataset.interval = interval;
+            } else {
+                button.textContent = '▶';
+                clearInterval(button.dataset.interval);
+            }
+        }
+
+        // Word count updater
+        function updateWordCount(textarea, spanId) {
+            const words = textarea.value.trim().split(/\s+/).filter(w => w.length > 0);
+            document.getElementById(spanId).textContent = words.length;
+        }
+
+        // Voice recorder simulation
+        function toggleRecorder(button, containerId) {
+            const isRecording = button.classList.contains('recording');
+            const statusEl = document.getElementById('rec-status-' + containerId.replace('recorder-', ''));
+            const waveEl = document.getElementById('wave-' + containerId.replace('recorder-', ''));
+            
+            if (!isRecording) {
+                button.classList.add('recording');
+                button.textContent = '⏹️';
+                if (statusEl) statusEl.textContent = '🔴 Recording... Click to stop';
+                if (waveEl) {
+                    const bars = waveEl.querySelectorAll('.wave-bar');
+                    button.dataset.waveInterval = setInterval(() => {
+                        bars.forEach(bar => {
+                            bar.style.height = (Math.random() * 36 + 4) + 'px';
+                            bar.style.background = 'rgba(251,191,36,0.9)';
+                        });
+                    }, 150);
+                }
+            } else {
+                button.classList.remove('recording');
+                button.textContent = '🎙️';
+                clearInterval(button.dataset.waveInterval);
+                if (statusEl) statusEl.textContent = '✅ Recorded! Click to re-record';
+                if (waveEl) {
+                    waveEl.querySelectorAll('.wave-bar').forEach(bar => {
+                        bar.style.background = 'rgba(255,255,255,0.5)';
+                    });
+                }
+            }
+        }
+
+        // Mark True/False/Not Given answers
+        function markAnswer(button, correctAnswer, questionId) {
+            const container = button.closest('div');
+            const allBtns = container.querySelectorAll('button');
+            const clickedText = button.textContent.trim();
+            allBtns.forEach(btn => {
+                btn.style.background = '';
+                btn.style.color = '';
+            });
+            if (clickedText === correctAnswer) {
+                button.style.background = 'var(--success)';
+                button.style.color = 'white';
+            } else {
+                button.style.background = 'var(--danger)';
+                button.style.color = 'white';
+                allBtns.forEach(btn => {
+                    if (btn.textContent.trim() === correctAnswer) {
+                        btn.style.background = 'var(--success)';
+                        btn.style.color = 'white';
+                    }
+                });
+            }
+        }
+
+        // Pagination
+        function changePage(page) {
+            document.querySelectorAll('.page-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            // In real implementation, this would load new questions
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
