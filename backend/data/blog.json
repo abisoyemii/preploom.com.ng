@@ -1,82 +1,92 @@
 [
   {
     "id": 1,
-    "title": "How to Score 110+ on TOEFL iBT: The Complete 30-Day Study Plan",
-    "excerpt": "A day-by-day breakdown of exactly what to study...",
+    "title": "How to Score 110+ on TOEFL iBT: 30-Day Study Plan",
     "category": "TOEFL Strategy",
+    "excerpt": "Day-by-day breakdown with practice tests and pitfalls to avoid for maximum score improvement.",
     "readTime": "8 min",
-    "date": "2026-04-01"
+    "date": "2026-03-15",
+    "author": "Dr. Sarah Chen"
   },
   {
     "id": 2,
-    "title": "Top 5 AWS Certifications to Boost Your Career in 2026",
-    "excerpt": "From Cloud Practitioner to Solutions Architect Professional...",
+    "title": "Top 5 AWS Certifications for 2026 Career Boost",
     "category": "Cloud Computing",
+    "excerpt": "Cloud Practitioner to Solutions Architect - which AWS cert fits your experience level?",
     "readTime": "12 min",
-    "date": "2026-03-28"
+    "date": "2026-02-28",
+    "author": "Mark Johnson, AWS Architect"
   },
   {
     "id": 3,
-    "title": "IELTS Academic Tips for Busy Professionals",
-    "excerpt": "Time-efficient strategies for working professionals...",
+    "title": "IELTS Tips for Busy Professionals",
     "category": "IELTS Tips",
+    "excerpt": "Maximize your score with just 1 hour daily study using time-efficient strategies.",
     "readTime": "6 min",
-    "date": "2026-03-25"
+    "date": "2026-01-10",
+    "author": "Lisa Wong, IELTS Examiner"
   },
   {
     "id": 4,
-    "title": "TOEFL iBT 2026: New AI Adaptive Scoring Revealed - Preparation Strategies",
-    "excerpt": "ETS announces AI-powered scoring changes effective April 15, 2026. How these updates impact speaking/writing evaluation and what you need to adjust in your prep...",
-    "category": "TOEFL Updates",
+    "title": "PMP Exam Changes 2026: New Format Guide",
+    "category": "Project Management",
+    "excerpt": "Updated domain distribution and agile/hybrid focus areas explained.",
     "readTime": "10 min",
-    "date": "2026-04-14"
+    "date": "2026-03-20",
+    "author": "David Chen, PMP"
   },
   {
     "id": 5,
-    "title": "IELTS Computer-Delivered: April 2026 Format Changes & Practice Tips",
-    "excerpt": "New handwriting recognition tech and updated speaking prompts. Complete guide to the changes + 20 sample questions...",
-    "category": "IELTS Updates",
+    "title": "CCNA 200-301: Automation & Programmability",
+    "category": "Cisco Networking",
+    "excerpt": "RESTCONF, NETCONF, Ansible, Python for network engineers.",
     "readTime": "9 min",
-    "date": "2026-04-14"
+    "date": "2026-03-10",
+    "author": "Cisco CCNP Instructor"
   },
   {
     "id": 6,
-    "title": "Duolingo English Test: Video Interview Feature Goes Live April 2026",
-    "excerpt": "New 5-minute video call simulation tests real-time fluency. Practice strategies for unscripted responses...",
-    "category": "Duolingo Strategy",
-    "readTime": "7 min",
-    "date": "2026-04-14"
+    "title": "CompTIA Security+ vs CEH Comparison",
+    "category": "Cybersecurity",
+    "excerpt": "Entry-level cybersecurity certifications: job market value and difficulty.",
+    "readTime": "11 min",
+    "date": "2026-02-15",
+    "author": "Security Analyst"
   },
   {
     "id": 7,
-    "title": "PMP 8th Edition: Major Changes for April 2026 Exam - What You Must Know",
-    "excerpt": "PMI reveals 8th Edition PMBOK updates: 60% agile, new sustainability domain, updated formulas. Complete transition guide...",
-    "category": "PMP Updates",
-    "readTime": "11 min",
-    "date": "2026-04-14"
+    "title": "Duolingo English Test: Fast Track Results",
+    "category": "Language Tests",
+    "excerpt": "Take anytime online, results in 48 hours. Perfect for urgent applications.",
+    "readTime": "5 min",
+    "date": "2026-03-05",
+    "author": "DET Expert"
   },
   {
     "id": 8,
-    "title": "PMP Agile Hybrid Questions: 50 Practice Scenarios for 2026 Exam",
-    "excerpt": "Real exam-style questions blending predictive + agile approaches. Detailed explanations + risk analysis...",
-    "category": "PMP Practice",
-    "readTime": "15 min",
-    "date": "2026-04-14"
+    "title": "Google Data Analytics Certificate Review",
+    "category": "Google Certs",
+    "excerpt": "6-month program, no degree required, job-ready skills in SQL/Python.",
+    "readTime": "7 min",
+    "date": "2026-01-25",
+    "author": "Data Analyst"
   },
   {
     "id": 9,
-    "title": "Cambridge Digital Exams: FCE/CAE/CPE On-Screen Changes April 2026",
-    "excerpt": "New digital-first format with interactive Use of English tasks. Updated word lists + 30 practice items...",
-    "category": "Cambridge Updates",
-    "readTime": "8 min",
-    "date": "2026-04-14"
+    "title": "Cisco CCNP ENCOR Lab Walkthrough",
+    "category": "Cisco Networking",
+    "excerpt": "Step-by-step SD-WAN and overlay configuration labs.",
+    "readTime": "15 min",
+    "date": "2026-03-18",
+    "author": "CCNP Instructor"
   },
   {
     "id": 10,
-    "title": "TOEFL vs IELTS vs Duolingo vs Cambridge 2026: Ultimate Comparison Matrix",
-    "excerpt": "Updated acceptance rates, cost analysis, format changes, and score conversion tables for all major English exams...",
-    "category": "Exam Comparison",
-    "readTime": "12 min",
-    "date": "2026-04-14"
+    "title": "PMP Success: From Zero to PMI Certified",
+    "category": "Success Stories",
+    "excerpt": "Real student journey: 3 months study → 1680 score first attempt.",
+    "readTime": "8 min",
+    "date": "2026-03-01",
+    "author": "Maria Rodriguez, PMP"
   }
 ]

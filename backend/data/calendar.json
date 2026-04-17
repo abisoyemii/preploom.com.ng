@@ -1,14 +1,21 @@
 {
-  "month": "April 2026",
-  "examDates": [5, 12, 15, 19, 22, 26, 29],
-  "today": 22,
-  "exams": {
-    "5": "TOEFL iBT",
-    "12": "IELTS Academic",
-    "15": "PMP",
-    "19": "TOEFL iBT",
-    "22": "Duolingo",
-    "26": "IELTS General",
-    "29": "Google Cert"
-  }
+  "2026-04": {
+    "1": {"exam": "TOEFL iBT", "type": "language", "status": "open"},
+    "5": {"exam": "IELTS Academic", "type": "language", "status": "open"},
+    "12": {"exam": "CCNA 200-301", "type": "professional", "status": "open"},
+    "19": {"exam": "PMP", "type": "professional", "status": "open"},
+    "26": {"exam": "Duolingo English Test", "type": "language", "status": "open"}
+  },
+  "2026-05": {
+    "3": {"exam": "TOEFL iBT", "type": "language", "status": "open"},
+    "10": {"exam": "CCNP ENCOR", "type": "professional", "status": "open"},
+    "17": {"exam": "Google Data Analytics", "type": "professional", "status": "open"},
+    "24": {"exam": "CompTIA Security+", "type": "professional", "status": "open"},
+    "31": {"exam": "Cambridge CAE", "type": "language", "status": "open"}
+  },
+  "upcoming": [
+    {"date": "Apr 5", "exam": "TOEFL iBT", "slots": 45},
+    {"date": "Apr 12", "exam": "CCNA", "slots": 120},
+    {"date": "Apr 19", "exam": "PMP", "slots": 89}
+  ]
 }

@@ -1,18 +1,56 @@
 [
   {
     "id": 1,
-    "title": "TOEFL iBT Complete Practice Test PDF",
-    "description": "Full-length test with audio files and answer explanations",
+    "title": "TOEFL iBT Complete Practice Test",
     "type": "PDF + MP3",
-    "exam": "TOEFL",
-    "downloads": 15000
+    "category": "TOEFL",
+    "description": "Full-length test with audio files and answer explanations",
+    "downloads": 15000,
+    "free": true
   },
   {
     "id": 2,
     "title": "PMP Formula Cheat Sheet",
-    "description": "All 49 processes and 100+ formulas on one page",
     "type": "PDF",
-    "exam": "PMP",
-    "downloads": 22000
+    "category": "PMP",
+    "description": "All 49 processes and 100+ formulas on one page",
+    "downloads": 22000,
+    "free": true
+  },
+  {
+    "id": 3,
+    "title": "IELTS Speaking Part 2 Cue Cards",
+    "type": "PDF",
+    "category": "IELTS",
+    "description": "100+ topics with model answers and vocabulary",
+    "downloads": 25000,
+    "free": true
+  },
+  {
+    "id": 4,
+    "title": "CompTIA Security+ SY0-701 Study Guide",
+    "type": "PDF",
+    "category": "CompTIA",
+    "description": "Complete domain coverage with practice questions",
+    "downloads": 12000,
+    "free": true
+  },
+  {
+    "id": 5,
+    "title": "90-Day Study Planner Template",
+    "type": "Excel",
+    "category": "General",
+    "description": "Customizable template for any exam",
+    "downloads": 30000,
+    "free": true
+  },
+  {
+    "id": 6,
+    "title": "CCNA 200-301 Quick Reference",
+    "type": "PDF",
+    "category": "Cisco",
+    "description": "OSI model, subnetting, routing protocols cheat sheet",
+    "downloads": 18000,
+    "free": true
   }
 ]

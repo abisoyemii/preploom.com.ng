@@ -1,18 +1,66 @@
 [
   {
     "id": 1,
-    "category": "language",
     "title": "TOEFL iBT",
-    "description": "Monthly test dates available",
-    "exams": ["TOEFL iBT", "IELTS Academic & General", "Duolingo English Test", "Cambridge English"],
-    "meta": {"duration": "1-4 hours", "mode": "Online/Offline", "validity": "2 years"}
+    "category": "language",
+    "description": "Internet-based English proficiency test",
+    "exams": ["TOEFL iBT"],
+    "meta": {"duration": "3 hours", "mode": "Online/Proctored", "validity": "2 years", "questions": 144}
   },
   {
     "id": 2,
+    "title": "IELTS Academic",
+    "category": "language",
+    "description": "Academic English for university admission",
+    "exams": ["IELTS Academic"],
+    "meta": {"duration": "2h45m", "mode": "Paper/Computer", "validity": "2 years", "questions": 40}
+  },
+  {
+    "id": 3,
+    "title": "PMP Certification",
     "category": "professional",
-    "title": "Professional Certifications",
-    "description": "Advance your career with industry-recognized credentials",
-    "exams": ["PMP Certification", "Google Professional Certificates", "Cisco CCNA/CCNP", "CompTIA"],
-    "meta": {"duration": "90-230 mins", "mode": "Online proctored", "validity": "3 years"}
+    "description": "Project Management Professional",
+    "exams": ["PMP"],
+    "meta": {"duration": "230 mins", "mode": "Online Proctored", "validity": "3 years", "score": "1800 max"}
+  },
+  {
+    "id": 4,
+    "title": "CCNA 200-301",
+    "category": "networking",
+    "description": "Cisco Certified Network Associate",
+    "exams": ["CCNA"],
+    "meta": {"duration": "120 mins", "mode": "Online/VUE", "validity": "3 years", "score": "1000 max", "questions": 120}
+  },
+  {
+    "id": 5,
+    "title": "CCNP ENCOR 350-401",
+    "category": "networking",
+    "description": "Enterprise Core Networking",
+    "exams": ["CCNP ENCOR"],
+    "meta": {"duration": "120 mins", "mode": "Online/VUE", "validity": "3 years"}
+  },
+  {
+    "id": 6,
+    "title": "AWS Solutions Architect Associate",
+    "category": "cloud",
+    "description": "Cloud architecture certification",
+    "exams": ["AWS SAA-C03"],
+    "meta": {"duration": "130 mins", "mode": "Online", "validity": "3 years"}
+  },
+  {
+    "id": 7,
+    "title": "Duolingo English Test",
+    "category": "language",
+    "description": "Online English proficiency test",
+    "exams": ["Duolingo"],
+    "meta": {"duration": "1 hour", "mode": "Online", "validity": "2 years"}
+  },
+  {
+    "id": 8,
+    "title": "Google Project Management",
+    "category": "professional",
+    "description": "Entry-level PM certification",
+    "exams": ["Google PM"],
+    "meta": {"duration": "180 mins", "mode": "Online", "validity": "No expiry"}
   }
 ]

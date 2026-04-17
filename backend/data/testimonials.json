@@ -3,27 +3,45 @@
     "id": 1,
     "name": "Maria Rodriguez",
     "exam": "TOEFL iBT",
-    "score": "85 → 115",
-    "text": "The AI-powered study plan identified my weak areas in speaking and provided targeted practice. I improved 30 points in just 6 weeks!",
-    "school": "Harvard University",
-    "filter": "language"
+    "score": "115/120",
+    "review": "From 85 to 115 in 6 weeks! The AI study plan identified my speaking weaknesses perfectly.",
+    "rating": 5,
+    "date": "2026-03-15"
   },
   {
     "id": 2,
     "name": "David Chen",
     "exam": "PMP",
-    "score": "Passed 1st Try",
-    "text": "The virtual labs prepared me perfectly for the real exam environment. The risk management simulations were incredibly realistic.",
-    "company": "Google",
-    "filter": "professional"
+    "score": "1680/1800",
+    "review": "Passed first try thanks to realistic labs and expert Q&A sessions.",
+    "rating": 5,
+    "date": "2026-03-10"
   },
   {
     "id": 3,
     "name": "Sarah Johnson",
-    "exam": "AWS Solutions Architect",
-    "score": "3 Certs in 6 Months",
-    "text": "The live Q&A sessions with AWS experts gave me insights I couldn't find anywhere else. Passed all 3 exams on first attempt!",
-    "company": "Amazon",
-    "filter": "professional"
+    "exam": "AWS SAA-C03",
+    "score": "Passed",
+    "review": "The cloud labs were spot-on. Got job offer immediately after certification.",
+    "rating": 5,
+    "date": "2026-02-28"
+  },
+  {
+    "id": 4,
+    "name": "Ahmed Khan",
+    "exam": "CCNA 200-301",
+    "score": "935/1000",
+    "review": "200+ practice questions + labs = success. Automation section was tough but covered well.",
+    "rating": 5,
+    "date": "2026-03-20"
+  },
+  {
+    "id": 5,
+    "name": "Priya Singh",
+    "exam": "IELTS Academic",
+    "score": "8.0",
+    "review": "Perfect for busy schedule. Micro-learning sessions fit my work hours.",
+    "rating": 5,
+    "date": "2026-03-05"
   }
 ]
