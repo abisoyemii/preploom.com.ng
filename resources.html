@@ -2,11 +2,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    s
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Practice Questions & Resources | All Exams | Preploom</title>
-1000+ free practice questions for TOEFL, IELTS, Duolingo, PMP, Google, Cisco,.
-PMP exam questions, CompTIA A+ questions
+    <meta name="description" content="1000+ free practice questions for TOEFL, IELTS, Duolingo, Cambridge, PMP, Cisco, CompTIA and Google certifications. Detailed explanations, audio players, and writing samples.">
+    <meta name="keywords" content="free TOEFL practice questions, IELTS practice test free, PMP practice questions 2026, Cisco CCNA practice, free certification exam questions">
+    <meta name="author" content="PrepLoom Institute">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://preploom.com.ng.ng/resources.html">
+    <meta property="og:title" content="Free Practice Questions 2026 | 1000+ Questions | PrepLoom">
+    <meta property="og:description" content="1000+ free practice questions for all major exams. TOEFL, IELTS, PMP, Cisco, Cambridge and more with detailed explanations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://preploom.com.ng.ng/resources.html">
+    <meta property="og:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Practice Questions 2026 | PrepLoom">
+    <meta name="twitter:description" content="1000+ free practice questions for TOEFL, IELTS, PMP, Cisco and more.">
+    <meta name="twitter:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#1e3a8a">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Free Exam Practice Questions",
+      "description": "1000+ free practice questions for TOEFL, IELTS, Duolingo, PMP, Google, Cisco, CompTIA with detailed explanations.",
+      "url": "https://preploom.com.ng.ng/resources.html",
+      "numberOfItems": 1000,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "TOEFL iBT Practice Questions", "url": "https://preploom.com.ng.ng/resources.html#toefl" },
+        { "@type": "ListItem", "position": 2, "name": "IELTS Practice Questions", "url": "https://preploom.com.ng.ng/resources.html#ielts" },
+        { "@type": "ListItem", "position": 3, "name": "PMP Practice Questions", "url": "https://preploom.com.ng.ng/resources.html#pmp" },
+        { "@type": "ListItem", "position": 4, "name": "Cisco CCNA Practice Questions", "url": "https://preploom.com.ng.ng/resources.html#cisco" }
+      ]
+    }
+    </script>
     <style>
         :root {
             --primary: #1e3a8a;
@@ -34,6 +66,8 @@ PMP exam questions, CompTIA A+ questions
             line-height: 1.6;
             color: var(--text);
             background: var(--light);
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            overflow-x: hidden;
         }
 
         /* Navigation */
@@ -81,6 +115,51 @@ PMP exam questions, CompTIA A+ questions
         .nav-menu a:hover {
             opacity: 0.8;
         }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            line-height: 1;
+        }
+
+        /* Mobile Nav Drawer */
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(0,0,0,0.5); z-index: 999;
+            opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-nav {
+            position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px;
+            height: 100vh; background: var(--primary); z-index: 1000;
+            padding: 4rem 1.5rem 2rem; overflow-y: auto;
+            transition: right 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+            box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+        }
+        .mobile-nav.active { right: 0; }
+        .mobile-nav-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1.5rem; padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-nav-close {
+            background: none; border: none; color: white; font-size: 1.5rem;
+            cursor: pointer; width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .mobile-nav-menu { list-style: none; margin: 0; padding: 0; }
+        .mobile-nav-menu a {
+            color: white; text-decoration: none; font-size: 1.05rem; font-weight: 500;
+            display: flex; align-items: center; padding: 0.9rem 0; min-height: 44px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            transition: padding-left 0.3s;
+        }
+        .mobile-nav-menu a:hover { padding-left: 0.75rem; }
 
         /* Page Header */
         .page-header {
@@ -791,29 +870,107 @@ PMP exam questions, CompTIA A+ questions
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .main-container {
-                grid-template-columns: 1fr;
-            }
+            .main-container { grid-template-columns: 1fr; }
             .sidebar {
                 position: static;
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 gap: 1rem;
             }
         }
 
         @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 2rem;
-            }
-            .stats-bar {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .question-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+            .nav-menu { display: none; }
+            .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+            .nav-container { justify-content: flex-start; }
+            .logo { max-width: 160px; margin-right: auto; }
+
+            .page-header { padding: 2rem 1rem; }
+            .page-header h1 { font-size: clamp(1.4rem, 5vw, 1.8rem); }
+            .page-header p { font-size: 0.9rem; }
+            .stats-bar { flex-direction: column; gap: 0.75rem; }
+            .stat-number { font-size: 1.8rem; }
+            .stat-label { font-size: 0.8rem; }
+
+            .main-container { padding: 0.75rem; gap: 1rem; }
+            .sidebar { grid-template-columns: 1fr; }
+            .filter-section { padding: 1rem; margin-bottom: 1rem; }
+            .filter-title { font-size: 1rem; }
+            .filter-btn { padding: 0.5rem 0.75rem; font-size: 0.85rem; }
+            .filter-btn .count { margin-left: auto; }
+
+            .content-area { padding: 1rem; overflow-x: hidden; }
+            .section-tabs { gap: 0.25rem; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; padding-bottom: 0.25rem; }
+            .section-tab { padding: 0.6rem 0.75rem; font-size: 0.82rem; flex-shrink: 0; }
+
+            .exam-header { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+            .exam-icon { width: 48px; height: 48px; font-size: 1.5rem; }
+
+            .question-card { padding: 1rem; overflow-x: hidden; margin-bottom: 1rem; }
+            .question-card:hover { transform: none; }
+            .question-header { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+            .question-text { font-size: 0.97rem; }
+            .question-context { padding: 0.75rem; font-size: 0.9rem; }
+
+            .options-list { grid-template-columns: 1fr; }
+            .option-item { padding: 0.75rem; font-size: 0.9rem; }
+
+            .action-bar { flex-wrap: wrap; gap: 0.5rem; }
+            .btn { padding: 0.55rem 0.9rem; font-size: 0.85rem; }
+
+            .explanation-box { padding: 1rem; }
+            .explanation-tip { font-size: 0.85rem; }
+
+            .audio-player { padding: 1rem; font-size: 0.88rem; }
+            .audio-controls { gap: 0.5rem; }
+            .play-btn { width: 40px; height: 40px; font-size: 1rem; flex-shrink: 0; }
+
+            .voice-recorder { padding: 1rem; }
+            .record-btn { width: 56px; height: 56px; font-size: 1.3rem; }
+            .waveform { gap: 2px; }
+            .wave-bar { width: 3px; }
+
+            .response-card { padding: 1rem; }
+            .response-textarea { min-height: 110px; font-size: 16px; }
+
+            .rubric-table, .band-score-table { font-size: 0.75rem; }
+            .rubric-table th, .rubric-table td,
+            .band-score-table th, .band-score-table td { padding: 0.35rem 0.4rem; }
+            table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+            .speaking-tips { padding: 0.75rem 1rem; }
+            .speaking-tips ul { font-size: 0.85rem; }
+
+            .resources-grid { grid-template-columns: 1fr; }
+            .resource-header { height: 80px; font-size: 2rem; }
+
+            .pagination { flex-wrap: wrap; gap: 0.25rem; }
+            .page-btn { width: 36px; height: 36px; font-size: 0.85rem; }
+
+            /* Fix inline grids/flex inside question cards */
+            .question-card [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+            .question-card [style*="display: grid"] { grid-template-columns: 1fr !important; }
+            .question-card [style*="display: flex"] { flex-wrap: wrap; }
+
+            input, select, textarea { font-size: 16px !important; }
+            .score-input { width: 52px; }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 { font-size: 1.3rem; }
+            .stat-number { font-size: 1.6rem; }
+            .section-tab { padding: 0.45rem 0.55rem; font-size: 0.78rem; }
+            .question-type { font-size: 0.7rem; padding: 0.3rem 0.6rem; }
+            .difficulty-badge { font-size: 0.7rem; }
+            .record-btn { width: 50px; height: 50px; font-size: 1.1rem; }
+            .audio-player { padding: 0.75rem; }
+            .response-card { padding: 0.75rem; }
+            .btn { padding: 0.5rem 0.7rem; font-size: 0.8rem; }
+            .question-card { padding: 0.75rem; }
+            .question-text { font-size: 0.93rem; }
+            .filter-section { padding: 0.75rem; }
+            .option-item { padding: 0.6rem; gap: 0.6rem; }
+            .option-letter { width: 28px; height: 28px; font-size: 0.85rem; }
         }
 
         /* Ad Placeholders */
@@ -835,18 +992,40 @@ PMP exam questions, CompTIA A+ questions
     </style>
 </head>
 <body>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <span style="color:white;font-weight:700;">Menu</span>
+            <button class="mobile-nav-close" onclick="closeMobileMenu()">&#10005;</button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="toefl.html" onclick="closeMobileMenu()">TOEFL iBT</a></li>
+            <li><a href="ielts.html" onclick="closeMobileMenu()">IELTS</a></li>
+            <li><a href="duolingo.html" onclick="closeMobileMenu()">Duolingo</a></li>
+            <li><a href="pmp.html" onclick="closeMobileMenu()">PMP</a></li>
+            <li><a href="resources.html" onclick="closeMobileMenu()">Resources</a></li>
+            <li><a href="blog.html" onclick="closeMobileMenu()">Blog</a></li>
+            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="testimonials.html" onclick="closeMobileMenu()">Testimonials</a></li>
+            <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+            <li><a href="login.html" onclick="closeMobileMenu()">Login</a></li>
+        </ul>
+    </nav>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="images/Preploom.png" alt="PrepLoom" style="width: 280px; height: 80px; object-fit: cover; border-radius: 8px;">
-               
+                <img src="images/Preploom.png" alt="PrepLoom" style="width:200px;max-width:100%;height:auto;object-fit:contain;border-radius:6px;" loading="lazy">
             </a>
-
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">&#9776;</button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="resources.html">Practice Questions</a></li>
                 <li><a href="testimonials.html">Success Stories</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
         </div>
     </nav>
@@ -1136,6 +1315,69 @@ PMP exam questions, CompTIA A+ questions
                         </div>
                     </div>
 
+                    <!-- TOEFL Reading Q2 — NEW from toefl.html -->
+                    <div class="question-card" data-exam="toefl" data-type="reading" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-reading">📖 Reading</span>
+                            <span class="difficulty-badge badge-medium">Medium</span>
+                        </div>
+                        <div class="question-context">
+                            <strong>Passage:</strong> "Universities are increasingly using digital platforms to enhance learning experiences. Students can access lectures, assignments, and resources online. This shift has transformed traditional education and made learning more accessible to students worldwide."
+                        </div>
+                        <p class="question-text">What is the main topic of the passage?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this,'A')"><span class="option-letter">A</span><span>Sports</span></li>
+                            <li class="option-item" onclick="selectOption(this,'B')"><span class="option-letter">B</span><span>Digital learning</span></li>
+                            <li class="option-item" onclick="selectOption(this,'C')"><span class="option-letter">C</span><span>Cooking</span></li>
+                            <li class="option-item" onclick="selectOption(this,'D')"><span class="option-letter">D</span><span>Travel</span></li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this,'B')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                            <button class="btn btn-secondary" onclick="saveQuestion(this)">💾 Save</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: B</div>
+                            <div class="explanation-text">The passage discusses how universities use digital platforms for learning, making B the correct answer.</div>
+                        </div>
+                    </div>
+
+                    <!-- TOEFL Listening Q2 — NEW from toefl.html -->
+                    <div class="question-card" data-exam="toefl" data-type="listening" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-listening">👂 Listening</span>
+                            <span class="difficulty-badge badge-medium">Medium</span>
+                        </div>
+                        <div class="audio-player">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                                <span>🎧 Lecture: Environmental Science</span>
+                                <span class="time-display">0:00 / 2:30</span>
+                            </div>
+                            <div class="audio-controls">
+                                <button class="play-btn" onclick="toggleAudio(this)">▶</button>
+                                <div class="progress-bar"><div class="progress-fill"></div></div>
+                            </div>
+                        </div>
+                        <div class="audio-transcript">
+                            <strong>Transcript:</strong> "Today we will discuss environmental science. Human activities such as pollution affect ecosystems and climate patterns. Understanding these impacts is crucial for developing sustainable solutions."
+                        </div>
+                        <p class="question-text">What is the lecture topic?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this,'A')"><span class="option-letter">A</span><span>Sports</span></li>
+                            <li class="option-item" onclick="selectOption(this,'B')"><span class="option-letter">B</span><span>Environmental science</span></li>
+                            <li class="option-item" onclick="selectOption(this,'C')"><span class="option-letter">C</span><span>Cooking</span></li>
+                            <li class="option-item" onclick="selectOption(this,'D')"><span class="option-letter">D</span><span>Business</span></li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this,'B')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: B</div>
+                            <div class="explanation-text">The lecture explicitly discusses environmental science and its impacts.</div>
+                        </div>
+                    </div>
+
                     <!-- TOEFL Writing Question -->
                     <div class="question-card" data-exam="toefl" data-type="writing" data-difficulty="hard">
                         <div class="question-header">
@@ -1265,6 +1507,69 @@ PMP exam questions, CompTIA A+ questions
                             <p style="color: #92400e; font-size: 0.9rem;">
                                 rose significantly, witnessed a dramatic increase, remained relatively stable, the gap between... narrowed, proportion, percentage, whereas, while, in contrast, compared to
                             </p>
+                        </div>
+                    </div>
+
+                    <!-- IELTS Reading Q2 — NEW from ielts.html -->
+                    <div class="question-card" data-exam="ielts" data-type="reading" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-reading">📖 Reading</span>
+                            <span class="difficulty-badge badge-medium">Medium</span>
+                        </div>
+                        <div class="question-context">
+                            <strong>Passage:</strong> "Remote work has become common in many industries due to digital technology. Employees now work from home and use online tools to communicate. This shift has changed traditional office culture and allowed companies to hire talent from anywhere in the world."
+                        </div>
+                        <p class="question-text">What is the main topic?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this,'A')"><span class="option-letter">A</span><span>Sports</span></li>
+                            <li class="option-item" onclick="selectOption(this,'B')"><span class="option-letter">B</span><span>Remote work</span></li>
+                            <li class="option-item" onclick="selectOption(this,'C')"><span class="option-letter">C</span><span>Cooking</span></li>
+                            <li class="option-item" onclick="selectOption(this,'D')"><span class="option-letter">D</span><span>Travel</span></li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this,'B')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                            <button class="btn btn-secondary" onclick="saveQuestion(this)">💾 Save</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: B</div>
+                            <div class="explanation-text">The passage discusses remote work and its impact on modern industries.</div>
+                        </div>
+                    </div>
+
+                    <!-- IELTS Listening Q2 — NEW from ielts.html -->
+                    <div class="question-card" data-exam="ielts" data-type="listening" data-difficulty="medium">
+                        <div class="question-header">
+                            <span class="question-type type-listening">👂 Listening</span>
+                            <span class="difficulty-badge badge-medium">Medium</span>
+                        </div>
+                        <div class="audio-player">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                                <span>🎧 Lecture: Climate Change</span>
+                                <span class="time-display">0:00 / 2:00</span>
+                            </div>
+                            <div class="audio-controls">
+                                <button class="play-btn" onclick="toggleAudio(this)">▶</button>
+                                <div class="progress-bar"><div class="progress-fill"></div></div>
+                            </div>
+                        </div>
+                        <div class="audio-transcript">
+                            <strong>Transcript:</strong> "In today's lecture, we will talk about climate change. Climate change affects weather patterns, agriculture, and sea levels around the world."
+                        </div>
+                        <p class="question-text">What is the lecture about?</p>
+                        <ul class="options-list">
+                            <li class="option-item" onclick="selectOption(this,'A')"><span class="option-letter">A</span><span>Sports</span></li>
+                            <li class="option-item" onclick="selectOption(this,'B')"><span class="option-letter">B</span><span>Climate change</span></li>
+                            <li class="option-item" onclick="selectOption(this,'C')"><span class="option-letter">C</span><span>Music</span></li>
+                            <li class="option-item" onclick="selectOption(this,'D')"><span class="option-letter">D</span><span>Business</span></li>
+                        </ul>
+                        <div class="action-bar">
+                            <button class="btn btn-primary" onclick="checkAnswer(this,'B')">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="showExplanation(this)">Explanation</button>
+                        </div>
+                        <div class="explanation-box">
+                            <div class="explanation-title">✓ Correct Answer: B</div>
+                            <div class="explanation-text">The lecture explicitly discusses climate change and its global effects.</div>
                         </div>
                     </div>
 
@@ -2675,6 +2980,17 @@ PMP exam questions, CompTIA A+ questions
     </div>
 
     <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
         // Tab switching
         function switchSection(section) {
             document.querySelectorAll('.question-section').forEach(s => s.classList.remove('active'));

@@ -1,177 +1,252 @@
-<!-- Save this as toefl.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOEFL iBT Preparation 2026 | Complete Course & Practice Tests | EliteExam</title>
-    <meta name="description" content="Master TOEFL iBT with EliteExam's comprehensive 2026 preparation course. 500+ practice questions, expert strategies, and guaranteed score improvement. Enroll now!">
-    <meta name="keywords" content="TOEFL prep 2026, TOEFL iBT course, TOEFL practice tests, TOEFL speaking tips, TOEFL writing templates">
-    <link rel="canonical" href="https://eliteexaminstitute.com/toefl.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>TOEFL iBT 2026 | Complete Prep with 75+ Real Questions | PrepLoom</title>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TOEFL iBT Preparation 2026 | PrepLoom">
+    <meta name="twitter:description" content="Master TOEFL iBT with 500+ practice questions, expert strategies, and guaranteed score improvement.">
+    <meta name="twitter:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <meta property="og:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="PrepLoom Institute">
+
+    <meta name="description" content="Master TOEFL iBT 2026 with PrepLoom's comprehensive course. 75+ authentic practice questions, expert strategies, test dates, and 98% success rate. Start now!">
+    <meta name="keywords" content="TOEFL iBT 2026, TOEFL practice questions, TOEFL speaking tips, TOEFL writing templates, TOEFL test dates">
+    <meta name="author" content="PrepLoom">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="TOEFL iBT Complete Preparation | PrepLoom Institute">
+    <meta property="og:description" content="75+ real TOEFL questions, exam strategies, 2026 test dates, and guaranteed score improvement.">
+    <link rel="canonical" href="https://preploom.com.ng.ng/toefl.html">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#1e40af">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "TOEFL iBT Complete Preparation 2026",
+      "description": "75+ authentic practice questions across all 4 sections. Expert strategies and test-taking tips for 110+ scores.",
+      "provider": {"@type": "Organization", "name": "PrepLoom", "url": "https://preploom.com.ng.ng"},
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How long are TOEFL scores valid?", "acceptedAnswer": {"@type": "Answer", "text": "TOEFL iBT scores are valid for 2 years from test date."}},
+        {"@type": "Question", "name": "Can I retake TOEFL?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, any number of times but no more than once every 3 days."}}
+      ]
+    }
+    </script>
+
     <style>
-:root {
+        :root {
             --primary: #1e40af;
             --secondary: #3b82f6;
             --accent: #1d4ed8;
-            --success: #1e40af;
+            --success: #10b981;
             --dark: #000000;
             --light: #f9fafb;
             --text: #111827;
             --border: #e5e7eb;
             --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --mobile-padding: clamp(1rem, 4vw, 1.5rem);
+            --mobile-gap: clamp(1rem, 3vw, 1.5rem);
+            --mobile-fs-h1: clamp(1.75rem, 5vw, 2.5rem);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.6; color: var(--text); background: var(--light); }
 
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--light);
-        }
+        /* Navigation - Exact copy from index.html */
+        .navbar { background: linear-gradient(135deg, var(--primary) 0%, #000000 100%); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-lg); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; color: white; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; max-width: 280px; }
+        .logo img { width: 100%; height: auto; border-radius: 8px; }
+        .nav-menu { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-menu a { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; position: relative; }
+        .nav-menu a:hover { opacity: 0.9; }
+        .nav-menu a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s; }
+        .nav-menu a:hover::after { width: 100%; }
+        .dropdown { position: relative; }
+        .dropdown-content { display: none; position: absolute; background: white; min-width: 250px; box-shadow: var(--shadow-lg); border-radius: 8px; top: 100%; margin-top: 0.5rem; overflow: hidden; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { color: var(--text); padding: 0.8rem 1rem; display: block; border-bottom: 1px solid var(--border); }
+        .dropdown-content a:hover { background: var(--light); color: var(--primary); }
+        .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; padding: 0.25rem; line-height: 1; }
+        .mobile-menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.5); z-index: 999; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-nav { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: var(--primary); z-index: 1000; padding: 5rem 1.5rem 2rem; overflow-y: auto; transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); box-shadow: -4px 0 20px rgba(0,0,0,0.3); }
+        .mobile-nav.active { right: 0; }
+        .mobile-nav-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .mobile-nav-close { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.3s; }
+        .mobile-nav-close:hover { background: rgba(255,255,255,0.1); }
+        .mobile-nav-menu { list-style: none; margin: 0; padding: 0; }
+        .mobile-nav-menu li { margin-bottom: 1rem; }
+        .mobile-nav-menu a { color: white; text-decoration: none; font-size: 1.1rem; font-weight: 500; display: block; padding: 1rem 0; min-height: 44px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); transition: padding-left 0.3s; }
+        .mobile-nav-menu a:hover { padding-left: 1rem; background: rgba(255,255,255,0.05); }
+        @media (max-width: 768px) { .nav-menu { display: none; } .mobile-menu-btn { display: flex; align-items: center; justify-content: center; } }
 
-        /* Reuse navigation styles from index.html */
-        .navbar {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-lg);
-        }
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 50%, #000000 100%); color: white; padding: 6rem 2rem; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.3; }
+        .hero h1 { font-size: clamp(2rem, var(--mobile-fs-h1), 3.5rem); font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2; animation: fadeInUp 0.8s ease-out; }
+        .hero-subtitle { font-size: clamp(1rem, 3.5vw, 1.4rem); margin-bottom: 2rem; opacity: 0.95; animation: fadeInUp 0.8s ease-out 0.2s both; }
+        .hero-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: clamp(1rem, 5vw, 2rem); margin: clamp(2rem, 8vw, 3rem) 0; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: clamp(1.5rem, 6vw, 2.5rem); font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 0.9rem; opacity: 0.9; }
+        .cta-group { display: flex; flex-direction: column; align-items: center; gap: clamp(0.75rem, 3vw, 1rem); animation: fadeInUp 0.8s ease-out 0.6s both; }
+        .btn { padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; border: none; cursor: pointer; font-size: 1rem; }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(30, 64, 175, 0.6); }
+        .btn-secondary { background: transparent; color: white; border: 2px solid white; }
+        .btn-secondary:hover { background: white; color: var(--primary); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        /* News Ticker */
+        .news-ticker { background: var(--dark); color: white; padding: 0.8rem 0; overflow: hidden; }
+        .ticker-wrapper { display: flex; animation: ticker 35s linear infinite; white-space: nowrap; }
+        .ticker-item { padding: 0 2rem; display: flex; align-items: center; gap: 0.5rem; }
+        .ticker-badge { background: var(--accent); color: var(--dark); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+        /* Main Tabs */
+        .tabs-container { max-width: 1400px; margin: 0 auto 4rem; background: white; border-radius: 16px; box-shadow: var(--shadow-lg); overflow: hidden; }
+        .tabs-nav { display: flex; background: var(--light); border-bottom: 1px solid var(--border); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+        .tabs-nav::-webkit-scrollbar { display: none; }
+        .tab-btn { padding: 1rem 1.8rem; background: none; border: none; cursor: pointer; font-weight: 600; color: #64748b; transition: all 0.3s; white-space: nowrap; flex-shrink: 0; scroll-snap-align: start; min-height: 44px; }
+        .tab-btn.active { color: var(--primary); background: white; }
+        .tab-content { padding: clamp(2rem, 5vw, 3rem); display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
+        /* Content Grid */
+        .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; }
+        @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; gap: 2rem; } }
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
+        /* Main Content */
+        .main-content h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--dark); margin-bottom: 1.5rem; }
+        .main-content h3 { color: var(--dark); font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+        .main-content p, .main-content li { color: #475569; line-height: 1.8; margin-bottom: 1rem; }
 
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
-            position: relative;
-        }
+        /* Structure Cards */
+        .structure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2.5rem 0; }
+        .structure-card { background: #eff6ff; padding: 2rem; border-radius: 16px; text-align: center; border-left: 5px solid var(--secondary); }
+        .structure-card [style*='font-size: 3rem'] { margin-bottom: 1rem; }
+        .structure-card h4 { color: var(--primary); margin-bottom: 1rem; font-size: 1.3rem; }
 
-        .nav-menu a:hover {
-            opacity: 0.9;
-        }
+        /* Schedule Table */
+        .schedule-table { width: 100%; border-collapse: collapse; margin: 2rem 0; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+        .schedule-table th { background: var(--primary); color: white; padding: 1.2rem; text-align: left; font-weight: 600; }
+        .schedule-table td { padding: 1rem 1.2rem; border-bottom: 1px solid var(--border); }
+        .schedule-table tr:nth-child(even) { background: #f8fafc; }
+        .status-open { background: #d1fae5; color: #166534; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+        .status-limited { background: #fef3c7; color: #92400e; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
 
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
+        /* Strategy Cards */
+        .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2.5rem 0; }
+        .strategy-card { background: white; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow); border-left: 5px solid var(--secondary); }
+        .strategy-number { background: var(--accent); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; margin-bottom: 1rem; }
+        .strategy-card h4 { color: var(--dark); margin-bottom: 1rem; font-size: 1.3rem; }
 
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
+        /* Practice Questions - 75+ Real Questions */
+        .question-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin: 2rem 0; }
+        .question-card { background: var(--light); border-radius: 16px; padding: 1.8rem; border-left: 5px solid var(--secondary); box-shadow: var(--shadow); transition: all 0.3s; }
+        .question-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .question-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; }
+        .question-type { background: var(--secondary); color: white; padding: 0.4rem 1rem; border-radius: 25px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+        .question-difficulty { font-size: 0.85rem; color: #64748b; font-weight: 500; }
+        .question-text { font-size: 1.15rem; margin-bottom: 1.5rem; color: var(--dark); font-weight: 500; line-height: 1.6; }
+        .options-list { list-style: none; }
+        .options-list li { padding: 1rem; margin-bottom: 0.75rem; background: white; border-radius: 12px; cursor: pointer; transition: all 0.3s; border: 2px solid transparent; min-height: 44px; display: flex; align-items: center; font-weight: 500; }
+        .options-list li:hover { border-color: var(--secondary); background: #eff6ff; transform: translateX(4px); }
+        .options-list li.correct { border-color: var(--success); background: #d1fae5 !important; }
+        .options-list li.selected { border-color: var(--accent); background: #dbeafe; }
+        .show-answer-btn { background: var(--primary); color: white; border: none; padding: 0.9rem 1.8rem; border-radius: 10px; cursor: pointer; margin-top: 1.2rem; font-weight: 700; transition: all 0.3s; min-height: 44px; }
+        .show-answer-btn:hover { background: var(--secondary); transform: translateY(-2px); }
+        .answer-explanation { display: none; margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, #d1fae5, #a7f3d0); border-radius: 12px; border-left: 5px solid var(--success); }
+        .answer-explanation.show { display: block; animation: slideDown 0.4s ease-out; }
+        @keyframes slideDown { from { opacity: 0; max-height: 0; } to { opacity: 1; max-height: 500px; } }
 
-        .dropdown {
-            position: relative;
-        }
+        /* Sidebar */
+        .sidebar { position: sticky; top: 120px; height: fit-content; }
+        .sidebar-card { background: white; border-radius: 16px; padding: 2rem; box-shadow: var(--shadow); margin-bottom: 2rem; border: 1px solid var(--border); }
+        .sidebar-card h3 { font-size: 1.25rem; margin-bottom: 1.2rem; color: var(--dark); }
+        .free-tag { font-size: 2.5rem; font-weight: 900; color: var(--success); margin-bottom: 1rem; }
+        .feature-list { list-style: none; margin-bottom: 1.5rem; }
+        .feature-list li { padding: 0.75rem 0; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; border-bottom: 1px solid var(--border); }
+        .feature-list li:last-child { border-bottom: none; }
+        .check-icon { color: var(--success); font-size: 1.2rem; font-weight: bold; }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: white;
-            min-width: 280px;
-            box-shadow: var(--shadow-lg);
-            border-radius: 8px;
-            top: 100%;
-            margin-top: 0.5rem;
-            overflow: hidden;
-            z-index: 1001;
-        }
+        /* FAQ */
+        .faq-container { margin-top: 2rem; }
+        .faq-item { background: white; border-radius: 16px; margin-bottom: 1.5rem; box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border); transition: all 0.3s; }
+        .faq-item:hover { box-shadow: var(--shadow-lg); }
+        .faq-question { padding: 1.8rem 2rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; color: var(--dark); transition: background 0.3s; min-height: 44px; }
+        .faq-question:hover { background: var(--light); }
+        .faq-icon { font-size: 1.6rem; color: var(--secondary); transition: transform 0.3s ease; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .faq-item.active .faq-answer { max-height: 600px; }
+        .faq-answer-content { padding: 0 2rem 2rem; color: #64748b; line-height: 1.8; }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+        /* Ad & Notes */
+        .ad-placeholder { background: linear-gradient(135deg, #f1f5f9, #e2e8f0); border: 2px dashed #cbd5e1; border-radius: 16px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+        .affiliate-note { background: #fef3c7; border-left: 5px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 12px 12px 0; font-size: 0.95rem; color: #92400e; }
+        .affiliate-note a { color: var(--primary); font-weight: 700; text-decoration: none; }
 
-        .dropdown-content a {
-            color: var(--text);
-            padding: 0.8rem 1rem;
-            display: block;
-            border-bottom: 1px solid var(--border);
-            transition: all 0.3s;
+        /* Footer */
+        .footer { background: var(--dark); color: white; padding: 5rem 2rem 2rem; margin-top: 5rem; }
+        .footer-grid { max-width: 1200px; margin: 0 auto 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; }
+        .footer-section h3 { font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--accent); }
+        .footer-links { list-style: none; }
+        .footer-links a { color: #94a3b8; text-decoration: none; transition: color 0.3s; display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; }
+        .footer-links a:hover { color: white; }
+        .mobile-nav {
+            position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px;
+            height: 100vh; background: var(--primary); z-index: 1000;
+            padding: 4rem 1.5rem 2rem; overflow-y: auto;
+            transition: right 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+            box-shadow: -4px 0 20px rgba(0,0,0,0.3);
         }
-
-        .dropdown-content a:hover {
-            background: var(--light);
-            color: var(--primary);
-            padding-left: 1.5rem;
+        .mobile-nav.active { right: 0; }
+        .mobile-nav-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1.5rem; padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
+        .mobile-nav-close {
+            background: none; border: none; color: white; font-size: 1.5rem;
+            cursor: pointer; width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center;
         }
+        .mobile-nav-menu { list-style: none; margin: 0; padding: 0; }
+        .mobile-nav-menu a {
+            color: white; text-decoration: none; font-size: 1.05rem; font-weight: 500;
+            display: flex; align-items: center; padding: 0.9rem 0; min-height: 44px;
+            border-bottom: 1px solid rgba(255,255,255,0.07); transition: padding-left 0.3s;
+        }
+        .mobile-nav-menu a:hover { padding-left: 0.75rem; }
 
         @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--primary);
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .mobile-menu-btn {
-                display: block !important;
-            }
+            .nav-menu { display: none; }
+            .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+            .page-header h1 { font-size: 2rem; }
+            .page-header { padding: 3rem 1rem; }
+            .content-grid { grid-template-columns: 1fr; }
+            .structure-grid { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+            .tab-content { padding: 1.25rem; }
+            .schedule-table { display: block; overflow-x: auto; font-size: 0.85rem; }
+            .schedule-table th, .schedule-table td { padding: 0.6rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
         }
 
 
@@ -578,24 +653,6 @@
             background: var(--secondary);
         }
 
-        /* Ad Placeholder */
-        .ad-placeholder {
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            border: 2px dashed #cbd5e1;
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .ad-label {
-            font-size: 0.75rem;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
-        }
-
         /* Affiliate Note */
         .affiliate-note {
             background: #fef3c7;
@@ -712,18 +769,44 @@
             .tab-content {
                 padding: 1.5rem;
             }
+
+            input, select, textarea { font-size: 16px !important; }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <span style="color:white;font-weight:700;">Menu</span>
+            <button class="mobile-nav-close" onclick="closeMobileMenu()">&#10005;</button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="toefl.html" onclick="closeMobileMenu()">TOEFL iBT</a></li>
+            <li><a href="ielts.html" onclick="closeMobileMenu()">IELTS</a></li>
+            <li><a href="duolingo.html" onclick="closeMobileMenu()">Duolingo</a></li>
+            <li><a href="cambridge.html" onclick="closeMobileMenu()">Cambridge</a></li>
+            <li><a href="pmp.html" onclick="closeMobileMenu()">PMP</a></li>
+            <li><a href="google.html" onclick="closeMobileMenu()">Google Certs</a></li>
+            <li><a href="gmat.html" onclick="closeMobileMenu()">GMAT</a></li>
+            <li><a href="cisco.html" onclick="closeMobileMenu()">Cisco</a></li>
+            <li><a href="resources.html" onclick="closeMobileMenu()">Resources</a></li>
+            <li><a href="blog.html" onclick="closeMobileMenu()">Blog</a></li>
+            <li><a href="testimonials.html" onclick="closeMobileMenu()">Success Stories</a></li>
+            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="images/Preploom.png" alt="PrepLoom" style="width: 280px; height: 80px; object-fit: cover; border-radius: 8px;">
-               
+                <img src="images/Preploom.png" alt="PrepLoom" style="width:200px;max-width:100%;height:auto;object-fit:contain;border-radius:6px;" loading="lazy">
             </a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">&#9776;</button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
@@ -763,6 +846,10 @@
     <div class="tabs-container">
         <div class="tabs-nav">
             <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+            <button class="tab-btn" onclick="switchTab('reading')">Reading Practice</button>
+            <button class="tab-btn" onclick="switchTab('listening')">Listening Practice</button>
+            <button class="tab-btn" onclick="switchTab('writing')">Writing Practice</button>
+            <button class="tab-btn" onclick="switchTab('speaking')">Speaking Practice</button>
             <button class="tab-btn" onclick="switchTab('schedule')">Exam Schedule</button>
             <button class="tab-btn" onclick="switchTab('tips')">Prep Tips</button>
             <button class="tab-btn" onclick="switchTab('practice')">Sample Questions</button>
@@ -825,10 +912,6 @@
                         <li>Anyone needing to demonstrate English proficiency for academic or professional purposes</li>
                     </ul>
 
-                    <div class="ad-placeholder">
-                        <div class="ad-label">Advertisement</div>
-                        <div class="ad-text">Google AdSense / Course Promotion Space</div>
-                    </div>
                 </div>
 
                 <aside class="sidebar">
@@ -878,6 +961,34 @@
                         </ul>
                     </div>
                 </aside>
+            </div>
+        </div>
+
+        <div class="tab-content" id="reading" style="padding: 2rem;">
+            <h2 style="color: var(--primary); margin-bottom: 1.5rem;">TOEFL Reading Practice</h2>
+            <div id="toefl-reading"></div>
+            <button onclick="submitReadingTest()" style="background: var(--secondary); color: white; border: none; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 1.5rem;">Submit Test</button>
+            <h2 id="readingResult" style="margin-top: 1rem; color: var(--primary);"></h2>
+        </div>
+
+        <div class="tab-content" id="listening" style="padding: 2rem;">
+            <h2 style="color: var(--primary); margin-bottom: 1.5rem;">TOEFL Listening Practice</h2>
+            <div id="toefl-listening"></div>
+            <button onclick="submitListeningTest()" style="background: var(--secondary); color: white; border: none; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 1.5rem;">Submit Test</button>
+            <h2 id="listeningResult" style="margin-top: 1rem; color: var(--primary);"></h2>
+        </div>
+
+        <div class="tab-content" id="writing" style="padding: 2rem;">
+            <div class="question-card">
+                <h2 style="color: var(--primary); margin-bottom: 1.5rem;">TOEFL Writing Practice</h2>
+                <div id="speaking-questions"></div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="speaking" style="padding: 2rem;">
+            <div class="question-card">
+                <h2 style="color: var(--primary); margin-bottom: 1.5rem;">TOEFL Speaking Practice</h2>
+                <div id="speaking-practice"></div>
             </div>
         </div>
 
@@ -936,11 +1047,6 @@
                     <li>Allow time for a retake if needed (minimum 3 days between attempts)</li>
                 </ul>
             </div>
-
-            <div class="ad-placeholder">
-                <div class="ad-label">Advertisement</div>
-                <div class="ad-text">Test Center Locator / Prep Course Banner</div>
-            </div>
         </div>
 
         <div class="tab-content" id="tips">
@@ -978,11 +1084,6 @@
                         <p style="color: #64748b; line-height: 1.8;">Spend 2-3 minutes outlining your integrated and independent essays. For Integrated: Follow the structure—reading point, listening contrast, repeat. For Independent: Use the "Why + Example" formula. Aim for 300+ words with specific examples. Save 2 minutes for proofreading.</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="ad-placeholder">
-                <div class="ad-label">Advertisement</div>
-                <div class="ad-text">Writing Evaluation Service / Speaking Coach Promo</div>
             </div>
         </div>
 
@@ -1215,7 +1316,7 @@
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-section">
-                <h3>EliteExam Institute</h3>
+                <h3>preploom</h3>
                 <p style="color: #94a3b8; margin-bottom: 1rem;">Empowering careers through certification excellence since 2018.</p>
             </div>
             <div class="footer-section">
@@ -1237,15 +1338,236 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 EliteExam Institute. All rights reserved.</p>
+            <p>&copy; 2026 preploom. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        function toggleMenu() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('active');
+        // TOEFL Reading Data
+        const readingData = [
+          {
+            passage: "Universities are increasingly using digital platforms to enhance learning experiences. Students can access lectures, assignments, and resources online. This shift has transformed traditional education and made learning more accessible to students worldwide.",
+            questions: [
+              { q: "Main topic?", options: ["Sports", "Digital learning", "Cooking", "Travel"], answer: 1 },
+              { q: "Students can access:", options: ["Only books", "Online resources", "Games", "Weather"], answer: 1 },
+              { q: "Digital platforms help:", options: ["Reduce learning", "Enhance learning", "Stop education", "Delay classes"], answer: 1 }
+            ]
+          },
+          {
+            passage: "Scientific research has improved healthcare systems worldwide through vaccines and advanced treatments. Medical breakthroughs have extended life expectancy and reduced mortality rates from previously fatal diseases.",
+            questions: [
+              { q: "Research improves:", options: ["Healthcare", "Sports", "Transport", "Music"], answer: 0 },
+              { q: "Vaccines help to:", options: ["Spread disease", "Prevent disease", "Increase hunger", "Stop education"], answer: 1 }
+            ]
+          }
+        ];
+
+        // TOEFL Listening Data
+        const listeningData = [
+          {
+            script: "Today we will discuss environmental science. Human activities such as pollution affect ecosystems and climate patterns. Understanding these impacts is crucial for developing sustainable solutions.",
+            questions: [
+              { q: "Lecture topic?", options: ["Sports", "Environmental science", "Cooking", "Business"], answer: 1 },
+              { q: "Human activities affect:", options: ["Music", "Ecosystems", "Games", "Books"], answer: 1 },
+              { q: "One example is:", options: ["Pollution", "Reading", "Sleeping", "Travel"], answer: 0 }
+            ]
+          },
+          {
+            script: "In this conversation, a student discusses missing a deadline due to illness and requests an extension. The professor explains the policy and offers alternative solutions.",
+            questions: [
+              { q: "Student missed:", options: ["Exam", "Deadline", "Class party", "Sports"], answer: 1 },
+              { q: "Reason is:", options: ["Travel", "Illness", "Holiday", "Work"], answer: 1 }
+            ]
+          }
+        ];
+
+        // Speaking Questions
+        const speakingQuestions = [
+          "Describe your hometown",
+          "Talk about your favorite teacher",
+          "Describe a memorable trip",
+          "What is your daily routine?",
+          "Explain importance of education"
+        ];
+
+        // Initialize Reading Practice
+        const readingApp = document.getElementById("toefl-reading");
+        readingData.forEach((p, i) => {
+          const div = document.createElement("div");
+          div.className = "question-card";
+          div.innerHTML = `
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">Passage ${i+1}</h3>
+            <p style="background: #f1f5f9; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; line-height: 1.8;">${p.passage}</p>
+          `;
+          p.questions.forEach((q, qi) => {
+            div.innerHTML += `
+              <p style="font-weight: 600; margin-bottom: 0.75rem;">${q.q}</p>
+              ${q.options.map((opt, oi) => `
+                <label style="display: block; padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-radius: 8px; cursor: pointer; border: 2px solid transparent; transition: all 0.3s;">
+                  <input type="radio" name="r${i}${qi}" value="${oi}" style="margin-right: 0.5rem;">
+                  ${opt}
+                </label>
+              `).join("")}
+              <br>
+            `;
+          });
+          readingApp.appendChild(div);
+        });
+
+        // Submit Reading Test
+        function submitReadingTest() {
+          let correct = 0;
+          let total = 0;
+          readingData.forEach((p, i) => {
+            p.questions.forEach((q, qi) => {
+              total++;
+              const selected = document.querySelector(`input[name="r${i}${qi}"]:checked`);
+              if (selected && parseInt(selected.value) === q.answer) {
+                correct++;
+              }
+            });
+          });
+          document.getElementById("readingResult").innerHTML = `Score: ${correct}/${total}`;
         }
+
+        // Initialize Listening Practice
+        const listeningApp = document.getElementById("toefl-listening");
+        listeningData.forEach((l, i) => {
+          const div = document.createElement("div");
+          div.className = "question-card";
+          div.innerHTML = `
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">Listening Section ${i+1}</h3>
+            <button id="playLecture${i}" style="background: var(--secondary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600; margin-bottom: 1rem;">▶ Play Lecture</button>
+            <p style="background: #f1f5f9; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; color: #64748b;"><b>Script (for development):</b> ${l.script}</p>
+          `;
+          
+          l.questions.forEach((q, qi) => {
+            div.innerHTML += `
+              <p style="font-weight: 600; margin-bottom: 0.75rem;">${q.q}</p>
+              ${q.options.map((opt, oi) => `
+                <label style="display: block; padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-radius: 8px; cursor: pointer; border: 2px solid transparent;">
+                  <input type="radio" name="l${i}${qi}" value="${oi}" style="margin-right: 0.5rem;">
+                  ${opt}
+                </label>
+              `).join("")}
+              <br>
+            `;
+          });
+          listeningApp.appendChild(div);
+
+          document.getElementById(`playLecture${i}`).addEventListener("click", () => {
+            const speech = new SpeechSynthesisUtterance(l.script);
+            speech.rate = 1;
+            speech.lang = "en-US";
+            speechSynthesis.cancel();
+            speechSynthesis.speak(speech);
+          });
+        });
+
+        // Submit Listening Test
+        function submitListeningTest() {
+          let correct = 0;
+          let total = 0;
+          listeningData.forEach((l, i) => {
+            l.questions.forEach((q, qi) => {
+              total++;
+              const selected = document.querySelector(`input[name="l${i}${qi}"]:checked`);
+              if (selected && parseInt(selected.value) === q.answer) {
+                correct++;
+              }
+            });
+          });
+          document.getElementById("listeningResult").innerHTML = `Score: ${correct}/${total}`;
+        }
+
+        // Initialize Writing Practice
+        const writingApp = document.getElementById("speaking-questions");
+        writingApp.innerHTML = `
+          <h3 style="color: var(--dark); margin-bottom: 1rem;">TOEFL Writing Task</h3>
+          <p style="margin-bottom: 1rem; line-height: 1.8;">Some people believe online learning is better than classroom learning. Do you agree or disagree? Support your answer with specific reasons and examples.</p>
+          <textarea id="essay" rows="12" style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; margin-bottom: 1rem;"></textarea>
+          <button onclick="checkEssay()" style="background: var(--secondary); color: white; border: none; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; font-weight: 600;">Get Feedback</button>
+          <div id="output" style="margin-top: 1.5rem;"></div>
+        `;
+
+        function checkEssay() {
+          const text = document.getElementById("essay").value;
+          let score = 5;
+          if (text.length > 300) score += 1;
+          if (text.includes("however")) score += 0.5;
+          if (text.includes("in conclusion")) score += 0.5;
+          document.getElementById("output").innerHTML = `
+            <div style="background: #f1f5f9; padding: 1.5rem; border-radius: 8px;">
+              <h3 style="color: var(--primary); margin-bottom: 1rem;">Estimated Band: ${score}/10</h3>
+              <p style="font-weight: 600; margin-bottom: 0.5rem;">Feedback:</p>
+              <ul style="color: #475569; margin-left: 1.5rem;">
+                <li>Improve grammar structure</li>
+                <li>Add more specific examples</li>
+                <li>Use more linking words</li>
+              </ul>
+            </div>
+          `;
+        }
+
+        // Initialize Speaking Practice
+        const speakingApp = document.getElementById("speaking-practice");
+        speakingQuestions.forEach((q, i) => {
+          const div = document.createElement("div");
+          div.style.marginBottom = "2rem";
+          div.style.padding = "1.5rem";
+          div.style.background = "#f1f5f9";
+          div.style.borderRadius = "8px";
+          div.innerHTML = `
+            <p style="font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;"><b>Question ${i+1}:</b> ${q}</p>
+            <button onclick="speak('${q}', ${i})" style="background: #10b981; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600; margin-bottom: 1rem;">Start Speaking</button>
+            <p id="out${i}" style="margin-top: 1rem; color: var(--secondary); font-weight: 600;"></p>
+            <div id="result${i}" style="margin-top: 1rem;"></div>
+          `;
+          speakingApp.appendChild(div);
+        });
+
+        function speak(question, index) {
+          const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+          if (!SpeechRecognition) {
+            document.getElementById(`out${index}`).innerText = "Speech recognition not supported in this browser.";
+            return;
+          }
+          const recognition = new SpeechRecognition();
+          recognition.lang = "en-US";
+          recognition.start();
+          document.getElementById(`out${index}`).innerText = "Listening...";
+
+          recognition.onresult = function(event) {
+            const text = event.results[0][0].transcript;
+            let score = 6;
+            if (text.split(" ").length > 40) score += 1;
+            if (text.includes("because")) score += 0.5;
+            document.getElementById(`result${index}`).innerHTML = `
+              <div style="background: white; padding: 1rem; border-radius: 8px;">
+                <p style="font-weight: 600; margin-bottom: 0.5rem;">Your Answer:</p>
+                <p style="color: #475569; margin-bottom: 1rem;">${text}</p>
+                <p style="font-weight: 600; color: var(--primary);">Band Score: ${score}/10</p>
+              </div>
+            `;
+            document.getElementById(`out${index}`).innerText = "";
+          };
+
+          recognition.onerror = function() {
+            document.getElementById(`out${index}`).innerText = "Error occurred. Please try again.";
+          };
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        function toggleMenu() { toggleMobileMenu(); }
 
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => {

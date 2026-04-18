@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Progress | Preploom</title>
+    <meta name="description" content="Track your exam preparation progress on PrepLoom. View scores, study streaks, and improvement trends for all your enrolled certifications.">
+    <meta name="keywords" content="PrepLoom progress tracker, exam score tracker, study progress">
+    <meta name="author" content="PrepLoom Institute">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://preploom.com.ng/progress.html">
+    <meta property="og:title" content="Progress Tracker | PrepLoom Student Portal">
+    <meta property="og:description" content="Track your certification exam progress, scores, and study streaks on PrepLoom.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://preploom.com.ng/progress.html">
+    <meta property="og:image" content="https://preploom.com.ng/images/Preploom.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Progress Tracker | PrepLoom">
+    <meta name="twitter:description" content="Monitor your exam prep progress and improvement on PrepLoom.">
+    <meta name="twitter:image" content="https://preploom.com.ng/images/Preploom.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#1e40af">
+
     <style>
         :root {
             --primary: #1e40af; --secondary: #3b82f6; --success: #10b981; --warning: #f59e0b;
@@ -15,7 +33,7 @@
         /* Navbar (match dashboard) */
         .navbar { background: linear-gradient(135deg, var(--primary), #000); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-lg); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo img { width: 280px; height: 80px; object-fit: cover; border-radius: 8px; }
+        .logo img { width: 280px; max-width: 100%; height: auto; object-fit: contain; border-radius: 8px; }
         .user-menu { display: flex; gap: 1rem; }
         .user-profile { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; }
         /* Main */
@@ -74,7 +92,9 @@
                 const res = await fetch('/api/progress', { headers: { 'Authorization': `Bearer ${token}` } });
                 const progress = await res.json();
                 const tbody = document.querySelector('#progressTable tbody');
-                tbody.innerHTML = Object.entries(progress).map(([exam, data]) => `
+                const entries = Object.entries(progress).filter(([k, v]) => v && typeof v === 'object' && 'progress' in v);
+                if (!entries.length) { tbody.innerHTML = '<tr><td colspan="6" style="padding:1rem;color:#64748b;">No progress data yet. Enroll in exams to get started.</td></tr>'; return; }
+                tbody.innerHTML = entries.map(([exam, data]) => `
                     <tr class="progress-row">
                         <td><strong>${exam.toUpperCase()}</strong></td>
                         <td><div class="progress-bar"><div class="progress-fill" style="width: ${data.progress}%"></div></div> ${data.progress}%</td>
@@ -94,22 +114,28 @@
             }
         }
 
+        async function getCsrfToken() {
+            try {
+                const res = await fetch('/api/csrf-token', { headers: { 'Authorization': `Bearer ${token}` } });
+                const data = await res.json();
+                return data.csrfToken || '';
+            } catch { return ''; }
+        }
+
         async function updateProgress(exam) {
             const newProgress = parseInt(document.getElementById(`prog-${exam}`).value);
             if (isNaN(newProgress) || newProgress < 0 || newProgress > 100) return showMessage('Invalid progress (0-100)', 'error');
 
             try {
+                const csrf = await getCsrfToken();
                 const res = await fetch('/api/progress', {
                     method: 'PUT',
-                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json', 'X-CSRF-Token': csrf },
                     body: JSON.stringify({ [exam]: { progress: newProgress, updated: new Date().toISOString() } })
                 });
-                if (res.ok) {
-                    showMessage('Progress updated!', 'success');
-                    loadProgress();
-                } else {
-                    showMessage('Update failed', 'error');
-                }
+                const data = await res.json();
+                if (res.ok) { showMessage('Progress updated!', 'success'); loadProgress(); }
+                else showMessage(data.message || 'Update failed', 'error');
             } catch {
                 showMessage('Network error', 'error');
             }
@@ -132,3 +158,4 @@
     </script>
 </body>
 </html>
+

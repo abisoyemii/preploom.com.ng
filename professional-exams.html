@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Certification Exams 2026 | PMP, AWS, Google, Cisco, CompTIA | Preploom</title>
-    <meta name="description" content="Master professional certifications with Preploom. Comprehensive preparation for PMP, AWS, Google Cloud, Cisco, CompTIA, and more. Expert-led courses, practice exams, and guaranteed success strategies.">
-    <meta name="keywords" content="PMP certification 2026, AWS certification training, Google Cloud Professional, Cisco certifications, CompTIA A+ exam, professional IT certifications, project management certification, cloud computing certifications">
-    <link rel="canonical" href="https://Preploom.com/professional-exams.html">
+    <meta name="description" content="Master professional certifications with PrepLoom. Expert preparation for PMP, AWS Solutions Architect, Google Cloud, Cisco CCNA/CCNP, and CompTIA. 95% pass rate.">
+    <meta name="keywords" content="PMP certification 2026, AWS certification training, Cisco CCNA prep, CompTIA Security+ exam, professional IT certifications">
+    <meta name="author" content="PrepLoom Institute">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://preploom.com.ng.ng/professional-exams.html">
+    <meta property="og:title" content="Professional Certifications 2026 | PMP, AWS, Cisco | PrepLoom">
+    <meta property="og:description" content="Ace PMP, AWS, Google Cloud, Cisco and CompTIA certifications with expert prep courses. 95% pass rate.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://preploom.com.ng.ng/professional-exams.html">
+    <meta property="og:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Professional Certifications 2026 | PrepLoom">
+    <meta name="twitter:description" content="Expert preparation for PMP, AWS, Cisco, CompTIA and more. 95% pass rate.">
+    <meta name="twitter:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#059669">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Professional Certification Courses",
+    "url": "https://preploom.com.ng.ng/professional-exams.html",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "PMP Certification Prep", "url": "https://preploom.com.ng.ng/pmp.html"},
+      {"@type": "ListItem", "position": 2, "name": "Cisco CCNA/CCNP Prep", "url": "https://preploom.com.ng.ng/cisco.html"},
+      {"@type": "ListItem", "position": 3, "name": "Google Professional Certificates", "url": "https://preploom.com.ng.ng/google.html"}
+    ]
+  }
+    </script>
+
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Professional Certification Exams 2026 | Preploom">
-    <meta property="og:description" content="Ace PMP, AWS, Google Cloud, Cisco & CompTIA certifications with expert preparation courses. Practice exams, study guides, and guaranteed success.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://Preploom.com/professional-exams.html">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Professional Certifications 2026 - PMP, AWS, Google, Cisco">
-    <meta name="twitter:description" content="Comprehensive preparation for top professional certifications with Preploom Institute">
 
     <style>
         :root {
@@ -56,6 +77,7 @@
             color: var(--text);
             background: var(--light);
             font-size: 16px;
+            overflow-x: hidden;
         }
 
         /* Navigation - Enhanced */
@@ -656,6 +678,40 @@
             color: #64748b;
         }
 
+        /* Mobile Nav Drawer */
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(0,0,0,0.5); z-index: 999;
+            opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-nav {
+            position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px;
+            height: 100vh; background: var(--primary); z-index: 1000;
+            padding: 4rem 1.5rem 2rem; overflow-y: auto;
+            transition: right 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+            box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+        }
+        .mobile-nav.active { right: 0; }
+        .mobile-nav-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1.5rem; padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-nav-close {
+            background: none; border: none; color: white; font-size: 1.5rem;
+            cursor: pointer; width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .mobile-nav-menu { list-style: none; margin: 0; padding: 0; }
+        .mobile-nav-menu a {
+            color: white; text-decoration: none; font-size: 1.05rem; font-weight: 500;
+            display: flex; align-items: center; padding: 0.9rem 0; min-height: 44px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            transition: padding-left 0.3s;
+        }
+        .mobile-nav-menu a:hover { padding-left: 0.75rem; }
+
         /* Animations */
         @keyframes fadeIn {
             from {
@@ -668,135 +724,143 @@
             }
         }
 
-        /* Responsive Design */
+        /* Mobile menu button — hidden on desktop */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            line-height: 1;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+            /* Nav */
+            .nav-menu { display: none; }
+            .mobile-menu-btn { display: flex; }
+            .nav-container { justify-content: flex-start; padding: 0 1rem; }
+            .logo { max-width: 160px; margin-right: auto; font-size: 1.4rem; }
+            .logo:hover { transform: none; }
 
-            .hero-stats {
-                gap: 2rem;
-            }
+            /* Hero */
+            .hero { padding: 3rem 1rem 2.5rem; }
+            .hero h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); line-height: 1.2; }
+            .hero .subtitle { font-size: 1rem; margin-bottom: 1.5rem; }
+            .hero-stats { gap: 1.5rem; }
+            .stat-number { font-size: 2rem; }
+            .stat-label { font-size: 0.8rem; }
+            .hero-buttons { flex-direction: column; align-items: center; gap: 0.75rem; }
+            .btn-primary, .btn-secondary { width: 100%; max-width: 320px; text-align: center; font-size: 1rem; padding: 0.9rem 1.5rem; }
 
-            .nav-menu {
-                display: none;
-            }
+            /* Main content */
+            .main-content { padding: 2rem 1rem; }
+            .section { margin-bottom: 2.5rem; }
+            .section-title { font-size: clamp(1.4rem, 5vw, 2rem); }
+            .section-subtitle { font-size: 0.95rem; }
+            .section-header { margin-bottom: 1.5rem; }
 
-            .cert-grid {
-                grid-template-columns: 1fr;
-            }
+            /* Cert cards */
+            .cert-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+            .cert-card { padding: 1.25rem; }
+            .cert-card:hover { transform: none; }
+            .cert-title { font-size: 1.2rem; }
+            .cert-stats { flex-wrap: wrap; gap: 0.5rem; justify-content: space-around; }
+            .stat-value { font-size: 1.2rem; }
+            .cert-action .btn-primary { font-size: 0.95rem; padding: 0.85rem; }
 
-            .comparison-table {
-                font-size: 0.9rem;
-            }
+            /* Comparison table — scrollable */
+            .comparison-section { padding: 1.25rem; overflow-x: auto; }
+            .comparison-section > * { min-width: 600px; }
+            .comparison-table { font-size: 0.82rem; }
+            .comparison-table th, .comparison-table td { padding: 0.5rem 0.6rem; white-space: nowrap; }
+            .difficulty-badge { font-size: 0.72rem; padding: 0.2rem 0.5rem; }
 
-            .comparison-table th,
-            .comparison-table td {
-                padding: 0.5rem;
-            }
+            /* Success stories */
+            .success-stories { padding: 2.5rem 1rem; }
+            .stories-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .story-card { padding: 1.25rem; }
+            .story-quote { font-size: 0.97rem; }
 
-            .stories-grid {
-                grid-template-columns: 1fr;
-            }
+            /* CTA */
+            .cta-section { padding: 2.5rem 1rem; }
+            .cta-title { font-size: clamp(1.4rem, 5vw, 2rem); }
+            .cta-subtitle { font-size: 1rem; }
+            .cta-buttons { flex-direction: column; align-items: center; gap: 0.75rem; }
 
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
+            /* Footer */
+            .footer { padding: 2rem 1rem 1rem; }
+            .footer-content { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
         }
 
         @media (max-width: 480px) {
-            .hero {
-                padding: 4rem 1rem 3rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .main-content {
-                padding: 2rem 1rem;
-            }
+            .hero { padding: 2.5rem 0.75rem 2rem; }
+            .hero h1 { font-size: 1.5rem; }
+            .hero-stats { flex-direction: column; gap: 0.75rem; }
+            .stat-number { font-size: 1.8rem; }
+            .main-content { padding: 1.5rem 0.75rem; }
+            .cert-card { padding: 1rem; }
+            .cert-icon { width: 48px; height: 48px; font-size: 1.2rem; }
+            .cert-stats { justify-content: space-between; }
+            .footer-content { grid-template-columns: 1fr; }
+            .cta-title { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <span style="color:white;font-weight:700;">Menu</span>
+            <button class="mobile-nav-close" onclick="closeMobileMenu()">&#10005;</button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="pmp.html" onclick="closeMobileMenu()">PMP</a></li>
+            <li><a href="cisco.html" onclick="closeMobileMenu()">Cisco</a></li>
+            <li><a href="google.html" onclick="closeMobileMenu()">Google</a></li>
+            <li><a href="language-exams.html" onclick="closeMobileMenu()">Language Exams</a></li>
+            <li><a href="resources.html" onclick="closeMobileMenu()">Resources</a></li>
+            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <div class="logo-icon">🎓</div>
-                Preploom
+                <img src="images/Preploom.png" alt="PrepLoom" style="width:200px;max-width:100%;height:auto;object-fit:contain;border-radius:6px;">
             </a>
-
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">&#9776;</button>
+            <ul class="nav-menu" id="navMenu">
                 <li class="dropdown">
                     <a href="#">Language Exams ▼</a>
                     <div class="dropdown-content">
                         <div class="dropdown-header">English Proficiency</div>
-                        <div class="dropdown-item">
-                            <a href="toefl.html">
-                                <strong>TOEFL iBT</strong>
-                                <div class="description">Internet-based test for academic English</div>
-                            </a>
-                        </div>
-                        <div class="dropdown-item">
-                            <a href="ielts.html">
-                                <strong>IELTS</strong>
-                                <div class="description">Academic & General Training modules</div>
-                            </a>
-                        </div>
-                        <div class="dropdown-item">
-                            <a href="language-exams.html">
-                                <strong>All Language Exams</strong>
-                                <div class="description">Complete comparison & guide</div>
-                            </a>
-                        </div>
+                        <div class="dropdown-item"><a href="toefl.html"><strong>TOEFL iBT</strong><div class="description">Internet-based test for academic English</div></a></div>
+                        <div class="dropdown-item"><a href="ielts.html"><strong>IELTS</strong><div class="description">Academic & General Training modules</div></a></div>
+                        <div class="dropdown-item"><a href="language-exams.html"><strong>All Language Exams</strong><div class="description">Complete comparison & guide</div></a></div>
                     </div>
                 </li>
                 <li class="dropdown">
                     <a href="#">Professional Exams ▼</a>
                     <div class="dropdown-content">
                         <div class="dropdown-header">IT & Project Management</div>
-                        <div class="dropdown-item">
-                            <a href="professional-exams.html">
-                                <strong>PMP Certification</strong>
-                                <div class="description">Project Management Professional</div>
-                            </a>
-                        </div>
-                        <div class="dropdown-item">
-                            <a href="professional-exams.html">
-                                <strong>AWS Certifications</strong>
-                                <div class="description">Amazon Web Services cloud</div>
-                            </a>
-                        </div>
-                        <div class="dropdown-item">
-                            <a href="professional-exams.html">
-                                <strong>Google Cloud</strong>
-                                <div class="description">Google Cloud Professional certs</div>
-                            </a>
-                        </div>
-                        <div class="dropdown-item">
-                            <a href="professional-exams.html">
-                                <strong>Cisco Certifications</strong>
-                                <div class="description">Networking & security</div>
-                            </a>
-                        </div>
-                        <div class="dropdown-item">
-                            <a href="professional-exams.html">
-                                <strong>CompTIA</strong>
-                                <div class="description">IT fundamentals & security</div>
-                            </a>
-                        </div>
+                        <div class="dropdown-item"><a href="pmp.html"><strong>PMP Certification</strong><div class="description">Project Management Professional</div></a></div>
+                        <div class="dropdown-item"><a href="cisco.html"><strong>Cisco Certifications</strong><div class="description">Networking & security</div></a></div>
+                        <div class="dropdown-item"><a href="google.html"><strong>Google Certificates</strong><div class="description">Data analytics, UX, PM</div></a></div>
                     </div>
                 </li>
-                <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="#" class="cta-button">Start Free Trial</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="cta-button">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -809,11 +873,11 @@
 
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-number">50K+</span>
+                    <span class="stat-number">1K+</span>
                     <span class="stat-label">Certified Professionals</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">95%</span>
+                    <span class="stat-number">60%</span>
                     <span class="stat-label">Pass Rate</span>
                 </div>
                 <div class="stat">
@@ -1228,5 +1292,18 @@
             <p>&copy; 2026 Preploom . All rights reserved. | <a href="#" style="color: #64748b;">Privacy Policy</a> | <a href="#" style="color: #64748b;">Terms of Service</a></p>
         </div>
     </footer>
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
 </body>
 </html>
+

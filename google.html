@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Professional Certificates | Complete Preparation | Preploo</title>
-    <meta name="description" content="Master Google Professional Certificates with EliteExam's free preparation resources. Data Analytics, UX Design, Project Management, IT Support - practice questions and expert strategies.">
-    <meta name="keywords" content="Google Data Analytics cert, Google UX Design certificate, Google Project Management cert, Google IT Support cert, Coursera Google certificates">
-    <link rel="canonical" href="https://eliteexaminstitute.com/google.html">
+    <meta name="description" content="Prepare for Google Professional Certificates with PrepLoom. Data Analytics, UX Design, Project Management, IT Support. Free practice questions and expert guidance.">
+    <meta name="keywords" content="Google Professional Certificate prep, Google Data Analytics, Google UX Design, Google Project Management, IT Support certificate">
+    <meta name="author" content="PrepLoom Institute">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://preploom.com.ng.ng/google.html">
+    <meta property="og:title" content="Google Professional Certificates Prep 2026 | PrepLoom">
+    <meta property="og:description" content="Master Google Professional Certificates in Data Analytics, UX Design, Project Management and IT Support with PrepLoom.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://preploom.com.ng.ng/google.html">
+    <meta property="og:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Google Professional Certificates 2026 | PrepLoom">
+    <meta name="twitter:description" content="Free practice questions and expert prep for all Google Professional Certificates.">
+    <meta name="twitter:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#1e40af">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Google Professional Certificates Preparation",
+    "description": "Comprehensive preparation for Google Data Analytics, UX Design, Project Management, and IT Support certificates.",
+    "provider": {"@type": "Organization", "name": "PrepLoom Institute", "url": "https://preploom.com.ng.ng"},
+    "url": "https://preploom.com.ng.ng/google.html",
+    "educationalLevel": "Professional",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock"}
+  }
+    </script>
+
     <style>
 /* Same CSS as toefl.html - copied for consistency */
 :root {
@@ -123,9 +150,42 @@
             background: none;
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
+            padding: 0.25rem;
+            line-height: 1;
         }
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(0,0,0,0.5); z-index: 999;
+            opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-nav {
+            position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px;
+            height: 100vh; background: var(--primary); z-index: 1000;
+            padding: 4rem 1.5rem 2rem; overflow-y: auto;
+            transition: right 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+            box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+        }
+        .mobile-nav.active { right: 0; }
+        .mobile-nav-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1.5rem; padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-nav-close {
+            background: none; border: none; color: white; font-size: 1.5rem;
+            cursor: pointer; width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .mobile-nav-menu { list-style: none; margin: 0; padding: 0; }
+        .mobile-nav-menu a {
+            color: white; text-decoration: none; font-size: 1.05rem; font-weight: 500;
+            display: flex; align-items: center; padding: 0.9rem 0; min-height: 44px;
+            border-bottom: 1px solid rgba(255,255,255,0.07); transition: padding-left 0.3s;
+        }
+        .mobile-nav-menu a:hover { padding-left: 0.75rem; }
 
         /* Page Header */
         .page-header {
@@ -408,47 +468,50 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--primary);
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cert-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .tab-content {
-                padding: 1.5rem;
-            }
+            .nav-menu { display: none; }
+            .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+            .content-grid { grid-template-columns: 1fr; }
+            .cert-grid { grid-template-columns: 1fr; }
+            .tab-content { padding: 1.25rem; }
+            .page-header h1 { font-size: 2rem; }
+            .page-header { padding: 3rem 1rem; }
+            table { display: block; overflow-x: auto; font-size: 0.85rem; }
+            .sidebar { position: static; }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <span style="color:white;font-weight:700;">Menu</span>
+            <button class="mobile-nav-close" onclick="closeMobileMenu()">&#10005;</button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="toefl.html" onclick="closeMobileMenu()">TOEFL iBT</a></li>
+            <li><a href="ielts.html" onclick="closeMobileMenu()">IELTS</a></li>
+            <li><a href="duolingo.html" onclick="closeMobileMenu()">Duolingo</a></li>
+            <li><a href="cambridge.html" onclick="closeMobileMenu()">Cambridge</a></li>
+            <li><a href="pmp.html" onclick="closeMobileMenu()">PMP</a></li>
+            <li><a href="google.html" onclick="closeMobileMenu()">Google Certs</a></li>
+            <li><a href="gmat.html" onclick="closeMobileMenu()">GMAT</a></li>
+            <li><a href="cisco.html" onclick="closeMobileMenu()">Cisco</a></li>
+            <li><a href="resources.html" onclick="closeMobileMenu()">Resources</a></li>
+            <li><a href="blog.html" onclick="closeMobileMenu()">Blog</a></li>
+            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="images/Preploom.png" alt="PrepLoom" style="width: 280px; height: 80px; object-fit: cover; border-radius: 8px;">
+                <img src="images/Preploom.png" alt="PrepLoom" style="width:200px;max-width:100%;height:auto;object-fit:contain;border-radius:6px;" loading="lazy">
             </a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">&#9776;</button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
@@ -715,9 +778,15 @@
     </footer>
 
     <script>
-        // Same JS as toefl.html for tabs, menu, questions
-        function toggleMenu() {
-            document.getElementById('navMenu').classList.toggle('active');
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+            document.body.style.overflow = '';
         }
 
         function switchTab(tabId) {
@@ -743,3 +812,4 @@
     </script>
 </body>
 </html>
+

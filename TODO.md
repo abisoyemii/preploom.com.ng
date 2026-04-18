@@ -1,41 +1,45 @@
-# Mobile Responsiveness Improvement for index.html - Approved Plan
+# TOEFL.html Rewrite Project - Approved Plan Breakdown
 
-## Current Progress
-- [x] **Analysis Complete**: Reviewed index.html (self-contained), identified issues
-- [x] **Plan Approved**: User confirmed: Hero/tabs priority, iPhone/Android focus, no off-limits sections
-- [x] **Create TODO.md** ← **Current Step (Retry)**
+## Completed Steps ✅
+- [x] Analyzed index.html (UI reference: nav, hamburger, responsive CSS, components)
+- [x] Analyzed current toefl.html (structure, gaps)
+- [x] Created comprehensive rewrite plan with **75+ real TOEFL questions**
+- [x] Got user approval for plan execution
 
-## Implementation Steps (Breakdown of Approved Plan)
+## Implementation Steps ⏳
+1. **Create full modern toefl.html** matching index.html UI exactly:
+   - Copy nav/hamburger JS/CSS from index.html
+   - TOEFL-blue hero with stats/CTAs
+   - Tabbed content (Overview/Schedule/Tips/Practice/News/FAQ)
+   - Mobile-responsive (clamp(), @media 768px, 44px touch targets)
 
-### Phase 1: Core Foundations (High Priority) ⭐ PRIORITY
-1. [x] **Update viewport & CSS variables** (Added maximum-scale=5.0, new CSS vars: --mobile-padding, --mobile-gap, --mobile-fs-h1)
-2. [x] **Navigation overhaul** (Fullscreen mobile menu, logo responsive, slide-in animation, touch targets)
-3. [x] **Hero optimization** (`100svh`, responsive typography, CTA stacking, stats grid)
+2. **Content Population:**
+   - Overview: Exam structure cards, scoring info
+   - Schedule: 2026 dates table + tips
+   - Tips: 8 strategy cards (numbered, detailed)
+   - **Practice: 75+ REAL TOEFL questions** (25 Reading, 20 Listening, 15 Speaking, 15 Writing)
+     - Interactive JS (select option, show answer/explanation, highlight correct)
+     - Authentic ETS-style questions with full explanations
+   - News: 6 recent updates
+   - FAQ: 12 toggle FAQs
 
-### Phase 2: Critical Sections (High Priority) ⭐ PRIORITY
-4. [ ] **Tabs section** (Mobile horizontal scroll + snap, touch targets)
-5. [ ] **Forms/inputs** (iOS zoom fix, full-width buttons, label positioning)
+3. **Components:**
+   - Sidebar: Free resources, test dates, signup form
+   - News ticker (TOEFL-specific)
+   - Ad placeholders/affiliate notes
+   - Footer matching index.html
 
-### Phase 3: Content & Layouts (Medium Priority)
-6. [ ] **Grids/cards** (Remove `!important`, use CSS vars, normalize heights)
-7. [ ] **Calendar** (Touch targets, small screen grid/carousel)
-8. [ ] **Typography/spacing** (Clamp functions everywhere)
+4. **Testing & Validation:**
+   - Test hamburger/responsiveness
+   - Verify all 75+ questions interactive
+   - Cross-browser check
+   - Mobile preview
 
-### Phase 4: Polish & Performance (Low-Medium)
-9. [ ] **Ticker improvements** (Touch pause, speed adjustment)
-10. [ ] **Extra small screens** (`@media 480px`)
-11. [ ] **Performance** (Lazy images, reduced motion, smooth scroll)
+5. **Completion:**
+   - Update this TODO.md (mark all ✅)
+   - attempt_completion with demo command
 
-### Phase 5: Testing & Completion
-12. [ ] **Mobile testing** (Chrome DevTools: iPhone 12, Galaxy S20)
-13. [ ] **Lighthouse audit** 
-14. [ ] **Final verification**
-15. [ ] **attempt_completion**
+**Next Action:** Execute Step 1-3 in parallel tool calls (create_file with full HTML).
 
-## Next Action
-**Proceed to Phase 1 Step 1: Core CSS variables & viewport**
-
-**Status**: ✅ TODO.md Created | Next: edit_file index.html (Phase 1)
-
-**Testing Command** (later): `npx lighthouse index.html --view --viewport=375,667`
+**Estimated Completion:** 1 tool call (full file rewrite)
 

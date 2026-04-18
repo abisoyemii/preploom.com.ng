@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard | PrepLoom - Preploom</title>
+    <meta name="description" content="Access your PrepLoom student dashboard. Track exam progress, view enrolled courses, take practice tests, and manage your study plan.">
+    <meta name="keywords" content="PrepLoom dashboard, student portal, exam progress tracker, online study dashboard">
+    <meta name="author" content="PrepLoom Institute">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://preploom.com.ng/dashboard.html">
+    <meta property="og:title" content="Student Dashboard | PrepLoom Institute">
+    <meta property="og:description" content="Your personal PrepLoom dashboard — track progress, access practice tests, and manage your study plan.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://preploom.com.ng/dashboard.html">
+    <meta property="og:image" content="https://preploom.com.ng/images/Preploom.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Student Dashboard | PrepLoom">
+    <meta name="twitter:description" content="Track your exam prep progress and access all your PrepLoom resources in one place.">
+    <meta name="twitter:image" content="https://preploom.com.ng/images/Preploom.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#1e40af">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Student Dashboard",
+    "url": "https://preploom.com.ng/dashboard.html",
+    "isPartOf": {"@type": "WebSite", "name": "PrepLoom Institute", "url": "https://preploom.com.ng"}
+  }
+    </script>
+
     <style>
 :root {
             --primary: #1e40af;
@@ -30,6 +57,7 @@
             line-height: 1.6;
             color: var(--text);
             background: var(--light);
+            overflow-x: hidden;
         }
 
         /* Navbar - Identical to login.html */
@@ -53,8 +81,9 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
 
         .logo img {
             width: 280px;
-            height: 80px;
-            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
             border-radius: 8px;
         }
 
@@ -348,6 +377,15 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
                 display: block;
             }
 
+            .nav-container {
+                justify-content: flex-start;
+            }
+
+            .logo {
+                max-width: 160px;
+                margin-right: auto;
+            }
+
             .hero-title {
                 font-size: 2.2rem;
             }
@@ -366,7 +404,7 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
                 <img src="images/Preploom.png" alt="PrepLoom">
             </a>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html#exams">Exams</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="login.html">Login</a></li>
@@ -375,6 +413,7 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
                         <span>👤</span>
                         <span id="userName">Loading...</span>
                     </div>
+                    <a href="#" id="adminLink" style="display:none;">Admin</a>
                     <a href="#" onclick="logout()">Logout</a>
                 </li>
             </ul>
@@ -510,12 +549,13 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
         </main>
     </div>
 
+    <script src="config.js"></script>
     <script>
         // Auth Check - Redirect if not logged in
         window.addEventListener('load', async () => {
             const token = localStorage.getItem('token');
             if (!token) {
-                // window.location.href = 'login.html';
+                window.location.href = 'login.html';
                 return;
             }
 
@@ -534,8 +574,20 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
                 document.getElementById('userRole').textContent = user.role?.toUpperCase() || 'STUDENT';
                 document.getElementById('welcomeTitle').innerHTML = `Welcome back, <strong>${user.name}</strong>!`;
 
+                // Show admin link for admins
+                if (user.role === 'admin') {
+                    const adminLink = document.getElementById('adminLink');
+                    adminLink.href = 'admin.html';
+                    adminLink.style.display = 'inline';
+                }
+
+                // Update profile sidebar
+                document.getElementById('joinDate').textContent = user.createdAt
+                    ? new Date(user.createdAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+                    : '-';
+
                 // Load dashboard data
-                const response = await fetch('/api/dashboard', {
+                const response = await fetch(API_BASE + '/api/dashboard', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -547,29 +599,54 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
                 }
             } catch (error) {
                 console.error('Dashboard load error:', error);
-                alert('Session expired. Please login again.');
-                logout();
             }
         }
 
         function updateDashboardData(data) {
             // Update stats
-            document.getElementById('totalProgress').textContent = data.overallProgress || '0%';
+            document.getElementById('totalProgress').textContent = (data.overallProgress || 0) + '%';
             document.getElementById('testsTaken').textContent = data.testsTaken || 0;
-            document.getElementById('streakDays').textContent = data.streak || 0;
+            document.getElementById('streakDays').textContent = (data.streak || 0) + ' days';
             document.getElementById('nextExam').textContent = data.nextExam || 'TBA';
+            document.getElementById('examCount').textContent = data.enrolledCount || 0;
 
             // Update upcoming exams
             const container = document.getElementById('upcomingExams');
+            if (!data.upcoming || data.upcoming.length === 0) {
+                container.innerHTML = '<p style="color:#64748b;">No enrolled exams yet. <a href="my-exams.html">Enroll now →</a></p>';
+                return;
+            }
             container.innerHTML = data.upcoming.map(exam => `
                 <div class="exam-item">
                     <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem;">${exam.name}</div>
                     <div style="color: #64748b; font-size: 0.9rem;">${exam.date}</div>
-                    <div style="color: var(--success); font-weight: 600; margin-top: 0.75rem;">
-                        Register → ${exam.status}
+                    <div style="margin-top: 0.75rem;">
+                        <div class="progress-bar" style="height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;">
+                            <div style="width:${exam.progress}%;height:100%;background:linear-gradient(90deg,#10b981,#f59e0b);"></div>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-top:0.25rem;">
+                            <span style="color:var(--success);font-weight:600;">${exam.status}</span>
+                            <span>${exam.progress}% complete</span>
+                        </div>
                     </div>
                 </div>
             `).join('');
+
+            // Update progress bars from real data
+            if (data.progressDetails) {
+                Object.entries(data.progressDetails).forEach(([key, val]) => {
+                    if (!val || typeof val !== 'object') return;
+                    const fill = document.querySelector(`.progress-fill[data-exam="${key}"]`);
+                    if (fill && val.progress !== undefined) {
+                        fill.style.width = val.progress + '%';
+                        const card = fill.closest('.progress-card');
+                        if (card) {
+                            const spans = card.querySelectorAll('span');
+                            if (spans[0]) spans[0].textContent = val.progress + '%';
+                        }
+                    }
+                });
+            }
         }
 
         function logout() {
@@ -606,4 +683,5 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
     </script>
 </body>
 </html>
+
 

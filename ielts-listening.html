@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IELTS Listening - PrepLoom</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .box { padding: 15px; background: #f4f4f4; margin-bottom: 20px; }
+    .question { margin: 10px 0; }
+    button { padding: 10px; margin: 10px 0; }
+  </style>
+</head>
+
+<body>
+
+<h1>IELTS Listening Practice</h1>
+
+<div id="app"></div>
+
+<button onclick="submitTest()">Submit Test</button>
+
+<h2 id="result"></h2>
+
+<script type="module">
+import { listeningTest } from './ieltsListeningData.js';
+import { playAudio } from './audioPlayer.js';
+
+const app = document.getElementById("app");
+
+let userAnswers = {};
+
+listeningTest.forEach((item, i) => {
+
+  const box = document.createElement("div");
+  box.className = "box";
+
+  box.innerHTML = `
+    <h3>Listening Section ${i + 1}</h3>
+    <button id="play${i}">▶ Play Audio</button>
+    <p><b>Script Preview (for development only):</b></p>
+    <p>${item.audioScript}</p>
+  `;
+
+  app.appendChild(box);
+
+  document.addEventListener("click", (e) => {
+    if (e.target && e.target.id === `play${i}`) {
+      playAudio(item.audioScript);
+    }
+  });
+
+  item.questions.forEach((q, qi) => {
+
+    const qDiv = document.createElement("div");
+    qDiv.className = "question";
+
+    qDiv.innerHTML = `
+      <p>${q.q}</p>
+      ${q.options.map((opt, oi) => `
+        <label>
+          <input type="radio" name="q${i}_${qi}" value="${oi}">
+          ${opt}
+        </label><br>
+      `).join("")}
+    `;
+
+    box.appendChild(qDiv);
+  });
+});
+
+window.submitTest = function () {
+
+  let correct = 0;
+  let total = 0;
+
+  listeningTest.forEach((item, i) => {
+    item.questions.forEach((q, qi) => {
+      total++;
+
+      const selected = document.querySelector(
+        `input[name="q${i}_${qi}"]:checked`
+      );
+
+      if (selected && parseInt(selected.value) === q.answer) {
+        correct++;
+      }
+    });
+  });
+
+  document.getElementById("result").innerHTML =
+    `Score: ${correct}/${total}`;
+};
+</script>
+
+</body>
+</html>

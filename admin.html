@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Preploom</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#1e40af">
+    <style>
+        :root {
+            --primary: #1e40af; --secondary: #3b82f6; --success: #10b981;
+            --danger: #ef4444; --warning: #f59e0b; --dark: #000;
+            --light: #f9fafb; --text: #111827; --border: #e5e7eb;
+            --shadow: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--light); color: var(--text); }
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), #000);
+            padding: 1rem 2rem; display: flex; justify-content: space-between;
+            align-items: center; position: sticky; top: 0; z-index: 100;
+            box-shadow: var(--shadow-lg);
+        }
+        .navbar a { color: white; text-decoration: none; }
+        .navbar img { width: 200px; height: auto; border-radius: 6px; }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; color: white; }
+        .nav-right span { font-weight: 600; }
+        .nav-right a { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+        .nav-right a:hover { color: white; }
+
+        .content { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+
+        .page-title { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .page-subtitle { color: #64748b; margin-bottom: 2rem; }
+
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem; margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: white; border-radius: 16px; padding: 1.5rem;
+            box-shadow: var(--shadow); border-left: 4px solid var(--secondary);
+        }
+        .stat-card.green { border-color: var(--success); }
+        .stat-card.orange { border-color: var(--warning); }
+        .stat-card.red { border-color: var(--danger); }
+        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--dark); }
+        .stat-label { color: #64748b; font-size: 0.9rem; margin-top: 0.25rem; }
+
+        .section {
+            background: white; border-radius: 16px; padding: 2rem;
+            box-shadow: var(--shadow); margin-bottom: 2rem;
+        }
+        .section-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--dark); }
+
+        table { width: 100%; border-collapse: collapse; }
+        th { background: var(--light); padding: 0.875rem 1rem; text-align: left; font-weight: 600; font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; }
+        td { padding: 1rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: #fafafa; }
+
+        .badge {
+            display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px;
+            font-size: 0.75rem; font-weight: 600;
+        }
+        .badge-admin { background: #dbeafe; color: var(--primary); }
+        .badge-student { background: #d1fae5; color: #065f46; }
+
+        .btn {
+            padding: 0.4rem 0.9rem; border: none; border-radius: 6px;
+            font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .btn-danger { background: #fee2e2; color: var(--danger); }
+        .btn-danger:hover { background: var(--danger); color: white; }
+        .btn-primary { background: var(--secondary); color: white; }
+        .btn-primary:hover { background: var(--primary); }
+
+        #message {
+            padding: 0.875rem 1rem; border-radius: 8px; margin-bottom: 1rem;
+            display: none; font-weight: 500;
+        }
+        .msg-success { background: #d1fae5; color: #065f46; }
+        .msg-error { background: #fee2e2; color: #991b1b; }
+
+        .loading { opacity: 0.6; pointer-events: none; }
+
+        @media (max-width: 768px) {
+            .content { padding: 0 1rem; }
+            table { font-size: 0.85rem; }
+            td, th { padding: 0.75rem 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html"><img src="images/Preploom.png" alt="Preploom"></a>
+        <div class="nav-right">
+            <span>⚙️ Admin Panel</span>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="page-title">Admin Panel</div>
+        <div class="page-subtitle">Manage users, view platform stats, and monitor activity.</div>
+
+        <div id="message"></div>
+
+        <!-- Stats -->
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="stat-number" id="statUsers">—</div>
+                <div class="stat-label">Total Users</div>
+            </div>
+            <div class="stat-card green">
+                <div class="stat-number" id="statEnrollments">—</div>
+                <div class="stat-label">Total Enrollments</div>
+            </div>
+            <div class="stat-card orange">
+                <div class="stat-number" id="statActive">—</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat-card red">
+                <div class="stat-number" id="statPosts">—</div>
+                <div class="stat-label">Blog Posts</div>
+            </div>
+        </div>
+
+        <!-- Users Table -->
+        <div class="section">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
+                <div class="section-title" style="margin:0;">👥 All Users</div>
+                <button class="btn btn-primary" onclick="loadData()">↻ Refresh</button>
+            </div>
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Joined</th>
+                        <th>Last Login</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="usersBody">
+                    <tr><td colspan="7" style="text-align:center;color:#64748b;padding:2rem;">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+        // Guard: must be logged in as admin
+        if (!token || user.role !== 'admin') {
+            window.location.href = 'login.html';
+        }
+
+        async function getCsrfToken() {
+            try {
+                const res = await fetch('/api/csrf-token', { headers: { 'Authorization': `Bearer ${token}` } });
+                const data = await res.json();
+                return data.csrfToken || '';
+            } catch { return ''; }
+        }
+
+        async function loadData() {
+            document.body.classList.add('loading');
+            try {
+                const [statsRes, usersRes] = await Promise.all([
+                    fetch('/api/admin/stats', { headers: { 'Authorization': `Bearer ${token}` } }),
+                    fetch('/api/admin/users', { headers: { 'Authorization': `Bearer ${token}` } })
+                ]);
+
+                if (statsRes.status === 403 || usersRes.status === 403) {
+                    showMessage('Access denied. Admin only.', 'error');
+                    setTimeout(() => window.location.href = 'login.html', 2000);
+                    return;
+                }
+
+                const stats = await statsRes.json();
+                const usersData = await usersRes.json();
+
+                // Update stats
+                document.getElementById('statUsers').textContent = stats.totalUsers ?? '—';
+                document.getElementById('statEnrollments').textContent = stats.totalEnrollments ?? '—';
+                document.getElementById('statActive').textContent = stats.activeUsers ?? '—';
+                document.getElementById('statPosts').textContent = stats.totalBlogPosts ?? '—';
+
+                // Render users table
+                const tbody = document.getElementById('usersBody');
+                const users = Object.values(usersData.users || {});
+                if (!users.length) {
+                    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:#64748b;padding:2rem;">No users found.</td></tr>';
+                    return;
+                }
+                tbody.innerHTML = users.map(u => `
+                    <tr>
+                        <td>${u.id}</td>
+                        <td><strong>${escHtml(u.name)}</strong></td>
+                        <td>${escHtml(u.email)}</td>
+                        <td><span class="badge badge-${u.role}">${u.role}</span></td>
+                        <td>${u.createdAt ? new Date(u.createdAt).toLocaleDateString() : '—'}</td>
+                        <td>${u.lastLogin ? new Date(u.lastLogin).toLocaleDateString() : 'Never'}</td>
+                        <td>
+                            ${u.id != user.id
+                                ? `<button class="btn btn-danger" onclick="deleteUser(${u.id}, '${escHtml(u.email)}')">Delete</button>`
+                                : '<span style="color:#94a3b8;font-size:0.8rem;">You</span>'
+                            }
+                        </td>
+                    </tr>
+                `).join('');
+            } catch (err) {
+                showMessage('Failed to load data. Is the server running?', 'error');
+            } finally {
+                document.body.classList.remove('loading');
+            }
+        }
+
+        async function deleteUser(userId, email) {
+            if (!confirm(`Delete user "${email}"? This cannot be undone.`)) return;
+            try {
+                const csrf = await getCsrfToken();
+                const res = await fetch(`/api/admin/users/${userId}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}`, 'X-CSRF-Token': csrf }
+                });
+                const data = await res.json();
+                if (res.ok) { showMessage(`User deleted successfully.`, 'success'); loadData(); }
+                else showMessage(data.message || 'Delete failed', 'error');
+            } catch {
+                showMessage('Delete failed. Check connection.', 'error');
+            }
+        }
+
+        function showMessage(text, type) {
+            const el = document.getElementById('message');
+            el.textContent = text;
+            el.className = type === 'success' ? 'msg-success' : 'msg-error';
+            el.style.display = 'block';
+            setTimeout(() => el.style.display = 'none', 4000);
+        }
+
+        function escHtml(str) {
+            return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = 'login.html';
+        }
+
+        window.onload = loadData;
+    </script>
+</body>
+</html>

@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <title>Cisco Certifications | CCNA CCNP Prep | PrepLoom</title>
-    <meta name="description" content="Complete Cisco CCNA, CCNP, CCIE preparation with practice questions, exam schedules, study plans, and expert guidance. Monthly test dates and guaranteed success strategies.">
-    <meta name="keywords" content="CCNA prep, CCNP exam, Cisco certification training, CCIE lab practice, networking certification courses">
+    <meta name="description" content="Ace Cisco CCNA 200-301 and CCNP ENCOR 350-401 with PrepLoom. 500+ real practice questions, lab simulations, exam schedules, and expert networking strategies.">
+    <meta name="keywords" content="CCNA 200-301 prep, CCNP ENCOR practice, Cisco certification 2026, networking exam questions, CCNA study guide">
+    <meta name="author" content="PrepLoom Institute">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://preploom.com.ng.ng/cisco.html">
+    <meta property="og:title" content="Cisco CCNA & CCNP Prep 2026 | 500+ Questions | PrepLoom">
+    <meta property="og:description" content="500+ real Cisco CCNA and CCNP practice questions with detailed explanations. Lab simulations and monthly exam dates.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://preploom.com.ng.ng/cisco.html">
+    <meta property="og:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cisco CCNA & CCNP Preparation 2026 | PrepLoom">
+    <meta name="twitter:description" content="CCNA 200-301 and CCNP ENCOR 350-401 prep with 500+ questions and lab simulations.">
+    <meta name="twitter:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#1e40af">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://preploom.com.ng.ng" },
+        { "@type": "ListItem", "position": 2, "name": "Professional Exams", "item": "https://preploom.com.ng.ng/professional-exams.html" },
+        { "@type": "ListItem", "position": 3, "name": "Cisco CCNA & CCNP", "item": "https://preploom.com.ng.ng/cisco.html" }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course", & CCNP Certification Preparation",
+      "description": "Complete Cisco CCNA 200-301 and CCNP ENCOR preparation with 500+ practice questions, lab simulations, and monthly exam schedules.",
+      "provider": { "@type": "Organization", "name": "PrepLoom Institute", "url": "https://preploom.com.ng.ng" },
+      "url": "https://preploom.com.ng.ng/cisco.html",
+      "educationalLevel": "Professional",
+      "teaches": "Cisco CCNA 200-301, CCNP ENCOR 350-401, Network Fundamentals, Security",
+      "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online", "inLanguage": "en" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+    }
+    </script>
     <style>
 :root {
             --primary: #1e40af;
@@ -25,7 +65,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.6; color: var(--text); background: var(--light); }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.6; color: var(--text); background: var(--light); overflow-x: hidden; }
 
         /* Navigation (copied from index.html) */
         .navbar { background: linear-gradient(135deg, var(--primary) 0%, #000000 100%); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-lg); }
@@ -39,9 +79,26 @@
         .btn-primary { background: var(--primary); color: white; }
         .btn-secondary { background: transparent; color: white; border: 2px solid white; }
         /* Mobile nav styles same as index.html */
-        .mobile-menu-btn { display: none; background: rgba(255,255,255,0.2); border: none; color: white; font-size: 1.5rem; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; }
-
-        @media (max-width: 768px) { .nav-menu { display: none; } .mobile-menu-btn { display: flex; align-items: center; justify-content: center; } }
+        .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; padding: 0.25rem; line-height: 1; }
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(0,0,0,0.5); z-index: 999;
+            opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-nav {
+            position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px;
+            height: 100vh; background: var(--primary); z-index: 1000;
+            padding: 4rem 1.5rem 2rem; overflow-y: auto;
+            transition: right 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+            box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+        }
+        .mobile-nav.active { right: 0; }
+        .mobile-nav-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .mobile-nav-close { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+        .mobile-nav-menu { list-style: none; margin: 0; padding: 0; }
+        .mobile-nav-menu a { color: white; text-decoration: none; font-size: 1.05rem; font-weight: 500; display: flex; align-items: center; padding: 0.9rem 0; min-height: 44px; border-bottom: 1px solid rgba(255,255,255,0.07); transition: padding-left 0.3s; }
+        .mobile-nav-menu a:hover { padding-left: 0.75rem; }
 
         /* Hero */
         .hero { height: 100svh; background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); color: white; padding: var(--mobile-padding); display: flex; align-items: center; text-align: center; position: relative; overflow: hidden; }
@@ -104,10 +161,17 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+            .nav-container { justify-content: flex-start; }
+            .logo { max-width: 160px; margin-right: auto; }
             .exam-grid { grid-template-columns: 1fr; }
             .section { padding: var(--mobile-padding); }
             .question-text { font-size: 1rem; line-height: 1.6; }
             .options-list li { padding: 0.875rem; margin-bottom: 0.5rem; }
+            .hero h1 { font-size: clamp(1.5rem, 7vw, 2.5rem); }
+            .tab-content { padding: 1.25rem; }
+            .tabs-container { margin: 1rem; }
         }
 
         /* Animations */
@@ -116,11 +180,32 @@
 </head>
 <body>
 
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <nav class="mobile-nav" id="mobileNavDrawer">
+        <div class="mobile-nav-header">
+            <span style="color:white;font-weight:700;">Menu</span>
+            <button class="mobile-nav-close" onclick="closeMobileMenu()">&#10005;</button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="toefl.html" onclick="closeMobileMenu()">TOEFL iBT</a></li>
+            <li><a href="ielts.html" onclick="closeMobileMenu()">IELTS</a></li>
+            <li><a href="pmp.html" onclick="closeMobileMenu()">PMP</a></li>
+            <li><a href="cisco.html" onclick="closeMobileMenu()">Cisco</a></li>
+            <li><a href="resources.html" onclick="closeMobileMenu()">Resources</a></li>
+            <li><a href="blog.html" onclick="closeMobileMenu()">Blog</a></li>
+            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+            <li><a href="login.html" onclick="closeMobileMenu()">Student Login</a></li>
+        </ul>
+    </nav>
+
     <!-- Navigation (same as index) -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="images/Preploom.png" alt="PrepLoom" style="width: 280px; height: 80px; object-fit: cover; border-radius: 8px;">
+                <img src="images/Preploom.png" alt="PrepLoom" style="width: 280px; max-width: 100%; height: auto; object-fit: contain; border-radius: 8px;" loading="lazy">
             </a>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
@@ -130,7 +215,7 @@
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="login.html" class="btn btn-secondary">Student Login</a></li>
             </ul>
-            <button class="mobile-menu-btn">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">&#9776;</button>
         </div>
     </nav>
 
@@ -378,6 +463,17 @@
 
     <!-- JS Functions -->
     <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileNavDrawer').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileNavDrawer').classList.contains('active') ? 'hidden' : '';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileNavDrawer').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -400,3 +496,4 @@
     </script>
 </body>
 </html>
+

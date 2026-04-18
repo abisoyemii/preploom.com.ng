@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Exams | EliteExam Institute</title>
+    <meta name="description" content="View and manage your enrolled certification exams on PrepLoom. Track progress, access study materials, and schedule practice tests.">
+    <meta name="keywords" content="PrepLoom my exams, enrolled certifications, exam progress tracker">
+    <meta name="author" content="PrepLoom Institute">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://preploom.com.ng/my-exams.html">
+    <meta property="og:title" content="My Exams | PrepLoom Student Portal">
+    <meta property="og:description" content="Manage your enrolled exams and track your certification progress on PrepLoom.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://preploom.com.ng/my-exams.html">
+    <meta property="og:image" content="https://preploom.com.ng/images/Preploom.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Exams | PrepLoom">
+    <meta name="twitter:description" content="View and manage your enrolled certification exams on PrepLoom.">
+    <meta name="twitter:image" content="https://preploom.com.ng/images/Preploom.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#1e40af">
+
     <style>
         :root { --primary: #1e40af; --secondary: #3b82f6; --success: #10b981; --danger: #ef4444; --dark: #000; --light: #f9fafb; --shadow-lg: 0 10px 15px rgba(0,0,0,0.1); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', sans-serif; background: var(--light); }
         .navbar { background: linear-gradient(135deg, var(--primary), #000); color: white; padding: 1rem 0; position: sticky; top: 0; box-shadow: var(--shadow-lg); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo img { width: 280px; height: 80px; object-fit: cover; border-radius: 8px; }
+        .logo img { width: 280px; max-width: 100%; height: auto; object-fit: contain; border-radius: 8px; }
         .user-menu { display: flex; gap: 1rem; }
         .dashboard-content { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
         .section { background: white; border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow-lg); margin-bottom: 2rem; }
@@ -62,10 +80,10 @@
             try {
                 // Enrolled
                 const enrollRes = await fetch('/api/enrollments', { headers: { 'Authorization': `Bearer ${token}` } });
-                const enrollments = await enrollRes.json();
+                const enrolledIds = await enrollRes.json();
                 const examsRes = await fetch('/api/exams');
                 const exams = await examsRes.json();
-                const enrolledExams = exams.filter(e => enrollments.includes(e.id));
+                const enrolledExams = exams.filter(e => enrolledIds.includes(e.id));
 
                 document.getElementById('enrolledExams').innerHTML = enrolledExams.map(e => `
                     <div class="exam-card">
@@ -79,7 +97,7 @@
                 `).join('') || '<p>No enrolled exams. Enroll below!</p>';
 
                 // Available
-                const available = exams.filter(e => !enrollments.includes(e.id));
+                const available = exams.filter(e => !enrolledIds.includes(e.id));
                 document.getElementById('availableExams').innerHTML = available.map(e => `
                     <div class="exam-card">
                         <div class="exam-title">${e.title}</div>
@@ -96,28 +114,39 @@
             }
         }
 
+        async function getCsrfToken() {
+            try {
+                const res = await fetch('/api/csrf-token', { headers: { 'Authorization': `Bearer ${token}` } });
+                const data = await res.json();
+                return data.csrfToken || '';
+            } catch { return ''; }
+        }
+
         async function enroll(examId) {
             try {
+                const csrf = await getCsrfToken();
                 const res = await fetch('/api/enroll', {
                     method: 'POST',
-                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json', 'X-CSRF-Token': csrf },
                     body: JSON.stringify({ examId })
                 });
-                if (res.ok) {
-                    showMessage('Enrolled successfully!', 'success');
-                    loadExams();
-                }
-            } catch { showMessage('Enroll failed', 'error'); }
+                const data = await res.json();
+                if (res.ok) { showMessage('Enrolled successfully!', 'success'); loadExams(); }
+                else showMessage(data.message || 'Enroll failed', 'error');
+            } catch { showMessage('Enroll failed. Check connection.', 'error'); }
         }
 
         async function unenroll(examId) {
             try {
-                const res = await fetch(`/api/enroll/${examId}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}` } });
-                if (res.ok) {
-                    showMessage('Unenrolled!', 'success');
-                    loadExams();
-                }
-            } catch { showMessage('Unenroll failed', 'error'); }
+                const csrf = await getCsrfToken();
+                const res = await fetch(`/api/enroll/${examId}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}`, 'X-CSRF-Token': csrf }
+                });
+                const data = await res.json();
+                if (res.ok) { showMessage('Unenrolled!', 'success'); loadExams(); }
+                else showMessage(data.message || 'Unenroll failed', 'error');
+            } catch { showMessage('Unenroll failed. Check connection.', 'error'); }
         }
 
         function showMessage(text, type) {
@@ -138,3 +167,4 @@
     </script>
 </body>
 </html>
+

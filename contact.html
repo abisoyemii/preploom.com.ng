@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Preploom | Get Help & Support</title>
-    <meta name="description" content="Contact our expert team for course inquiries, technical support, partnership opportunities. Live chat, email, phone support available 24/7.">
+    <meta name="description" content="Contact PrepLoom Institute for course inquiries, technical support, and partnership opportunities. Email, live chat, and phone support available 24/7.">
+    <meta name="keywords" content="contact PrepLoom, exam prep support, certification course inquiry, PrepLoom help">
+    <meta name="author" content="PrepLoom Institute">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://preploom.com.ng.ng/contact.html">
+    <meta property="og:title" content="Contact PrepLoom Institute | 24/7 Support">
+    <meta property="og:description" content="Get in touch with PrepLoom. Email, live chat, and phone support available 24/7 for all your exam prep needs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://preploom.com.ng.ng/contact.html">
+    <meta property="og:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact PrepLoom | 24/7 Exam Prep Support">
+    <meta name="twitter:description" content="Reach PrepLoom Institute via email, live chat, or phone. 24/7 support for TOEFL, IELTS, PMP and more.">
+    <meta name="twitter:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#1e40af">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact PrepLoom Institute",
+      "url": "https://preploom.com.ng.ng/contact.html",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "PrepLoom ",
+        "email": "support@preploom.com.ng",
+        "telephone": "+234-703-1323-048",
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "customer support", "availableLanguage": "English", "contactOption": "TollFree" },
+          { "@type": "ContactPoint", "contactType": "technical support", "availableLanguage": "English" }
+        ]
+      }
+    }
+    </script>
     <style>
 :root {
             --primary: #1e40af;
@@ -111,8 +146,49 @@
             background: none;
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
+            padding: 0.25rem;
+            line-height: 1;
+        }
+
+        /* Mobile Nav Drawer */
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(0,0,0,0.5); z-index: 999;
+            opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-nav {
+            position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px;
+            height: 100vh; background: var(--primary); z-index: 1000;
+            padding: 4rem 1.5rem 2rem; overflow-y: auto;
+            transition: right 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+            box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+        }
+        .mobile-nav.active { right: 0; }
+        .mobile-nav-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1.5rem; padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-nav-close {
+            background: none; border: none; color: white; font-size: 1.5rem;
+            cursor: pointer; width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .mobile-nav-menu { list-style: none; margin: 0; padding: 0; }
+        .mobile-nav-menu a {
+            color: white; text-decoration: none; font-size: 1.05rem; font-weight: 500;
+            display: flex; align-items: center; padding: 0.9rem 0; min-height: 44px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            transition: padding-left 0.3s;
+        }
+        .mobile-nav-menu a:hover { padding-left: 0.75rem; }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
         }
 
         /* Page Header */
@@ -326,66 +402,57 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--primary);
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
+            .page-header { padding: 3rem 1rem; }
+            .page-header h1 { font-size: 2rem; }
             .contact-section {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 1.5rem;
+                padding: 2rem 1rem;
             }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .page-header h1 {
-                font-size: 2.2rem;
-            }
-
-            .contact-form {
-                padding: 2rem 1.5rem;
-            }
-
-            .chat-widget {
-                bottom: 1rem;
-                right: 1rem;
-                width: 55px;
-                height: 55px;
-                font-size: 1.6rem;
-            }
+            .form-row { grid-template-columns: 1fr; }
+            .contact-form { padding: 1.5rem 1rem; }
+            .contact-card { padding: 1.5rem; }
+            .map-placeholder { height: 200px; }
+            .chat-widget { bottom: 1rem; right: 1rem; width: 50px; height: 50px; font-size: 1.4rem; }
+            .nav-container { justify-content: flex-start; }
+            .logo { max-width: 160px; margin-right: auto; }
+            input, select, textarea { font-size: 16px !important; }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <span style="color:white;font-weight:700;">Menu</span>
+            <button class="mobile-nav-close" onclick="closeMobileMenu()">&#10005;</button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="toefl.html" onclick="closeMobileMenu()">TOEFL iBT</a></li>
+            <li><a href="ielts.html" onclick="closeMobileMenu()">IELTS</a></li>
+            <li><a href="duolingo.html" onclick="closeMobileMenu()">Duolingo</a></li>
+            <li><a href="pmp.html" onclick="closeMobileMenu()">PMP</a></li>
+            <li><a href="resources.html" onclick="closeMobileMenu()">Resources</a></li>
+            <li><a href="blog.html" onclick="closeMobileMenu()">Blog</a></li>
+            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+            <li><a href="login.html" onclick="closeMobileMenu()">Login</a></li>
+        </ul>
+    </nav>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <div class="logo-icon">🎓</div>
-                Preploom
+                <img src="images/Preploom.png" alt="PrepLoom" style="width:200px;max-width:100%;height:auto;object-fit:contain;border-radius:6px;" loading="lazy">
             </a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">&#9776;</button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="language-exams.html">Language Exams</a></li>
                 <li><a href="professional-exams.html">Professional Exams</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
@@ -415,9 +482,9 @@
                 <div class="contact-icon">📞</div>
                 <h3>Phone Support</h3>
                 <p>Call our experts for immediate assistance</p>
-                <p><strong>+1 (555) 123-4567</strong></p>
+                <p><strong>+234 7031-323-048</strong></p>
                 <p>Mon-Fri 8AM-8PM EST</p>
-                <p><a href="tel:+15551234567" class="phone-link">Call Now</a></p>
+                <p><a href="tel:+2347031323048" class="phone-link">Call Now</a></p>
             </div>
 
             <div class="contact-card">
@@ -491,34 +558,70 @@
     </footer>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('navMenu').classList.toggle('active');
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
         }
+        function closeMobileMenu() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        function toggleMenu() { toggleMobileMenu(); }
 
         function openChat() {
             // Unique: Animated chat bubble
             alert('🧙‍♂️ Live Chat Opening...\n\nHello! This is your AI assistant. How can I help?\n\n(Production: Integrates with Intercom/Zendesk)');
         }
 
-        // Form submission with animation
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Form submission — connected to backend
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const btn = this.querySelector('.submit-btn');
             const successMsg = document.getElementById('successMsg');
-            
+            const formData = new FormData(this);
+
             btn.textContent = 'Sending...';
+            btn.disabled = true;
             btn.classList.add('loading');
-            
-            setTimeout(() => {
-                btn.textContent = 'Message Sent! 🚀';
-                btn.classList.remove('loading');
+
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        firstName: formData.get('firstName'),
+                        lastName: formData.get('lastName'),
+                        email: formData.get('email'),
+                        subject: formData.get('subject'),
+                        message: formData.get('message')
+                    })
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    successMsg.textContent = '✅ ' + data.message;
+                    successMsg.style.background = '#d1fae5';
+                    successMsg.style.color = '#065f46';
+                    successMsg.style.display = 'block';
+                    this.reset();
+                } else {
+                    successMsg.textContent = '❌ ' + (data.message || 'Failed to send. Please try again.');
+                    successMsg.style.background = '#fee2e2';
+                    successMsg.style.color = '#991b1b';
+                    successMsg.style.display = 'block';
+                }
+            } catch {
+                successMsg.textContent = '❌ Network error. Please check your connection and try again.';
+                successMsg.style.background = '#fee2e2';
+                successMsg.style.color = '#991b1b';
                 successMsg.style.display = 'block';
-                this.reset();
-                setTimeout(() => {
-                    successMsg.style.display = 'none';
-                    btn.textContent = 'Send Message 🚀';
-                }, 5000);
-            }, 1500);
+            } finally {
+                btn.textContent = 'Send Message 🚀';
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                setTimeout(() => successMsg.style.display = 'none', 6000);
+            }
         });
 
         // Smooth scrolling & animations
@@ -540,4 +643,5 @@
     </script>
 </body>
 </html>
+
 

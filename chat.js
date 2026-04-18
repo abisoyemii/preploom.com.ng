@@ -420,7 +420,7 @@
     const replies = {
       'toefl': 'Great choice! TOEFL iBT has monthly dates (Apr 5,12,19,26). Duration: 1-4hrs. Need schedule or prep tips?',
       'pmp': 'PMP is 230min online proctored, valid 3yrs. PMI authorized training available. Ready to enroll?',
-      'login': 'Demo login: student@eliteexam.com / pass123. Forgot password? Use "student login" in nav.',
+      'login': 'Go to login.html to sign in. New here? Register for free — it only takes 30 seconds!',
       'dates': 'Upcoming: TOEFL Apr 2026 (5,12,19,26), PMP monthly. Check calendar section or /api/calendar.',
       'enroll': 'Login first, then visit dashboard.html and enroll via exam cards. Need login help?'
     };
@@ -438,10 +438,10 @@
     if (lowerInput.includes('toefl') || lowerInput.includes('ibt')) return 'TOEFL iBT: Monthly tests, 1-4hrs, online/offline. Dates: Apr 5,12,19,26 2026. Check tabs above!';
     if (lowerInput.includes('ielts') || lowerInput.includes('ielts')) return 'IELTS: 48 dates/year. Academic/General. Need Academic vs General diff?';
     if (lowerInput.includes('pmp') || lowerInput.includes('project')) return 'PMP Certification: 230min, online proctored, 3yr validity. PMI authorized. Enroll now!';
-    if (lowerInput.includes('login') || lowerInput.includes('demo')) return 'Demo: student@eliteexam.com / pass123. Click "Student Login" nav!';
+    if (lowerInput.includes('login') || lowerInput.includes('sign in')) return 'Go to login.html to sign in. New here? Register for free!';
     if (lowerInput.includes('date') || lowerInput.includes('schedule')) {
       try {
-        const res = await fetch('/api/calendar');
+        const res = await fetch((window.API_BASE || '') + '/api/calendar');
         const data = await res.json();
         return `Upcoming dates: ${data.upcoming?.slice(0,3).join(', ') || 'Check calendar widget!'}`;
       } catch {

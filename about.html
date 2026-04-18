@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Preploom Institute | Our Mission & Expert Team</title>
-    <meta name="description" content="Learn about Preploom's mission, expert instructors, innovative AI technology, and why 50,000+ students trust us for certification success.">
+    <meta name="description" content="Learn about PrepLoom Institute — our mission to help 1 million students pass TOEFL, IELTS, PMP, Cisco and more. Meet our expert instructors and see our milestones since 2018.">
+    <meta name="keywords" content="about PrepLoom, exam prep institute, TOEFL IELTS experts, certification training team, online exam preparation">
+    <meta name="author" content="PrepLoom Institute">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://preploom.com.ng.ng/about.html">
+    <meta property="og:title" content="About PrepLoom Institute | Expert Certification Prep Since 2018">
+    <meta property="og:description" content="Meet the team behind PrepLoom. 50,000+ students trained, 98% pass rate, AI-powered learning since 2018.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://preploom.com.ng.ng/about.html">
+    <meta property="og:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About PrepLoom Institute">
+    <meta name="twitter:description" content="1,000+ students trained. 60% pass rate. Expert instructors for TOEFL, IELTS, PMP, Cisco & more.">
+    <meta name="twitter:image" content="https://preploom.com.ng.ng/images/Preploom.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#1e40af">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About PrepLoom Institute",
+    "url": "https://preploom.com.ng.ng/about.html",
+    "mainEntity": {
+      "@type": "EducationalOrganization",
+      "name": "PrepLoom Institute",
+      "foundingDate": "2018",
+      "url": "https://preploom.com.ng.ng",
+      "logo": "https://preploom.com.ng.ng/images/Preploom.png",
+      "numberOfEmployees": {"@type": "QuantitativeValue", "value": 15},
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "50000", "bestRating": "5"}
+    }
+  }
+    </script>
+
     <style>
 :root {
             --primary: #1e40af;
@@ -119,9 +153,74 @@
             background: none;
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
+            padding: 0.25rem;
+            line-height: 1;
         }
+
+        /* Dropdown */
+        .dropdown { position: relative; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 220px;
+            box-shadow: var(--shadow-lg);
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+            overflow: hidden;
+            z-index: 100;
+        }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a {
+            color: var(--text);
+            padding: 0.8rem 1rem;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .dropdown-content a:hover { background: var(--light); color: var(--primary); }
+
+        /* Mobile Nav Drawer */
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(0,0,0,0.5); z-index: 999;
+            opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-nav {
+            position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px;
+            height: 100vh; background: var(--primary); z-index: 1000;
+            padding: 4rem 1.5rem 2rem; overflow-y: auto;
+            transition: right 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+            box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+        }
+        .mobile-nav.active { right: 0; }
+        .mobile-nav-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1.5rem; padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-nav-close {
+            background: none; border: none; color: white; font-size: 1.5rem;
+            cursor: pointer; width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .mobile-nav-menu { list-style: none; margin: 0; padding: 0; }
+        .mobile-nav-menu a {
+            color: white; text-decoration: none; font-size: 1.05rem; font-weight: 500;
+            display: flex; align-items: center; padding: 0.9rem 0; min-height: 44px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            transition: padding-left 0.3s;
+        }
+        .mobile-nav-menu a:hover { padding-left: 0.75rem; }
+
+        
 
         /* Page Header */
         .page-header {
@@ -616,81 +715,87 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--primary);
-                flex-direction: column;
-                padding: 1rem;
-                gap: 0;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .page-header h1 {
-                font-size: 2.5rem;
-            }
-
-            .section {
-                padding: 3rem 1rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                flex-direction: column !important;
-                margin: 2rem 0;
-            }
-
-            .timeline-content {
-                width: 100%;
-                margin-left: 40px;
-            }
-
-            .timeline-date {
-                left: 0 !important;
-                right: auto !important;
-            }
-
-            .timeline-dot {
-                left: 20px;
-            }
-
-            .mission-grid, .stats-grid, .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-section h2 {
-                font-size: 2.2rem;
-            }
+            .nav-menu { display: none; }
+            .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+            .nav-container { justify-content: flex-start; }
+            .logo { max-width: 160px; margin-right: auto; }
+            .page-header { padding: 3.5rem 1rem 2rem; }
+            .page-header h1 { font-size: 2rem; }
+            .page-subtitle { font-size: 1rem; }
+            .breadcrumb { font-size: 0.8rem; }
+            .section { padding: 2.5rem 1rem; }
+            .section-title { font-size: 1.8rem; }
+            .section-subtitle { font-size: 1rem; }
+            .section-header { margin-bottom: 2rem; }
+            .mission-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+            .mission-card { padding: 1.75rem; }
+            .mission-card h3 { font-size: 1.4rem; }
+            .mission-icon { width: 60px; height: 60px; font-size: 2rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .stat-card { padding: 1.25rem; }
+            .stat-number { font-size: 2.2rem; }
+            .team-grid { grid-template-columns: 1fr; }
+            .team-photo { height: 180px; font-size: 3rem; }
+            .team-info { padding: 1.5rem; }
+            .timeline::before { left: 16px; }
+            .timeline-item { flex-direction: column !important; margin: 1.5rem 0; }
+            .timeline-content { width: calc(100% - 44px); margin-left: 44px; padding: 1.25rem; }
+            .timeline-date { left: 0 !important; right: auto !important; font-size: 0.75rem; padding: 0.3rem 0.6rem; top: -8px; }
+            .timeline-dot { left: 7px; top: 16px; width: 16px; height: 16px; }
+            .cta-section { padding: 2.5rem 1rem; border-radius: 12px; margin: 2rem 0; }
+            .cta-section h2 { font-size: 1.8rem; }
+            .cta-section p { font-size: 1rem; }
+            .btn { width: 100%; max-width: 320px; justify-content: center; }
+            .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .footer-section { text-align: center; }
+            .social-links { justify-content: center; }
+            input, select, textarea { font-size: 16px !important; }
+        }
+        @media (max-width: 480px) {
+            .page-header h1 { font-size: 1.6rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.5rem; }
+            .stat-number { font-size: 2rem; }
+            .mission-card p { font-size: 1rem; }
+            .team-name { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <span style="color:white;font-weight:700;">Menu</span>
+            <button class="mobile-nav-close" onclick="closeMobileMenu()">&#10005;</button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="toefl.html" onclick="closeMobileMenu()">TOEFL iBT</a></li>
+            <li><a href="ielts.html" onclick="closeMobileMenu()">IELTS</a></li>
+            <li><a href="duolingo.html" onclick="closeMobileMenu()">Duolingo</a></li>
+            <li><a href="gmat.html" onclick="closeMobileMenu()">GMAT</a></li>
+            <li><a href="cambridge.html" onclick="closeMobileMenu()">Cambridge</a></li>
+            <li><a href="pmp.html" onclick="closeMobileMenu()">PMP</a></li>
+            <li><a href="google.html" onclick="closeMobileMenu()">Google Certs</a></li>
+            <li><a href="cisco.html" onclick="closeMobileMenu()">Cisco</a></li>
+            <li><a href="resources.html" onclick="closeMobileMenu()">Resources</a></li>
+            <li><a href="blog.html" onclick="closeMobileMenu()">Blog</a></li>
+            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="testimonials.html" onclick="closeMobileMenu()">Testimonials</a></li>
+            <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+            <li><a href="login.html" onclick="closeMobileMenu()">Login</a></li>
+        </ul>
+    </nav>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <div class="logo-icon">🎓</div>
-                Preploom
+                <img src="images/Preploom.png" alt="PrepLoom" style="width:200px;max-width:100%;height:auto;object-fit:contain;border-radius:6px;" loading="lazy">
             </a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-<ul class="nav-menu" id="navMenu">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">&#9776;</button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html#home">Home</a></li>
                 <li class="dropdown">
                     <a href="#">Language Exams ▾</a>
@@ -727,7 +832,7 @@
             <a href="index.html" style="color: rgba(255,255,255,0.8);">Home</a> / About Us
         </div>
         <h1>Empowering Global Success</h1>
-        <p class="page-subtitle">Since 2018, we've helped 50,000+ students achieve their certification dreams through innovative AI technology and expert instruction</p>
+        <p class="page-subtitle">Since 2018, we've helped 1,000+ students achieve their certification dreams through innovative AI technology and expert instruction</p>
     </header>
 
     <!-- Mission Section -->
@@ -761,27 +866,27 @@
     <section class="section" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
         <div class="stats-grid">
             <div class="stat-card">
-                <span class="stat-number">50K+</span>
+                <span class="stat-number">1K+</span>
                 <div class="stat-label">Students Trained</div>
             </div>
             <div class="stat-card">
-                <span class="stat-number">98%</span>
+                <span class="stat-number">60%</span>
                 <div class="stat-label">Success Rate</div>
             </div>
             <div class="stat-card">
-                <span class="stat-number">15+</span>
+                <span class="stat-number">10+</span>
                 <div class="stat-label">Expert Instructors</div>
             </div>
             <div class="stat-card">
-                <span class="stat-number">120+</span>
+                <span class="stat-number">30+</span>
                 <div class="stat-label">Countries Served</div>
             </div>
             <div class="stat-card">
-                <span class="stat-number">500K+</span>
+                <span class="stat-number">500+</span>
                 <div class="stat-label">Practice Questions</div>
             </div>
             <div class="stat-card">
-                <span class="stat-number">4.9⭐</span>
+                <span class="stat-number">3.9⭐</span>
                 <div class="stat-label">Average Rating</div>
             </div>
         </div>
@@ -885,9 +990,9 @@
     <section class="cta-section">
         <div class="cta-content">
             <h2>Ready to Start Your Journey?</h2>
-            <p>Join 50,000+ successful students who trusted Preploom for their certification success</p>
+            <p>Join 1,000+ successful students who trusted Preploom for their certification success</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="pricing.html" class="btn btn-primary">View All Courses</a>
+                <a href="index.html#exams" class="btn btn-primary">View All Courses</a>
                 <a href="contact.html" class="btn btn-secondary">Book Free Consultation</a>
             </div>
         </div>
@@ -944,8 +1049,15 @@
     </footer>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('navMenu').classList.toggle('active');
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+            document.body.style.overflow = '';
         }
 
         // Timeline animation on scroll
@@ -965,7 +1077,7 @@
 
         document.querySelectorAll('.timeline-item').forEach((item, index) => {
             item.style.opacity = '0';
-            item.style.transform = item.classList.contains('timeline-item:nth-child(odd)') ? 'translateX(-50px)' : 'translateX(50px)';
+            item.style.transform = index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)';
             item.style.transition = `all 0.8s ease-out ${index * 0.1}s`;
             observer.observe(item);
         });
@@ -973,13 +1085,15 @@
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(href);
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
 </body>
 </html>
+
 
