@@ -9,16 +9,17 @@
     <meta name="keywords" content="PrepLoom login, student portal login, exam prep account">
     <meta name="author" content="PrepLoom Institute">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="canonical" href="https://preploom.com.ng/login.html">
+    <link rel="canonical" href="https://preploom.com.ng/login">
     <meta property="og:title" content="Student Login | PrepLoom Institute">
     <meta property="og:description" content="Sign in to access your PrepLoom dashboard, practice tests, and personalized study plans.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://preploom.com.ng/login.html">
+    <meta property="og:url" content="https://preploom.com.ng/login">
     <meta property="og:image" content="https://preploom.com.ng/images/Preploom.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Student Login | PrepLoom">
     <meta name="twitter:description" content="Access your PrepLoom account for practice tests and personalized study plans.">
     <meta name="twitter:image" content="https://preploom.com.ng/images/Preploom.png">
+    <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <meta name="theme-color" content="#1e40af">
 
@@ -818,29 +819,29 @@
             <button class="mobile-nav-close" onclick="closeMobileMenu()">&#10005;</button>
         </div>
         <ul class="mobile-nav-menu">
-            <li><a href="index.html" onclick="closeMobileMenu()">Home</a></li>
-            <li><a href="index.html#exams" onclick="closeMobileMenu()">Exams</a></li>
-            <li><a href="resources.html" onclick="closeMobileMenu()">Resources</a></li>
-            <li><a href="blog.html" onclick="closeMobileMenu()">Blog</a></li>
-            <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
-            <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+            <li><a href="/" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="/#exams" onclick="closeMobileMenu()">Exams</a></li>
+            <li><a href="/resources" onclick="closeMobileMenu()">Resources</a></li>
+            <li><a href="/blog" onclick="closeMobileMenu()">Blog</a></li>
+            <li><a href="/about" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="/contact" onclick="closeMobileMenu()">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Navigation - FIXED: Added proper ul container -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 <img src="images/Preploom.png" alt="PrepLoom">
             </a>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">&#9776;</button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#exams">Exams</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="/#home">Home</a></li>
+                <li><a href="/#exams">Exams</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
                 <li class="user-menu">
                     <a href="#" id="userBtn" onclick="toggleUserMenu()">👤 <span id="userName"></span></a>
                     <a href="#" id="logoutBtn" onclick="logout()" style="display: none;">Logout</a>
@@ -978,7 +979,7 @@
                     <div class="form-group">
                         <label class="checkbox-label">
                             <input type="checkbox" id="agreeTerms" required>
-                            I agree to the <a href="#" style="color: var(--secondary);">Terms of Service</a> and <a href="privacy-policy.html" style="color: var(--secondary);">Privacy Policy</a>
+                            I agree to the <a href="#" style="color: var(--secondary);">Terms of Service</a> and <a href="/privacy-policy" style="color: var(--secondary);">Privacy Policy</a>
                         </label>
                     </div>
                     <button type="submit" class="login-btn" id="regBtn">
@@ -1164,7 +1165,7 @@
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('user', JSON.stringify(data.user));
                     // Redirect admin to admin panel, students to dashboard
-                    window.location.href = data.user.role === 'admin' ? 'admin.html' : 'dashboard.html';
+                    window.location.href = data.user.role === 'admin' ? '/admin' : '/dashboard';
                 } else {
                     error.textContent = data.message || 'Login failed. Please check your credentials.';
                     error.classList.add('show');
@@ -1239,7 +1240,7 @@
                         // Auto-login after register
                         localStorage.setItem('token', data.token);
                         localStorage.setItem('user', JSON.stringify(data.user));
-                        window.location.href = 'dashboard.html';
+                        window.location.href='/dashboard';
                     }, 1500);
                 } else {
                     error.textContent = data.message || 'Registration failed. Please try again.';
