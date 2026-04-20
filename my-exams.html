@@ -9,11 +9,11 @@
     <meta name="keywords" content="PrepLoom my exams, enrolled certifications, exam progress tracker">
     <meta name="author" content="PrepLoom Institute">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="canonical" href="https://preploom.com.ng/my-exams.html">
+    <link rel="canonical" href="https://preploom.com.ng/my-exams">
     <meta property="og:title" content="My Exams | PrepLoom Student Portal">
     <meta property="og:description" content="Manage your enrolled exams and track your certification progress on PrepLoom.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://preploom.com.ng/my-exams.html">
+    <meta property="og:url" content="https://preploom.com.ng/my-exams">
     <meta property="og:image" content="https://preploom.com.ng/images/Preploom.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="My Exams | PrepLoom">
@@ -50,7 +50,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="dashboard.html" class="logo"><img src="images/Preploom.png" alt="EliteExam"></a>
+            <a href="/dashboard" class="logo"><img src="images/Preploom.png" alt="EliteExam"></a>
             <div class="user-menu" id="userName">Loading...</div>
             <a href="#" onclick="logout()" style="color: white; text-decoration: none;">Logout</a>
         </div>
@@ -71,7 +71,7 @@
     <script>
         const token = localStorage.getItem('token');
         const user = JSON.parse(localStorage.getItem('user') || '{}');
-        if (!token) location.href = 'login.html';
+        if (!token) location.href='/login';
 
         document.getElementById('userName').textContent = user.name;
 
@@ -160,7 +160,7 @@
 
         function logout() {
             localStorage.removeItem('token'); localStorage.removeItem('user');
-            location.href = 'login.html';
+            location.href='/login';
         }
 
         window.onload = loadExams;
