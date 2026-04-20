@@ -9,11 +9,11 @@
     <meta name="keywords" content="PrepLoom progress tracker, exam score tracker, study progress">
     <meta name="author" content="PrepLoom Institute">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="canonical" href="https://preploom.com.ng/progress.html">
+    <link rel="canonical" href="https://preploom.com.ng/progress">
     <meta property="og:title" content="Progress Tracker | PrepLoom Student Portal">
     <meta property="og:description" content="Track your certification exam progress, scores, and study streaks on PrepLoom.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://preploom.com.ng/progress.html">
+    <meta property="og:url" content="https://preploom.com.ng/progress">
     <meta property="og:image" content="https://preploom.com.ng/images/Preploom.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Progress Tracker | PrepLoom">
@@ -59,7 +59,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="dashboard.html" class="logo"><img src="images/Preploom.png" alt="Preploom"></a>
+            <a href="/dashboard" class="logo"><img src="images/Preploom.png" alt="Preploom"></a>
             <div class="user-menu">
                 <div class="user-profile" id="userName">Loading...</div>
                 <a href="#" onclick="logout()">Logout</a>
@@ -82,7 +82,7 @@
     <script>
         const token = localStorage.getItem('token');
         const user = JSON.parse(localStorage.getItem('user') || '{}');
-        if (!token) location.href = 'login.html';
+        if (!token) location.href='/login';
 
         document.getElementById('userName').textContent = user.name;
 
@@ -151,7 +151,7 @@
 
         function logout() {
             localStorage.removeItem('token'); localStorage.removeItem('user');
-            location.href = 'login.html';
+            location.href='/login';
         }
 
         window.onload = loadProgress;

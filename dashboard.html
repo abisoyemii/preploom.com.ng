@@ -9,11 +9,11 @@
     <meta name="keywords" content="PrepLoom dashboard, student portal, exam progress tracker, online study dashboard">
     <meta name="author" content="PrepLoom Institute">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="canonical" href="https://preploom.com.ng/dashboard.html">
+    <link rel="canonical" href="https://preploom.com.ng/dashboard">
     <meta property="og:title" content="Student Dashboard | PrepLoom Institute">
     <meta property="og:description" content="Your personal PrepLoom dashboard — track progress, access practice tests, and manage your study plan.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://preploom.com.ng/dashboard.html">
+    <meta property="og:url" content="https://preploom.com.ng/dashboard">
     <meta property="og:image" content="https://preploom.com.ng/images/Preploom.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Student Dashboard | PrepLoom">
@@ -26,7 +26,7 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Student Dashboard",
-    "url": "https://preploom.com.ng/dashboard.html",
+    "url": "https://preploom.com.ng/dashboard",
     "isPartOf": {"@type": "WebSite", "name": "PrepLoom Institute", "url": "https://preploom.com.ng"}
   }
     </script>
@@ -400,14 +400,14 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="dashboard.html" class="logo">
+            <a href="/dashboard" class="logo">
                 <img src="images/Preploom.png" alt="PrepLoom">
             </a>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html#exams">Exams</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="/#exams">Exams</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/login">Login</a></li>
                 <li class="user-menu">
                     <div class="user-profile">
                         <span>👤</span>
@@ -524,11 +524,11 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
                         <span class="action-icon">📝</span>
                         Start Practice Test
                     </a>
-                <a href="progress.html" class="action-btn">
+                <a href="/progress" class="action-btn">
                         <span class="action-icon">📚</span>
                         Track Progress
                     </a>
-                <a href="my-exams.html" class="action-btn">
+                <a href="/my-exams" class="action-btn">
                         <span class="action-icon">📋</span>
                         My Exams
                     </a>
@@ -555,7 +555,7 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
         window.addEventListener('load', async () => {
             const token = localStorage.getItem('token');
             if (!token) {
-                window.location.href = 'login.html';
+                window.location.href='/login';
                 return;
             }
 
@@ -577,7 +577,7 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
                 // Show admin link for admins
                 if (user.role === 'admin') {
                     const adminLink = document.getElementById('adminLink');
-                    adminLink.href = 'admin.html';
+                    adminLink.href = '/admin';
                     adminLink.style.display = 'inline';
                 }
 
@@ -613,7 +613,7 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
             // Update upcoming exams
             const container = document.getElementById('upcomingExams');
             if (!data.upcoming || data.upcoming.length === 0) {
-                container.innerHTML = '<p style="color:#64748b;">No enrolled exams yet. <a href="my-exams.html">Enroll now →</a></p>';
+                container.innerHTML = '<p style="color:#64748b;">No enrolled exams yet. <a href="/my-exams">Enroll now →</a></p>';
                 return;
             }
             container.innerHTML = data.upcoming.map(exam => `
@@ -652,7 +652,7 @@ background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
         function logout() {
             localStorage.removeItem('token');
             localStorage.removeItem('user');
-            window.location.href = 'login.html';
+            window.location.href='/login';
         }
 
         // Quick action handlers

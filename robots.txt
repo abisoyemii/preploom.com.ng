@@ -2,34 +2,33 @@ User-agent: *
 Allow: /
 
 # Block private/authenticated pages
-Disallow: /dashboard.html
-Disallow: /my-exams.html
-Disallow: /progress.html
-Disallow: /login.html
+Disallow: /dashboard
+Disallow: /my-exams
+Disallow: /progress
+Disallow: /login
 Disallow: /backend/
 
-# Allow all public pages
-Allow: /index.html
-Allow: /toefl.html
-Allow: /ielts.html
-Allow: /duolingo.html
-Allow: /cambridge.html
-Allow: /gmat.html
-Allow: /pmp.html
-Allow: /cisco.html
-Allow: /google.html
-Allow: /language-exams.html
-Allow: /professional-exams.html
-Allow: /resources.html
-Allow: /blog.html
-Allow: /about.html
-Allow: /contact.html
-Allow: /testimonials.html
-Allow: /privacy-policy.html
-Allow: /images/
+# Allow public pages (clean URLs)
+Allow: /toefl
+Allow: /ielts
+Allow: /duolingo
+Allow: /cambridge
+Allow: /gmat
+Allow: /pmp
+Allow: /cisco
+Allow: /google
+Allow: /language-exams
+Allow: /professional-exams
+Allow: /resources
+Allow: /blog
+Allow: /about
+Allow: /contact
+Allow: /testimonials
+Allow: /privacy-policy
+Allow: /terms
 
 # Sitemap location
 Sitemap: https://preploom.com.ng/sitemap.xml
 
-# Crawl delay (be polite to crawlers)
+# Crawl delay
 Crawl-delay: 1

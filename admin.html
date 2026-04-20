@@ -95,10 +95,10 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html"><img src="images/Preploom.png" alt="Preploom"></a>
+        <a href="/"><img src="images/Preploom.png" alt="Preploom"></a>
         <div class="nav-right">
             <span>⚙️ Admin Panel</span>
-            <a href="dashboard.html">Dashboard</a>
+            <a href="/dashboard">Dashboard</a>
             <a href="#" onclick="logout()">Logout</a>
         </div>
     </nav>
@@ -160,7 +160,7 @@
 
         // Guard: must be logged in as admin
         if (!token || user.role !== 'admin') {
-            window.location.href = 'login.html';
+            window.location.href='/login';
         }
 
         async function getCsrfToken() {
@@ -181,7 +181,7 @@
 
                 if (statsRes.status === 403 || usersRes.status === 403) {
                     showMessage('Access denied. Admin only.', 'error');
-                    setTimeout(() => window.location.href = 'login.html', 2000);
+                    setTimeout(() => window.location.href='/login', 2000);
                     return;
                 }
 
@@ -255,7 +255,7 @@
         function logout() {
             localStorage.removeItem('token');
             localStorage.removeItem('user');
-            window.location.href = 'login.html';
+            window.location.href='/login';
         }
 
         window.onload = loadData;

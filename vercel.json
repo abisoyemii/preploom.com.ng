@@ -1,0 +1,29 @@
+{
+  "rewrites": [
+    { "source": "/toefl", "destination": "/toefl.html" },
+    { "source": "/ielts", "destination": "/ielts.html" },
+    { "source": "/ielts-listening", "destination": "/ielts-listening.html" },
+    { "source": "/gmat", "destination": "/gmat.html" },
+    { "source": "/pmp", "destination": "/pmp.html" },
+    { "source": "/cisco", "destination": "/cisco.html" },
+    { "source": "/google", "destination": "/google.html" },
+    { "source": "/cambridge", "destination": "/cambridge.html" },
+    { "source": "/duolingo", "destination": "/duolingo.html" },
+    { "source": "/language-exams", "destination": "/language-exams.html" },
+    { "source": "/professional-exams", "destination": "/professional-exams.html" },
+    { "source": "/resources", "destination": "/resources.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/testimonials", "destination": "/testimonials.html" },
+    { "source": "/privacy-policy", "destination": "/privacy-policy.html" },
+    { "source": "/terms", "destination": "/terms.html" }
+  ],
+  "redirects": [
+    { "source": "/login", "destination": "/login.html", "permanent": false },
+    { "source": "/dashboard", "destination": "/dashboard.html", "permanent": false },
+    { "source": "/my-exams", "destination": "/my-exams.html", "permanent": false },
+    { "source": "/progress", "destination": "/progress.html", "permanent": false },
+    { "source": "/admin", "destination": "/admin.html", "permanent": false }
+  ]
+}

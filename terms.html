@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Terms and Conditions | PrepLoom</title>
+    <meta name="description" content="PrepLoom Institute Terms and Conditions. Read our terms of service, user agreements, and guidelines for using our exam preparation platform.">
+    <meta name="keywords" content="PrepLoom terms, terms of service, user agreement, exam prep terms">
+    <meta name="author" content="PrepLoom Institute">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://preploom.com.ng/terms">
+    <meta property="og:title" content="Terms and Conditions | PrepLoom Institute">
+    <meta property="og:description" content="PrepLoom terms of service and user agreement.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://preploom.com.ng/terms">
+    <meta property="og:image" content="https://preploom.com.ng/images/Preploom.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Terms and Conditions | PrepLoom">
+    <meta name="twitter:description" content="PrepLoom terms of service and user agreement.">
+    <meta name="twitter:image" content="https://preploom.com.ng/images/Preploom.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#1e40af">
+
+    <style>
+:root {
+            --primary: #1e40af;
+            --secondary: #3b82f6;
+            --accent: #1d4ed8;
+            --success: #10b981;
+            --dark: #000000;
+            --light: #f9fafb;
+            --text: #111827;
+            --border: #e5e7eb;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --mobile-padding: clamp(1rem, 4vw, 1.5rem);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            background: var(--light); 
+        }
+
+        .navbar { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); 
+            padding: 1rem 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: var(--shadow-lg); 
+        }
+        .nav-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 2rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo img { 
+            width: 280px; 
+            max-width: 100%; 
+            height: auto; 
+            object-fit: contain; 
+            border-radius: 8px; 
+        }
+        .nav-menu { 
+            display: flex; 
+            list-style: none; 
+            gap: 2rem; 
+        }
+        .nav-menu a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 500; 
+        }
+        .btn { 
+            padding: 0.75rem 1.5rem; 
+            background: white; 
+            color: var(--primary); 
+            border-radius: 50px; 
+            font-weight: 600; 
+            text-decoration: none; 
+            transition: all 0.3s; 
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            line-height: 1;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 350px;
+            height: 100vh;
+            background: var(--primary);
+            z-index: 1000;
+            padding: 5rem 1.5rem 2rem;
+            overflow-y: auto;
+            transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mobile-nav-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .mobile-nav-close:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .mobile-nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mobile-nav-menu li {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: block;
+            padding: 1rem 0;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: padding-left 0.3s;
+        }
+
+        .mobile-nav-menu a:hover {
+            padding-left: 1rem;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .hero { 
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); 
+            color: white; 
+            padding: clamp(2rem, 8vh, 4rem) var(--mobile-padding); 
+            text-align: center; 
+        }
+        .hero h1 { 
+            font-size: clamp(1.75rem, 6vw, 3rem); 
+            margin-bottom: clamp(0.75rem, 3vw, 1rem); 
+            line-height: 1.2;
+        }
+        .hero p { 
+            font-size: clamp(0.95rem, 3vw, 1.1rem); 
+            opacity: 0.95; 
+            max-width: 100%; 
+            margin: 0 auto clamp(1rem, 4vw, 2rem); 
+        }
+
+        .section { 
+            padding: clamp(1.5rem, 6vh, 4rem) var(--mobile-padding); 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        .section-header { 
+            text-align: center; 
+            margin-bottom: clamp(1.5rem, 5vw, 3rem); 
+        }
+        .section-title { 
+            font-size: clamp(1.5rem, 5vw, 2.5rem); 
+            color: var(--dark); 
+            margin-bottom: clamp(0.5rem, 2vw, 1rem); 
+        }
+
+        .policy-section { 
+            background: white; 
+            margin-bottom: clamp(1.5rem, 4vw, 2rem); 
+            padding: clamp(1.25rem, 5vh, 2.5rem); 
+            border-radius: clamp(8px, 2vw, 12px); 
+            box-shadow: var(--shadow); 
+            border-left: 4px solid var(--secondary); 
+        }
+        .policy-section h2 { 
+            color: var(--primary); 
+            font-size: clamp(1.25rem, 4vw, 1.75rem); 
+            margin-bottom: clamp(0.75rem, 2vw, 1rem); 
+            border-bottom: 2px solid var(--border); 
+            padding-bottom: clamp(0.25rem, 1.5vw, 0.5rem); 
+        }
+        .policy-section h3 { 
+            color: var(--dark); 
+            margin: clamp(1rem, 4vw, 1.5rem) 0 clamp(0.5rem, 2vw, 0.75rem) 0; 
+            font-size: clamp(1.1rem, 3vw, 1.25rem); 
+        }
+        .policy-list { 
+            padding-left: clamp(1.25rem, 4vw, 2rem); 
+            margin-bottom: 1rem; 
+        }
+        .policy-list li { 
+            margin-bottom: clamp(0.5rem, 2vw, 0.75rem); 
+            font-size: clamp(0.95rem, 2.5vw, 1rem);
+        }
+
+        .highlight-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .footer { 
+            background: var(--dark); 
+            color: white; 
+            padding: 2rem; 
+            text-align: center; 
+        }
+
+        @media (max-width: 768px) { 
+            .nav-menu { 
+                display: none; 
+            }
+            .mobile-menu-btn {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+            }
+            .nav-container {
+                justify-content: flex-start;
+            }
+            .logo {
+                margin-right: auto;
+            }
+            .logo img {
+                width: 180px;
+            }
+            .section { 
+                padding: var(--mobile-padding); 
+            }
+            .policy-section { 
+                padding: 1.5rem; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <span style="color:white;font-weight:700;font-size:1.1rem;">Menu</span>
+            <button class="mobile-nav-close" onclick="closeMobileMenu()" aria-label="Close menu">&#10005;</button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="/" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="#acceptance" onclick="closeMobileMenu()">Acceptance</a></li>
+            <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+            <li><a href="#accounts" onclick="closeMobileMenu()">User Accounts</a></li>
+            <li><a href="#conduct" onclick="closeMobileMenu()">User Conduct</a></li>
+            <li><a href="#content" onclick="closeMobileMenu()">Content & IP</a></li>
+            <li><a href="#payments" onclick="closeMobileMenu()">Payments</a></li>
+            <li><a href="#disclaimers" onclick="closeMobileMenu()">Disclaimers</a></li>
+            <li><a href="/privacy-policy" onclick="closeMobileMenu()">Privacy Policy</a></li>
+            <li><a href="/contact" onclick="closeMobileMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="images/Preploom.png" alt="PrepLoom">
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu">&#9776;</button>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="#acceptance">Acceptance</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#accounts">User Accounts</a></li>
+                <li><a href="/contact" class="btn">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Terms and Conditions</h1>
+        <p>Last Updated: April 10, 2026</p>
+        <p>Please read these Terms and Conditions carefully before using PrepLoom services. By accessing or using our website, you agree to be bound by these terms.</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="section-header">
+            <h2 class="section-title">Table of Contents</h2>
+            <ol style="max-width: 600px; margin: 0 auto; text-align: left;">
+                <li><a href="#acceptance">Acceptance of Terms</a></li>
+                <li><a href="#services">Description of Services</a></li>
+                <li><a href="#accounts">User Accounts</a></li>
+                <li><a href="#conduct">User Conduct</a></li>
+                <li><a href="#content">Content and Intellectual Property</a></li>
+                <li><a href="#payments">Payments and Refunds</a></li>
+                <li><a href="#disclaimers">Disclaimers and Limitations</a></li>
+                <li><a href="#termination">Termination</a></li>
+                <li><a href="#governing">Governing Law</a></li>
+                <li><a href="#contact">Contact Information</a></li>
+            </ol>
+        </div>
+
+        <section id="acceptance" class="policy-section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using PrepLoom (<strong>preploom.com.ng</strong>), you accept and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services.</p>
+            
+            <div class="highlight-box">
+                <strong>⚠️ Important:</strong> These terms constitute a legally binding agreement between you and PrepLoom Institute. Your continued use of the platform indicates your acceptance of any updates to these terms.
+            </div>
+
+            <ul class="policy-list">
+                <li>You must be at least 13 years old to use our services</li>
+                <li>If you are under 18, you must have parental/guardian consent</li>
+                <li>You agree to provide accurate and complete information</li>
+                <li>You are responsible for maintaining the confidentiality of your account</li>
+            </ul>
+        </section>
+
+        <section id="services" class="policy-section">
+            <h2>2. Description of Services</h2>
+            <p>PrepLoom provides online exam preparation services including:</p>
+            
+            <ul class="policy-list">
+                <li><strong>Practice Tests:</strong> TOEFL, IELTS, PMP, Cisco, CompTIA, and other certification exams</li>
+                <li><strong>Study Materials:</strong> Video lessons, study guides, and reference materials</li>
+                <li><strong>Progress Tracking:</strong> Performance analytics and personalized study plans</li>
+                <li><strong>Community Features:</strong> Forums, study groups, and peer support</li>
+                <li><strong>Expert Support:</strong> Live Q&A sessions and instructor guidance</li>
+            </ul>
+
+            <h3>Service Availability</h3>
+            <ul class="policy-list">
+                <li>Services are provided "as is" and "as available"</li>
+                <li>We do not guarantee uninterrupted or error-free service</li>
+                <li>Scheduled maintenance may temporarily limit access</li>
+                <li>We reserve the right to modify or discontinue services with notice</li>
+            </ul>
+        </section>
+
+        <section id="accounts" class="policy-section">
+            <h2>3. User Accounts</h2>
+            
+            <h3>Account Creation</h3>
+            <ul class="policy-list">
+                <li>You must provide accurate, current, and complete information</li>
+                <li>You are responsible for maintaining account security</li>
+                <li>One account per person; sharing accounts is prohibited</li>
+                <li>You must notify us immediately of any unauthorized access</li>
+            </ul>
+
+            <h3>Account Responsibilities</h3>
+            <ul class="policy-list">
+                <li>Keep your password secure and confidential</li>
+                <li>Do not share login credentials with others</li>
+                <li>You are liable for all activities under your account</li>
+                <li>Update your information promptly when it changes</li>
+            </ul>
+
+            <h3>Account Termination</h3>
+            <p>We reserve the right to suspend or terminate accounts that:</p>
+            <ul class="policy-list">
+                <li>Violate these Terms and Conditions</li>
+                <li>Engage in fraudulent or illegal activities</li>
+                <li>Abuse or harass other users or staff</li>
+                <li>Remain inactive for more than 2 years</li>
+            </ul>
+        </section>
+
+        <section id="conduct" class="policy-section">
+            <h2>4. User Conduct</h2>
+            <p>You agree NOT to:</p>
+            
+            <ul class="policy-list">
+                <li><strong>Cheat or Misuse:</strong> Share answers, use unauthorized aids during practice tests</li>
+                <li><strong>Distribute Content:</strong> Copy, redistribute, or sell our materials without permission</li>
+                <li><strong>Reverse Engineer:</strong> Attempt to access source code or underlying technology</li>
+                <li><strong>Spam or Harass:</strong> Send unsolicited messages or harass other users</li>
+                <li><strong>Impersonate:</strong> Pretend to be another person or entity</li>
+                <li><strong>Hack or Disrupt:</strong> Interfere with servers, networks, or security measures</li>
+                <li><strong>Scrape Data:</strong> Use automated tools to extract content without authorization</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>⚖️ Consequences:</strong> Violation of these rules may result in immediate account suspension, legal action, and reporting to relevant authorities.
+            </div>
+        </section>
+
+        <section id="content" class="policy-section">
+            <h2>5. Content and Intellectual Property</h2>
+            
+            <h3>Our Content</h3>
+            <p>All content on PrepLoom (text, graphics, logos, videos, software) is owned by PrepLoom Institute or licensed to us. This includes:</p>
+            <ul class="policy-list">
+                <li>Practice questions and exam simulations</li>
+                <li>Study guides and instructional materials</li>
+                <li>Video lectures and audio content</li>
+                <li>Website design and user interface</li>
+                <li>Trademarks, logos, and branding</li>
+            </ul>
+
+            <h3>Your Content</h3>
+            <p>When you submit content (forum posts, comments, feedback):</p>
+            <ul class="policy-list">
+                <li>You retain ownership of your content</li>
+                <li>You grant us a license to use, display, and distribute it</li>
+                <li>You confirm you have the right to share the content</li>
+                <li>We may remove content that violates our policies</li>
+            </ul>
+
+            <h3>Copyright Protection</h3>
+            <ul class="policy-list">
+                <li>All materials are protected by copyright laws</li>
+                <li>Unauthorized reproduction is strictly prohibited</li>
+                <li>Report copyright infringement to: <a href="mailto:legal@preploom.com.ng" style="color: var(--primary);">legal@preploom.com.ng</a></li>
+            </ul>
+        </section>
+
+        <section id="payments" class="policy-section">
+            <h2>6. Payments and Refunds</h2>
+            
+            <h3>Pricing</h3>
+            <ul class="policy-list">
+                <li>Prices are displayed in Nigerian Naira (NGN) or USD</li>
+                <li>Prices may change with 30 days notice</li>
+                <li>Promotional pricing is subject to terms and expiration</li>
+                <li>Taxes may apply based on your location</li>
+            </ul>
+
+            <h3>Payment Methods</h3>
+            <ul class="policy-list">
+                <li>We accept credit/debit cards, PayPal, and bank transfers</li>
+                <li>Payments are processed securely via Stripe/PayPal</li>
+                <li>Recurring subscriptions auto-renew unless cancelled</li>
+            </ul>
+
+            <h3>Refund Policy</h3>
+            <ul class="policy-list">
+                <li><strong>7-Day Money-Back Guarantee:</strong> Full refund if requested within 7 days of purchase</li>
+                <li><strong>Conditions:</strong> Must not have completed more than 20% of course content</li>
+                <li><strong>Processing Time:</strong> Refunds processed within 5-10 business days</li>
+                <li><strong>Non-Refundable:</strong> Exam registration fees paid to third parties</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>📧 Refund Requests:</strong> Email <a href="mailto:billing@preploom.com.ng" style="color: var(--primary);">billing@preploom.com.ng</a> with your order number and reason.
+            </div>
+        </section>
+
+        <section id="disclaimers" class="policy-section">
+            <h2>7. Disclaimers and Limitations</h2>
+            
+            <h3>No Guarantee of Results</h3>
+            <p>While we provide high-quality preparation materials, we cannot guarantee:</p>
+            <ul class="policy-list">
+                <li>Specific exam scores or pass rates</li>
+                <li>Admission to universities or certification programs</li>
+                <li>Employment or career advancement</li>
+            </ul>
+
+            <h3>Third-Party Links</h3>
+            <ul class="policy-list">
+                <li>Our site may contain links to external websites</li>
+                <li>We are not responsible for third-party content or practices</li>
+                <li>Use external links at your own risk</li>
+            </ul>
+
+            <h3>Limitation of Liability</h3>
+            <p>To the maximum extent permitted by law, PrepLoom shall not be liable for:</p>
+            <ul class="policy-list">
+                <li>Indirect, incidental, or consequential damages</li>
+                <li>Loss of data, profits, or business opportunities</li>
+                <li>Damages exceeding the amount you paid for services</li>
+                <li>Issues caused by factors beyond our control</li>
+            </ul>
+        </section>
+
+        <section id="termination" class="policy-section">
+            <h2>8. Termination</h2>
+            
+            <h3>By You</h3>
+            <ul class="policy-list">
+                <li>You may cancel your account at any time via account settings</li>
+                <li>Cancellation takes effect at the end of the current billing period</li>
+                <li>You remain responsible for charges incurred before cancellation</li>
+            </ul>
+
+            <h3>By Us</h3>
+            <p>We may suspend or terminate your account if:</p>
+            <ul class="policy-list">
+                <li>You violate these Terms and Conditions</li>
+                <li>Your payment method fails or is declined</li>
+                <li>We discontinue the service (with 30 days notice)</li>
+                <li>Required by law or regulatory authority</li>
+            </ul>
+
+            <h3>Effect of Termination</h3>
+            <ul class="policy-list">
+                <li>Access to paid content will be revoked</li>
+                <li>Your data will be retained per our Privacy Policy</li>
+                <li>Outstanding payments remain due</li>
+                <li>Provisions that should survive termination will remain in effect</li>
+            </ul>
+        </section>
+
+        <section id="governing" class="policy-section">
+            <h2>9. Governing Law and Disputes</h2>
+            
+            <h3>Governing Law</h3>
+            <p>These Terms are governed by the laws of the Federal Republic of Nigeria, without regard to conflict of law principles.</p>
+
+            <h3>Dispute Resolution</h3>
+            <ul class="policy-list">
+                <li><strong>Informal Resolution:</strong> Contact us first to resolve disputes amicably</li>
+                <li><strong>Mediation:</strong> If informal resolution fails, we agree to mediation</li>
+                <li><strong>Arbitration:</strong> Binding arbitration in Lagos, Nigeria (if mediation fails)</li>
+                <li><strong>Class Action Waiver:</strong> Disputes must be resolved individually</li>
+            </ul>
+
+            <h3>Jurisdiction</h3>
+            <p>You agree to submit to the exclusive jurisdiction of courts in Lagos, Nigeria for any legal proceedings.</p>
+        </section>
+
+        <section id="contact" class="policy-section">
+            <h2>10. Contact Information</h2>
+            <p>For questions about these Terms and Conditions, contact us:</p>
+            <ul class="policy-list">
+                <li><strong>Email:</strong> <a href="mailto:legal@preploom.com.ng" style="color: var(--primary);">legal@preploom.com.ng</a></li>
+                <li><strong>Support:</strong> <a href="mailto:support@preploom.com.ng" style="color: var(--primary);">support@preploom.com.ng</a></li>
+                <li><strong>Address:</strong> PrepLoom Institute, Lagos, Nigeria</li>
+                <li><strong>Phone:</strong> +234 703-1323-048</li>
+            </ul>
+            <p>We respond to inquiries within 48 hours during business days.</p>
+
+            <div class="highlight-box">
+                <strong>📄 Document Version:</strong> Terms v2.1 (April 2026). Previous versions available upon request.
+            </div>
+        </section>
+
+        <section class="policy-section">
+            <h2>Changes to These Terms</h2>
+            <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting. Material changes will be notified via:</p>
+            <ul class="policy-list">
+                <li>Email to registered users</li>
+                <li>Prominent notice on the website</li>
+                <li>In-app notification (if applicable)</li>
+            </ul>
+            <p>Your continued use after changes constitutes acceptance of the modified terms. If you disagree with changes, you must stop using our services.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 PrepLoom Institute. All rights reserved. | 
+        <a href="/privacy-policy" style="color: #94a3b8;">Privacy Policy</a> | 
+        <a href="/terms" style="color: #94a3b8;">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
+        }
+        
+        function closeMobileMenu() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile menu if open
+                    closeMobileMenu();
+                }
+            });
+        });
+    </script>
+    <script src="cookies.js"></script>
+</body>
+</html>
