@@ -28,7 +28,7 @@ Allow: /privacy-policy
 Allow: /terms
 
 # Sitemap location
-Sitemap: https://preploom.com.ng/sitemap.xml
+Sitemap: https://www.preploom.com.ng/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1
