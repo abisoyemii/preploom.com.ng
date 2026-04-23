@@ -719,6 +719,103 @@
             font-size: 0.9rem;
         }
 
+        /* =========================
+   SEO INTERNAL LINK BLOCK
+========================= */
+
+.seo-links {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0b1b3a, #000000);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+}
+
+/* Heading */
+.seo-links h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  color: #4da3ff; /* soft blue accent */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Description text */
+.seo-links p {
+  font-size: 0.95rem;
+  color: #c9d4e5;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* List styling */
+.seo-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* List items */
+.seo-links li {
+  margin: 0.6rem 0;
+}
+
+/* Links */
+.seo-links a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.seo-links a:hover {
+  background: rgba(77, 163, 255, 0.15);
+  border-color: #4da3ff;
+  transform: translateX(5px);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+  .seo-links {
+    padding: 1.5rem;
+  }
+
+  .seo-links h3 {
+    font-size: 1.2rem;
+  }
+
+  .seo-links a {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .seo-links {
+    padding: 1.2rem;
+    border-radius: 10px;
+  }
+
+  .seo-links h3 {
+    font-size: 1.1rem;
+  }
+
+  .seo-links p {
+    font-size: 0.85rem;
+  }
+}
+
         /* Responsive */
         @media (max-width: 1024px) and (min-width: 769px) {
             .exam-grid {
@@ -954,6 +1051,9 @@
                             <li><a href="/resources" style="color: var(--secondary); text-decoration: none;">→ Speaking Templates</a></li>
                             <li><a href="/resources" style="color: var(--secondary); text-decoration: none;">→ Vocabulary List (500 words)</a></li>
                             <li><a href="/resources" style="color: var(--secondary); text-decoration: none;">→ Practice Test 1 (Free)</a></li>
+                            <li><a href="/ielts" style="color: var(--secondary); text-decoration: none;">→ IELTS Preparation</a></li>
+                            <li><a href="/cambridge" style="color: var(--secondary); text-decoration: none;">→ Cambridge English</a></li>
+                            <li><a href="/gmat" style="color: var(--secondary); text-decoration: none;">→ GMAT Focus Edition</a></li>
                         </ul>
                     </div>
                 </aside>
@@ -1209,7 +1309,7 @@
 
 <div style="text-align: center; margin-top: 3rem;">
                 <p style="font-size: 1.1rem; color: var(--success); font-weight: 600; margin-bottom: 1rem;">All questions above are completely FREE!</p>
-                <a href="resources.html" class="btn btn-primary" style="width: auto; padding: 1rem 3rem;">More Free Practice Questions →</a>
+                <a href="/resources" class="btn btn-primary" style="width: auto; padding: 1rem 3rem;">More Free Practice Questions →</a>
             </div>
 
         </div>
@@ -1307,7 +1407,18 @@
             </div>
         </div>
     </div>
+<section class="seo-links">
+  <h3>Master Your TOEFL Preparation</h3>
 
+  <p>Explore more free tools and practice materials:</p>
+
+  <ul>
+    <li><a href="/toefl">TOEFL Hub – Full Practice System</a></li>
+    <li><a href="/ielts">IELTS Practice Tests & Study Guide</a></li>
+    <li><a href="/question-generator">AI Question Generator</a></li>
+    <li><a href="/pdfs/toefl.pdf">Download TOEFL 100 Questions PDF</a></li>
+  </ul>
+</section>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-grid">
@@ -1320,6 +1431,8 @@
                 <ul class="footer-links">
                     <li><a href="/toefl">TOEFL Preparation</a></li>
                     <li><a href="/ielts">IELTS Preparation</a></li>
+                    <li><a href="/cambridge">Cambridge English</a></li>
+                    <li><a href="/gmat">GMAT Focus</a></li>
                     <li><a href="/resources">Free Resources</a></li>
                     <li><a href="/contact">Contact Us</a></li>
                 </ul>

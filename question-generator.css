@@ -1,0 +1,106 @@
+/* AI Question Generator Styles */
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card {
+  border: none;
+  border-radius: 20px;
+}
+
+.card-header {
+  border-radius: 20px 20px 0 0 !important;
+}
+
+.question-card {
+  background: white;
+  transition: box-shadow 0.3s ease;
+}
+
+.question-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.question-text {
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.options .form-check {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.options .form-check:hover {
+  background: #f8f9fa;
+}
+
+.options .form-check input:checked + label {
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+.reveal-section {
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.reveal-btn {
+  border-radius: 25px;
+  font-weight: 500;
+}
+
+.alert {
+  border-radius: 15px;
+  border: none;
+}
+
+.spinner-border {
+  color: white;
+}
+
+#results {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .question-text {
+    font-size: 1.1rem;
+  }
+  
+  .reveal-section .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none;
+}
