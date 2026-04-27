@@ -287,6 +287,86 @@
             letter-spacing: 1px;
         }
 
+        /* Search and Filter Bar */
+        .search-filter-bar {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .search-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .search-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .filter-chips {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .chip {
+            background: var(--light);
+            color: var(--text);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 2px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .chip:hover, .chip.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
         /* Main Content */
         .main-content {
             max-width: 1400px;
@@ -315,6 +395,35 @@
             color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        /* Breaking News Banner */
+        .breaking-news {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: var(--shadow-lg);
+            animation: pulse 2s infinite;
+        }
+
+        .breaking-badge {
+            background: white;
+            color: #dc2626;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
         }
 
         /* Featured Post */
@@ -424,6 +533,10 @@
             box-shadow: var(--shadow-xl);
         }
 
+        .blog-card.hidden {
+            display: none;
+        }
+
         .blog-image {
             height: 200px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -491,6 +604,37 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            padding: 0.75rem 1.25rem;
+            border: 2px solid var(--border);
+            background: white;
+            color: var(--text);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
         /* Categories */
@@ -715,6 +859,7 @@
             .newsletter-input { min-width: auto; width: 100%; }
             .newsletter-title { font-size: 1.8rem; }
             .section-title { font-size: 1.8rem; }
+            .search-filter-bar { position: static; }
             input, select, textarea { font-size: 16px !important; }
         }
 
@@ -798,15 +943,15 @@
 
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-number">500+</span>
+                    <span class="stat-number">650+</span>
                     <span class="stat-label">Expert Articles</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">50K+</span>
+                    <span class="stat-number">75K+</span>
                     <span class="stat-label">Monthly Readers</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">95%</span>
+                    <span class="stat-number">96%</span>
                     <span class="stat-label">Success Rate</span>
                 </div>
                 <div class="stat">
@@ -819,31 +964,54 @@
 
     <!-- Main Content -->
     <main class="main-content">
+        <!-- Breaking News -->
+        <div class="breaking-news">
+            <span class="breaking-badge">⚡ Breaking</span>
+            <span><strong>TOEFL MyBest Scores Policy Update:</strong> Starting May 2026, all universities globally must accept MyBest scores. Read our coverage below.</span>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="search-filter-bar">
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search articles by title, topic, or keyword...">
+                <button class="search-btn" onclick="filterPosts()">🔍 Search</button>
+            </div>
+            <div class="filter-chips">
+                <span class="filter-label">Filter by:</span>
+                <button class="chip active" data-category="all" onclick="filterByCategory('all')">All Posts</button>
+                <button class="chip" data-category="TOEFL" onclick="filterByCategory('TOEFL')">TOEFL</button>
+                <button class="chip" data-category="IELTS" onclick="filterByCategory('IELTS')">IELTS</button>
+                <button class="chip" data-category="Duolingo" onclick="filterByCategory('Duolingo')">Duolingo</button>
+                <button class="chip" data-category="PMP" onclick="filterByCategory('PMP')">PMP</button>
+                <button class="chip" data-category="Cambridge" onclick="filterByCategory('Cambridge')">Cambridge</button>
+            </div>
+        </div>
+
         <!-- Featured Post -->
         <section class="featured-post">
-<span class="featured-badge">Breaking: April 14, 2026</span>
-            <h2 class="featured-title">TOEFL iBT 2026: New AI Adaptive Scoring Revealed - Preparation Strategies</h2>
+            <span class="featured-badge">Breaking: April 27, 2026</span>
+            <h2 class="featured-title">TOEFL MyBest Scores Now Mandatory: Universities Must Accept Combined Scores</h2>
             <div class="featured-meta">
                 <div class="meta-item">
                     <span>📅</span>
-                    April 14, 2026
+                    April 27, 2026
                 </div>
                 <div class="meta-item">
                     <span>👤</span>
-                    Dr. Sarah Chen
+                    Dr. Michael Roberts
                 </div>
                 <div class="meta-item">
                     <span>📖</span>
-                    10 min read
+                    12 min read
                 </div>
                 <div class="meta-item">
                     <span>🏷️</span>
-                    TOEFL Updates
+                    TOEFL Policy Update
                 </div>
             </div>
-            <p class="featured-excerpt">ETS announces AI-powered scoring changes effective April 15, 2026. How these updates impact speaking/writing evaluation and what you need to adjust in your prep. Real sample prompts + adaptation strategies included.</p>
+            <p class="featured-excerpt">ETS announces historic policy change: All universities must now accept TOEFL MyBest scores starting May 1, 2026. This ends years of debate over score validity. Learn how to maximize your MyBest score, which test dates to choose, and strategic retake planning for applicants targeting top universities.</p>
             <div class="featured-action">
-                <a href="#" class="btn-featured">Read Now →</a>
+                <a href="#" class="btn-featured">Read Full Analysis →</a>
             </div>
         </section>
 
@@ -854,20 +1022,86 @@
                 <p class="section-subtitle">Stay updated with the latest exam preparation tips, study strategies, and industry insights</p>
             </div>
 
-            <div class="blog-grid">
-                <!-- Post 1 - New Apr 14 -->
-                <div class="blog-card">
-                    <div class="blog-image">💻</div>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Post 1 -->
+                <div class="blog-card" data-category="IELTS" data-date="2026-04-27">
+                    <div class="blog-image">🎯</div>
                     <div class="blog-content">
-                        <span class="blog-category">IELTS Updates</span>
+                        <span class="blog-category">IELTS Speaking</span>
                         <h3 class="blog-title">
-                            <a href="#">IELTS Computer-Delivered: April 2026 Format Changes & Practice Tips</a>
+                            <a href="#">IELTS Speaking Test 2026: New Part 3 Discussion Topics Revealed</a>
                         </h3>
-                        <p class="blog-excerpt">New handwriting recognition tech and updated speaking prompts. Complete guide to the changes + 20 sample questions for paper vs computer versions.</p>
+                        <p class="blog-excerpt">British Council releases updated Part 3 question bank covering AI ethics, climate adaptation, and digital wellbeing. 40+ sample answers with band 8-9 vocabulary strategies included.</p>
                         <div class="blog-meta">
                             <div class="blog-date">
                                 <span>📅</span>
-                                April 14, 2026
+                                April 27, 2026
+                            </div>
+                            <div class="blog-read-time">
+                                <span>📖</span>
+                                10 min read
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="blog-card" data-category="TOEFL" data-date="2026-04-26">
+                    <div class="blog-image">🤖</div>
+                    <div class="blog-content">
+                        <span class="blog-category">TOEFL AI Updates</span>
+                        <h3 class="blog-title">
+                            <a href="#">TOEFL Speaking AI Grading: How to Beat the Algorithm in 2026</a>
+                        </h3>
+                        <p class="blog-excerpt">New research reveals what TOEFL's SpeechRater AI actually prioritizes: fluency markers, stress patterns, and coherence signals. Proven techniques to optimize your responses for maximum AI scoring.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">
+                                <span>📅</span>
+                                April 26, 2026
+                            </div>
+                            <div class="blog-read-time">
+                                <span>📖</span>
+                                13 min read
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="blog-card" data-category="IELTS" data-date="2026-04-25">
+                    <div class="blog-image">✍️</div>
+                    <div class="blog-content">
+                        <span class="blog-category">IELTS Writing</span>
+                        <h3 class="blog-title">
+                            <a href="#">IELTS Writing Task 2: 2026 Essay Questions on Sustainability & Tech</a>
+                        </h3>
+                        <p class="blog-excerpt">Complete analysis of emerging topics: green energy transitions, remote work culture, and education technology. 15 model essays with examiner commentary and band descriptors.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">
+                                <span>📅</span>
+                                April 25, 2026
+                            </div>
+                            <div class="blog-read-time">
+                                <span>📖</span>
+                                14 min read
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 4 -->
+                <div class="blog-card" data-category="Duolingo" data-date="2026-04-24">
+                    <div class="blog-image">🎤</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Duolingo Strategy</span>
+                        <h3 class="blog-title">
+                            <a href="#">Duolingo English Test: Mastering the New 2-Minute Video Interview</a>
+                        </h3>
+                        <p class="blog-excerpt">Deep dive into the April 2026 video speaking feature. Analysis of 50+ actual prompts, body language tips, and how AI evaluates eye contact, gestures, and spontaneous fluency.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">
+                                <span>📅</span>
+                                April 24, 2026
                             </div>
                             <div class="blog-read-time">
                                 <span>📖</span>
@@ -877,41 +1111,19 @@
                     </div>
                 </div>
 
-                <!-- Post 2 - New Apr 14 -->
-                <div class="blog-card">
-                    <div class="blog-image">🎤</div>
+                <!-- Post 5 -->
+                <div class="blog-card" data-category="TOEFL" data-date="2026-04-23">
+                    <div class="blog-image">📊</div>
                     <div class="blog-content">
-                        <span class="blog-category">Duolingo Strategy</span>
+                        <span class="blog-category">TOEFL Reading</span>
                         <h3 class="blog-title">
-                            <a href="#">Duolingo English Test: Video Interview Feature Goes Live April 2026</a>
+                            <a href="#">TOEFL Reading 2026: New Academic Passage Types & Question Formats</a>
                         </h3>
-                        <p class="blog-excerpt">New 5-minute video call simulation tests real-time fluency. Practice strategies for unscripted responses + AI feedback analysis.</p>
+                        <p class="blog-excerpt">ETS introduces interdisciplinary passages combining STEM + humanities. Updated question types include multi-paragraph inference and evidence-based selections. 20 practice passages included.</p>
                         <div class="blog-meta">
                             <div class="blog-date">
                                 <span>📅</span>
-                                April 14, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                7 min read
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Post 3 - New Apr 14 -->
-                <div class="blog-card">
-                    <div class="blog-image">📈</div>
-                    <div class="blog-content">
-                        <span class="blog-category">PMP Updates</span>
-                        <h3 class="blog-title">
-                            <a href="#">PMP 8th Edition: Major Changes for April 2026 Exam - What You Must Know</a>
-                        </h3>
-                        <p class="blog-excerpt">PMI reveals 8th Edition PMBOK updates: 60% agile, new sustainability domain, updated formulas. Complete transition guide with 25 sample questions.</p>
-                        <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 14, 2026
+                                April 23, 2026
                             </div>
                             <div class="blog-read-time">
                                 <span>📖</span>
@@ -921,41 +1133,41 @@
                     </div>
                 </div>
 
-                <!-- Post 4 - New Apr 14 -->
-                <div class="blog-card">
-                    <div class="blog-image">⚙️</div>
+                <!-- Post 6 -->
+                <div class="blog-card" data-category="PMP" data-date="2026-04-22">
+                    <div class="blog-image">📈</div>
                     <div class="blog-content">
-                        <span class="blog-category">PMP Practice</span>
+                        <span class="blog-category">PMP Updates</span>
                         <h3 class="blog-title">
-                            <a href="#">PMP Agile Hybrid Questions: 50 Practice Scenarios for 2026 Exam</a>
+                            <a href="#">PMP 2026: Complete Guide to the New Sustainability Domain</a>
                         </h3>
-                        <p class="blog-excerpt">Real exam-style questions blending predictive + agile approaches. Detailed explanations + risk analysis for People/Process domains.</p>
+                        <p class="blog-excerpt">PMI's 8th Edition adds ESG integration, carbon-neutral project planning, and stakeholder sustainability metrics. 35 practice questions with detailed process group mapping.</p>
                         <div class="blog-meta">
                             <div class="blog-date">
                                 <span>📅</span>
-                                April 14, 2026
+                                April 22, 2026
                             </div>
                             <div class="blog-read-time">
                                 <span>📖</span>
-                                15 min read
+                                16 min read
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Post 5 - New Apr 14 -->
-                <div class="blog-card">
-                    <div class="blog-image">🏛️</div>
+                <!-- Post 7 -->
+                <div class="blog-card" data-category="IELTS" data-date="2026-04-21">
+                    <div class="blog-image">💻</div>
                     <div class="blog-content">
-                        <span class="blog-category">Cambridge Updates</span>
+                        <span class="blog-category">IELTS Computer Test</span>
                         <h3 class="blog-title">
-                            <a href="#">Cambridge Digital Exams: FCE/CAE/CPE On-Screen Changes April 2026</a>
+                            <a href="#">IELTS Computer-Delivered vs Paper: Complete 2026 Comparison</a>
                         </h3>
-                        <p class="blog-excerpt">New digital-first format with interactive Use of English tasks. Updated word lists + 30 practice items for B2-C2 levels.</p>
+                        <p class="blog-excerpt">Updated analysis shows CD test now offers faster results (3-5 days) and more flexible scheduling. Detailed breakdown of typing vs handwriting advantages, plus practice interface walkthrough.</p>
                         <div class="blog-meta">
                             <div class="blog-date">
                                 <span>📅</span>
-                                April 14, 2026
+                                April 21, 2026
                             </div>
                             <div class="blog-read-time">
                                 <span>📖</span>
@@ -965,19 +1177,41 @@
                     </div>
                 </div>
 
-                <!-- Post 6 - New Apr 14 -->
-                <div class="blog-card">
-                    <div class="blog-image">⚖️</div>
+                <!-- Post 8 -->
+                <div class="blog-card" data-category="Cambridge" data-date="2026-04-20">
+                    <div class="blog-image">🏛️</div>
                     <div class="blog-content">
-                        <span class="blog-category">Exam Comparison</span>
+                        <span class="blog-category">Cambridge FCE/CAE</span>
                         <h3 class="blog-title">
-                            <a href="#">TOEFL vs IELTS vs Duolingo vs Cambridge 2026: Ultimate Comparison Matrix</a>
+                            <a href="#">Cambridge C1 Advanced: 2026 Digital Exam Format Changes Explained</a>
                         </h3>
-                        <p class="blog-excerpt">Updated acceptance rates, cost analysis, format changes, and score conversion tables for all major English exams post-April updates.</p>
+                        <p class="blog-excerpt">New on-screen Use of English features drag-and-drop, text highlighting, and interactive gap fills. Complete guide to navigating the digital interface plus 25 adaptive practice items.</p>
                         <div class="blog-meta">
                             <div class="blog-date">
                                 <span>📅</span>
-                                April 14, 2026
+                                April 20, 2026
+                            </div>
+                            <div class="blog-read-time">
+                                <span>📖</span>
+                                10 min read
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 9 -->
+                <div class="blog-card" data-category="TOEFL" data-date="2026-04-19">
+                    <div class="blog-image">🎓</div>
+                    <div class="blog-content">
+                        <span class="blog-category">TOEFL Writing</span>
+                        <h3 class="blog-title">
+                            <a href="#">TOEFL Writing: How to Use Academic Word List 3.0 for Higher Scores</a>
+                        </h3>
+                        <p class="blog-excerpt">The updated AWL (2026 edition) adds 200 new academic terms. Strategic integration techniques for Integrated and Discussion tasks, with sentence templates and transition phrases.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">
+                                <span>📅</span>
+                                April 19, 2026
                             </div>
                             <div class="blog-read-time">
                                 <span>📖</span>
@@ -986,6 +1220,81 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Post 10 -->
+                <div class="blog-card" data-category="PMP" data-date="2026-04-18">
+                    <div class="blog-image">⚙️</div>
+                    <div class="blog-content">
+                        <span class="blog-category">PMP Agile</span>
+                        <h3 class="blog-title">
+                            <a href="#">PMP Agile Practice: 100 Scenario-Based Questions for 2026 Exam</a>
+                        </h3>
+                        <p class="blog-excerpt">Comprehensive question bank covering Scrum, Kanban, and hybrid methodologies. Focus on servant leadership, backlog refinement, and velocity calculations with detailed answer explanations.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">
+                                <span>📅</span>
+                                April 18, 2026
+                            </div>
+                            <div class="blog-read-time">
+                                <span>📖</span>
+                                18 min read
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 11 -->
+                <div class="blog-card" data-category="IELTS" data-date="2026-04-17">
+                    <div class="blog-image">🎧</div>
+                    <div class="blog-content">
+                        <span class="blog-category">IELTS Listening</span>
+                        <h3 class="blog-title">
+                            <a href="#">IELTS Listening 2026: New Accent Diversity & Multi-Speaker Tasks</a>
+                        </h3>
+                        <p class="blog-excerpt">British Council expands accent range: now includes Nigerian, Indian, and Australian English in academic contexts. Training strategies for non-native accent comprehension with audio samples.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">
+                                <span>📅</span>
+                                April 17, 2026
+                            </div>
+                            <div class="blog-read-time">
+                                <span>📖</span>
+                                9 min read
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 12 -->
+                <div class="blog-card" data-category="Comparison" data-date="2026-04-16">
+                    <div class="blog-image">⚖️</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Exam Comparison</span>
+                        <h3 class="blog-title">
+                            <a href="#">2026 English Test Comparison: TOEFL vs IELTS vs Duolingo vs PTE</a>
+                        </h3>
+                        <p class="blog-excerpt">Updated acceptance rates at top 200 universities, pricing analysis, score validity periods, and test-taking experience. Includes decision matrix based on your target schools and timeline.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">
+                                <span>📅</span>
+                                April 16, 2026
+                            </div>
+                            <div class="blog-read-time">
+                                <span>📖</span>
+                                15 min read
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <button class="page-btn" onclick="changePage(-1)">← Previous</button>
+                <button class="page-btn active" onclick="goToPage(1)">1</button>
+                <button class="page-btn" onclick="goToPage(2)">2</button>
+                <button class="page-btn" onclick="goToPage(3)">3</button>
+                <button class="page-btn" onclick="changePage(1)">Next →</button>
             </div>
         </section>
 
@@ -1065,11 +1374,11 @@
             <div class="footer-section">
                 <h3>Popular Articles</h3>
                 <ul>
-                    <li><a href="#">TOEFL vs IELTS Comparison</a></li>
-                    <li><a href="#">PMP Study Plan 2026</a></li>
-                    <li><a href="#">AWS Certification Guide</a></li>
-                    <li><a href="#">IELTS Speaking Tips</a></li>
-                    <li><a href="#">Duolingo Test Strategies</a></li>
+                    <li><a href="#">TOEFL MyBest Scores Policy</a></li>
+                    <li><a href="#">IELTS Speaking 2026 Topics</a></li>
+                    <li><a href="#">PMP Sustainability Domain</a></li>
+                    <li><a href="#">Duolingo Video Interview</a></li>
+                    <li><a href="#">Cambridge Digital Exams</a></li>
                 </ul>
             </div>
 
@@ -1100,19 +1409,22 @@
             <p>&copy; 2026 Preploom . All rights reserved. | Subscribe to our newsletter for weekly exam prep tips</p>
         </div>
     </footer>
+
     <script>
+        // Mobile menu functionality
         function toggleMobileMenu() {
             document.getElementById('mobileNav').classList.toggle('active');
             document.getElementById('mobileOverlay').classList.toggle('active');
             document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
         }
+        
         function closeMobileMenu() {
             document.getElementById('mobileNav').classList.remove('active');
             document.getElementById('mobileOverlay').classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        // Newsletter form — connected to backend
+        // Newsletter form
         document.getElementById('newsletterForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const btn = document.getElementById('newsletterBtn');
@@ -1143,7 +1455,112 @@
                 setTimeout(() => msg.style.display = 'none', 5000);
             }
         });
+
+        // Filter and search functionality
+        let currentCategory = 'all';
+        let currentPage = 1;
+        const postsPerPage = 9;
+
+        function filterByCategory(category) {
+            currentCategory = category;
+            currentPage = 1;
+            
+            // Update chip active state
+            document.querySelectorAll('.chip').forEach(chip => {
+                chip.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            applyFilters();
+        }
+
+        function filterPosts() {
+            currentPage = 1;
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.blog-card');
+            let visibleCards = [];
+
+            cards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const title = card.querySelector('.blog-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.blog-excerpt').textContent.toLowerCase();
+                
+                const categoryMatch = currentCategory === 'all' || category === currentCategory;
+                const searchMatch = searchTerm === '' || title.includes(searchTerm) || excerpt.includes(searchTerm);
+                
+                if (categoryMatch && searchMatch) {
+                    visibleCards.push(card);
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            updatePagination(visibleCards.length);
+            paginateCards(visibleCards);
+        }
+
+        function paginateCards(visibleCards) {
+            const start = (currentPage - 1) * postsPerPage;
+            const end = start + postsPerPage;
+            
+            visibleCards.forEach((card, index) => {
+                if (index >= start && index < end) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function updatePagination(totalVisible) {
+            const totalPages = Math.ceil(totalVisible / postsPerPage);
+            const pagination = document.getElementById('pagination');
+            
+            let paginationHTML = '<button class="page-btn" onclick="changePage(-1)" ' + (currentPage === 1 ? 'disabled' : '') + '>← Previous</button>';
+            
+            for (let i = 1; i <= totalPages; i++) {
+                paginationHTML += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+            }
+            
+            paginationHTML += '<button class="page-btn" onclick="changePage(1)" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next →</button>';
+            
+            pagination.innerHTML = paginationHTML;
+        }
+
+        function changePage(direction) {
+            const cards = document.querySelectorAll('.blog-card:not(.hidden)');
+            const totalPages = Math.ceil(cards.length / postsPerPage);
+            
+            currentPage += direction;
+            if (currentPage < 1) currentPage = 1;
+            if (currentPage > totalPages) currentPage = totalPages;
+            
+            applyFilters();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            applyFilters();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                filterPosts();
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            applyFilters();
+        });
     </script>
 </body>
 </html>
-
