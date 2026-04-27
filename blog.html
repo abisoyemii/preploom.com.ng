@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam Preparation Blog | Tips, Strategies & Success Stories | Preploom</title>
@@ -9,7 +8,6 @@
     <meta name="author" content="PrepLoom Institute">
     <meta property="og:image" content="https://preploom.com.ng/images/Preploom.png">
     <meta name="twitter:image" content="https://preploom.com.ng/images/Preploom.png">
-
     <meta name="description" content="Expert exam preparation tips, study strategies, and success stories for TOEFL, IELTS, PMP, AWS, and other certifications. Stay updated with the latest exam trends and preparation advice.">
     <meta name="keywords" content="exam preparation tips, TOEFL study guide, IELTS strategies, PMP certification tips, AWS exam preparation, certification success stories, exam study plans">
     <link rel="canonical" href="https://preploom.com.ng/blog">
@@ -25,18 +23,13 @@
       "publisher": { "@type": "Organization", "name": "PrepLoom Institute", "logo": { "@type": "ImageObject", "url": "https://preploom.com.ng/images/Preploom.png" } }
     }
     </script>
-
-    <!-- Open Graph -->
     <meta property="og:title" content="Exam Preparation Blog | Preploom Institute">
     <meta property="og:description" content="Expert tips, strategies, and success stories for language and professional certifications">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://preploom.com.ng/blog">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Exam Prep Blog - Tips & Strategies">
     <meta name="twitter:description" content="Stay updated with expert exam preparation advice and success stories">
-
     <style>
         :root {
             --primary: #1e3a8a;
@@ -56,828 +49,458 @@
             --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --nav-bg: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        [data-theme="dark"] {
+            --primary: #60a5fa;
+            --secondary: #3b82f6;
+            --accent: #fbbf24;
+            --dark: #f1f5f9;
+            --light: #0f172a;
+            --text: #cbd5e1;
+            --text-light: #94a3b8;
+            --border: #334155;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --nav-bg: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--light);
-            font-size: 16px;
+            line-height: 1.6; color: var(--text); background: var(--bg); font-size: 16px;
+            transition: background 0.3s, color 0.3s;
         }
-
-        /* Navigation - Enhanced */
+        /* Progress Bar */
+        #readingProgress {
+            position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--secondary));
+            z-index: 10001; width: 0%; transition: width 0.1s;
+        }
+        /* Navbar */
         .navbar {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-lg);
+            background: var(--nav-bg); padding: 0.75rem 0;
+            position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-lg);
+            transition: background 0.3s;
         }
-
         .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1400px; margin: 0 auto; padding: 0 2rem;
+            display: flex; justify-content: space-between; align-items: center;
         }
-
         .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: transform 0.3s;
+            display: flex; align-items: center; text-decoration: none;
+            transition: transform 0.3s; flex-shrink: 0;
         }
-
-        .logo:hover {
-            transform: scale(1.05);
+        .logo:hover { transform: scale(1.03); }
+        .logo img {
+            height: 44px; width: auto; max-width: 180px;
+            object-fit: contain; border-radius: 6px; display: block;
         }
-
+        .nav-actions {
+            display: flex; align-items: center; gap: 1rem;
+        }
+        .theme-toggle {
+            background: rgba(255,255,255,0.15); border: none; color: white;
+            width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; transition: all 0.3s; backdrop-filter: blur(4px);
+        }
+        .theme-toggle:hover { background: rgba(255,255,255,0.25); transform: rotate(15deg); }
         .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
+            display: flex; list-style: none; gap: 2.5rem; align-items: center;
         }
-
         .nav-menu a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            position: relative;
-            padding: 0.5rem 0;
+            color: white; text-decoration: none; font-weight: 500; transition: all 0.3s;
+            position: relative; padding: 0.5rem 0; font-size: 0.95rem;
         }
-
         .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+            background: var(--accent); transition: width 0.3s;
         }
-
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
+        .nav-menu a:hover::after { width: 100%; }
+        .dropdown { position: relative; }
         .dropdown-content {
-            display: none;
-            position: absolute;
-            background: white;
-            min-width: 320px;
-            box-shadow: var(--shadow-xl);
-            border-radius: 12px;
-            top: 100%;
-            margin-top: 0.75rem;
-            overflow: hidden;
-            border: 1px solid var(--border);
+            display: none; position: absolute; background: var(--card-bg); min-width: 280px;
+            box-shadow: var(--shadow-xl); border-radius: 12px; top: 100%; margin-top: 0.75rem;
+            overflow: hidden; border: 1px solid var(--border); z-index: 1001;
         }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-            animation: fadeIn 0.2s;
+        .dropdown:hover .dropdown-content { display: block; animation: fadeIn 0.2s; }
+        .dropdown-content a {
+            color: var(--text); display: block; padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border); font-size: 0.9rem;
         }
-
-        .dropdown-header {
-            background: var(--primary);
-            color: white;
-            padding: 1rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .dropdown-content a:hover { background: var(--light); color: var(--primary); }
+        .mobile-menu-btn {
+            display: none; background: none; border: none; color: white;
+            font-size: 1.6rem; cursor: pointer; padding: 0.25rem; line-height: 1;
         }
-
-        .dropdown-item {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid var(--border);
-            transition: background 0.2s;
-        }
-
-        .dropdown-item:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-item:hover {
-            background: var(--light);
-        }
-
-        .dropdown-item a {
-            color: var(--text);
-            text-decoration: none;
-            display: block;
-            font-weight: 500;
-        }
-
-        .dropdown-item .description {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            margin-top: 0.25rem;
-        }
-
-        .cta-button {
-            background: var(--accent);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: var(--shadow);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            background: #d97706;
-        }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 6rem 2rem 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white; padding: 5rem 2rem 3.5rem; text-align: center; position: relative; overflow: hidden;
         }
-
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="50" r="2" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            content: ''; position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cpattern id='g' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='25' cy='25' r='1' fill='white' opacity='0.1'/%3E%3Ccircle cx='75' cy='75' r='1' fill='white' opacity='0.1'/%3E%3Ccircle cx='50' cy='50' r='2' fill='white' opacity='0.05'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23g)'/%3E%3C/svg%3E");
             pointer-events: none;
         }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .hero .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            display: block;
-            color: var(--accent);
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Search and Filter Bar */
+        .hero-content { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.1; }
+        .hero .subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 2rem; }
+        .hero-stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+        .stat { text-align: center; }
+        .stat-number { font-size: 2.2rem; font-weight: 800; color: var(--accent); display: block; }
+        .stat-label { font-size: 0.85rem; opacity: 0.85; text-transform: uppercase; letter-spacing: 1px; }
+        /* Search Bar */
         .search-filter-bar {
-            background: white;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            margin-bottom: 3rem;
-            position: sticky;
-            top: 80px;
-            z-index: 100;
+            background: var(--card-bg); padding: 1.5rem 2rem; border-radius: 16px;
+            box-shadow: var(--shadow-lg); margin-bottom: 3rem; position: sticky; top: 70px; z-index: 99;
+            border: 1px solid var(--border); transition: background 0.3s, border 0.3s;
         }
-
-        .search-box {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
+        .search-box { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
         .search-input {
-            flex: 1;
-            min-width: 250px;
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
+            flex: 1; min-width: 250px; padding: 0.85rem 1rem; border: 2px solid var(--border);
+            border-radius: 10px; font-size: 1rem; transition: all 0.3s; background: var(--bg); color: var(--text);
         }
-
-        .search-input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
+        .search-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
         .search-btn {
-            background: var(--primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
+            background: var(--primary); color: white; padding: 0.85rem 1.75rem; border: none;
+            border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s; white-space: nowrap;
         }
-
-        .search-btn:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
+        .search-btn:hover { background: var(--secondary); transform: translateY(-2px); }
+        .search-shortcut {
+            display: inline-flex; align-items: center; gap: 0.25rem;
+            background: var(--light); color: var(--text-light); padding: 0.2rem 0.5rem;
+            border-radius: 6px; font-size: 0.75rem; border: 1px solid var(--border); margin-left: 0.5rem;
         }
-
-        .filter-chips {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .filter-label {
-            font-weight: 600;
-            color: var(--text);
-        }
-
+        .filter-chips { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
+        .filter-label { font-weight: 600; color: var(--text); font-size: 0.9rem; }
         .chip {
-            background: var(--light);
-            color: var(--text);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            border: 2px solid var(--border);
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-            font-weight: 500;
+            background: var(--light); color: var(--text); padding: 0.45rem 1rem; border-radius: 20px;
+            border: 2px solid var(--border); cursor: pointer; transition: all 0.3s; font-size: 0.85rem; font-weight: 500;
         }
-
-        .chip:hover, .chip.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
+        .chip:hover, .chip.active { background: var(--primary); color: white; border-color: var(--primary); }
         /* Main Content */
-        .main-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .section {
-            margin-bottom: 4rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Breaking News Banner */
+        .main-content { max-width: 1400px; margin: 0 auto; padding: 3rem 2rem; }
+        .section { margin-bottom: 3rem; }
+        .section-header { text-align: center; margin-bottom: 2.5rem; }
+        .section-title { font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.5rem; }
+        .section-subtitle { font-size: 1rem; color: var(--text-light); max-width: 600px; margin: 0 auto; }
+        /* Breaking News */
         .breaking-news {
-            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            box-shadow: var(--shadow-lg);
-            animation: pulse 2s infinite;
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); color: white;
+            padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 2rem; display: flex;
+            align-items: center; gap: 1rem; box-shadow: var(--shadow-lg); animation: pulse 2.5s infinite;
+            flex-wrap: wrap;
         }
-
         .breaking-badge {
-            background: white;
-            color: #dc2626;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
+            background: white; color: #dc2626; padding: 0.25rem 0.75rem; border-radius: 12px;
+            font-weight: 700; font-size: 0.75rem; text-transform: uppercase; white-space: nowrap;
         }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
-            50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
-        }
-
+        @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,0.6);} 50%{box-shadow:0 0 0 12px rgba(239,68,68,0);} }
         /* Featured Post */
         .featured-post {
-            background: white;
-            border-radius: 16px;
-            padding: 3rem;
-            box-shadow: var(--shadow-lg);
-            margin-bottom: 4rem;
-            position: relative;
-            overflow: hidden;
+            background: var(--card-bg); border-radius: 16px; padding: 2.5rem; box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem; position: relative; overflow: hidden; border: 1px solid var(--border);
+            transition: background 0.3s, border 0.3s;
         }
-
         .featured-post::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
         }
-
         .featured-badge {
-            background: var(--accent);
-            color: var(--dark);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 1rem;
+            background: var(--accent); color: var(--dark); padding: 0.4rem 1rem; border-radius: 20px;
+            font-size: 0.75rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 0.75rem;
         }
-
-        .featured-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .featured-meta {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .featured-excerpt {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--text);
-            margin-bottom: 2rem;
-        }
-
-        .featured-action {
-            text-align: center;
-        }
-
+        .featured-title { font-size: 2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.75rem; line-height: 1.25; }
+        .featured-meta { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .meta-item { display: flex; align-items: center; gap: 0.4rem; color: var(--text-light); font-size: 0.9rem; }
+        .featured-excerpt { font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 1.5rem; }
         .btn-featured {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: var(--shadow-lg);
-            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;
+            padding: 0.9rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600;
+            font-size: 1rem; transition: all 0.3s; box-shadow: var(--shadow-lg); display: inline-block;
+            cursor: pointer; border: none;
         }
-
-        .btn-featured:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 25px 50px -12px rgba(30, 58, 138, 0.5);
-        }
-
+        .btn-featured:hover { transform: translateY(-3px); box-shadow: 0 25px 50px -12px rgba(30,58,138,0.5); }
         /* Blog Grid */
         .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.75rem; margin-bottom: 3rem;
         }
-
         .blog-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s;
-            border: 1px solid var(--border);
+            background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow);
+            transition: all 0.3s; border: 1px solid var(--border); position: relative;
+            display: flex; flex-direction: column;
         }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .blog-card.hidden {
-            display: none;
-        }
-
+        .blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); border-color: rgba(59,130,246,0.2); }
+        .blog-card.hidden { display: none; }
         .blog-image {
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
+            height: 190px; background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex; align-items: center; justify-content: center; color: white; font-size: 2.8rem; position: relative;
         }
-
-        .blog-content {
-            padding: 2rem;
+        .bookmark-btn {
+            position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.9);
+            border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+            transition: all 0.2s; z-index: 2; box-shadow: var(--shadow-sm);
         }
-
+        .bookmark-btn:hover { transform: scale(1.1); background: white; }
+        .bookmark-btn.saved { color: var(--danger); }
+        .blog-content { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
         .blog-category {
-            background: var(--light);
-            color: var(--primary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 1rem;
+            background: var(--light); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 12px;
+            font-size: 0.75rem; font-weight: 700; text-transform: uppercase; display: inline-block;
+            margin-bottom: 0.75rem; width: fit-content;
         }
-
-        .blog-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 1rem;
-            line-height: 1.3;
+        .blog-title { font-size: 1.15rem; font-weight: 700; color: var(--dark); margin-bottom: 0.75rem; line-height: 1.35; }
+        .blog-title a { color: inherit; text-decoration: none; cursor: pointer; }
+        .blog-title a:hover { color: var(--primary); }
+        .blog-excerpt { color: var(--text); margin-bottom: 1.25rem; line-height: 1.6; font-size: 0.95rem; flex: 1; }
+        .blog-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--text-light); }
+        .highlight { background: rgba(245, 158, 11, 0.25); padding: 0 2px; border-radius: 3px; font-weight: 600; }
+        /* No results */
+        .no-results {
+            text-align: center; padding: 3rem 1rem; color: var(--text-light); display: none;
         }
-
-        .blog-title a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .blog-title a:hover {
-            color: var(--primary);
-        }
-
-        .blog-excerpt {
-            color: var(--text);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .blog-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        .blog-date {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .blog-read-time {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
+        .no-results.show { display: block; }
+        .no-results-icon { font-size: 3rem; margin-bottom: 1rem; }
         /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
+        .pagination { display: flex; justify-content: center; gap: 0.4rem; margin-top: 2rem; flex-wrap: wrap; }
         .page-btn {
-            padding: 0.75rem 1.25rem;
-            border: 2px solid var(--border);
-            background: white;
-            color: var(--text);
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
+            padding: 0.6rem 1.1rem; border: 2px solid var(--border); background: var(--card-bg); color: var(--text);
+            border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s; font-size: 0.9rem;
         }
-
-        .page-btn:hover, .page-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        .page-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
+        .page-btn:hover, .page-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
         /* Categories */
-        .categories-section {
-            background: var(--light);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
+        .categories-section { background: var(--light); padding: 3rem 2rem; text-align: center; transition: background 0.3s; }
+        [data-theme="dark"] .categories-section { background: #0b1221; }
         .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;
+            max-width: 1000px; margin: 0 auto;
         }
-
         .category-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s;
-            text-decoration: none;
-            color: inherit;
-            display: block;
+            background: var(--card-bg); padding: 1.75rem 1.25rem; border-radius: 12px; box-shadow: var(--shadow);
+            transition: all 0.3s; text-decoration: none; color: inherit; display: block; border: 1px solid var(--border);
         }
-
-        .category-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .category-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .category-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .category-desc {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
+        .category-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        .category-icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
+        .category-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
+        .category-desc { color: var(--text-light); font-size: 0.85rem; }
         /* Newsletter */
         .newsletter {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
+            color: white; padding: 3.5rem 2rem; text-align: center;
         }
-
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .newsletter-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .newsletter-subtitle {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
-
+        .newsletter-content { max-width: 600px; margin: 0 auto; }
+        .newsletter-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .newsletter-subtitle { font-size: 1rem; margin-bottom: 1.5rem; opacity: 0.9; }
+        .newsletter-form { display: flex; gap: 0.75rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap; }
         .newsletter-input {
-            flex: 1;
-            padding: 1rem;
-            border-radius: 8px;
-            border: none;
-            font-size: 1rem;
-            min-width: 250px;
+            flex: 1; padding: 0.9rem; border-radius: 10px; border: none; font-size: 1rem;
+            min-width: 250px; background: rgba(255,255,255,0.95);
         }
-
         .newsletter-button {
-            background: var(--accent);
-            color: var(--dark);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
+            background: var(--accent); color: var(--dark); padding: 0.9rem 2rem; border-radius: 10px;
+            border: none; font-weight: 700; cursor: pointer; transition: all 0.3s;
         }
-
-        .newsletter-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
+        .newsletter-button:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
         /* Footer */
-        .footer {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 2rem 1rem;
-        }
-
+        .footer { background: var(--dark); color: white; padding: 2.5rem 2rem 1rem; transition: background 0.3s; }
         .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            max-width: 1400px; margin: 0 auto; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;
         }
-
-        .footer-section h3 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+        .footer-section h3 { color: var(--accent); margin-bottom: 0.75rem; font-size: 1.1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.4rem; }
+        .footer-section ul li a { color: #cbd5e1; text-decoration: none; transition: color 0.3s; font-size: 0.9rem; cursor: pointer; }
+        .footer-section ul li a:hover { color: var(--accent); }
+        .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid #334155; margin-top: 1.5rem; color: #64748b; font-size: 0.85rem; }
+        /* Modal */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(15,23,42,0.88); backdrop-filter: blur(6px);
+            z-index: 2000; display: none; align-items: center; justify-content: center;
+            padding: 1rem; overflow-y: auto; opacity: 0; transition: opacity 0.3s ease;
         }
-
-        .footer-section ul {
-            list-style: none;
+        .modal-overlay.active { display: flex; opacity: 1; }
+        .modal-container {
+            background: var(--card-bg); border-radius: 16px; max-width: 880px; width: 100%;
+            max-height: 92vh; overflow-y: auto; position: relative; box-shadow: var(--shadow-xl);
+            transform: translateY(20px) scale(0.98); transition: transform 0.3s ease;
+            border: 1px solid var(--border); display: flex; flex-direction: column;
         }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
+        .modal-overlay.active .modal-container { transform: translateY(0) scale(1); }
+        .modal-progress {
+            position: absolute; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--secondary));
+            width: 0%; z-index: 10; transition: width 0.1s;
         }
-
-        .footer-section ul li a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: color 0.3s;
+        .modal-header {
+            padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--border); position: sticky; top: 0;
+            background: var(--card-bg); z-index: 9; border-radius: 16px 16px 0 0; display: flex;
+            justify-content: space-between; align-items: flex-start; gap: 1rem;
         }
-
-        .footer-section ul li a:hover {
-            color: var(--accent);
+        .modal-title { font-size: 1.35rem; font-weight: 800; color: var(--dark); line-height: 1.3; flex: 1; }
+        .modal-actions { display: flex; gap: 0.4rem; align-items: center; }
+        .modal-action-btn {
+            background: var(--light); border: 1px solid var(--border); width: 36px; height: 36px;
+            border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; color: var(--text); transition: all 0.2s;
         }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #334155;
-            margin-top: 2rem;
-            color: #64748b;
+        .modal-action-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .modal-close { background: var(--light); border: 1px solid var(--border); width: 36px; height: 36px;
+            border-radius: 50%; cursor: pointer; font-size: 1.5rem; color: var(--text);
+            display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0;
         }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .modal-close:hover { background: var(--danger); color: white; border-color: var(--danger); }
+        .modal-body { padding: 1.75rem; line-height: 1.8; color: var(--text); font-size: 1rem; flex: 1; }
+        .modal-body h3 { color: var(--primary); margin: 1.75rem 0 0.75rem; font-size: 1.15rem; font-weight: 700; }
+        .modal-body h4 { color: var(--dark); margin: 1.25rem 0 0.5rem; font-size: 1.05rem; font-weight: 700; }
+        .modal-body p { margin-bottom: 1rem; }
+        .modal-body ul, .modal-body ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .modal-body li { margin-bottom: 0.5rem; }
+        .modal-body strong { color: var(--dark); }
+        .modal-body blockquote {
+            border-left: 4px solid var(--accent); padding-left: 1rem; margin: 1.25rem 0;
+            color: var(--text-light); font-style: italic; background: var(--light); padding: 1rem 1rem 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
         }
-
-        /* Mobile Nav Drawer */
+        .modal-body table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.92rem; }
+        .modal-body th, .modal-body td { border: 1px solid var(--border); padding: 0.65rem; text-align: left; }
+        .modal-body th { background: var(--light); font-weight: 700; color: var(--dark); }
+        .modal-body tr:nth-child(even) { background: rgba(148,163,184,0.05); }
+        .modal-footer-meta {
+            padding: 1rem 1.75rem; border-top: 1px solid var(--border); background: var(--light);
+            border-radius: 0 0 16px 16px; display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 0.75rem; font-size: 0.85rem; color: var(--text-light);
+        }
+        .modal-related {
+            padding: 1.25rem 1.75rem; border-top: 1px solid var(--border); background: var(--bg);
+        }
+        .modal-related h4 { font-size: 0.95rem; color: var(--dark); margin-bottom: 0.75rem; }
+        .related-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .related-chip {
+            background: var(--card-bg); border: 1px solid var(--border); padding: 0.4rem 0.9rem;
+            border-radius: 20px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; color: var(--text);
+        }
+        .related-chip:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .citation { color: var(--text-light); font-size: 0.85rem; vertical-align: super; }
+        /* Back to top */
+        .back-to-top {
+            position: fixed; bottom: 2rem; right: 2rem; width: 48px; height: 48px;
+            background: var(--primary); color: white; border: none; border-radius: 50%;
+            cursor: pointer; display: none; align-items: center; justify-content: center;
+            font-size: 1.3rem; box-shadow: var(--shadow-lg); z-index: 999; transition: all 0.3s;
+        }
+        .back-to-top.show { display: flex; }
+        .back-to-top:hover { transform: translateY(-4px); background: var(--secondary); }
+        /* Mobile Nav */
         .mobile-menu-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-            background: rgba(0,0,0,0.5); z-index: 999;
+            position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 999;
             opacity: 0; visibility: hidden; transition: all 0.3s ease;
         }
         .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
         .mobile-nav {
-            position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px;
-            height: 100vh; background: var(--primary); z-index: 1000;
-            padding: 4rem 1.5rem 2rem; overflow-y: auto;
-            transition: right 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
-            box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+            position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px; height: 100vh;
+            background: var(--dark); z-index: 1000; padding: 4rem 1.5rem 2rem; overflow-y: auto;
+            transition: right 0.4s cubic-bezier(0.25,0.46,0.45,0.94); box-shadow: -4px 0 20px rgba(0,0,0,0.3);
         }
         .mobile-nav.active { right: 0; }
         .mobile-nav-header {
             display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 1.5rem; padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         .mobile-nav-close {
-            background: none; border: none; color: white; font-size: 1.5rem;
-            cursor: pointer; width: 44px; height: 44px;
-            display: flex; align-items: center; justify-content: center;
+            background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;
+            width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
         }
         .mobile-nav-menu { list-style: none; margin: 0; padding: 0; }
         .mobile-nav-menu a {
-            color: white; text-decoration: none; font-size: 1.05rem; font-weight: 500;
-            display: flex; align-items: center; padding: 0.9rem 0; min-height: 44px;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-            transition: padding-left 0.3s;
+            color: white; text-decoration: none; font-size: 1rem; font-weight: 500;
+            display: flex; align-items: center; padding: 0.85rem 0; min-height: 44px;
+            border-bottom: 1px solid rgba(255,255,255,0.07); transition: padding-left 0.3s;
         }
-        .mobile-nav-menu a:hover { padding-left: 0.75rem; }
-        .mobile-menu-btn {
-            display: none;
-            background: none; border: none; color: white;
-            font-size: 1.8rem; cursor: pointer; padding: 0.25rem; line-height: 1;
+        .mobile-nav-menu a:hover { padding-left: 0.75rem; color: var(--accent); }
+        /* Toast */
+        .toast {
+            position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(100px);
+            background: var(--dark); color: white; padding: 0.9rem 1.5rem; border-radius: 10px;
+            box-shadow: var(--shadow-xl); z-index: 3000; font-size: 0.95rem; opacity: 0; transition: all 0.4s ease;
+            display: flex; align-items: center; gap: 0.6rem;
         }
-
-        /* Responsive Design */
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+        /* Animations */
+        @keyframes fadeIn { from { opacity:0; transform: translateY(-10px);} to { opacity:1; transform: translateY(0);} }
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-menu { display: none; }
             .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
-            .hero { padding: 4rem 1rem 3rem; }
-            .hero h1 { font-size: 2rem; }
+            .hero { padding: 3.5rem 1rem 2.5rem; }
+            .hero h1 { font-size: 1.9rem; }
             .hero .subtitle { font-size: 1rem; }
             .hero-stats { gap: 1.5rem; }
-            .main-content { padding: 2rem 1rem; }
-            .featured-post { padding: 1.5rem 1rem; }
-            .featured-title { font-size: 1.5rem; }
-            .featured-meta { gap: 0.75rem; flex-wrap: wrap; }
+            .main-content { padding: 1.5rem 1rem; }
+            .featured-post { padding: 1.5rem; }
+            .featured-title { font-size: 1.4rem; }
             .blog-grid { grid-template-columns: 1fr; }
             .categories-grid { grid-template-columns: repeat(2, 1fr); }
             .newsletter-form { flex-direction: column; align-items: stretch; }
             .newsletter-input { min-width: auto; width: 100%; }
-            .newsletter-title { font-size: 1.8rem; }
-            .section-title { font-size: 1.8rem; }
-            .search-filter-bar { position: static; }
+            .search-filter-bar { position: static; padding: 1.25rem; }
+            .modal-overlay { padding: 0.5rem; }
+            .modal-header, .modal-body { padding: 1.25rem; }
+            .modal-title { font-size: 1.1rem; }
+            .logo img { height: 38px; max-width: 150px; }
+            .section-title { font-size: 1.7rem; }
             input, select, textarea { font-size: 16px !important; }
         }
-
         @media (max-width: 480px) {
-            .hero h1 { font-size: 1.75rem; }
+            .hero h1 { font-size: 1.6rem; }
             .hero-stats { flex-direction: column; gap: 1rem; }
             .categories-grid { grid-template-columns: 1fr; }
-            .featured-title { font-size: 1.3rem; }
+            .featured-title { font-size: 1.2rem; }
+            .logo img { height: 34px; max-width: 130px; }
         }
     </style>
+<base target="_blank">
 </head>
 <body>
+    <div id="readingProgress"></div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Article Modal -->
+    <div class="modal-overlay" id="articleModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-container" id="modalContainer">
+            <div class="modal-progress" id="modalProgress"></div>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Article Title</h2>
+                <div class="modal-actions">
+                    <button class="modal-action-btn" onclick="copyArticleLink()" title="Copy link">🔗</button>
+                    <button class="modal-action-btn" onclick="shareArticle('twitter')" title="Share on X">𝕏</button>
+                    <button class="modal-action-btn" onclick="shareArticle('linkedin')" title="Share on LinkedIn">in</button>
+                    <button class="modal-action-btn" onclick="printArticle()" title="Print">🖨️</button>
+                    <button class="modal-action-btn" onclick="toggleModalBookmark()" id="modalBookmarkBtn" title="Bookmark">🔖</button>
+                    <button class="modal-close" onclick="closeModal()" aria-label="Close article">×</button>
+                </div>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer-meta" id="modalFooterMeta"></div>
+            <div class="modal-related" id="modalRelated">
+                <h4>📎 Related Articles</h4>
+                <div class="related-chips" id="relatedChips"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Mobile Nav Drawer -->
     <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
     <nav class="mobile-nav" id="mobileNav">
         <div class="mobile-nav-header">
             <span style="color:white;font-weight:700;">Menu</span>
-            <button class="mobile-nav-close" onclick="closeMobileMenu()">&#10005;</button>
+            <button class="mobile-nav-close" onclick="closeMobileMenu()">✕</button>
         </div>
         <ul class="mobile-nav-menu">
             <li><a href="/" onclick="closeMobileMenu()">Home</a></li>
@@ -901,37 +524,40 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="logo">
-                <img src="images/Preploom.png" alt="PrepLoom" style="width:200px;max-width:100%;height:auto;object-fit:contain;border-radius:6px;" loading="lazy">
+                <img src="images/Preploom.png" alt="PrepLoom" loading="lazy">
             </a>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">&#9776;</button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="/#home">Home</a></li>
-                <li class="dropdown">
-                    <a href="#">Language Exams ▾</a>
-                    <div class="dropdown-content">
-                        <a href="/ielts">IELTS</a>
-                        <a href="/toefl">TOEFL</a>
-                        <a href="/duolingo">Duolingo</a>
-                        <a href="/cambridge">Cambridge</a>
-                        <a href="/gmat">GMAT</a>
-                        <a href="/language-exams">All Language Exams</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Professional Exams ▾</a>
-                    <div class="dropdown-content">
-                        <a href="/pmp">PMP</a>
-                        <a href="/google">Google</a>
-                        <a href="/professional-exams">All Professional</a>
-                    </div>
-                </li>
-                <li><a href="/resources">Resources</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/testimonials">Testimonials</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/login" class="btn btn-secondary" style="padding: 0.5rem 1rem;">Login</a></li>
-            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" title="Toggle dark mode">🌙</button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="/#home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Language Exams ▾</a>
+                        <div class="dropdown-content">
+                            <a href="/ielts">IELTS</a>
+                            <a href="/toefl">TOEFL</a>
+                            <a href="/duolingo">Duolingo</a>
+                            <a href="/cambridge">Cambridge</a>
+                            <a href="/gmat">GMAT</a>
+                            <a href="/language-exams">All Language Exams</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Professional Exams ▾</a>
+                        <div class="dropdown-content">
+                            <a href="/pmp">PMP</a>
+                            <a href="/google">Google</a>
+                            <a href="/professional-exams">All Professional</a>
+                        </div>
+                    </li>
+                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/testimonials">Testimonials</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/login" style="padding: 0.5rem 1rem; background: rgba(255,255,255,0.15); border-radius: 8px;">Login</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -940,24 +566,11 @@
         <div class="hero-content">
             <h1>Exam Preparation Insights</h1>
             <p class="subtitle">Expert tips, study strategies, and success stories to help you ace your certification exams</p>
-
             <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">650+</span>
-                    <span class="stat-label">Expert Articles</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">75K+</span>
-                    <span class="stat-label">Monthly Readers</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">96%</span>
-                    <span class="stat-label">Success Rate</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Fresh Content</span>
-                </div>
+                <div class="stat"><span class="stat-number">650+</span><span class="stat-label">Expert Articles</span></div>
+                <div class="stat"><span class="stat-number">75K+</span><span class="stat-label">Monthly Readers</span></div>
+                <div class="stat"><span class="stat-number">96%</span><span class="stat-label">Success Rate</span></div>
+                <div class="stat"><span class="stat-number">24/7</span><span class="stat-label">Fresh Content</span></div>
             </div>
         </div>
     </section>
@@ -967,14 +580,15 @@
         <!-- Breaking News -->
         <div class="breaking-news">
             <span class="breaking-badge">⚡ Breaking</span>
-            <span><strong>TOEFL MyBest Scores Policy Update:</strong> Starting May 2026, all universities globally must accept MyBest scores. Read our coverage below.</span>
+            <span><strong>TOEFL Format Overhaul:</strong> As of January 21, 2026, the TOEFL iBT uses a new 1-6 band scale, multistage adaptive testing, and is now under 2 hours. Full analysis below.</span>
         </div>
 
         <!-- Search and Filter -->
         <div class="search-filter-bar">
             <div class="search-box">
-                <input type="text" id="searchInput" class="search-input" placeholder="Search articles by title, topic, or keyword...">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search articles by title, topic, or keyword..." autocomplete="off">
                 <button class="search-btn" onclick="filterPosts()">🔍 Search</button>
+                <span class="search-shortcut"><kbd>Ctrl</kbd> <kbd>K</kbd></span>
             </div>
             <div class="filter-chips">
                 <span class="filter-label">Filter by:</span>
@@ -989,29 +603,17 @@
 
         <!-- Featured Post -->
         <section class="featured-post">
-            <span class="featured-badge">Breaking: April 27, 2026</span>
-            <h2 class="featured-title">TOEFL MyBest Scores Now Mandatory: Universities Must Accept Combined Scores</h2>
+            <span class="featured-badge">Featured Analysis</span>
+            <h2 class="featured-title">TOEFL MyBest Scores & 2026 Format Changes: Complete Strategic Guide</h2>
             <div class="featured-meta">
-                <div class="meta-item">
-                    <span>📅</span>
-                    April 27, 2026
-                </div>
-                <div class="meta-item">
-                    <span>👤</span>
-                    Dr. Michael Roberts
-                </div>
-                <div class="meta-item">
-                    <span>📖</span>
-                    12 min read
-                </div>
-                <div class="meta-item">
-                    <span>🏷️</span>
-                    TOEFL Policy Update
-                </div>
+                <div class="meta-item"><span>📅</span> April 27, 2026</div>
+                <div class="meta-item"><span>👤</span> Dr. Michael Roberts</div>
+                <div class="meta-item"><span>📖</span> 12 min read</div>
+                <div class="meta-item"><span>🏷️</span> TOEFL Policy Update</div>
             </div>
-            <p class="featured-excerpt">ETS announces historic policy change: All universities must now accept TOEFL MyBest scores starting May 1, 2026. This ends years of debate over score validity. Learn how to maximize your MyBest score, which test dates to choose, and strategic retake planning for applicants targeting top universities.</p>
+            <p class="featured-excerpt">Starting January 21, 2026, ETS introduced a new 1-6 band scale, multistage adaptive testing, and a shorter under-2-hour format. MyBest scores remain optional institution-by-institution. Learn the real facts about MyBest acceptance, how the new adaptive algorithm works, and strategic retake planning for top university applications.</p>
             <div class="featured-action">
-                <a href="#" class="btn-featured">Read Full Analysis →</a>
+                <button class="btn-featured" onclick="openModal('article-1')">Read Full Analysis →</button>
             </div>
         </section>
 
@@ -1024,271 +626,193 @@
 
             <div class="blog-grid" id="blogGrid">
                 <!-- Post 1 -->
-                <div class="blog-card" data-category="IELTS" data-date="2026-04-27">
-                    <div class="blog-image">🎯</div>
+                <div class="blog-card" data-category="IELTS" data-date="2026-04-27" data-id="article-2">
+                    <div class="blog-image">🎯
+                        <button class="bookmark-btn" onclick="toggleBookmark('article-2', event)" data-id="article-2">🔖</button>
+                    </div>
                     <div class="blog-content">
                         <span class="blog-category">IELTS Speaking</span>
-                        <h3 class="blog-title">
-                            <a href="#">IELTS Speaking Test 2026: New Part 3 Discussion Topics Revealed</a>
-                        </h3>
-                        <p class="blog-excerpt">British Council releases updated Part 3 question bank covering AI ethics, climate adaptation, and digital wellbeing. 40+ sample answers with band 8-9 vocabulary strategies included.</p>
+                        <h3 class="blog-title"><a onclick="openModal('article-2')">IELTS Speaking Test 2026: New Part 3 Discussion Topics Revealed</a></h3>
+                        <p class="blog-excerpt">British Council and IDP have released updated Part 3 question banks covering AI ethics, climate adaptation, and digital wellbeing. Sample answers with band 8-9 vocabulary strategies included.</p>
                         <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 27, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                10 min read
-                            </div>
+                            <div class="blog-date"><span>📅</span> April 27, 2026</div>
+                            <div class="blog-read-time"><span>📖</span> 10 min read</div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Post 2 -->
-                <div class="blog-card" data-category="TOEFL" data-date="2026-04-26">
-                    <div class="blog-image">🤖</div>
+                <div class="blog-card" data-category="TOEFL" data-date="2026-04-26" data-id="article-3">
+                    <div class="blog-image">🤖
+                        <button class="bookmark-btn" onclick="toggleBookmark('article-3', event)" data-id="article-3">🔖</button>
+                    </div>
                     <div class="blog-content">
                         <span class="blog-category">TOEFL AI Updates</span>
-                        <h3 class="blog-title">
-                            <a href="#">TOEFL Speaking AI Grading: How to Beat the Algorithm in 2026</a>
-                        </h3>
+                        <h3 class="blog-title"><a onclick="openModal('article-3')">TOEFL Speaking AI Grading: How to Beat the Algorithm in 2026</a></h3>
                         <p class="blog-excerpt">New research reveals what TOEFL's SpeechRater AI actually prioritizes: fluency markers, stress patterns, and coherence signals. Proven techniques to optimize your responses for maximum AI scoring.</p>
                         <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 26, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                13 min read
-                            </div>
+                            <div class="blog-date"><span>📅</span> April 26, 2026</div>
+                            <div class="blog-read-time"><span>📖</span> 13 min read</div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Post 3 -->
-                <div class="blog-card" data-category="IELTS" data-date="2026-04-25">
-                    <div class="blog-image">✍️</div>
+                <div class="blog-card" data-category="IELTS" data-date="2026-04-25" data-id="article-4">
+                    <div class="blog-image">✍️
+                        <button class="bookmark-btn" onclick="toggleBookmark('article-4', event)" data-id="article-4">🔖</button>
+                    </div>
                     <div class="blog-content">
                         <span class="blog-category">IELTS Writing</span>
-                        <h3 class="blog-title">
-                            <a href="#">IELTS Writing Task 2: 2026 Essay Questions on Sustainability & Tech</a>
-                        </h3>
-                        <p class="blog-excerpt">Complete analysis of emerging topics: green energy transitions, remote work culture, and education technology. 15 model essays with examiner commentary and band descriptors.</p>
+                        <h3 class="blog-title"><a onclick="openModal('article-4')">IELTS Writing Task 2: 2026 Essay Questions on Sustainability & Tech</a></h3>
+                        <p class="blog-excerpt">Complete analysis of emerging topics: green energy transitions, remote work culture, and education technology. Model essays with examiner commentary and band descriptors.</p>
                         <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 25, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                14 min read
-                            </div>
+                            <div class="blog-date"><span>📅</span> April 25, 2026</div>
+                            <div class="blog-read-time"><span>📖</span> 14 min read</div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Post 4 -->
-                <div class="blog-card" data-category="Duolingo" data-date="2026-04-24">
-                    <div class="blog-image">🎤</div>
+                <div class="blog-card" data-category="Duolingo" data-date="2026-04-24" data-id="article-5">
+                    <div class="blog-image">🎤
+                        <button class="bookmark-btn" onclick="toggleBookmark('article-5', event)" data-id="article-5">🔖</button>
+                    </div>
                     <div class="blog-content">
                         <span class="blog-category">Duolingo Strategy</span>
-                        <h3 class="blog-title">
-                            <a href="#">Duolingo English Test: Mastering the New 2-Minute Video Interview</a>
-                        </h3>
-                        <p class="blog-excerpt">Deep dive into the April 2026 video speaking feature. Analysis of 50+ actual prompts, body language tips, and how AI evaluates eye contact, gestures, and spontaneous fluency.</p>
+                        <h3 class="blog-title"><a onclick="openModal('article-5')">Duolingo English Test: Mastering the New Interactive Speaking & Writing</a></h3>
+                        <p class="blog-excerpt">Deep dive into the 2026 DET updates. Analysis of Interactive Speaking with AI characters, Interactive Writing follow-up prompts, and how the adaptive algorithm evaluates spontaneous fluency.</p>
                         <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 24, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                9 min read
-                            </div>
+                            <div class="blog-date"><span>📅</span> April 24, 2026</div>
+                            <div class="blog-read-time"><span>📖</span> 9 min read</div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Post 5 -->
-                <div class="blog-card" data-category="TOEFL" data-date="2026-04-23">
-                    <div class="blog-image">📊</div>
+                <div class="blog-card" data-category="TOEFL" data-date="2026-04-23" data-id="article-6">
+                    <div class="blog-image">📊
+                        <button class="bookmark-btn" onclick="toggleBookmark('article-6', event)" data-id="article-6">🔖</button>
+                    </div>
                     <div class="blog-content">
                         <span class="blog-category">TOEFL Reading</span>
-                        <h3 class="blog-title">
-                            <a href="#">TOEFL Reading 2026: New Academic Passage Types & Question Formats</a>
-                        </h3>
-                        <p class="blog-excerpt">ETS introduces interdisciplinary passages combining STEM + humanities. Updated question types include multi-paragraph inference and evidence-based selections. 20 practice passages included.</p>
+                        <h3 class="blog-title"><a onclick="openModal('article-6')">TOEFL Reading 2026: New Adaptive Format & Task Types Explained</a></h3>
+                        <p class="blog-excerpt">ETS introduces multistage adaptive reading with three new task types: Complete the Words, Read in Daily Life, and Read an Academic Passage. Strategic guide to the routing module and hard module.</p>
                         <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 23, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                11 min read
-                            </div>
+                            <div class="blog-date"><span>📅</span> April 23, 2026</div>
+                            <div class="blog-read-time"><span>📖</span> 11 min read</div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Post 6 -->
-                <div class="blog-card" data-category="PMP" data-date="2026-04-22">
-                    <div class="blog-image">📈</div>
+                <div class="blog-card" data-category="PMP" data-date="2026-04-22" data-id="article-7">
+                    <div class="blog-image">📈
+                        <button class="bookmark-btn" onclick="toggleBookmark('article-7', event)" data-id="article-7">🔖</button>
+                    </div>
                     <div class="blog-content">
                         <span class="blog-category">PMP Updates</span>
-                        <h3 class="blog-title">
-                            <a href="#">PMP 2026: Complete Guide to the New Sustainability Domain</a>
-                        </h3>
-                        <p class="blog-excerpt">PMI's 8th Edition adds ESG integration, carbon-neutral project planning, and stakeholder sustainability metrics. 35 practice questions with detailed process group mapping.</p>
+                        <h3 class="blog-title"><a onclick="openModal('article-7')">PMP 2026: Complete Guide to the New Exam & PMBOK 8th Edition</a></h3>
+                        <p class="blog-excerpt">PMI's exam update launches July 9, 2026. Business Environment domain jumps to 26%, new AI and sustainability content, plus interactive question types. Full domain breakdown inside.</p>
                         <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 22, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                16 min read
-                            </div>
+                            <div class="blog-date"><span>📅</span> April 22, 2026</div>
+                            <div class="blog-read-time"><span>📖</span> 16 min read</div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Post 7 -->
-                <div class="blog-card" data-category="IELTS" data-date="2026-04-21">
-                    <div class="blog-image">💻</div>
+                <div class="blog-card" data-category="IELTS" data-date="2026-04-21" data-id="article-8">
+                    <div class="blog-image">💻
+                        <button class="bookmark-btn" onclick="toggleBookmark('article-8', event)" data-id="article-8">🔖</button>
+                    </div>
                     <div class="blog-content">
                         <span class="blog-category">IELTS Computer Test</span>
-                        <h3 class="blog-title">
-                            <a href="#">IELTS Computer-Delivered vs Paper: Complete 2026 Comparison</a>
-                        </h3>
-                        <p class="blog-excerpt">Updated analysis shows CD test now offers faster results (3-5 days) and more flexible scheduling. Detailed breakdown of typing vs handwriting advantages, plus practice interface walkthrough.</p>
+                        <h3 class="blog-title"><a onclick="openModal('article-8')">IELTS Computer-Delivered vs Paper: Complete 2026 Comparison</a></h3>
+                        <p class="blog-excerpt">From mid-2026, IELTS phases out paper-based tests in most markets. Analysis of faster results, One Skill Retake eligibility, and the new Writing on Paper hybrid option.</p>
                         <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 21, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                8 min read
-                            </div>
+                            <div class="blog-date"><span>📅</span> April 21, 2026</div>
+                            <div class="blog-read-time"><span>📖</span> 8 min read</div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Post 8 -->
-                <div class="blog-card" data-category="Cambridge" data-date="2026-04-20">
-                    <div class="blog-image">🏛️</div>
+                <div class="blog-card" data-category="Cambridge" data-date="2026-04-20" data-id="article-9">
+                    <div class="blog-image">🏛️
+                        <button class="bookmark-btn" onclick="toggleBookmark('article-9', event)" data-id="article-9">🔖</button>
+                    </div>
                     <div class="blog-content">
                         <span class="blog-category">Cambridge FCE/CAE</span>
-                        <h3 class="blog-title">
-                            <a href="#">Cambridge C1 Advanced: 2026 Digital Exam Format Changes Explained</a>
-                        </h3>
-                        <p class="blog-excerpt">New on-screen Use of English features drag-and-drop, text highlighting, and interactive gap fills. Complete guide to navigating the digital interface plus 25 adaptive practice items.</p>
+                        <h3 class="blog-title"><a onclick="openModal('article-9')">Cambridge C1 Advanced: Digital vs Paper-Based Exam Guide 2026</a></h3>
+                        <p class="blog-excerpt">Computer-based C1 Advanced delivers faster results in 2-3 weeks versus 4-6 weeks for paper. Complete comparison of delivery modes, scheduling, and digital interface navigation.</p>
                         <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 20, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                10 min read
-                            </div>
+                            <div class="blog-date"><span>📅</span> April 20, 2026</div>
+                            <div class="blog-read-time"><span>📖</span> 10 min read</div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Post 9 -->
-                <div class="blog-card" data-category="TOEFL" data-date="2026-04-19">
-                    <div class="blog-image">🎓</div>
+                <div class="blog-card" data-category="TOEFL" data-date="2026-04-19" data-id="article-10">
+                    <div class="blog-image">🎓
+                        <button class="bookmark-btn" onclick="toggleBookmark('article-10', event)" data-id="article-10">🔖</button>
+                    </div>
                     <div class="blog-content">
                         <span class="blog-category">TOEFL Writing</span>
-                        <h3 class="blog-title">
-                            <a href="#">TOEFL Writing: How to Use Academic Word List 3.0 for Higher Scores</a>
-                        </h3>
-                        <p class="blog-excerpt">The updated AWL (2026 edition) adds 200 new academic terms. Strategic integration techniques for Integrated and Discussion tasks, with sentence templates and transition phrases.</p>
+                        <h3 class="blog-title"><a onclick="openModal('article-10')">TOEFL Writing 2026: How to Use Academic Vocabulary for Higher Scores</a></h3>
+                        <p class="blog-excerpt">The new Writing section includes Build a Sentence, Write an Email, and Academic Discussion tasks. Strategic integration of academic word lists, sentence templates, and transition phrases.</p>
                         <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 19, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                12 min read
-                            </div>
+                            <div class="blog-date"><span>📅</span> April 19, 2026</div>
+                            <div class="blog-read-time"><span>📖</span> 12 min read</div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Post 10 -->
-                <div class="blog-card" data-category="PMP" data-date="2026-04-18">
-                    <div class="blog-image">⚙️</div>
+                <div class="blog-card" data-category="PMP" data-date="2026-04-18" data-id="article-11">
+                    <div class="blog-image">⚙️
+                        <button class="bookmark-btn" onclick="toggleBookmark('article-11', event)" data-id="article-11">🔖</button>
+                    </div>
                     <div class="blog-content">
                         <span class="blog-category">PMP Agile</span>
-                        <h3 class="blog-title">
-                            <a href="#">PMP Agile Practice: 100 Scenario-Based Questions for 2026 Exam</a>
-                        </h3>
-                        <p class="blog-excerpt">Comprehensive question bank covering Scrum, Kanban, and hybrid methodologies. Focus on servant leadership, backlog refinement, and velocity calculations with detailed answer explanations.</p>
+                        <h3 class="blog-title"><a onclick="openModal('article-11')">PMP Agile Practice: Scenario-Based Questions for the 2026 Exam</a></h3>
+                        <p class="blog-excerpt">Comprehensive guidance covering Scrum, Kanban, and hybrid methodologies in the new exam format. Focus on servant leadership, backlog refinement, and velocity calculations.</p>
                         <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 18, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                18 min read
-                            </div>
+                            <div class="blog-date"><span>📅</span> April 18, 2026</div>
+                            <div class="blog-read-time"><span>📖</span> 18 min read</div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Post 11 -->
-                <div class="blog-card" data-category="IELTS" data-date="2026-04-17">
-                    <div class="blog-image">🎧</div>
+                <div class="blog-card" data-category="IELTS" data-date="2026-04-17" data-id="article-12">
+                    <div class="blog-image">🎧
+                        <button class="bookmark-btn" onclick="toggleBookmark('article-12', event)" data-id="article-12">🔖</button>
+                    </div>
                     <div class="blog-content">
                         <span class="blog-category">IELTS Listening</span>
-                        <h3 class="blog-title">
-                            <a href="#">IELTS Listening 2026: New Accent Diversity & Multi-Speaker Tasks</a>
-                        </h3>
-                        <p class="blog-excerpt">British Council expands accent range: now includes Nigerian, Indian, and Australian English in academic contexts. Training strategies for non-native accent comprehension with audio samples.</p>
+                        <h3 class="blog-title"><a onclick="openModal('article-12')">IELTS Listening 2026: Accent Diversity & Computer Test Advantages</a></h3>
+                        <p class="blog-excerpt">IELTS Listening uses a range of native accents including British, American, Australian, and New Zealand English. Training strategies for computer-delivered highlighting and note tools.</p>
                         <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 17, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                9 min read
-                            </div>
+                            <div class="blog-date"><span>📅</span> April 17, 2026</div>
+                            <div class="blog-read-time"><span>📖</span> 9 min read</div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Post 12 -->
-                <div class="blog-card" data-category="Comparison" data-date="2026-04-16">
-                    <div class="blog-image">⚖️</div>
+                <div class="blog-card" data-category="Comparison" data-date="2026-04-16" data-id="article-13">
+                    <div class="blog-image">⚖️
+                        <button class="bookmark-btn" onclick="toggleBookmark('article-13', event)" data-id="article-13">🔖</button>
+                    </div>
                     <div class="blog-content">
                         <span class="blog-category">Exam Comparison</span>
-                        <h3 class="blog-title">
-                            <a href="#">2026 English Test Comparison: TOEFL vs IELTS vs Duolingo vs PTE</a>
-                        </h3>
-                        <p class="blog-excerpt">Updated acceptance rates at top 200 universities, pricing analysis, score validity periods, and test-taking experience. Includes decision matrix based on your target schools and timeline.</p>
+                        <h3 class="blog-title"><a onclick="openModal('article-13')">2026 English Test Comparison: TOEFL vs IELTS vs Duolingo vs PTE</a></h3>
+                        <p class="blog-excerpt">Updated acceptance rates, pricing analysis, score validity periods, and test-taking experience. Includes decision matrix based on your target schools and timeline.</p>
                         <div class="blog-meta">
-                            <div class="blog-date">
-                                <span>📅</span>
-                                April 16, 2026
-                            </div>
-                            <div class="blog-read-time">
-                                <span>📖</span>
-                                15 min read
-                            </div>
+                            <div class="blog-date"><span>📅</span> April 16, 2026</div>
+                            <div class="blog-read-time"><span>📖</span> 15 min read</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Pagination -->
+            <div class="no-results" id="noResults">
+                <div class="no-results-icon">🔍</div>
+                <h3>No articles found</h3>
+                <p>Try adjusting your search terms or filters.</p>
+            </div>
+
             <div class="pagination" id="pagination">
                 <button class="page-btn" onclick="changePage(-1)">← Previous</button>
                 <button class="page-btn active" onclick="goToPage(1)">1</button>
@@ -1300,40 +824,34 @@
 
         <!-- Categories -->
         <section class="categories-section">
-            <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem;">Explore by Category</h2>
-            <p style="color: var(--text-light); margin-bottom: 3rem;">Find articles tailored to your exam preparation needs</p>
-
+            <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.75rem;">Explore by Category</h2>
+            <p style="color: var(--text-light); margin-bottom: 2.5rem;">Find articles tailored to your exam preparation needs</p>
             <div class="categories-grid">
-                <a href="#" class="category-card">
+                <a href="#" class="category-card" onclick="filterByCategory('TOEFL'); return false;">
                     <div class="category-icon">🎓</div>
                     <h3 class="category-title">Language Exams</h3>
                     <p class="category-desc">TOEFL, IELTS, Duolingo tips & strategies</p>
                 </a>
-
-                <a href="#" class="category-card">
+                <a href="#" class="category-card" onclick="filterByCategory('PMP'); return false;">
                     <div class="category-icon">💼</div>
                     <h3 class="category-title">Professional Certs</h3>
                     <p class="category-desc">PMP, AWS, Cisco, CompTIA guides</p>
                 </a>
-
                 <a href="#" class="category-card">
                     <div class="category-icon">📚</div>
                     <h3 class="category-title">Study Tips</h3>
                     <p class="category-desc">Effective learning strategies</p>
                 </a>
-
                 <a href="#" class="category-card">
                     <div class="category-icon">🏆</div>
                     <h3 class="category-title">Success Stories</h3>
                     <p class="category-desc">Real student experiences</p>
                 </a>
-
-                <a href="#" class="category-card">
+                <a href="#" class="category-card" onclick="filterByCategory('TOEFL'); return false;">
                     <div class="category-icon">📰</div>
                     <h3 class="category-title">Exam Updates</h3>
                     <p class="category-desc">Latest changes & news</p>
                 </a>
-
                 <a href="#" class="category-card">
                     <div class="category-icon">🤖</div>
                     <h3 class="category-title">Tech & Tools</h3>
@@ -1370,18 +888,16 @@
                     <li><a href="/blog">Blog</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h3>Popular Articles</h3>
                 <ul>
-                    <li><a href="#">TOEFL MyBest Scores Policy</a></li>
-                    <li><a href="#">IELTS Speaking 2026 Topics</a></li>
-                    <li><a href="#">PMP Sustainability Domain</a></li>
-                    <li><a href="#">Duolingo Video Interview</a></li>
-                    <li><a href="#">Cambridge Digital Exams</a></li>
+                    <li><a onclick="openModal('article-1')">TOEFL MyBest Scores Guide</a></li>
+                    <li><a onclick="openModal('article-2')">IELTS Speaking 2026 Topics</a></li>
+                    <li><a onclick="openModal('article-7')">PMP 2026 Exam Changes</a></li>
+                    <li><a onclick="openModal('article-5')">Duolingo Interactive Speaking</a></li>
+                    <li><a onclick="openModal('article-9')">Cambridge Digital Exams</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h3>Categories</h3>
                 <ul>
@@ -1392,7 +908,6 @@
                     <li><a href="#">Exam Updates</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h3>Connect</h3>
                 <ul>
@@ -1404,40 +919,778 @@
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
-            <p>&copy; 2026 Preploom . All rights reserved. | Subscribe to our newsletter for weekly exam prep tips</p>
+            <p>&copy; 2026 Preploom. All rights reserved. | Subscribe to our newsletter for weekly exam prep tips</p>
         </div>
     </footer>
 
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" title="Back to top">↑</button>
+
     <script>
-        // Mobile menu functionality
+        // Theme management
+        function initTheme() {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('themeBtn').textContent = '☀️';
+            }
+        }
+        function toggleTheme() {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                document.getElementById('themeBtn').textContent = '🌙';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                document.getElementById('themeBtn').textContent = '☀️';
+            }
+        }
+        initTheme();
+
+        // Mobile menu
         function toggleMobileMenu() {
             document.getElementById('mobileNav').classList.toggle('active');
             document.getElementById('mobileOverlay').classList.toggle('active');
             document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
         }
-        
         function closeMobileMenu() {
             document.getElementById('mobileNav').classList.remove('active');
             document.getElementById('mobileOverlay').classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        // Newsletter form
+        // Reading progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('readingProgress').style.width = scrolled + '%';
+
+            const btn = document.getElementById('backToTop');
+            if (winScroll > 500) btn.classList.add('show'); else btn.classList.remove('show');
+        });
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+        // Toast
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 2800);
+        }
+
+        // Bookmarks
+        function getBookmarks() {
+            try { return JSON.parse(localStorage.getItem('preploom_bookmarks') || '[]'); } catch(e) { return []; }
+        }
+        function saveBookmarks(arr) { localStorage.setItem('preploom_bookmarks', JSON.stringify(arr)); }
+        function updateBookmarkIcons() {
+            const saved = getBookmarks();
+            document.querySelectorAll('.bookmark-btn').forEach(btn => {
+                const id = btn.getAttribute('data-id');
+                if (saved.includes(id)) { btn.classList.add('saved'); btn.textContent = '❤️'; }
+                else { btn.classList.remove('saved'); btn.textContent = '🔖'; }
+            });
+        }
+        function toggleBookmark(id, event) {
+            if (event) event.stopPropagation();
+            const saved = getBookmarks();
+            const idx = saved.indexOf(id);
+            if (idx > -1) { saved.splice(idx, 1); showToast('Removed from bookmarks'); }
+            else { saved.push(id); showToast('Saved to bookmarks'); }
+            saveBookmarks(saved);
+            updateBookmarkIcons();
+            updateModalBookmarkState();
+        }
+        let currentModalId = null;
+        function toggleModalBookmark() {
+            if (!currentModalId) return;
+            toggleBookmark(currentModalId, null);
+            updateModalBookmarkState();
+        }
+        function updateModalBookmarkState() {
+            const btn = document.getElementById('modalBookmarkBtn');
+            if (!btn || !currentModalId) return;
+            const saved = getBookmarks();
+            if (saved.includes(currentModalId)) { btn.textContent = '❤️'; btn.title = 'Remove bookmark'; }
+            else { btn.textContent = '🔖'; btn.title = 'Bookmark'; }
+        }
+        updateBookmarkIcons();
+
+        // Article content database
+        const articleContent = {
+            'article-1': {
+                title: 'TOEFL MyBest Scores & 2026 Format Changes: Complete Strategic Guide',
+                category: 'TOEFL Policy Update',
+                date: 'April 27, 2026',
+                readTime: '12 min read',
+                content: `
+                    <p><strong>Correction to widespread misinformation:</strong> Contrary to rumors circulating in early 2026, ETS has <em>not</em> made MyBest scores mandatory for all universities beginning May 2026. MyBest score acceptance remains an institutional decision. However, the TOEFL iBT underwent its most significant overhaul in years on <strong>January 21, 2026</strong>, introducing a new band scale, adaptive testing, and a shorter format. Here is the complete, fact-checked analysis.</p>
+                    <h3>What Are TOEFL MyBest Scores?</h3>
+                    <p>MyBest scores—also known as "superscores"—combine your highest section scores from all valid TOEFL tests taken within a two-year period. If you took the test twice and scored Reading 5.0/Listening 4.5 on the first attempt and Reading 4.5/Listening 5.0 on the second, your MyBest score would show Reading 5.0 and Listening 5.0.</p>
+                    <p>According to ETS and test prep authorities, many institutions accept MyBest scores, but <strong>not all do</strong>. Some graduate programs prefer single-test scores, and professional licensing boards may not accept superscores. You must verify with each specific program before applying.</p>
+                    <h3>The Real 2026 Changes (Effective January 21, 2026)</h3>
+                    <p>ETS launched a restructured TOEFL iBT that is shorter, adaptive, and aligned to CEFR standards:</p>
+                    <ul>
+                        <li><strong>New 1-6 Band Scale:</strong> Each section is now scored on a 1-6 band (with 0.5 increments), similar to IELTS. During a transition period through 2028, score reports show both the new band and the old 0-120 equivalent.</li>
+                        <li><strong>Multistage Adaptive Testing:</strong> Reading and Listening sections now adapt in real-time. All test-takers begin with a "routing module" of standard difficulty. Based on performance, the second module is either harder or easier. Your final score reflects both accuracy and difficulty level attempted.</li>
+                        <li><strong>Shorter Duration:</strong> Total test time is now under 2 hours (reduced from approximately 3 hours).</li>
+                        <li><strong>New Task Types:</strong> Speaking now uses "Listen and Repeat" (7 items) and "Take an Interview" (4 items). Reading adds "Complete the Words" and "Read in Daily Life" tasks.</li>
+                    </ul>
+                    <h3>Strategic Retake Planning</h3>
+                    <p>If you are close to your target score but not quite there, retaking the test makes strategic sense. Because the new scale uses 0.5 increments, improving one section by even half a band can meaningfully boost your total. However, note the mandatory 3-day waiting period between attempts.</p>
+                    <p>For top universities (Harvard, Stanford, MIT, Ivy League), aim for <strong>Band 5.0+</strong> on the new scale, equivalent to 100+ on the legacy scale. Competitive applicants often present Band 5.5+.</p>
+                    <h3>Score Conversion Quick Reference</h3>
+                    <table>
+                        <tr><th>New Band</th><th>Old Scale (approx.)</th><th>CEFR Level</th></tr>
+                        <tr><td>6.0</td><td>110-120</td><td>C2</td></tr>
+                        <tr><td>5.0-5.5</td><td>95-109</td><td>C1</td></tr>
+                        <tr><td>4.0-4.5</td><td>72-94</td><td>B2</td></tr>
+                        <tr><td>3.0-3.5</td><td>42-71</td><td>B1</td></tr>
+                    </table>
+                    <p><em>Always check your target institution's specific requirements, as they may list minimums in either scale during the transition period.</em></p>
+                `
+            },
+            'article-2': {
+                title: 'IELTS Speaking Test 2026: New Part 3 Discussion Topics Revealed',
+                category: 'IELTS Speaking',
+                date: 'April 27, 2026',
+                readTime: '10 min read',
+                content: `
+                    <p>The IELTS Speaking test has refreshed its topic rotation for the January-April 2026 period, with Part 3 discussion questions increasingly focusing on abstract, societal-level issues that reflect global trends. This analysis covers the verified topic areas, sample questions, and Band 8-9 response strategies.</p>
+                    <h3>Part 3 Structure and Purpose</h3>
+                    <p>Part 3 is the Two-Way Discussion (4-5 minutes) where the examiner asks deeper, abstract questions related to your Part 2 topic. This section tests your ability to express and justify opinions, speculate, and discuss broader issues. Unlike Part 1, there are no personal questions here—everything operates at the societal level.</p>
+                    <h3>Emerging 2026 Topic Areas</h3>
+                    <p>Based on British Council and IDP release patterns, the following thematic clusters are prominent in early 2026:</p>
+                    <ul>
+                        <li><strong>Technology and Society:</strong> AI ethics, digital wellbeing, remote work culture, social media's impact on relationships, and automation in employment.</li>
+                        <li><strong>Environment and Sustainability:</strong> Climate adaptation strategies, individual versus governmental responsibility for carbon reduction, green energy transitions, and urban planning for sustainability.</li>
+                        <li><strong>Education and Learning:</strong> Online versus in-person instruction, the role of AI tutors, lifelong learning culture, and educational equity.</li>
+                        <li><strong>Health and Lifestyle:</strong> Mental health awareness, work-life balance in the digital age, preventive healthcare, and the impact of sedentary lifestyles.</li>
+                        <li><strong>Media and Information:</strong> News consumption habits, misinformation, freedom of speech online, and the decline of traditional journalism.</li>
+                    </ul>
+                    <h3>Sample Part 3 Questions (2026 Rotation)</h3>
+                    <p><strong>On Technology and Society:</strong></p>
+                    <ul>
+                        <li>Do you think artificial intelligence will ultimately create more jobs than it eliminates?</li>
+                        <li>How can governments balance innovation in AI with the need for privacy protection?</li>
+                        <li>Some argue that social media brings people closer together; others believe it isolates us. What is your view?</li>
+                    </ul>
+                    <p><strong>On Environment:</strong></p>
+                    <ul>
+                        <li>Do you think individuals or large corporations bear more responsibility for environmental damage?</li>
+                        <li>Why do some countries struggle to implement green energy policies despite the scientific consensus?</li>
+                        <li>How might climate change alter where people choose to live in the future?</li>
+                    </ul>
+                    <h3>Band 8-9 Vocabulary Strategies</h3>
+                    <p>High-scoring responses avoid repetition and demonstrate lexical precision. For technology topics, use terms like <em>algorithmic bias, digital literacy, ubiquitous connectivity, surveillance capitalism,</em> and <em>technological determinism</em>. For environment topics, incorporate <em>carbon neutrality, circular economy, ecological footprint, regenerative agriculture,</em> and <em>climate resilience</em>.</p>
+                    <p>Structure your answers using the <strong>OREO</strong> method: Opinion → Reason → Example → Opinion restated. This ensures coherence and full task response.</p>
+                    <h3>Common Mistakes to Avoid</h3>
+                    <ul>
+                        <li>Giving overly short answers (aim for 3-4 sentences minimum per question).</li>
+                        <li>Repeating the examiner's exact words instead of paraphrasing.</li>
+                        <li>Failing to use conditionals ("If governments were to..., then...") when speculating about the future.</li>
+                        <li>Using memorized chunks that do not directly answer the specific question asked.</li>
+                    </ul>
+                `
+            },
+            'article-3': {
+                title: 'TOEFL Speaking AI Grading: How to Beat the Algorithm in 2026',
+                category: 'TOEFL AI Updates',
+                date: 'April 26, 2026',
+                readTime: '13 min read',
+                content: `
+                    <p>The 2026 TOEFL Speaking section is now fully AI-scored using ETS's SpeechRater engine, combined with a streamlined format that eliminates preparation time and note-taking. Understanding exactly what the algorithm measures is essential for maximizing your score.</p>
+                    <h3>The New 2026 Speaking Format</h3>
+                    <p>Starting January 21, 2026, the Speaking section was reduced from 4 tasks (17 minutes) to 2 task types totaling 11 items across approximately 8 minutes:</p>
+                    <ul>
+                        <li><strong>Listen and Repeat (7 items):</strong> You hear a sentence once and repeat it immediately with 8-12 seconds of recording time. No preparation time. No text on screen.</li>
+                        <li><strong>Take an Interview (4 items):</strong> You respond to spoken interview questions on familiar topics. Each response is timed at 45 seconds. No note-taking. No planning time. No opportunity to restart.</li>
+                    </ul>
+                    <h3>What SpeechRater Actually Measures</h3>
+                    <p>ETS's AI evaluates four core constructs across the section, plus one task-specific construct:</p>
+                    <table>
+                        <tr><th>Dimension</th><th>What It Measures</th><th>How to Train It</th></tr>
+                        <tr><td><strong>Fluency</strong></td><td>Rhythm, speed, smooth pacing, pause patterns</td><td>Practice steady ~150 WPM rhythm; avoid long mid-sentence pauses</td></tr>
+                        <tr><td><strong>Intelligibility</strong></td><td>Pronunciation clarity, stress, sound stability</td><td>Shadow native audio; record and replay your speech</td></tr>
+                        <tr><td><strong>Language Use</strong></td><td>Grammar accuracy and vocabulary range</td><td>Mix short and complex structures; avoid repeated simple patterns</td></tr>
+                        <tr><td><strong>Organization</strong></td><td>Logic, completeness, coherence of ideas</td><td>Use IRT: Idea → Reason → Tie-in</td></tr>
+                        <tr><td><strong>Repeat Accuracy</strong></td><td>Similarity to prompt (words, rhythm, timing)</td><td>Shadow and repeat with identical pacing; focus on content words</td></tr>
+                    </table>
+                    <h3>What the AI Does NOT Care About</h3>
+                    <p>This is critical: SpeechRater does not evaluate whether your opinion is clever, original, or factually correct. It does not penalize accents—it penalizes <em>inconsistent</em> pronunciation that reduces clarity. Your goal is not native-like perfection; it is <strong>stable control under time pressure</strong>.</p>
+                    <h3>Proven Techniques for Higher AI Scores</h3>
+                    <ul>
+                        <li><strong>Start within 1 second.</strong> Delayed starts signal hesitation and reduce fluency scores.</li>
+                        <li><strong>Maintain consistent volume.</strong> SpeechRater flags responses with irregular amplitude as potentially problematic.</li>
+                        <li><strong>Use discourse markers naturally:</strong> "The reason I believe this is...", "This matters because...", "Consequently..."</li>
+                        <li><strong>For Listen and Repeat:</strong> Focus on content words (nouns, verbs, adjectives) if the sentence is long. Maintain the original intonation pattern—rising and falling where the speaker did.</li>
+                        <li><strong>For Interviews:</strong> Answer directly in your first sentence, then elaborate. Do not spend 15 seconds "thinking out loud."</li>
+                    </ul>
+                    <h3>Scoring Scale (2026)</h3>
+                    <p>Each item is scored 0-5. Items average into task scores, which then average into a final Speaking band from 1-6. A Band 5-5.5 (C1) is competitive for most graduate admissions, while Band 6 (C2) is near-native control suitable for top-tier programs and licensing bodies.</p>
+                `
+            },
+            'article-4': {
+                title: 'IELTS Writing Task 2: 2026 Essay Questions on Sustainability & Tech',
+                category: 'IELTS Writing',
+                date: 'April 25, 2026',
+                readTime: '14 min read',
+                content: `
+                    <p>IELTS Writing Task 2 continues to evolve its topic distribution to reflect global priorities. In 2026, two dominant themes have emerged with increased frequency: sustainability/environment and technology/society. This guide provides verified question patterns, model structures, and examiner-aligned strategies.</p>
+                    <h3>Confirmed 2026 Topic Clusters</h3>
+                    <p>Analysis of recent exam rotations shows the following categories appearing with the highest frequency:</p>
+                    <ul>
+                        <li><strong>Environment and Sustainability:</strong> Climate change mitigation, green energy transitions, individual versus corporate responsibility, conservation, and sustainable urban development.</li>
+                        <li><strong>Technology and Society:</strong> Remote work culture, education technology, artificial intelligence in daily life, social media's psychological impact, and automation.</li>
+                        <li><strong>Health:</strong> Preventive versus curative healthcare, mental health awareness, fast food and obesity, and sports in schools.</li>
+                        <li><strong>Travel and Transport:</strong> Tourism's environmental cost, work-related relocation after retirement, and public transport investment.</li>
+                    </ul>
+                    <h3>Sample Task 2 Questions (2026 Style)</h3>
+                    <p><strong>Sustainability:</strong></p>
+                    <blockquote>"Environmental issues such as climate change have always been an international problem because governments are not imposing harsh punishments against offenders. To what extent do you agree or disagree?"</blockquote>
+                    <p><strong>Technology:</strong></p>
+                    <blockquote>"In many countries, traditional classrooms are being replaced by online learning platforms. Discuss the advantages and disadvantages of this trend, and give your own opinion."</blockquote>
+                    <p><strong>Health:</strong></p>
+                    <blockquote>"Some people think that keeping pets is good for children while others think it is dangerous and unhealthy. Discuss both views and give your opinion."</blockquote>
+                    <h3>Band Descriptor Breakdown</h3>
+                    <p>Examiners score Task 2 across four criteria, each weighted equally (25%):</p>
+                    <ol>
+                        <li><strong>Task Response:</strong> Did you answer all parts of the prompt? Is your position clear throughout?</li>
+                        <li><strong>Coherence and Cohesion:</strong> Is your essay logically organized? Do paragraphs flow with effective transitions?</li>
+                        <li><strong>Lexical Resource:</strong> Do you use a wide range of vocabulary naturally and accurately? (Band 8+ requires "less common lexical items" used skillfully.)</li>
+                        <li><strong>Grammatical Range and Accuracy:</strong> Do you use a mix of simple and complex sentences with few errors?</li>
+                    </ol>
+                    <h3>Model Essay Structure for Band 8+</h3>
+                    <p><strong>Introduction (40-60 words):</strong> Paraphrase the prompt + thesis statement outlining your position.</p>
+                    <p><strong>Body Paragraph 1 (80-100 words):</strong> Main idea → Explanation → Specific example → Link back to thesis.</p>
+                    <p><strong>Body Paragraph 2 (80-100 words):</strong> Counter-argument or second main idea → Nuanced discussion → Example.</p>
+                    <p><strong>Conclusion (40-50 words):</strong> Restate position + broader implication or recommendation.</p>
+                    <h3>Vocabulary for Sustainability Topics</h3>
+                    <p>Replace basic terms with academic equivalents:</p>
+                    <ul>
+                        <li>Bad for the environment → environmentally detrimental / ecologically damaging</li>
+                        <li>Fix the problem → mitigate the impact / implement remedial measures</li>
+                        <li>Good for the future → sustainable / future-proof / regenerative</li>
+                        <li>More and more → an increasing proliferation / a growing trend toward</li>
+                    </ul>
+                    <h3>Common Pitfalls to Avoid</h3>
+                    <ul>
+                        <li>Writing under 250 words (automatic Band reduction).</li>
+                        <li>Using memorized introductions without addressing the specific question.</li>
+                        <li>Missing one side of the argument in "Discuss both views" prompts.</li>
+                        <li>Overusing cohesive devices ("Furthermore," "Moreover") to the point of unnaturalness.</li>
+                    </ul>
+                `
+            },
+            'article-5': {
+                title: 'Duolingo English Test: Mastering the New Interactive Speaking & Writing',
+                category: 'Duolingo Strategy',
+                date: 'April 24, 2026',
+                readTime: '9 min read',
+                content: `
+                    <p>The Duolingo English Test (DET) has significantly evolved its format for 2026, introducing more interactive, adaptive tasks that simulate real-world academic communication. While rumors of a "2-minute video interview" have circulated, the actual updates center on Interactive Speaking with AI characters and Interactive Writing with follow-up prompts.</p>
+                    <h3>2026 DET Format Overview</h3>
+                    <p>The DET remains a 60-minute online test divided into three parts: a 5-minute introduction with ID verification, a 45-minute adaptive test, and a 10-minute video and writing sample section. Over 4,500 universities worldwide now accept DET scores.</p>
+                    <h3>New Interactive Speaking</h3>
+                    <p>Replacing older task types like Read Aloud and Listen Then Speak, the new <strong>Interactive Speaking</strong> section simulates a live conversation with AI characters named Bea or Oscar. You will answer 6-8 spoken questions, with 35 seconds to respond to each. Questions are spoken only once, and topics can shift abruptly between daily life and academic contexts.</p>
+                    <p><strong>Key constraints:</strong></p>
+                    <ul>
+                        <li>No re-recording is allowed.</li>
+                        <li>The image remains on screen during speaking.</li>
+                        <li>Pauses reduce your fluency subscore.</li>
+                        <li>Responses must be natural conversational English, not scripted monologues.</li>
+                    </ul>
+                    <h3>New Interactive Writing</h3>
+                    <p>The <strong>Interactive Writing</strong> task replaced the older "Read, Then Write" format. It consists of two connected prompts:</p>
+                    <ul>
+                        <li><strong>Task 1:</strong> Write about a topic for 5 minutes.</li>
+                        <li><strong>Task 2:</strong> Respond to a 3-minute follow-up query generated by AI that refers directly to your Task 1 response.</li>
+                    </ul>
+                    <p>This tests your ability to expand ideas consistently and respond to feedback—skills directly relevant to academic writing seminars.</p>
+                    <h3>Other 2026 Updates</h3>
+                    <ul>
+                        <li><strong>Fill in the Blanks:</strong> A new question type where you complete one missing word in a single sentence.</li>
+                        <li><strong>Read and Select Redesign:</strong> Instead of identifying real words from a list of 15, you now evaluate one word at a time.</li>
+                        <li><strong>Secondary Camera Required:</strong> A second camera must record your screen and keyboard during the test to enhance security.</li>
+                        <li><strong>Enhanced AI Scoring:</strong> Improved adaptive algorithms and clearer subscores for Literacy, Comprehension, Conversation, and Production.</li>
+                    </ul>
+                    <h3>Preparation Strategies</h3>
+                    <p><strong>For Interactive Speaking:</strong> Practice rapid topic switching. Record yourself answering random questions with exactly 35 seconds of response time. Focus on natural fillers ("That's an interesting question because...") rather than silence.</p>
+                    <p><strong>For Interactive Writing:</strong> Practice writing for exactly 5 minutes, then immediately pivot to a related follow-up question for 3 minutes. Your Task 2 response must reference Task 1 without contradicting it.</p>
+                    <p><strong>General:</strong> The DET rewards vocabulary breadth in the Read and Complete and Read and Select tasks. Study academic word lists, but also ensure you recognize common false friends and pseudo-words.</p>
+                `
+            },
+            'article-6': {
+                title: 'TOEFL Reading 2026: New Adaptive Format & Task Types Explained',
+                category: 'TOEFL Reading',
+                date: 'April 23, 2026',
+                readTime: '11 min read',
+                content: `
+                    <p>The TOEFL Reading section transformed on January 21, 2026, moving from a fixed-format test with two long passages to a multistage adaptive design with shorter, more diverse texts. Understanding the routing module system and new task types is essential for effective preparation.</p>
+                    <h3>Multistage Adaptive Testing (MST)</h3>
+                    <p>The Reading section now uses a two-stage adaptive format:</p>
+                    <ul>
+                        <li><strong>Stage 1 (Routing Module):</strong> All test-takers receive a common set of passages and questions of standard difficulty. This is typically the longest module, lasting 10-12 minutes.</li>
+                        <li><strong>Stage 2:</strong> Based on your routing module performance, you receive either a "hard" or "easy" second module. To reach the hard module, you need to correctly answer approximately 60% of routing module questions.</li>
+                    </ul>
+                    <p>Your final score reflects both your accuracy and the difficulty level of the passages you attempted. This creates a fairer assessment than traditional fixed-difficulty tests.</p>
+                    <h3>New Task Types</h3>
+                    <p>ETS introduced three distinct task types to reflect both academic and real-world reading:</p>
+                    <ol>
+                        <li><strong>Complete the Words:</strong> You fill in missing letters in academic paragraphs. Each paragraph includes incomplete words that test spelling and vocabulary in context.</li>
+                        <li><strong>Read in Daily Life:</strong> You read short practical texts (emails, announcements, social media posts of 15-150 words) and answer 2-3 multiple-choice questions. This tests functional literacy.</li>
+                        <li><strong>Read an Academic Passage:</strong> A shorter academic text (around 200 words) with 5 multiple-choice questions. These passages are interdisciplinary, combining STEM and humanities content.</li>
+                    </ol>
+                    <h3>Timing and Question Count</h3>
+                    <p>The section lasts approximately 27-30 minutes (reduced from 36 minutes). Total items range from 35-48 questions depending on which adaptive stage you reach, rather than the fixed 20 questions in the old format.</p>
+                    <h3>Navigation Rules</h3>
+                    <p>You can move back and forth between questions <em>within the same module</em>. However, once you finish the routing module and proceed to Stage 2, you cannot return to Stage 1. A clock displays time remaining for the current module only.</p>
+                    <h3>Scoring: 1-6 Band Scale</h3>
+                    <p>Reading scores are now reported on a 1-6 band scale aligned to CEFR:</p>
+                    <table>
+                        <tr><th>Band</th><th>Proficiency Level</th></tr>
+                        <tr><td>6</td><td>Advanced Academic Proficiency (C2)</td></tr>
+                        <tr><td>5</td><td>High Proficiency (C1)</td></tr>
+                        <tr><td>4</td><td>Competent Proficiency (B2)</td></tr>
+                        <tr><td>3</td><td>Moderate Proficiency (B1)</td></tr>
+                        <tr><td>2</td><td>Basic Proficiency (A2)</td></tr>
+                        <tr><td>1</td><td>Limited Proficiency (A1)</td></tr>
+                    </table>
+                    <h3>Preparation Strategies</h3>
+                    <ul>
+                        <li><strong>Practice skimming for main ideas in under 2 minutes.</strong> With shorter passages, speed is essential.</li>
+                        <li><strong>Build interdisciplinary vocabulary.</strong> Read articles that blend science with social commentary (e.g., climate policy, bioethics).</li>
+                        <li><strong>Master the "Complete the Words" format.</strong> This is unique to TOEFL and requires active spelling knowledge, not just recognition.</li>
+                        <li><strong>Do not leave routing module questions unanswered.</strong> There is no penalty for wrong answers, so every question deserves a guess.</li>
+                    </ul>
+                `
+            },
+            'article-7': {
+                title: 'PMP 2026: Complete Guide to the New Exam & PMBOK 8th Edition',
+                category: 'PMP Updates',
+                date: 'April 22, 2026',
+                readTime: '16 min read',
+                content: `
+                    <p>PMI has announced the most significant PMP exam update since 2021, aligning the certification with the PMBOK Guide Eighth Edition. The new exam launches July 9, 2026, featuring rebalanced domains, new content areas, and interactive question types. Whether you should take the current exam or wait depends entirely on your preparation timeline.</p>
+                    <h3>Launch Timeline</h3>
+                    <ul>
+                        <li><strong>November 2025:</strong> PMBOK Guide 8th Edition released.</li>
+                        <li><strong>January 2026:</strong> Pilot exam period begins.</li>
+                        <li><strong>April 2026:</strong> Updated study materials released.</li>
+                        <li><strong>July 9, 2026:</strong> New exam goes live. Current exam available until July 8, 2026.</li>
+                    </ul>
+                    <h3>Domain Rebalancing</h3>
+                    <p>The three exam domains have been significantly reweighted to emphasize strategic business skills:</p>
+                    <table>
+                        <tr><th>Domain</th><th>Current Weight</th><th>2026 Weight</th></tr>
+                        <tr><td>People</td><td>42%</td><td>33%</td></tr>
+                        <tr><td>Process</td><td>50%</td><td>41%</td></tr>
+                        <tr><td>Business Environment</td><td>8%</td><td>26%</td></tr>
+                    </table>
+                    <h3>New Content Areas</h3>
+                    <p>The 2026 exam adds several emerging practice areas:</p>
+                    <ul>
+                        <li><strong>Artificial Intelligence in Project Management:</strong> Using AI for risk prediction, resource optimization, and scheduling.</li>
+                        <li><strong>Sustainability and ESG:</strong> Environmental, social, and governance integration; carbon-neutral project planning; stakeholder sustainability metrics.</li>
+                        <li><strong>Value Delivery:</strong> Shift from output-focused to outcome-focused project evaluation.</li>
+                        <li><strong>Organizational Strategy:</strong> Stronger linkage between portfolio/program decisions and business objectives.</li>
+                    </ul>
+                    <h3>Exam Format Changes</h3>
+                    <ul>
+                        <li><strong>Question Count:</strong> 185 questions (up from 180).</li>
+                        <li><strong>Duration:</strong> 240 minutes with two 10-minute breaks.</li>
+                        <li><strong>New Question Types:</strong> Case sets (multiple questions based on one scenario), drag-and-drop sequencing, and graphic interpretation.</li>
+                        <li><strong>Approach Integration:</strong> Questions will cover predictive, agile, and hybrid methods with greater emphasis on adaptive, real-world dynamics.</li>
+                    </ul>
+                    <h3>PMBOK 8th Edition Key Changes</h3>
+                    <p>The Eighth Edition reintroduces practical structure by adding five "Focus Areas" containing 40 processes to complement the principles-based approach of the Seventh Edition. It consolidates 12 principles into six core principles and refines performance domains from eight to seven.</p>
+                    <h3>Should You Take the Current or New Exam?</h3>
+                    <p><strong>Take the current exam if:</strong> You are already well-prepared and can schedule before July 8, 2026. Your study materials are aligned to the current version, and you prefer avoiding uncertainty.</p>
+                    <p><strong>Wait for the new exam if:</strong> You are just starting preparation and want to learn the newest frameworks. The Business Environment domain's increased weight may actually suit professionals with strategic planning experience.</p>
+                `
+            },
+            'article-8': {
+                title: 'IELTS Computer-Delivered vs Paper: Complete 2026 Comparison',
+                category: 'IELTS Computer Test',
+                date: 'April 21, 2026',
+                readTime: '8 min read',
+                content: `
+                    <p>IELTS is undergoing its largest delivery transformation in decades. From mid-2026, paper-based tests will be phased out in most markets, with all tests delivered on computer. However, a new "Writing on Paper" hybrid option provides flexibility for handwriting-preferred candidates in select locations.</p>
+                    <h3>The Phase-Out Timeline</h3>
+                    <p>IELTS partners (British Council, IDP, and Cambridge) announced that from mid-2026, all IELTS tests will be delivered on computer. Paper-based tests will no longer be available, though exact timelines vary by market. Bangladesh, for example, fully discontinued paper-based IELTS in February 2026.</p>
+                    <h3>Key Differences: Computer vs Paper</h3>
+                    <table>
+                        <tr><th>Feature</th><th>Computer-Delivered</th><th>Paper-Based (phasing out)</th></tr>
+                        <tr><td>Results</td><td>1-2 business days (3-5 in some markets)</td><td>13 calendar days</td></tr>
+                        <tr><td>Test Frequency</td><td>Up to 3 sessions daily, 7 days/week</td><td>Limited dates, 2-4 per month</td></tr>
+                        <tr><td>Writing Method</td><td>Type on keyboard</td><td>Handwrite with black ballpoint pen</td></tr>
+                        <tr><td>One Skill Retake</td><td>Eligible</td><td>Not eligible</td></tr>
+                        <tr><td>Speaking Test</td><td>Face-to-face or video call</td><td>Face-to-face only</td></tr>
+                        <tr><td>Test Duration</td><td>2 hours 45 minutes</td><td>2 hours 45 minutes</td></tr>
+                    </table>
+                    <h3>The "Writing on Paper" Hybrid Option</h3>
+                    <p>Recognizing that some candidates prefer handwriting, IELTS is introducing a hybrid option in selected markets. You can complete Listening and Reading on computer while handwriting your Writing responses on paper. Research confirms scores remain comparable across formats.</p>
+                    <p>Important: If you choose Writing on Paper for your original test, your One Skill Retake must also use Writing on Paper—you cannot switch modes for the retake.</p>
+                    <h3>What Has NOT Changed</h3>
+                    <p>Despite the delivery shift, the following remain identical:</p>
+                    <ul>
+                        <li>Test format and question types</li>
+                        <li>Scoring criteria and assessment standards</li>
+                        <li>Difficulty level of questions</li>
+                        <li>University and immigration recognition worldwide</li>
+                    </ul>
+                    <h3>Computer Test Interface Advantages</h3>
+                    <ul>
+                        <li><strong>Highlighting and Note Tools:</strong> In Reading and Listening, you can highlight text and make on-screen notes.</li>
+                        <li><strong>Word Counter:</strong> The Writing interface includes a built-in word counter—no manual counting needed.</li>
+                        <li><strong>Copy/Paste:</strong> You can copy and paste text within your Writing response.</li>
+                        <li><strong>Navigation:</strong> In Reading, the passage appears on the left and questions on the right, reducing page-flipping.</li>
+                    </ul>
+                    <h3>Which Should You Choose?</h3>
+                    <p><strong>Choose computer-delivered if:</strong> You type at 30+ WPM, want results in 1-2 days, need One Skill Retake as a safety net, or have tight application deadlines.</p>
+                    <p><strong>Choose Writing on Paper (if available) if:</strong> You handwrite significantly faster than you type, or you struggle with keyboard navigation under pressure.</p>
+                `
+            },
+            'article-9': {
+                title: 'Cambridge C1 Advanced: Digital vs Paper-Based Exam Guide 2026',
+                category: 'Cambridge FCE/CAE',
+                date: 'April 20, 2026',
+                readTime: '10 min read',
+                content: `
+                    <p>Cambridge C1 Advanced (CAE) remains one of the most prestigious high-level English certifications, accepted by over 11,000 organizations worldwide. In 2026, candidates can choose between computer-based and paper-based delivery, with digital exams offering significantly faster results and enhanced scheduling flexibility.</p>
+                    <h3>Exam Structure (Unchanged in 2026)</h3>
+                    <p>Contrary to rumors of major digital format overhauls, the C1 Advanced structure remains stable with four papers:</p>
+                    <ul>
+                        <li><strong>Reading and Use of English:</strong> 90 minutes. Tests reading comprehension, vocabulary range, and grammar control through multiple-choice, gap-fill, and word-formation tasks.</li>
+                        <li><strong>Writing:</strong> 90 minutes. Two tasks: one compulsory essay and one choice from report, proposal, review, or letter/email.</li>
+                        <li><strong>Listening:</strong> 40 minutes. 30 questions based on recordings featuring various accents and contexts.</li>
+                        <li><strong>Speaking:</strong> 15 minutes. Face-to-face interview with another candidate, assessed by two examiners.</li>
+                    </ul>
+                    <h3>Digital vs Paper-Based: Key Differences</h3>
+                    <table>
+                        <tr><th>Factor</th><th>Computer-Based</th><th>Paper-Based</th></tr>
+                        <tr><td>Result Timeline</td><td>2-3 weeks</td><td>4-6 weeks</td></tr>
+                        <tr><td>Scheduling</td><td>Available throughout the year</td><td>Set dates (specific Saturdays)</td></tr>
+                        <tr><td>Certificate</td><td>Identical qualification</td><td>Identical qualification</td></tr>
+                        <tr><td>Navigation</td><td>On-screen timer, easy navigation between questions</td><td>Physical booklet and answer sheet</td></tr>
+                    </table>
+                    <h3>Scoring Scale</h3>
+                    <p>Results are reported on the Cambridge English Scale (180-199 for C1 Advanced):</p>
+                    <table>
+                        <tr><th>Scale Score</th><th>Grade</th><th>CEFR Level</th></tr>
+                        <tr><td>200-210</td><td>Grade A</td><td>C2</td></tr>
+                        <tr><td>193-199</td><td>Grade B</td><td>C1</td></tr>
+                        <tr><td>180-192</td><td>Grade C</td><td>C1</td></tr>
+                        <tr><td>160-179</td><td>Level B2</td><td>B2</td></tr>
+                    </table>
+                    <p>Unlike TOEFL and IELTS, Cambridge certificates are valid for life, though institutions may request recent scores.</p>
+                    <h3>Digital Exam Interface Tips</h3>
+                    <ul>
+                        <li><strong>Use the flag function</strong> to mark uncertain questions for review.</li>
+                        <li><strong>Watch the on-screen timer carefully</strong>—the system does not pause between sections.</li>
+                        <li><strong>For Writing:</strong> You can cut, copy, and paste text. Use this to reorganize paragraphs efficiently.</li>
+                        <li><strong>For Use of English:</strong> Typing answers eliminates handwriting legibility concerns but requires careful spelling.</li>
+                    </ul>
+                    <h3>2026 Exam Dates</h3>
+                    <p>Computer-based exams are available year-round at authorized centers. Paper-based exams have fixed dates including January 31, March 7, April 11, May 9, June 13, and continuing throughout 2026. Always confirm with your local exam center.</p>
+                `
+            },
+            'article-10': {
+                title: 'TOEFL Writing 2026: How to Use Academic Vocabulary for Higher Scores',
+                category: 'TOEFL Writing',
+                date: 'April 19, 2026',
+                readTime: '12 min read',
+                content: `
+                    <p>The TOEFL Writing section was restructured in 2026 alongside the broader test overhaul. While there is no official "Academic Word List 3.0" released by ETS in 2026, strategic use of academic vocabulary remains one of the most reliable ways to boost your score in the new Writing tasks.</p>
+                    <h3>New 2026 Writing Format</h3>
+                    <p>The Writing section now consists of 12 questions completed in 23 minutes, featuring three task types:</p>
+                    <ul>
+                        <li><strong>Build a Sentence:</strong> You construct grammatically correct sentences from provided word banks.</li>
+                        <li><strong>Write an Email:</strong> A practical writing task simulating real campus communication.</li>
+                        <li><strong>Write for an Academic Discussion:</strong> The retained task from the 2023 changes where you respond to a professor's prompt and contribute to a class discussion.</li>
+                    </ul>
+                    <h3>Academic Vocabulary Strategy</h3>
+                    <p>High-scoring responses (Band 5-6) demonstrate control over <em>less common lexical items</em> used accurately and naturally. Focus on these categories:</p>
+                    <h4>1. Nominalizations</h4>
+                    <p>Turn verbs into nouns to sound more academic:</p>
+                    <ul>
+                        <li>"The government <strong>decided</strong>..." → "The government's <strong>decision</strong>..."</li>
+                        <li>"Scientists <strong>discovered</strong>..." → "The <strong>discovery</strong> by scientists..."</li>
+                    </ul>
+                    <h4>2. Discourse Markers for Academic Discussion</h4>
+                    <p>Structure your argument with sophisticated transitions:</p>
+                    <ul>
+                        <li>To introduce contrast: <em>Conversely, Nevertheless, On the contrary</em></li>
+                        <li>To add information: <em>Furthermore, Moreover, Additionally</em></li>
+                        <li>To give examples: <em>For instance, To illustrate, A case in point</em></li>
+                        <li>To conclude: <em>In light of this, Consequently, Therefore</em></li>
+                    </ul>
+                    <h4>3. Hedging Language</h4>
+                    <p>Academic writing rarely states absolutes. Use:</p>
+                    <ul>
+                        <li><em>It could be argued that..., This suggests that..., One possible interpretation is...</em></li>
+                        <li><em>Tends to, is likely to, may indicate, generally</em></li>
+                    </ul>
+                    <h4>4. Collocations</h4>
+                    <p>Native-like fluency comes from word combinations, not isolated vocabulary:</p>
+                    <ul>
+                        <li>Conduct research (not "make research")</li>
+                        <li>Draw a conclusion (not "take a conclusion")</li>
+                        <li>Address an issue (not "talk about an issue")</li>
+                        <li>Implement a policy (not "do a policy")</li>
+                    </ul>
+                    <h3>Template for Academic Discussion Task</h3>
+                    <p><strong>Opening:</strong> "While [classmate's name] raises a valid point about [topic], I believe [your position] because..."</p>
+                    <p><strong>Development:</strong> "This is supported by the fact that [evidence/example]. Furthermore, [additional reason]..."</p>
+                    <p><strong>Conclusion:</strong> "Therefore, [restate position with nuance]. In broader terms, this issue highlights [larger implication]."</p>
+                    <h3>Common Errors to Avoid</h3>
+                    <ul>
+                        <li>Using overly complex words incorrectly (a Band 4 error is worse than a simple but correct sentence).</li>
+                        <li>Repeating the same transition words ("Also... Also... Also").</li>
+                        <li>Writing off-topic to show off vocabulary—task completion is scored first.</li>
+                        <li>Ignoring the word count guidelines in the email task.</li>
+                    </ul>
+                `
+            },
+            'article-11': {
+                title: 'PMP Agile Practice: Scenario-Based Questions for the 2026 Exam',
+                category: 'PMP Agile',
+                date: 'April 18, 2026',
+                readTime: '18 min read',
+                content: `
+                    <p>With the July 2026 PMP exam update increasing the Business Environment domain to 26% and emphasizing adaptive methodologies, agile and hybrid scenario questions will carry even more weight. This guide covers the agile concepts most likely to appear and how to approach them.</p>
+                    <h3>Agile/Hybrid Emphasis in the 2026 Exam</h3>
+                    <p>The revised exam integrates predictive, agile, and hybrid approaches throughout all domains. You will not see purely "agile" or purely "predictive" sections; instead, questions will test how well you apply techniques across different methodologies based on project context.</p>
+                    <h3>Key Agile Concepts to Master</h3>
+                    <ul>
+                        <li><strong>Servant Leadership:</strong> The project manager's role shifts from directive to facilitative. You remove impediments, shield the team from distractions, and foster self-organization.</li>
+                        <li><strong>Backlog Refinement:</strong> The ongoing process of reviewing and revising product backlog items. Know when to involve stakeholders versus keeping sessions internal.</li>
+                        <li><strong>Velocity:</strong> A measure of work completed per iteration. Used for forecasting, not performance evaluation of individuals.</li>
+                        <li><strong>Definition of Done (DoD):</strong> The agreed-upon checklist ensuring quality. Distinguish this from "Definition of Ready."</li>
+                        <li><strong>Information Radiators:</strong> Burndown charts, Kanban boards, and impediment logs that make project status visible to all.</li>
+                    </ul>
+                    <h3>Sample Scenario Framework</h3>
+                    <p>Expect questions structured like this:</p>
+                    <blockquote>"A team has completed three sprints with velocities of 24, 28, and 26 story points. The product owner requests four additional features estimated at 40 story points total, with a hard deadline in six weeks. What should the project manager do first?"</blockquote>
+                    <p><strong>Correct approach:</strong> Calculate average velocity (26), determine capacity for remaining sprints (approximately 52 points), and present data to the product owner about feasibility. The answer is rarely "add more people" (Brooks's Law) or "skip retrospectives."</p>
+                    <h3>Hybrid Methodology Scenarios</h3>
+                    <p>Many 2026 questions will present hybrid environments where:</p>
+                    <ul>
+                        <li>The overall project uses predictive planning, but software modules use sprints.</li>
+                        <li>Regulatory requirements demand fixed scope (predictive), while user interface elements evolve based on feedback (agile).</li>
+                        <li>A vendor contract is fixed-price, but internal development is iterative.</li>
+                    </ul>
+                    <p>In these cases, the correct answer often involves <strong>tailoring</strong>—selecting the appropriate blend of practices rather than forcing a pure methodology.</p>
+                    <h3>New Sustainability Integration</h3>
+                    <p>The 2026 exam adds ESG (Environmental, Social, Governance) considerations to agile contexts. You may see scenarios asking how to reduce a project's carbon footprint during iterative development, or how to ensure supplier diversity in procurement sprints.</p>
+                    <h3>Practice Strategy</h3>
+                    <ul>
+                        <li>Focus on <strong>scenario-based question banks</strong> rather than definition memorization.</li>
+                        <li>When in doubt, choose the answer that <strong>empowers the team</strong> over the answer where the PM makes unilateral decisions.</li>
+                        <li>Remember: Agile values working solutions over comprehensive documentation, but the PMP exam still expects you to maintain appropriate records for audit and compliance.</li>
+                    </ul>
+                `
+            },
+            'article-12': {
+                title: 'IELTS Listening 2026: Accent Diversity & Computer Test Advantages',
+                category: 'IELTS Listening',
+                date: 'April 17, 2026',
+                readTime: '9 min read',
+                content: `
+                    <p>IELTS Listening has long used a range of native English accents to reflect real-world academic and social contexts. With the shift to computer-delivered testing in 2026, candidates now have access to enhanced interface tools that can improve performance—provided they know how to use them strategically.</p>
+                    <h3>Accent Range in IELTS Listening</h3>
+                    <p>The IELTS Listening test features speakers with a variety of native accents, including British, American, Australian, and New Zealand English. This has been standard practice for years and is not a 2026-specific change. The test deliberately includes different speech rates, idiomatic expressions, and pronunciation patterns to ensure candidates can comprehend English as it is spoken globally.</p>
+                    <h3>Computer-Delivered Listening Advantages</h3>
+                    <p>When taking IELTS on computer, the Listening section offers several practical benefits:</p>
+                    <ul>
+                        <li><strong>On-screen highlighting:</strong> You can highlight key words in questions before the audio begins.</li>
+                        <li><strong>Note-taking:</strong> A notes panel allows you to type reminders without using scratch paper.</li>
+                        <li><strong>Volume control:</strong> Individual headphone volume adjustment ensures clarity.</li>
+                        <li><strong>Navigation:</strong> You can move between questions within a section, though you cannot return to a previous section once it ends.</li>
+                    </ul>
+                    <h3>Section-by-Section Breakdown</h3>
+                    <p><strong>Section 1:</strong> A social conversation (e.g., booking a course, renting accommodation). Usually the most predictable accent and slowest pace. Focus on spelling names, numbers, and dates correctly.</p>
+                    <p><strong>Section 2:</strong> A monologue in a social context (e.g., a museum guide, orientation speech). Often includes a map or diagram labeling task. Watch for directional vocabulary.</p>
+                    <p><strong>Section 3:</strong> An academic discussion (up to 4 speakers). Multiple accents often appear here. This section tests your ability to track different opinions.</p>
+                    <p><strong>Section 4:</strong> An academic lecture. Typically the most challenging—one speaker, dense information, complex vocabulary. Note-taking structure is critical.</p>
+                    <h3>Accent-Specific Training Tips</h3>
+                    <ul>
+                        <li><strong>British accents:</strong> Practice with BBC podcasts and news. Pay attention to non-rhoticity (dropping 'r' sounds before consonants).</li>
+                        <li><strong>Australian accents:</strong> Watch ABC News Australia. Note the raised vowel sounds (e.g., "day" sounding closer to "die").</li>
+                        <li><strong>American accents:</strong> Listen to NPR podcasts. Focus on the rhotic 'r' and flapped 't' sounds.</li>
+                        <li><strong>New Zealand accents:</strong> The least common in IELTS but appears occasionally. Vowels are the main difference from Australian.</li>
+                    </ul>
+                    <h3>Common Traps in 2026</h3>
+                    <ul>
+                        <li><strong>Answer transfer time removed:</strong> In the computer test, you type answers directly—no 10-minute transfer time at the end. However, you still get 2 minutes to review answers after each section.</li>
+                        <li><strong>Word count limits:</strong> "NO MORE THAN TWO WORDS AND/OR A NUMBER" is strictly enforced by the marking algorithm.</li>
+                        <li><strong>Distractors:</strong> Speakers often correct themselves. The second answer is usually the correct one.</li>
+                    </ul>
+                `
+            },
+            'article-13': {
+                title: '2026 English Test Comparison: TOEFL vs IELTS vs Duolingo vs PTE',
+                category: 'Exam Comparison',
+                date: 'April 16, 2026',
+                readTime: '15 min read',
+                content: `
+                    <p>Choosing the right English proficiency test in 2026 requires understanding not just acceptance rates, but also delivery format changes, pricing, scoring systems, and strategic advantages. This comparison is updated for the TOEFL 1-6 band scale, IELTS computer-delivery phase-out, and Duolingo's growing university acceptance.</p>
+                    <h3>At-a-Glance Comparison</h3>
+                    <table>
+                        <tr><th>Feature</th><th>TOEFL iBT</th><th>IELTS Academic</th><th>Duolingo (DET)</th><th>PTE Academic</th></tr>
+                        <tr><td>Cost (USD)</td><td>$190-$250</td><td>$215-$250</td><td>$59</td><td>$200-$250</td></tr>
+                        <tr><td>Duration</td><td>~1 hour 40 min</td><td>2h 45min</td><td>1 hour</td><td>2 hours</td></tr>
+                        <tr><td>Score Range</td><td>1-6 bands (0-120 during transition)</td><td>0-9 bands</td><td>10-160</td><td>10-90</td></tr>
+                        <tr><td>Validity</td><td>2 years</td><td>2 years</td><td>2 years</td><td>2 years</td></tr>
+                        <tr><td>Delivery</td><td>Test center or Home Edition</td><td>Computer (paper phased out mid-2026)</td><td>Online at home</td><td>Test center or Home Edition</td></tr>
+                        <tr><td>Results Speed</td><td>4-8 days</td><td>1-2 days (computer)</td><td>48 hours</td><td>48 hours</td></tr>
+                        <tr><td>Retake Policy</td><td>Every 3 days; MyBest scores</td><td>One Skill Retake (computer only)</td><td>3 times per 30 days</td><td>Unlimited</td></tr>
+                    </table>
+                    <h3>Acceptance and Recognition</h3>
+                    <p><strong>TOEFL:</strong> Accepted by over 11,500 institutions in 160+ countries. The 2026 band scale aligns to CEFR, making cross-test comparison easier for admissions offices.</p>
+                    <p><strong>IELTS:</strong> Accepted by 12,000+ organizations globally. The mid-2026 shift to computer-only delivery (with hybrid Writing on Paper) does not affect recognition. Remains the preferred test for UK visas and Australian immigration.</p>
+                    <p><strong>Duolingo:</strong> Now accepted by 4,500+ universities, with rapid growth in US undergraduate admissions. Best for candidates needing fast, affordable results. Not accepted for most visa/immigration purposes.</p>
+                    <p><strong>PTE:</strong> Strong acceptance in Australia and New Zealand for immigration. Growing US university acceptance. Fully AI-scored like Duolingo.</p>
+                    <h3>Strategic Decision Matrix</h3>
+                    <p><strong>Choose TOEFL if:</strong> You are applying to US graduate programs, want MyBest score flexibility, or prefer the new adaptive format's personalized difficulty.</p>
+                    <p><strong>Choose IELTS if:</strong> You need immigration acceptance (UK/AU/CA), want face-to-face Speaking assessment, or prefer the One Skill Retake safety net.</p>
+                    <p><strong>Choose Duolingo if:</strong> You are on a budget, need results within 48 hours, or prefer testing from home. Verify acceptance with each institution first.</p>
+                    <p><strong>Choose PTE if:</strong> You are comfortable with fully AI scoring, applying to Australian institutions, or want same-day booking options.</p>
+                    <h3>2026 Scoring Concordance</h3>
+                    <p>Approximate equivalents for university admissions:</p>
+                    <table>
+                        <tr><th>TOEFL (New)</th><th>IELTS</th><th>Duolingo</th><th>PTE</th><th>CEFR</th></tr>
+                        <tr><td>6.0</td><td>8.0-9.0</td><td>140-160</td><td>76-84</td><td>C2</td></tr>
+                        <tr><td>5.0-5.5</td><td>7.0-7.5</td><td>120-135</td><td>65-75</td><td>C1</td></tr>
+                        <tr><td>4.0-4.5</td><td>5.5-6.5</td><td>95-115</td><td>50-64</td><td>B2</td></tr>
+                    </table>
+                    <h3>Final Recommendation</h3>
+                    <p>There is no universally "easiest" test. The best choice depends on your target institutions, timeline, budget, and personal strengths. If possible, take free practice tests for each format before committing. In 2026, the gap between test formats is narrowing—all major providers now use AI scoring elements, offer faster results, and align to CEFR standards.</p>
+                `
+            }
+        };
+
+        // Related articles mapping
+        const relatedMap = {
+            'article-1': ['article-3', 'article-6', 'article-10'],
+            'article-2': ['article-4', 'article-8', 'article-12'],
+            'article-3': ['article-1', 'article-6', 'article-10'],
+            'article-4': ['article-2', 'article-8', 'article-12'],
+            'article-5': ['article-13', 'article-1', 'article-8'],
+            'article-6': ['article-1', 'article-3', 'article-10'],
+            'article-7': ['article-11', 'article-13', 'article-5'],
+            'article-8': ['article-2', 'article-4', 'article-12'],
+            'article-9': ['article-13', 'article-2', 'article-8'],
+            'article-10': ['article-1', 'article-3', 'article-6'],
+            'article-11': ['article-7', 'article-13', 'article-5'],
+            'article-12': ['article-2', 'article-4', 'article-8'],
+            'article-13': ['article-1', 'article-5', 'article-7']
+        };
+
+        function openModal(articleId) {
+            currentModalId = articleId;
+            const data = articleContent[articleId];
+            if (!data) return;
+            const modal = document.getElementById('articleModal');
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalBody').innerHTML = data.content;
+            document.getElementById('modalFooterMeta').innerHTML = `
+                <span>🏷️ ${data.category}</span>
+                <span>📅 ${data.date}</span>
+                <span>📖 ${data.readTime}</span>
+            `;
+            // Related
+            const relContainer = document.getElementById('relatedChips');
+            const relIds = relatedMap[articleId] || [];
+            relContainer.innerHTML = relIds.map(id => {
+                const r = articleContent[id];
+                return r ? `<button class="related-chip" onclick="openModal('${id}')">${r.title}</button>` : '';
+            }).join('');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            updateModalBookmarkState();
+            // Reset modal scroll and progress
+            document.getElementById('modalContainer').scrollTop = 0;
+            document.getElementById('modalProgress').style.width = '0%';
+            // Track modal scroll for progress
+            setTimeout(() => {
+                document.getElementById('modalContainer').addEventListener('scroll', trackModalScroll);
+            }, 100);
+        }
+
+        function trackModalScroll() {
+            const container = document.getElementById('modalContainer');
+            const scrolled = (container.scrollTop / (container.scrollHeight - container.clientHeight)) * 100;
+            document.getElementById('modalProgress').style.width = Math.min(100, scrolled) + '%';
+        }
+
+        function closeModal() {
+            document.getElementById('articleModal').classList.remove('active');
+            document.body.style.overflow = '';
+            currentModalId = null;
+            document.getElementById('modalContainer').removeEventListener('scroll', trackModalScroll);
+        }
+        function closeModalOnOverlay(event) {
+            if (event.target === document.getElementById('articleModal')) closeModal();
+        }
+
+        // Share & copy
+        function copyArticleLink() {
+            if (!currentModalId) return;
+            const url = window.location.href.split('#')[0] + '#' + currentModalId;
+            navigator.clipboard.writeText(url).then(() => showToast('Link copied to clipboard!'));
+        }
+        function shareArticle(platform) {
+            if (!currentModalId) return;
+            const data = articleContent[currentModalId];
+            const url = encodeURIComponent(window.location.href.split('#')[0] + '#' + currentModalId);
+            const text = encodeURIComponent(data.title);
+            let shareUrl = '';
+            if (platform === 'twitter') shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+            if (platform === 'linkedin') shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+            if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+        function printArticle() {
+            const data = articleContent[currentModalId];
+            if (!data) return;
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html><head><title>${data.title}</title>
+                <style>body{font-family:system-ui,sans-serif;line-height:1.7;max-width:720px;margin:2rem auto;padding:0 1rem;color:#334155} h3{color:#1e3a8a} table{width:100%;border-collapse:collapse;margin:1rem 0} th,td{border:1px solid #e2e8f0;padding:0.6rem;text-align:left} th{background:#f8fafc}</style>
+                </head><body>
+                <h1>${data.title}</h1>
+                <p><small>${data.category} | ${data.date} | ${data.readTime}</small></p>
+                <hr>
+                ${data.content}
+                </body></html>
+            `);
+            printWindow.document.close();
+            printWindow.focus();
+            setTimeout(() => printWindow.print(), 400);
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') { closeModal(); closeMobileMenu(); }
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                document.getElementById('searchInput').focus();
+            }
+        });
+
+        // Newsletter
         document.getElementById('newsletterForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const btn = document.getElementById('newsletterBtn');
             const msg = document.getElementById('newsletterMsg');
             const email = document.getElementById('newsletterEmail').value.trim();
-
-            btn.textContent = 'Subscribing...';
-            btn.disabled = true;
-
+            btn.textContent = 'Subscribing...'; btn.disabled = true;
             try {
                 const res = await fetch('/api/subscribe', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email })
                 });
                 const data = await res.json();
@@ -1447,51 +1700,47 @@
                 if (res.ok) this.reset();
             } catch {
                 msg.textContent = '❌ Network error. Please try again.';
-                msg.style.color = '#fee2e2';
-                msg.style.display = 'block';
+                msg.style.color = '#fee2e2'; msg.style.display = 'block';
             } finally {
-                btn.textContent = 'Subscribe Now';
-                btn.disabled = false;
+                btn.textContent = 'Subscribe Now'; btn.disabled = false;
                 setTimeout(() => msg.style.display = 'none', 5000);
             }
         });
 
-        // Filter and search functionality
+        // Filter, Search, Pagination
         let currentCategory = 'all';
         let currentPage = 1;
         const postsPerPage = 9;
 
         function filterByCategory(category) {
-            currentCategory = category;
-            currentPage = 1;
-            
-            // Update chip active state
+            currentCategory = category; currentPage = 1;
             document.querySelectorAll('.chip').forEach(chip => {
                 chip.classList.remove('active');
+                if (chip.getAttribute('data-category') === category) chip.classList.add('active');
             });
-            event.target.classList.add('active');
-            
             applyFilters();
         }
-
-        function filterPosts() {
-            currentPage = 1;
-            applyFilters();
-        }
+        function filterPosts() { currentPage = 1; applyFilters(); }
 
         function applyFilters() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
             const cards = document.querySelectorAll('.blog-card');
             let visibleCards = [];
-
             cards.forEach(card => {
                 const category = card.getAttribute('data-category');
-                const title = card.querySelector('.blog-title').textContent.toLowerCase();
-                const excerpt = card.querySelector('.blog-excerpt').textContent.toLowerCase();
-                
+                const titleEl = card.querySelector('.blog-title');
+                const excerptEl = card.querySelector('.blog-excerpt');
+                const title = titleEl.textContent.toLowerCase();
+                const excerpt = excerptEl.textContent.toLowerCase();
                 const categoryMatch = currentCategory === 'all' || category === currentCategory;
-                const searchMatch = searchTerm === '' || title.includes(searchTerm) || excerpt.includes(searchTerm);
-                
+                const searchMatch = !searchTerm || title.includes(searchTerm) || excerpt.includes(searchTerm);
+                // Highlight
+                if (searchMatch && searchTerm) {
+                    highlightText(titleEl, searchTerm);
+                    highlightText(excerptEl, searchTerm);
+                } else {
+                    removeHighlight(titleEl); removeHighlight(excerptEl);
+                }
                 if (categoryMatch && searchMatch) {
                     visibleCards.push(card);
                     card.classList.remove('hidden');
@@ -1499,67 +1748,72 @@
                     card.classList.add('hidden');
                 }
             });
-
+            const noResults = document.getElementById('noResults');
+            if (visibleCards.length === 0) noResults.classList.add('show');
+            else noResults.classList.remove('show');
             updatePagination(visibleCards.length);
             paginateCards(visibleCards);
+        }
+
+        function highlightText(el, term) {
+            if (!el.dataset.original) el.dataset.original = el.innerHTML;
+            const regex = new RegExp('(' + escapeRegex(term) + ')', 'gi');
+            el.innerHTML = el.dataset.original.replace(regex, '<span class="highlight">$1</span>');
+        }
+        function removeHighlight(el) {
+            if (el.dataset.original) el.innerHTML = el.dataset.original;
+        }
+        function escapeRegex(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         }
 
         function paginateCards(visibleCards) {
             const start = (currentPage - 1) * postsPerPage;
             const end = start + postsPerPage;
-            
             visibleCards.forEach((card, index) => {
-                if (index >= start && index < end) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = (index >= start && index < end) ? 'flex' : 'none';
             });
         }
-
         function updatePagination(totalVisible) {
-            const totalPages = Math.ceil(totalVisible / postsPerPage);
+            const totalPages = Math.max(1, Math.ceil(totalVisible / postsPerPage));
             const pagination = document.getElementById('pagination');
-            
-            let paginationHTML = '<button class="page-btn" onclick="changePage(-1)" ' + (currentPage === 1 ? 'disabled' : '') + '>← Previous</button>';
-            
+            let html = `<button class="page-btn" onclick="changePage(-1)" ${currentPage===1?'disabled':''}>← Previous</button>`;
             for (let i = 1; i <= totalPages; i++) {
-                paginationHTML += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+                html += `<button class="page-btn ${i===currentPage?'active':''}" onclick="goToPage(${i})">${i}</button>`;
             }
-            
-            paginationHTML += '<button class="page-btn" onclick="changePage(1)" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next →</button>';
-            
-            pagination.innerHTML = paginationHTML;
+            html += `<button class="page-btn" onclick="changePage(1)" ${currentPage===totalPages?'disabled':''}>Next →</button>`;
+            pagination.innerHTML = html;
         }
-
-        function changePage(direction) {
+        function changePage(dir) {
             const cards = document.querySelectorAll('.blog-card:not(.hidden)');
             const totalPages = Math.ceil(cards.length / postsPerPage);
-            
-            currentPage += direction;
+            currentPage += dir;
             if (currentPage < 1) currentPage = 1;
             if (currentPage > totalPages) currentPage = totalPages;
-            
             applyFilters();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const bar = document.querySelector('.search-filter-bar');
+            window.scrollTo({ top: bar ? bar.offsetTop - 90 : 0, behavior: 'smooth' });
         }
+        function goToPage(page) { currentPage = page; applyFilters(); }
 
-        function goToPage(page) {
-            currentPage = page;
-            applyFilters();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Search on Enter key
         document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                filterPosts();
-            }
+            if (e.key === 'Enter') filterPosts();
+        });
+        document.getElementById('searchInput').addEventListener('input', function() {
+            if (this.value === '') filterPosts();
         });
 
-        // Initialize
+        // Hash routing for direct article links
+        function checkHash() {
+            const hash = window.location.hash.replace('#', '');
+            if (articleContent[hash]) openModal(hash);
+        }
+        window.addEventListener('hashchange', checkHash);
+
         document.addEventListener('DOMContentLoaded', function() {
             applyFilters();
+            updateBookmarkIcons();
+            setTimeout(checkHash, 300);
         });
     </script>
 </body>
