@@ -450,7 +450,55 @@ background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 50%, #00
             cursor: pointer;
             font-size: 1rem;
         }
+         /* DROPDOWN CONTAINER */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
+/* HIDE DROPDOWN BY DEFAULT */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 220px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    z-index: 999;
+    overflow: hidden;
+}
+
+/* DROPDOWN LINKS */
+.dropdown-content a {
+    display: block;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.dropdown-content a:hover {
+    background: #f3f4f6;
+}
+
+/* SHOW ON HOVER (DESKTOP) */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        display: none;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+}
         .btn-primary {
             background: var(--primary);
             color: white;
@@ -1423,7 +1471,14 @@ background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 50%, #00
                     </div>
                 </li>
                 <li><a href="/resources">Resources</a></li>
-                <li><a href="/blog">Blog</a></li>
+               <li class="dropdown">
+    <a href="/blog">Blog ▾</a>
+    <div class="dropdown-content">
+        <a href="/blog/ielts-complete-study-guide.html">IELTS Study Guide</a>
+        <a href="/blog/toefl-complete-preparation-guide.html">TOEFL Preparation</a>
+        <a href="/blog/pmp-certification-study-plan.html">PMP Study Plan</a>
+    </div>
+</li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/login" class="btn btn-secondary" style="padding: 0.5rem 1rem;">Student Login</a></li>
@@ -3034,6 +3089,29 @@ document.addEventListener('DOMContentLoaded', async function() {
                 observer.observe(el);
             });
         });
+         function toggleMobileMenu() {
+    document.getElementById("mobileNav").classList.toggle("active");
+    document.getElementById("mobileOverlay").classList.toggle("active");
+}
+
+function closeMobileMenu() {
+    document.getElementById("mobileNav").classList.remove("active");
+    document.getElementById("mobileOverlay").classList.remove("active");
+}
+
+// Mobile dropdown fix (Blog dropdown or Exams dropdown)
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownLinks = document.querySelectorAll(".dropdown > a");
+
+    dropdownLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                this.nextElementSibling.classList.toggle("show");
+            }
+        });
+    });
+});
 
         // Dynamic News Ticker Speed Control
         let tickerSpeed = 30;
