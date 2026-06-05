@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>PrepLoom Blog: Expert Tips, Study Guides & Exam Prep Resources | Free Articles</title>
+    <meta name="description" content="Read PrepLoom's expert blog for TOEFL iBT, IELTS, PMP, Cisco certification tips, study strategies, exam dates, and success stories from top scorers.">
+    <meta name="keywords" content="exam preparation blog, TOEFL tips, IELTS study guide, certification prep articles, exam strategies, study tips">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="PrepLoom Institute">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="PrepLoom Blog: Expert Exam Preparation Guides & Study Tips">
+    <meta property="og:description" content="Free articles on TOEFL, IELTS, PMP, Cisco certification. Expert tips, study strategies, and success stories.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://preploom.com.ng/blog">
+    <meta property="og:image" content="https://preploom.com.ng/images/Preploom.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="PrepLoom Institute">
+    <meta property="og:locale" content="en_NG">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PrepLoom Blog | Expert Exam Prep Guides">
+    <meta name="twitter:description" content="Free articles on TOEFL, IELTS, PMP, Cisco certification tips and study strategies.">
+    <meta name="twitter:image" content="https://preploom.com.ng/images/Preploom.png">
+    
+    <link rel="canonical" href="https://preploom.com.ng/blog">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="theme-color" content="#1e40af">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "PrepLoom Blog",
+      "description": "Expert articles on exam preparation, study strategies, and certification tips",
+      "url": "https://preploom.com.ng/blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "PrepLoom Institute",
+        "url": "https://preploom.com.ng",
+        "logo": "https://preploom.com.ng/images/Preploom.png"
+      }
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #1e40af;
+            --secondary: #3b82f6;
+            --accent: #1d4ed8;
+            --success: #10b981;
+            --dark: #000000;
+            --light: #f9fafb;
+            --text: #111827;
+            --border: #e5e7eb;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.6; color: var(--text); background: var(--light); }
+
+        /* Navigation */
+        .navbar { background: linear-gradient(135deg, var(--primary) 0%, #000000 100%); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-lg); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; color: white; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; max-width: 280px; }
+        .logo img { width: 100%; height: auto; border-radius: 8px; }
+        .nav-menu { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-menu a { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; position: relative; }
+        .nav-menu a:hover { opacity: 0.9; }
+        .nav-menu a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s; }
+        .nav-menu a:hover::after { width: 100%; }
+        .dropdown { position: relative; }
+        .dropdown-content { display: none; position: absolute; background: white; min-width: 250px; box-shadow: var(--shadow-lg); border-radius: 8px; top: 100%; margin-top: 0.5rem; overflow: hidden; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { color: var(--text); padding: 0.8rem 1rem; display: block; border-bottom: 1px solid var(--border); }
+        .dropdown-content a:hover { background: var(--light); color: var(--primary); }
+        .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 50%, #000000 100%); color: white; padding: 6rem 2rem; text-align: center; position: relative; overflow: hidden; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto; }
+
+        /* Main Content */
+        .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-title { font-size: 2.5rem; color: var(--dark); margin-bottom: 1rem; font-weight: 800; }
+        .section-subtitle { color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Blog Grid */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .blog-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s; border: 1px solid var(--border); }
+        .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .blog-image { width: 100%; height: 200px; background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+        .blog-content { padding: 1.5rem; }
+        .blog-category { color: var(--secondary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .blog-title { font-size: 1.3rem; color: var(--dark); margin-bottom: 1rem; font-weight: 700; }
+        .blog-excerpt { color: #64748b; line-height: 1.6; margin-bottom: 1rem; }
+        .blog-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #94a3b8; }
+        .read-more { color: var(--primary); font-weight: 700; text-decoration: none; }
+        .read-more:hover { text-decoration: underline; }
+
+        /* Footer */
+        .footer { background: var(--dark); color: white; padding: 4rem 2rem 2rem; margin-top: 5rem; }
+        .footer-grid { max-width: 1200px; margin: 0 auto 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; }
+        .footer-section h3 { font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--accent); }
+        .footer-links { list-style: none; }
+        .footer-links a { color: #94a3b8; text-decoration: none; transition: color 0.3s; padding: 0.5rem 0; display: block; }
+        .footer-links a:hover { color: white; }
+        .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid #334155; text-align: center; color: #64748b; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="images/Preploom.png" alt="PrepLoom" style="width:200px;max-width:100%;height:auto;object-fit:contain;border-radius:6px;" loading="lazy">
+            </a>
+            <button class="mobile-menu-btn">&#9776;</button>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Exams ▾</a>
+                    <div class="dropdown-content">
+                        <a href="/toefl">TOEFL iBT Preparation</a>
+                        <a href="/ielts">IELTS Academic & General</a>
+                        <a href="/duolingo">Duolingo English Test</a>
+                        <a href="/cambridge">Cambridge English</a>
+                        <a href="/pmp">PMP Certification</a>
+                        <a href="/google">Google Certificates</a>
+                        <a href="/cisco">Cisco (CCNA, CCNP)</a>
+                    </div>
+                </li>
+                <li><a href="/language-exams">Language Exams</a></li>
+                <li><a href="/professional-exams">Professional Certs</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>PrepLoom Blog: Expert Exam Preparation Guides</h1>
+        <p>Free articles, study strategies, and success tips from certified instructors and top scorers</p>
+    </header>
+
+    <!-- Coming Soon Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Learn from Experts</h2>
+            <p class="section-subtitle">In-depth articles covering exam strategies, study tips, and success stories from PrepLoom students</p>
+        </div>
+
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">📚</div>
+                <div class="blog-content">
+                    <div class="blog-category">TOEFL Prep</div>
+                    <h3 class="blog-title">How to Score 110+ on TOEFL iBT</h3>
+                    <p class="blog-excerpt">Master the proven strategies used by top scorers. Learn time management, section-specific tips, and essential vocabulary.</p>
+                    <div class="blog-meta">
+                        <span>Coming Soon</span>
+                        <a href="/blog" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">🎯</div>
+                <div class="blog-content">
+                    <div class="blog-category">IELTS Prep</div>
+                    <h3 class="blog-title">IELTS Band 8 Study Plan: 8-Week Roadmap</h3>
+                    <p class="blog-excerpt">A structured 8-week study plan designed by certified IELTS instructors to help you achieve band 8 in both Academic and General.</p>
+                    <div class="blog-meta">
+                        <span>Coming Soon</span>
+                        <a href="/blog" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">💼</div>
+                <div class="blog-content">
+                    <div class="blog-category">PMP Certification</div>
+                    <h3 class="blog-title">PMP Exam Guide: 200 Most Important Questions</h3>
+                    <p class="blog-excerpt">Review the top 200 PMP exam questions with detailed answers, explanations, and PMI-aligned study materials.</p>
+                    <div class="blog-meta">
+                        <span>Coming Soon</span>
+                        <a href="/blog" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">🔧</div>
+                <div class="blog-content">
+                    <div class="blog-category">Cisco Certification</div>
+                    <h3 class="blog-title">Cisco CCNA 200-301: Complete Study Guide</h3>
+                    <p class="blog-excerpt">Comprehensive guide covering all CCNA domains with practice questions, lab exercises, and exam day tips.</p>
+                    <div class="blog-meta">
+                        <span>Coming Soon</span>
+                        <a href="/blog" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">📊</div>
+                <div class="blog-content">
+                    <div class="blog-category">GMAT Prep</div>
+                    <h3 class="blog-title">GMAT 700+ Score: Advanced Strategies</h3>
+                    <p class="blog-excerpt">Advanced GMAT strategies for quantitative reasoning, verbal reasoning, and analytical writing assessment.</p>
+                    <div class="blog-meta">
+                        <span>Coming Soon</span>
+                        <a href="/blog" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">⭐</div>
+                <div class="blog-content">
+                    <div class="blog-category">Success Stories</div>
+                    <h3 class="blog-title">Student Success Stories: From Struggling to Scoring 110+</h3>
+                    <p class="blog-excerpt">Read inspiring stories from PrepLoom students who improved their scores and achieved their dream scores.</p>
+                    <div class="blog-meta">
+                        <span>Coming Soon</span>
+                        <a href="/testimonials" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Language Exams</h3>
+                <ul class="footer-links">
+                    <li><a href="/toefl">TOEFL iBT Preparation</a></li>
+                    <li><a href="/ielts">IELTS Academic & General</a></li>
+                    <li><a href="/duolingo">Duolingo English Test</a></li>
+                    <li><a href="/cambridge">Cambridge English</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Professional Certificates</h3>
+                <ul class="footer-links">
+                    <li><a href="/pmp">PMP Certification</a></li>
+                    <li><a href="/cisco">Cisco CCNA & CCNP</a></li>
+                    <li><a href="/google">Google Certificates</a></li>
+                    <li><a href="/gmat">GMAT Preparation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="/resources">Free Study Materials</a></li>
+                    <li><a href="/blog">Blog & Articles</a></li>
+                    <li><a href="/testimonials">Success Stories</a></li>
+                    <li><a href="/about">About PrepLoom</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PrepLoom Institute. All rights reserved. Helping students succeed globally.</p>
+        </div>
+    </footer>
+</body>
+</html>
