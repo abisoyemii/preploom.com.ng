@@ -25,5 +25,16 @@
     { "source": "/my-exams", "destination": "/my-exams.html", "permanent": false },
     { "source": "/progress", "destination": "/progress.html", "permanent": false },
     { "source": "/admin", "destination": "/admin.html", "permanent": false }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    }
   ]
 }
