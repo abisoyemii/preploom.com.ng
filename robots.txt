@@ -7,25 +7,7 @@ Disallow: /my-exams
 Disallow: /progress
 Disallow: /login
 Disallow: /backend/
-
-# Allow public pages (clean URLs)
-Allow: /toefl
-Allow: /ielts
-Allow: /duolingo
-Allow: /cambridge
-Allow: /gmat
-Allow: /pmp
-Allow: /cisco
-Allow: /google
-Allow: /language-exams
-Allow: /professional-exams
-Allow: /resources
-Allow: /blog
-Allow: /about
-Allow: /contact
-Allow: /testimonials
-Allow: /privacy-policy
-Allow: /terms
+Disallow: /admin
 
 # Sitemap location
 Sitemap: https://www.preploom.com.ng/sitemap.xml
