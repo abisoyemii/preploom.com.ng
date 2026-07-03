@@ -17,8 +17,8 @@ const DATA_DIR = path.join(__dirname, 'data');
 
 // ─── Middleware ───────────────────────────────────────────────────────────────
 const ALLOWED_ORIGINS = [
-  'https://preploom.com.ng',
   'https://www.preploom.com.ng',
+  'https://preploom.com.ng',
   'http://localhost:3000',
   'http://127.0.0.1:3000'
 ];
@@ -41,11 +41,11 @@ try {
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://pagead2.googlesyndication.com', 'https://www.googletagmanager.com'],
+        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://pagead2.googlesyndication.com', 'https://googleads.g.doubleclick.net', 'https://www.googletagmanager.com'],
         styleSrc: ["'self'", "'unsafe-inline'"],
         imgSrc: ["'self'", 'data:', 'https:'],
-        connectSrc: ["'self'", 'https://preploom.com.ng', 'http://localhost:3000', 'http://127.0.0.1:3000'],
-        frameSrc: ["'none'"],
+        connectSrc: ["'self'", 'https://www.preploom.com.ng', 'https://preploom.com.ng', 'https://pagead2.googlesyndication.com', 'https://googleads.g.doubleclick.net', 'https://tpc.googlesyndication.com', 'http://localhost:3000', 'http://127.0.0.1:3000'],
+        frameSrc: ["'self'", 'https://googleads.g.doubleclick.net', 'https://tpc.googlesyndication.com', 'https://www.google.com'],
         objectSrc: ["'none'"]
       }
     },

@@ -17,7 +17,8 @@
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/testimonials", "destination": "/testimonials.html" },
     { "source": "/privacy-policy", "destination": "/privacy-policy.html" },
-    { "source": "/terms", "destination": "/terms.html" }
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/cookie-policy", "destination": "/cookie-policy.html" }
   ],
   "redirects": [
     { "source": "/login", "destination": "/login.html", "permanent": false },

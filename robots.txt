@@ -8,9 +8,14 @@ Disallow: /progress
 Disallow: /login
 Disallow: /backend/
 Disallow: /admin
+Disallow: /dashboard.html
+Disallow: /my-exams.html
+Disallow: /progress.html
+Disallow: /login.html
+Disallow: /admin.html
 
 # Sitemap location
-Sitemap: https://www.preploom.com.ng/sitemap.xml
+Sitemap: https://preploom.com.ng/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1

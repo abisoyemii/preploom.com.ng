@@ -1,7 +1,9 @@
 (function () {
   const COOKIE_KEY = 'preploom_cookie_consent';
+  const GA_ID = 'G-QGR6DVNBFK';
+  const ADSENSE_CLIENT = 'ca-pub-3990291332288915';
+  let consentLoaded = false;
 
-  // Load saved preferences
   function getConsent() {
     try { return JSON.parse(localStorage.getItem(COOKIE_KEY)); } catch { return null; }
   }
@@ -10,14 +12,54 @@
     localStorage.setItem(COOKIE_KEY, JSON.stringify({ ...prefs, timestamp: Date.now() }));
   }
 
-  // Apply consent — enable/disable Google Analytics & Ads based on choice
-  function applyConsent(prefs) {
-    if (prefs.analytics) {
-      window['ga-disable-G-XXXXXXXXXX'] = false;
-    } else {
-      window['ga-disable-G-XXXXXXXXXX'] = true;
-    }
+  function loadGoogleAnalytics() {
+    if (window.__preploomAnalyticsLoaded || !window.document) return;
+    window.__preploomAnalyticsLoaded = true;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
 
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+
+  function renderAdsenseSlots() {
+    if (!window.document || typeof window.adsbygoogle === 'undefined') return;
+    const slots = document.querySelectorAll('.adsbygoogle');
+    if (slots.length && window.adsbygoogle.push) {
+      window.adsbygoogle.push({});
+    }
+  }
+
+  function loadAdsense() {
+    if (window.__preploomAdsLoaded || !window.document) return;
+    window.__preploomAdsLoaded = true;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`;
+    script.crossOrigin = 'anonymous';
+    script.onload = () => {
+      window.adsbygoogle = window.adsbygoogle || [];
+      renderAdsenseSlots();
+    };
+    document.head.appendChild(script);
+  }
+
+  function applyConsent(prefs) {
+    if (!consentLoaded) {
+      consentLoaded = true;
+    }
+    if (prefs.analytics) {
+      window['ga-disable-G-QGR6DVNBFK'] = false;
+      loadGoogleAnalytics();
+      loadAdsense();
+    } else {
+      window['ga-disable-G-QGR6DVNBFK'] = true;
+    }
   }
 
   function removeBanner() {
@@ -69,7 +111,7 @@
         <div id="cookie-banner-text">
           <strong>🍪 We use cookies</strong>
           <p>We use cookies to enhance your experience and analyse traffic. 
-          See our <a href="privacy-policy.html" style="color:#93c5fd;">Privacy Policy</a> for details.</p>
+          See our <a href="/privacy-policy" style="color:#93c5fd;">Privacy Policy</a> for details.</p>
         </div>
         <div id="cookie-banner-actions">
           <button id="cookie-manage-btn">Manage Preferences</button>
@@ -243,9 +285,8 @@
   // Init
   const saved = getConsent();
   if (saved) {
-    applyConsent(saved); // Re-apply saved preferences on every page load
+    applyConsent(saved);
   } else {
-    // Show banner after DOM is ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', createBanner);
     } else {

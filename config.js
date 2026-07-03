@@ -1,4 +1,4 @@
-// API base URL — update RAILWAY_URL after deploying backend to Railway
+// API base URL
 const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? ''  // local: use relative paths (backend serves frontend)
-  : 'https://RAILWAY_URL.up.railway.app';  // production: replace with your Railway URL
+  : '';  // production: backend API calls use relative paths via Vercel rewrites
